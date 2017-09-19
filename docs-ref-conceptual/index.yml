@@ -1,11 +1,11 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: <span data-ttu-id="82b25-101">Azure для разработчиков Java</span><span class="sxs-lookup"><span data-stu-id="82b25-101">Azure for Java developers</span></span>
+title: <span data-ttu-id="6258e-101">Azure для разработчиков Java</span><span class="sxs-lookup"><span data-stu-id="6258e-101">Azure for Java developers</span></span>
 metadata:
   document_id: 1152a217-eb0e-45e9-b01b-bd27080d615e
-  title: '<span data-ttu-id="82b25-102">Azure для разработчиков Java: руководства и справочник по API</span><span class="sxs-lookup"><span data-stu-id="82b25-102">Azure for Java developers - Tutorials, API Reference</span></span>'
-  description: <span data-ttu-id="82b25-103">Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.</span><span class="sxs-lookup"><span data-stu-id="82b25-103">Get started developing apps with Azure using the resources below to find great tutorials and tools for Java developers.</span></span>
-  keywords: '<span data-ttu-id="82b25-104">Azure, Java, SDK, API, Maven, Spring</span><span class="sxs-lookup"><span data-stu-id="82b25-104">Azure, Java, SDK, API, Maven, Spring</span></span>'
+  title: '<span data-ttu-id="6258e-102">Azure для разработчиков Java: руководства и справочник по API</span><span class="sxs-lookup"><span data-stu-id="6258e-102">Azure for Java developers - Tutorials, API Reference</span></span>'
+  description: <span data-ttu-id="6258e-103">Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.</span><span class="sxs-lookup"><span data-stu-id="6258e-103">Get started developing apps with Azure using the resources below to find great tutorials and tools for Java developers.</span></span>
+  keywords: '<span data-ttu-id="6258e-104">Azure, Java, SDK, API, Maven, Spring</span><span class="sxs-lookup"><span data-stu-id="6258e-104">Azure, Java, SDK, API, Maven, Spring</span></span>'
   author: rloutlaw
   ms.author: routlaw
   manager: douge
@@ -19,7 +19,7 @@ sections:
   - items:
       - type: markdown
         text: |
-          <span data-ttu-id="82b25-105">Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.</span><span class="sxs-lookup"><span data-stu-id="82b25-105">Get started developing apps with Azure using the resources below to find great tutorials and tools for Java developers.</span></span>
+          <span data-ttu-id="6258e-105">Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.</span><span class="sxs-lookup"><span data-stu-id="6258e-105">Get started developing apps with Azure using the resources below to find great tutorials and tools for Java developers.</span></span>
   - items:
       - type: list
         style: cards
@@ -27,29 +27,29 @@ sections:
         columns: 2
         items:
           - href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
-            html: <p><span data-ttu-id="82b25-106">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="82b25-106">Deploy your first web app to Azure</span></span></p>
+            html: <p><span data-ttu-id="6258e-106">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="6258e-106">Deploy your first web app to Azure</span></span></p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            title: <span data-ttu-id="82b25-107">Начало работы</span><span class="sxs-lookup"><span data-stu-id="82b25-107">Get Started</span></span>
+            title: <span data-ttu-id="6258e-107">Начало работы</span><span class="sxs-lookup"><span data-stu-id="6258e-107">Get Started</span></span>
           - href: 'https://azure.microsoft.com/resources/samples/?platform=java&view=azure-java'
-            html: <p><span data-ttu-id="82b25-108">Примеры кода Azure на основе Java</span><span class="sxs-lookup"><span data-stu-id="82b25-108">Azure code samples using Java</span></span></p>
+            html: <p><span data-ttu-id="6258e-108">Примеры кода Azure на основе Java</span><span class="sxs-lookup"><span data-stu-id="6258e-108">Azure code samples using Java</span></span></p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-            title: <span data-ttu-id="82b25-109">Примеры кода</span><span class="sxs-lookup"><span data-stu-id="82b25-109">Code Samples</span></span>
+            title: <span data-ttu-id="6258e-109">Примеры кода</span><span class="sxs-lookup"><span data-stu-id="6258e-109">Code Samples</span></span>
           - href: java-azure-tools.md
-            html: <p><span data-ttu-id="82b25-110">Инструменты для разработчиков</span><span class="sxs-lookup"><span data-stu-id="82b25-110">Developer tools</span></span></p>
+            html: <p><span data-ttu-id="6258e-110">Инструменты для разработчиков</span><span class="sxs-lookup"><span data-stu-id="6258e-110">Developer tools</span></span></p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
-            title: <span data-ttu-id="82b25-111">Пакет SDK и средства</span><span class="sxs-lookup"><span data-stu-id="82b25-111">SDK &amp; Tools</span></span>
+            title: <span data-ttu-id="6258e-111">Средства и подключаемые модули IDE</span><span class="sxs-lookup"><span data-stu-id="6258e-111">IDE plugins &amp; Tools</span></span>
           - href: java-sdk-azure-install.md
-            html: <p><span data-ttu-id="82b25-112">Библиотеки Azure для Java</span><span class="sxs-lookup"><span data-stu-id="82b25-112">Azure Libraries for Java</span></span></p>
+            html: <p><span data-ttu-id="6258e-112">Библиотеки Azure для Java</span><span class="sxs-lookup"><span data-stu-id="6258e-112">Azure Libraries for Java</span></span></p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: <span data-ttu-id="82b25-113">Справочник по API</span><span class="sxs-lookup"><span data-stu-id="82b25-113">API Reference</span></span>
-  - title: <span data-ttu-id="82b25-114">5-минутные руководства по началу работы</span><span class="sxs-lookup"><span data-stu-id="82b25-114">5-Minute Quickstarts</span></span>
+            title: <span data-ttu-id="6258e-113">Справочник по API</span><span class="sxs-lookup"><span data-stu-id="6258e-113">API Reference</span></span>
+  - title: <span data-ttu-id="6258e-114">5-минутные руководства по началу работы</span><span class="sxs-lookup"><span data-stu-id="6258e-114">5-Minute Quickstarts</span></span>
     items:
       - type: paragraph
-        text: <span data-ttu-id="82b25-115">Сведения о создании приложений Java с помощью служб Azure.</span><span class="sxs-lookup"><span data-stu-id="82b25-115">Learn how to build Java apps with Azure services.</span></span>
+        text: <span data-ttu-id="6258e-115">Сведения о создании приложений Java с помощью служб Azure.</span><span class="sxs-lookup"><span data-stu-id="6258e-115">Learn how to build Java apps with Azure services.</span></span>
       - type: list
         style: cards
         className: cardsM
@@ -57,25 +57,25 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: <span data-ttu-id="82b25-116">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="82b25-116">Deploy your first web app to Azure</span></span>
+            title: <span data-ttu-id="6258e-116">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="6258e-116">Deploy your first web app to Azure</span></span>
             href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/MySQL.svg'
-            title: <span data-ttu-id="82b25-117">Подключение к базе данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="82b25-117">Connect to Azure Database for MySQL</span></span>
+            title: <span data-ttu-id="6258e-117">Подключение к базе данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="6258e-117">Connect to Azure Database for MySQL</span></span>
             href: 'https://docs.microsoft.com/azure/mysql/connect-java'
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/CosmosDB_rgb_ui_lighttheme.svg'
-            title: <span data-ttu-id="82b25-118">Создание веб-приложения с помощью Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="82b25-118">Build a web app with Cosmos DB</span></span>
+            title: <span data-ttu-id="6258e-118">Создание веб-приложения с помощью Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="6258e-118">Build a web app with Cosmos DB</span></span>
             href: 'https://docs.microsoft.com/azure/cosmos-db/create-documentdb-java'
           - image:
               src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/jenkins_logo.svg'
-            title: <span data-ttu-id="82b25-119">Непрерывная интеграция и развертывание в службу приложений с помощью Jenkins®</span><span class="sxs-lookup"><span data-stu-id="82b25-119">CI/CD to App Service with Jenkins®</span></span>
+            title: <span data-ttu-id="6258e-119">Непрерывная интеграция и развертывание в службу приложений с помощью Jenkins®</span><span class="sxs-lookup"><span data-stu-id="6258e-119">CI/CD to App Service with Jenkins®</span></span>
             href: 'https://docs.microsoft.com/azure/jenkins/java-deploy-webapp-tutorial'
-  - title: <span data-ttu-id="82b25-120">Примеры</span><span class="sxs-lookup"><span data-stu-id="82b25-120">Samples</span></span>
+  - title: <span data-ttu-id="6258e-120">Примеры</span><span class="sxs-lookup"><span data-stu-id="6258e-120">Samples</span></span>
     items:
       - type: list
         style: unordered
         items:
-          - html: '<span data-ttu-id="82b25-121"><a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Создание веб-приложения с помощью Spring Boot и MySQL</a></span><span class="sxs-lookup"><span data-stu-id="82b25-121"><a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Create a web app with Spring Boot and MySQL</a></span></span>'
-          - html: '<span data-ttu-id="82b25-122"><a href="https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/">Использование хранилища больших двоичных объектов с помощью Java</a></span><span class="sxs-lookup"><span data-stu-id="82b25-122"><a href="https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/">Azure Blob Storage with Java</a></span></span>'
-          - html: '<span data-ttu-id="82b25-123"><a href="https://azure.microsoft.com/resources/samples/azure-cosmos-db-mongodb-java-getting-started/">Подключение к Azure Cosmos DB с помощью API MongoDB</a></span><span class="sxs-lookup"><span data-stu-id="82b25-123"><a href="https://azure.microsoft.com/resources/samples/azure-cosmos-db-mongodb-java-getting-started/">Connect to Azure Cosmos DB with the MongoDB API</a></span></span>'
+          - html: '<span data-ttu-id="6258e-121"><a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Создание веб-приложения с помощью Spring Boot и MySQL</a></span><span class="sxs-lookup"><span data-stu-id="6258e-121"><a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Create a web app with Spring Boot and MySQL</a></span></span>'
+          - html: '<span data-ttu-id="6258e-122"><a href="https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/">Использование хранилища больших двоичных объектов с помощью Java</a></span><span class="sxs-lookup"><span data-stu-id="6258e-122"><a href="https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/">Azure Blob Storage with Java</a></span></span>'
+          - html: '<span data-ttu-id="6258e-123"><a href="https://azure.microsoft.com/resources/samples/azure-cosmos-db-mongodb-java-getting-started/">Подключение к Azure Cosmos DB с помощью API MongoDB</a></span><span class="sxs-lookup"><span data-stu-id="6258e-123"><a href="https://azure.microsoft.com/resources/samples/azure-cosmos-db-mongodb-java-getting-started/">Connect to Azure Cosmos DB with the MongoDB API</a></span></span>'
