@@ -78,7 +78,7 @@ ms.lasthandoff: 09/13/2017
 [Инструкции по входу для набора средств Azure для IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Публикация веб-приложения в виде контейнера Docker с помощью набора средств Azure для IntelliJ]: ./azure-toolkit-for-intellij-publish-as-docker-container.md
 [Управление учетными записями хранения с помощью Azure Explorer для IntelliJ]: ./azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md
-[Управление виртуальными машинами с помощью Azure Explorer для IntelliJ]: ./azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md
+[Управление виртуальными машинами хранения с помощью Azure Explorer для IntelliJ]: ./azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md
 
 [Azure Java Developer Center]: https://docs.microsoft.com/java/azure
 
