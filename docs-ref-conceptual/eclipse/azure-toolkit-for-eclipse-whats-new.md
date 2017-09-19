@@ -321,7 +321,7 @@ ms.lasthandoff: 09/13/2017
 [Инструкции по входу для набора средств Azure для Eclipse]: azure-toolkit-for-eclipse-sign-in-instructions.md
 [Публикация веб-приложения в виде контейнера Docker с помощью набора средств Azure для Eclipse]: ./azure-toolkit-for-eclipse-publish-as-docker-container.md
 [Управление учетными записями хранения с помощью Azure Explorer для Eclipse]: ./azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
-[Управление виртуальными машинами с помощью Azure Explorer для Eclipse]: ./azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
+[Управление виртуальными машинами хранения с помощью Azure Explorer для Eclipse]: ./azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
 
 [Azure Java Developer Center]: https://docs.microsoft.com/java/azure
 

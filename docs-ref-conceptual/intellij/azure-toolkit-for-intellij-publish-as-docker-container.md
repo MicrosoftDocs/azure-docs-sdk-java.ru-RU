@@ -188,7 +188,7 @@ ms.lasthandoff: 09/13/2017
 
 <!-- URL List -->
 
-[Веб-сайт Docker]: https://www.docker.com/
+[веб-сайте Docker]: https://www.docker.com/
 [Configuring artifacts]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html (Настройка артефактов)
 
 <!-- IMG List -->

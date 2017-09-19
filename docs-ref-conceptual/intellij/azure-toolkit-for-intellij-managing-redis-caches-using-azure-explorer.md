@@ -93,14 +93,14 @@ Azure Explorer, входящий в состав набора средств Azu
 
 * [кэш Azure Redis]
 * [Документация по кэшу Redis]
-* [Кэш Redis. Цены]
+* [странице с ценами на кэш Redis]
 * [Настройка кэша Redis для Azure]
 
 [!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
 
 <!-- URL List -->
 
-[Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
+[странице с ценами на кэш Redis]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure
