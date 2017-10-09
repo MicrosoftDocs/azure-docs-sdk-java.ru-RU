@@ -52,7 +52,7 @@ ms.lasthandoff: 09/13/2017
 
    d. **Расположение**: указывает расположение, в котором создается кэш Redis (например, *западная часть США*).
 
-   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [странице с ценами на кэш Redis].)
+   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [странице с ценами на кэш Redis] .)
 
    f. **Порт без SSL**: указывает, разрешает ли кэш Redis подключения без использования SSL. По умолчанию разрешены только SSL-подключения.
 
@@ -93,14 +93,14 @@ ms.lasthandoff: 09/13/2017
 
 * [кэш Azure Redis]
 * [Документация по кэшу Redis]
-* [Кэш Redis. Цены]
+* [странице с ценами на кэш Redis]
 * [Настройка кэша Redis для Azure]
 
 [!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
 
 <!-- URL List -->
 
-[Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
+[странице с ценами на кэш Redis]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache/
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure
