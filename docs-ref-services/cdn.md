@@ -11,37 +11,37 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: cdn
-ms.openlocfilehash: db9fb8a9a8f9f21061f1e16b77e3145d1fb1b119
-ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
+ms.openlocfilehash: 91df958d2d78fb4fd959c228b28c6ae003716be6
+ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2017
+ms.lasthandoff: 10/09/2017
 ---
-# <a name="azure-cdn-libraries-for-java"></a><span data-ttu-id="ab2b7-104">Библиотеки Azure CDN для Java</span><span class="sxs-lookup"><span data-stu-id="ab2b7-104">Azure CDN libraries for Java</span></span>
+# <a name="azure-cdn-libraries-for-java"></a><span data-ttu-id="b8b7e-104">Библиотеки Azure CDN для Java</span><span class="sxs-lookup"><span data-stu-id="b8b7e-104">Azure CDN libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="ab2b7-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="ab2b7-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="b8b7e-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="b8b7e-105">Overview</span></span>
 
-<span data-ttu-id="ab2b7-106">Кэшируйте статическое веб-содержимое в стратегически расположенных точках, обеспечивая максимальную пропускную способность для пользователей с помощью [сети доставки содержимого Azure](/azure/cdn/cdn-overview) (CDN).</span><span class="sxs-lookup"><span data-stu-id="ab2b7-106">Cache static web content at strategically placed locations to provide maximum throughput for users with [Azure Content Delivery Network](/azure/cdn/cdn-overview) (CDN).</span></span>
+<span data-ttu-id="b8b7e-106">Кэшируйте статическое веб-содержимое в стратегически расположенных точках, обеспечивая максимальную пропускную способность для пользователей с помощью [сети доставки содержимого Azure](/azure/cdn/cdn-overview) (CDN).</span><span class="sxs-lookup"><span data-stu-id="b8b7e-106">Cache static web content at strategically placed locations to provide maximum throughput for users with [Azure Content Delivery Network](/azure/cdn/cdn-overview) (CDN).</span></span>
 
-<span data-ttu-id="ab2b7-107">Чтобы приступить к работе с Azure CDN, см. инструкции по [началу работы с Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span><span class="sxs-lookup"><span data-stu-id="ab2b7-107">To get started with Azure CDN, see [Getting started with Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span></span>
+<span data-ttu-id="b8b7e-107">Чтобы приступить к работе с Azure CDN, см. инструкции по [началу работы с Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span><span class="sxs-lookup"><span data-stu-id="b8b7e-107">To get started with Azure CDN, see [Getting started with Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span></span>
 
-## <a name="management-api"></a><span data-ttu-id="ab2b7-108">API управления</span><span class="sxs-lookup"><span data-stu-id="ab2b7-108">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="b8b7e-108">API управления</span><span class="sxs-lookup"><span data-stu-id="b8b7e-108">Management API</span></span>
 
-<span data-ttu-id="ab2b7-109">Создавайте профили CDN, определяйте конечные точки и добавляйте содержимое в CDN с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="ab2b7-109">Create CDN profiles, define endpoints, and add content to the CDN using the management API.</span></span>
+<span data-ttu-id="b8b7e-109">Создавайте профили CDN, определяйте конечные точки и добавляйте содержимое в CDN с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="b8b7e-109">Create CDN profiles, define endpoints, and add content to the CDN using the management API.</span></span>
 
-<span data-ttu-id="ab2b7-110">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="ab2b7-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
+<span data-ttu-id="b8b7e-110">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="b8b7e-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 ```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-mgmt-cdn</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```   
 
-### <a name="example"></a><span data-ttu-id="ab2b7-111">Пример</span><span class="sxs-lookup"><span data-stu-id="ab2b7-111">Example</span></span>
+### <a name="example"></a><span data-ttu-id="b8b7e-111">Пример</span><span class="sxs-lookup"><span data-stu-id="b8b7e-111">Example</span></span>
 
-<span data-ttu-id="ab2b7-112">Создайте профиль CDN, назначьте конечные точки и загрузите содержимое в CDN.</span><span class="sxs-lookup"><span data-stu-id="ab2b7-112">Create a CDN profile, assign endpoints, and load content into the CDN.</span></span>
+<span data-ttu-id="b8b7e-112">Создайте профиль CDN, назначьте конечные точки и загрузите содержимое в CDN.</span><span class="sxs-lookup"><span data-stu-id="b8b7e-112">Create a CDN profile, assign endpoints, and load content into the CDN.</span></span>
 
 ```java
 CdnProfile profile = azure.cdnProfiles().define("testCDN")
@@ -62,10 +62,10 @@ for (CdnEndpoint endpoint : profile.endpoints().values()) {
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="ab2b7-113">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="ab2b7-113">Explore the Management APIs</span></span>](/java/api/overview/azure/cdn/managementapi)
+> [<span data-ttu-id="b8b7e-113">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="b8b7e-113">Explore the Management APIs</span></span>](/java/api/overview/azure/cdn/managementapi)
 
-## <a name="samples"></a><span data-ttu-id="ab2b7-114">Примеры</span><span class="sxs-lookup"><span data-stu-id="ab2b7-114">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="b8b7e-114">Примеры</span><span class="sxs-lookup"><span data-stu-id="b8b7e-114">Samples</span></span>
 
-[<span data-ttu-id="ab2b7-115">Управление CDN с помощью Java</span><span class="sxs-lookup"><span data-stu-id="ab2b7-115">Manage CDNs with Java</span></span>](https://github.com/Azure-Samples/cdn-java-manage-cdn)
+[<span data-ttu-id="b8b7e-115">Управление CDN с помощью Java</span><span class="sxs-lookup"><span data-stu-id="b8b7e-115">Manage CDNs with Java</span></span>](https://github.com/Azure-Samples/cdn-java-manage-cdn)
 
-<span data-ttu-id="ab2b7-116">Ознакомьтесь с [примерами кода Java для Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="ab2b7-116">Explore more [sample Java code for Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) you can use in your apps.</span></span>
+<span data-ttu-id="b8b7e-116">Ознакомьтесь с [примерами кода Java для Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="b8b7e-116">Explore more [sample Java code for Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) you can use in your apps.</span></span>
