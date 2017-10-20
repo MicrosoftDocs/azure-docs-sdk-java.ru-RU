@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 6226cf0f94b6403ac81ff344eba022420f5e20ea
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 081b8455a6cd8f26ce714328d10ce25ea6a07e3b
+ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/14/2017
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>Библиотеки Azure Active Directory для Java
 
@@ -57,7 +57,7 @@ System.out.println("ID Token - " + result.getIdToken());
 
 ## <a name="management-api"></a>API управления
 
-Настройте [управление доступом на основе ролей](/azure/active-directory/role-based-access-control-what-is) и назначьте этим ролям удостоверения (например, удостоверения пользователей и [субъектов-служб](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-application-objects)) с помощью API управления. 
+Настройте [управление доступом на основе ролей](/azure/active-directory/role-based-access-control-what-is) и назначьте этим ролям удостоверения (например, удостоверения пользователей и [субъектов-служб](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects)) с помощью API управления. 
 
 [Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.
 
