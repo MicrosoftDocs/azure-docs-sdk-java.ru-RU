@@ -2,5 +2,5 @@
 
 Если окно средств **обозревателя Azure** не отображается в IntelliJ, выберите **Представление** и **Окна инструментов**, а затем — **Обозреватель Azure**.
 
-![Окно "Показать средства обозревателя Azure"](media/azure-toolkit-for-intellij-show-azure-explorer/show-az-exp-01.png)
+![Окно "Показать средства обозревателя Azure"](../media/azure-toolkit-for-intellij-show-azure-explorer/show-az-exp-01.png)
 
