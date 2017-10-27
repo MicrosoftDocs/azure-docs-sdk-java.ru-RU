@@ -1,0 +1,27 @@
+- name: Spring Framework в Azure
+  href: ./index.yml
+  items:
+    - name: Начало работы
+      items:
+        - name: Развертывание приложения Spring Boot Application в службе приложений Azure
+          href: deploy-spring-boot-java-web-app-on-azure.md
+        - name: Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
+          href: deploy-spring-boot-java-app-with-maven-plugin.md
+    - name: Учебники
+      items:
+        - name: Развертывание приложения Spring Boot в Kubernetes в Службе контейнеров Azure
+          href: deploy-spring-boot-java-app-on-kubernetes.md
+        - name: Развертывание веб-приложения Spring Boot в Linux в Службе контейнеров Azure
+          href: deploy-spring-boot-java-app-on-linux.md
+        - name: Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8
+          href: deploy-spring-boot-java-app-using-fabric8-maven-plugin.md
+    - name: Инструкции
+      items:
+        - name: Как настроить приложение Spring Boot Initializer для использования кэша Redis
+          href: configure-spring-boot-initializer-java-app-with-redis-cache.md
+        - name: Использование начального приложения Spring Boot с API DocumentDB в Azure Cosmos DB
+          href: configure-spring-boot-starter-java-app-with-cosmos-db.md
+        - name: Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
+          href: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
+        - name: Развертывание приложения Spring Boot в реестре контейнеров Azure в службе приложений Azure с помощью подключаемого модуля Maven для веб-приложений Azure
+          href: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md

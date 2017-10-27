@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 10/19/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: 61cf858f2f118650c34c299634fc0c47c22fd6a5
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: dc93b0b490eb61baa2b7cf86c7df7ac13925305f
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="azure-toolkit-for-intellij"></a>Набор средств Azure для IntelliJ
 В набор средств Azure для IntelliJ входят шаблоны и функциональные возможности для простого создания, разработки, тестирования и развертывания приложений Azure с помощью интегрированной среды разработки IntelliJ. Это проект с открытым кодом, исходный код которого доступен по [лицензии MIT на сайте проекта](https://github.com/microsoft/azure-tools-for-java).
@@ -31,13 +31,11 @@ ms.lasthandoff: 09/13/2017
 ## <a name="get-started-with-the-azure-toolkit-for-intellij"></a>Приступая к работе с набором средств Azure для IntelliJ
 Следующие статьи помогут вам приступить к работе с набором средств Azure для IntelliJ:
 
-* [Новые возможности набора средств Azure для IntelliJ](azure-toolkit-for-intellij-whats-new.md)
-
 * [Установка набора средств Azure для IntelliJ](azure-toolkit-for-intellij-installation.md)
 
 * [Инструкции по входу для набора средств Azure для IntelliJ](azure-toolkit-for-intellij-sign-in-instructions.md)
 
-* [Создание веб-приложения Azure (цен. категория "Базовый") в IntelliJ](/azure/app-service-web/app-service-web-intellij-create-hello-world-web-app)
+* [Создание веб-приложения Azure (цен. категория "Базовый") в IntelliJ](azure-toolkit-for-intellij-create-hello-world-web-app.md)
 
 ## <a name="use-the-azure-toolkit-for-intellij-with-your-java-projects"></a>Использование набора средств Azure для IntelliJ для проектов Java
 В следующих статьях демонстрируется использование набора средств Azure для IntelliJ для добавления функций Azure в проекты Java.
@@ -60,6 +58,12 @@ ms.lasthandoff: 09/13/2017
 * [Управление виртуальными машинами с помощью Azure Explorer для IntelliJ](azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о наборе средств Azure для IntelliJ см. на следующих страницах:
+
+* [Заметки о выпуске набора средств Azure](https://github.com/Microsoft/azure-tools-for-java/releases)
+
+* [Набор средств Azure для IntelliJ в репозитории подключаемых модулей JetBrains](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij)
 
 Дополнительные сведения об использовании Java с Azure см. в [центре разработчиков Java для Azure](https://azure.microsoft.com/develop/java/) и на странице [инструментов Java для Visual Studio Team Services](https://java.visualstudio.com/).
 
