@@ -4,12 +4,12 @@ title: Azure для разработчиков Java
 metadata:
   document_id: 1152a217-eb0e-45e9-b01b-bd27080d615e
   title: 'Azure для разработчиков Java: руководства и справочник по API'
-  description: Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.
+  description: 'Начните разрабатывать приложения для облачной среды, используя эти превосходные руководства и средства для разработчиков Java.'
   keywords: 'Azure, Java, SDK, API, Maven, Spring'
   author: rloutlaw
   ms.author: routlaw
   manager: douge
-  ms.date: 07/13/2017
+  ms.date: 11/02/2017
   ms.topic: article
   ms.prod: azure
   ms.technology: azure
@@ -19,14 +19,14 @@ sections:
   - items:
       - type: markdown
         text: |
-          Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.
+          Начните разрабатывать приложения Java для облачной среды, используя эти руководства, средства и библиотеки.
   - items:
       - type: list
         style: cards
         className: cardsM
         columns: 2
         items:
-          - href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
+          - href: 'https://docs.microsoft.com/azure/app-service/app-service-web-deploy-spring-boot-app-with-maven-plugin'
             html: <p>Развертывание веб-приложения в Azure</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
@@ -58,7 +58,7 @@ sections:
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
             title: Развертывание веб-приложения в Azure
-            href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
+            href: 'https://docs.microsoft.com/azure/app-service/app-service-web-deploy-spring-boot-app-with-maven-plugin'
           - image:
               src: 'https://docs.microsoft.com/en-us/azure/media/index/azurefunctions.svg'
             title: Создание независимой от сервера функции Java
@@ -77,7 +77,7 @@ sections:
             href: 'https://docs.microsoft.com/azure/jenkins/java-deploy-webapp-tutorial'
   - title: Примеры
     items:
-      - type: list
+      - type: listgit check
         style: unordered
         items:
           - html: '<a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Создание веб-приложения с помощью Spring Boot и MySQL</a>'
