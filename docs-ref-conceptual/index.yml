@@ -1,0 +1,85 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Azure для разработчиков Java
+metadata:
+  document_id: 1152a217-eb0e-45e9-b01b-bd27080d615e
+  title: 'Azure для разработчиков Java: руководства и справочник по API'
+  description: Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.
+  keywords: 'Azure, Java, SDK, API, Maven, Spring'
+  author: rloutlaw
+  ms.author: routlaw
+  manager: douge
+  ms.date: 07/13/2017
+  ms.topic: article
+  ms.prod: azure
+  ms.technology: azure
+  ms.devlang: java
+  ms.service: multiple
+sections:
+  - items:
+      - type: markdown
+        text: |
+          Приступайте к разработке приложений в Azure. В следующих ресурсах вы найдете руководства и средства для разработчиков Java.
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 2
+        items:
+          - href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
+            html: <p>Развертывание веб-приложения в Azure</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+            title: Начало работы
+          - href: 'https://azure.microsoft.com/resources/samples/?platform=java&view=azure-java'
+            html: <p>Примеры кода Azure на основе Java</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
+            title: Примеры кода
+          - href: java-azure-tools.md
+            html: <p>Инструменты для разработчиков</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+            title: Средства и подключаемые модули IDE
+          - href: java-sdk-azure-install.md
+            html: <p>Библиотеки Azure для Java</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+            title: Справочник по API
+  - title: 5-минутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: Сведения о создании приложений Java с помощью служб Azure.
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
+            title: Развертывание веб-приложения в Azure
+            href: 'https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java'
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/media/index/azurefunctions.svg'
+            title: Создание независимой от сервера функции Java
+            href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-first-java-maven'
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/MySQL.svg'
+            title: Подключение к базе данных Azure для MySQL
+            href: 'https://docs.microsoft.com/azure/mysql/connect-java'
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/CosmosDB_rgb_ui_lighttheme.svg'
+            title: Создание веб-приложения с помощью Cosmos DB
+            href: 'https://docs.microsoft.com/azure/cosmos-db/create-documentdb-java'
+          - image:
+              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/jenkins_logo.svg'
+            title: Непрерывная интеграция и развертывание в службу приложений с помощью Jenkins®
+            href: 'https://docs.microsoft.com/azure/jenkins/java-deploy-webapp-tutorial'
+  - title: Примеры
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://github.com/Azure-Samples/mysql-spring-boot-todo">Создание веб-приложения с помощью Spring Boot и MySQL</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/">Использование хранилища больших двоичных объектов с помощью Java</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/samples/azure-cosmos-db-mongodb-java-getting-started/">Подключение к Azure Cosmos DB с помощью API MongoDB</a>'
