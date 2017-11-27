@@ -3,7 +3,7 @@
   items:
     - name: Начало работы
       items:
-        - name: Развертывание приложения Spring Boot Application в службе приложений Azure
+        - name: Развертывание приложения Spring Boot в службе приложений Azure
           href: deploy-spring-boot-java-web-app-on-azure.md
         - name: Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
           href: deploy-spring-boot-java-app-with-maven-plugin.md
@@ -17,9 +17,9 @@
           href: deploy-spring-boot-java-app-using-fabric8-maven-plugin.md
     - name: Инструкции
       items:
-        - name: Как настроить приложение Spring Boot Initializer для использования кэша Redis
+        - name: Настройка приложения Spring Boot Initializer с использованием кэша Redis
           href: configure-spring-boot-initializer-java-app-with-redis-cache.md
-        - name: Использование начального приложения Spring Boot с API DocumentDB в Azure Cosmos DB
+        - name: Использование начального приложения Spring Boot в Azure Cosmos DB
           href: configure-spring-boot-starter-java-app-with-cosmos-db.md
         - name: Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
           href: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
