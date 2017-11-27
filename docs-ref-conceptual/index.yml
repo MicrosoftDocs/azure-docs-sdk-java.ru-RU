@@ -37,15 +37,15 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
             title: Примеры кода
           - href: java-azure-tools.md
-            html: <p>Инструменты для разработчиков</p>
+            html: <p>Средства и подключаемые модули IDE</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
-            title: Средства и подключаемые модули IDE
+            title: 'Подключаемые модули IntelliJ, Maven, Eclipse и VS Code'
           - href: java-sdk-azure-install.md
-            html: <p>Библиотеки Azure для Java</p>
+            html: <p>Справочник по API</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: Справочник по API
+            title: Библиотеки Azure для Java
   - title: 5-минутные руководства по началу работы
     items:
       - type: paragraph
