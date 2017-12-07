@@ -2,9 +2,7 @@
 Для выполнения описанных в статье шагов необходимо установить набор средств Azure для IntelliJ. Для этого требуются следующие компоненты:
 
 * Выпуск IntelliJ IDEA Ultimate Edition или Community Edition. Его можно скачать с [веб-сайта JetBrains](https://www.jetbrains.com/idea/download/).
-
 * Java Developer Kit (JDK) версии 1.8 или более поздней.
-
 * Операционная система. Набор средств Azure для IntelliJ проверен в следующих операционных системах:
   
   * Windows 10, Windows 8.1, Windows 8 и Windows 7;
