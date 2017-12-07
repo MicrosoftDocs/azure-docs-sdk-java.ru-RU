@@ -4,7 +4,7 @@
     - name: Установить
       href: azure-toolkit-for-eclipse-installation.md
     - name: Начало работы
-      href: /azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app
+      href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
     - name: Учебники
       items:
         - name: Развертывание контейнеров в виртуальных машинах Azure
