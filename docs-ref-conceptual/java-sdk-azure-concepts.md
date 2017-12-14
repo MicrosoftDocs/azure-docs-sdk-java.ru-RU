@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки управления Azure для Java: принципы использования и шаблоны"
-description: 
+title: "Руководство разработчика Java по библиотекам управления Azure"
+description: "Шаблоны и способы использования библиотек управления Java для управления облачными ресурсами в Azure с помощью Java."
 keywords: Azure, Java, SDK, API, Maven, Gradle, authentication, active directory, service principal
 author: rloutlaw
 ms.author: routlaw
@@ -12,13 +12,15 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.openlocfilehash: 052c4de1e8f9ff0ece5f36d1c3514bad8c04cfec
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 8b52981ddfaadb7227cea4c7df014011196339cb
+ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="azure-management-library-concepts"></a>Библиотеки управления Azure: принципы использования
+# <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Шаблоны и рекомендации по разработке с помощью библиотек Azure для Java 
+
+В этой статье описаны шаблоны и рекомендации по работе с библиотеками Azure для Java в ваших проектах. Разработка на основе этих шаблонов и рекомендаций позволит сократить объем поддерживающего кода и упростить добавление или настройку дополнительных ресурсов в будущих обновлениях библиотек управления.
 
 ## <a name="build-resources-through-a-fluent-interface"></a>Создание ресурсов с помощью текучего API
 

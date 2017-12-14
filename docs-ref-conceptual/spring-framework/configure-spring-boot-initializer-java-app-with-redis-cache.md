@@ -6,38 +6,58 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Spring Starter, Redis Cache
 ms.assetid: 
 ms.service: cache
 ms.workload: na
 ms.tgt_pltfrm: cache-redis
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: c5e9a9214762e014e463dd3277671fc56237d4a0
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: e46a90413321845cb94d72fff893e42aa2353491
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="how-to-configure-a-spring-boot-initializer-app-to-use-redis-cache"></a>Как настроить приложение Spring Boot Initializer для использования кэша Redis
 
 ## <a name="overview"></a>Обзор
 
-**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java. Чтобы помочь разработчикам приступить к работе со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения. Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.
-
-В этой статье описывается создание кэша Redis с помощью портала Azure, использование **Spring Initializr** для создания пользовательского приложения, а также создание веб-приложения Java, которое сохраняет и извлекает данные с помощью кэша Redis.
+В этой статье описано, как создать кэш Redis с помощью портала Azure, использовать **[Spring Initializr]** для создания пользовательского приложения, а также создать веб-приложение Java, которое хранит и извлекает данные с помощью кэша Redis.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
 
 * Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
-
 * [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
+* [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
-* [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
+## <a name="create-a-custom-application-using-the-spring-initializr"></a>Создание пользовательского приложения с помощью Spring Initializr
+
+1. Перейдите по адресу <https://start.spring.io/>.
+
+1. Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.
+
+   ![Основные параметры Spring Initializr][SI01]
+
+   > [!NOTE]
+   >
+   > Spring Initializr будет использовать имена **группы** и **артефакта** для создания имени пакета, например *com.contoso.myazuredemo*.
+   >
+
+1. Прокрутите вниз к разделу **Web** (Веб) и установите флажок для параметра **Web** (Веб). Затем прокрутите вниз к разделу **NoSQL** и установите флажок для параметра **Redis**, затем перейдите к нижней части страницы и нажмите кнопку **Generate Project** (Создать проект).
+
+   ![Все параметры Spring Initializr][SI02]
+
+1. При появлении запроса скачайте проект на локальный компьютер.
+
+   ![Скачивание пользовательского проекта Spring Boot][SI03]
+
+1. После извлечения файлов в локальной системе пользовательское приложение Spring Boot можно будет редактировать.
+
+   ![Пользовательские файлы проекта Spring Boot][SI04]
 
 ## <a name="create-a-redis-cache-on-azure"></a>Создание кэша Redis в Azure
 
@@ -71,31 +91,6 @@ ms.lasthandoff: 11/18/2017
 1. Когда отобразится страница, содержащая список свойств кэша, щелкните **Ключи доступа** и скопируйте ключи доступа для кэша.
 
    ![Портал Azure][AZ05]
-
-## <a name="create-a-custom-application-using-the-spring-initializr"></a>Создание пользовательского приложения с помощью Spring Initializr
-
-1. Перейдите по адресу <https://start.spring.io/>.
-
-1. Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.
-
-   ![Основные параметры Spring Initializr][SI01]
-
-   > [!NOTE]
-   >
-   > Spring Initializr будет использовать имена **группы** и **артефакта** для создания имени пакета, например *com.contoso.myazuredemo*.
-   >
-
-1. Прокрутите вниз к разделу **Web** (Веб) и установите флажок для параметра **Web** (Веб). Затем прокрутите вниз к разделу **NoSQL** и установите флажок для параметра **Redis**, затем перейдите к нижней части страницы и нажмите кнопку **Generate Project** (Создать проект).
-
-   ![Все параметры Spring Initializr][SI02]
-
-1. При появлении запроса скачайте проект на локальный компьютер.
-
-   ![Скачивание пользовательского проекта Spring Boot][SI03]
-
-1. После извлечения файлов в локальной системе пользовательское приложение Spring Boot можно будет редактировать.
-
-   ![Пользовательские файлы проекта Spring Boot][SI04]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>Настройка пользовательского приложения Spring Boot для использования кэша Redis
 
@@ -206,15 +201,17 @@ ms.lasthandoff: 11/18/2017
 
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure см. в [центре разработчиков Java для Azure] и на странице [инструментов Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
 
 Дополнительные сведения о начале работы с кэшем Redis с помощью Java в Azure см. в [этой статье][Redis Cache with Java].
 
+**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java. Чтобы помочь разработчикам приступить к работе со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения. Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.
+
 <!-- URL List -->
 
-[центре разработчиков Java для Azure]: https://azure.microsoft.com/develop/java/
+[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
-[инструментов Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/

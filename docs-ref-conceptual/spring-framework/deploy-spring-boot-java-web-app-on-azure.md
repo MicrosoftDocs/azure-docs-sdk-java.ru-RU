@@ -6,26 +6,23 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework
 ms.assetid: 
 ms.service: multiple
 ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 7a4234aefd4eb33f80c1978fb84721f2dbcb2e4f
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: b520cc80360f8162c929bb2cc88c24311a7e20f8
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-a-spring-boot-application-to-the-azure-app-service"></a>Развертывание приложения Spring Boot Application в службе приложений Azure
 
-**[Spring Framework]** — это решение с открытым исходным кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является [Spring Boot]. Он упрощает подход к созданию автономных приложений Java.
-
-В этом учебнике приводятся пошаговые инструкции по созданию образца веб-приложения Spring Boot Getting Started и его развертыванию в [службе приложений Azure].
+В этом руководстве описано, как создать пример начального веб-приложения [Spring Boot] и развернуть его в [службе приложений Azure].
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -199,7 +196,7 @@ ms.lasthandoff: 11/18/2017
 
 * [Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure см. в [центре разработчиков Java для Azure] и на странице [инструментов Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
 
 Дополнительные сведения о развертывании веб-приложений в Azure по FTP см. в статье [Развертывание приложения в службе приложений Azure с помощью FTP или FTPS].
 
@@ -213,14 +210,14 @@ ms.lasthandoff: 11/18/2017
 
 [службе приложений Azure]: https://azure.microsoft.com/services/app-service/
 [Azure Container Service]: https://azure.microsoft.com/services/container-service/
-[центре разработчиков Java для Azure]: https://azure.microsoft.com/develop/java/
+[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [портал Azure]: https://portal.azure.com/
 [Настройка веб-приложений в службе приложений Azure]: /azure/app-service/web-sites-configure
 [Развертывание приложения в службе приложений Azure с помощью FTP или FTPS]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[инструментов Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [Maven]: http://maven.apache.org/
 [преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/

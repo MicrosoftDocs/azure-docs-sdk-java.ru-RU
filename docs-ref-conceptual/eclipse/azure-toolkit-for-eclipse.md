@@ -14,11 +14,11 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: f94900ab5fa25a5d9dac19f665705b970db7c8b7
-ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
+ms.openlocfilehash: 1cd0430a6649b1c979da5650b4d817bfb35b5f8c
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
 В набор средств Azure для Eclipse входят шаблоны и функциональные возможности для простого создания, разработки, тестирования и развертывания приложений Azure с помощью интегрированной среды разработки Eclipse.
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 
 * [Инструкции по входу для набора средств Azure для Eclipse](azure-toolkit-for-eclipse-sign-in-instructions.md)
 
-* [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse](/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app)
+* [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse](azure-toolkit-for-eclipse-create-hello-world-web-app.md)
 
 ## <a name="use-the-azure-toolkit-for-eclipse-with-your-java-projects"></a>Использование набора средств Azure для Eclipse для проектов Java
 В следующих статьях демонстрируется использование набора средств Azure для Eclipse для добавления функций Azure в проекты Java:
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/21/2017
 
 * [Набор средств Azure для Eclipse в Eclipse Marketplace](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)
 
-Дополнительные сведения об использовании Java с Azure см. в [центре разработчиков Java для Azure](https://azure.microsoft.com/develop/java/) и на странице [инструментов Java для Visual Studio Team Services](https://java.visualstudio.com/).
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) и [инструментах Java для Visual Studio Team Services](https://java.visualstudio.com/).
 
 <!-- [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)] -->
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/21/2017
 
 <!-- URL List -->
 
-[Azure Java Developer Center]: https://docs.microsoft.com/java/azure
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 
 <!-- Temporarily Deprecated URLs -->

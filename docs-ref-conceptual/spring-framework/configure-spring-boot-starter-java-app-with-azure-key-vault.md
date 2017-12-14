@@ -1,0 +1,333 @@
+---
+title: "Как использовать начальное приложение Spring Boot Starter с Azure Key Vault"
+description: "Сведения о настройке приложения Spring Boot Initializer с помощью начального приложения Azure Key Vault."
+services: key-vault
+documentationcenter: java
+author: rmcmurray
+manager: routlaw
+editor: 
+ms.assetid: 
+ms.service: key-vault
+ms.workload: identity
+ms.tgt_pltfrm: multiple
+ms.devlang: java
+ms.topic: article
+ms.date: 11/29/2017
+ms.author: robmcm
+ms.openlocfilehash: 8b35a972a00c995730dfa59b1b6a47fab7716b76
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/06/2017
+---
+# <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
+
+## <a name="overview"></a>Обзор
+
+В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Key Vault для получения строки подключения, которая хранится в виде секрета в хранилище ключей.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
+
+* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
+* [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
+
+## <a name="create-an-app-using-the-spring-initialzr"></a>Создание приложения с помощью Spring Initialzr
+
+1. Перейдите по адресу <https://start.spring.io/>.
+
+1. Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.
+
+   ![Указание имен группы и артефакта][secrets-01]
+
+1. Прокрутите вниз до раздела **Azure** статьи и установите флажок рядом с пунктом **Azure Key Vault**.
+
+   ![Выбор начального приложения Azure Key Vault][secrets-02]
+
+1. Прокрутите страницу вниз и нажмите кнопку, чтобы **создать проект**.
+
+   ![Создание проекта Spring Boot][secrets-03]
+
+1. При появлении запроса скачайте проект на локальный компьютер.
+
+## <a name="sign-into-azure-and-select-the-subscription-to-use"></a>Вход в Azure и выбор подписки для использования
+
+1. Откройте окно командной строки.
+
+1. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
+
+   ```azurecli
+   az login
+   ```
+   Для завершения процесса входа следуйте инструкциям.
+
+1. Отобразите список подписок:
+
+   ```azurecli
+   az account list
+   ```
+   Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:
+
+   ```json
+   [
+     {
+       "cloudName": "AzureCloud",
+       "id": "ssssssss-ssss-ssss-ssss-ssssssssssss",
+       "isDefault": true,
+       "name": "Converted Windows Azure MSDN - Visual Studio Ultimate",
+       "state": "Enabled",
+       "tenantId": "tttttttt-tttt-tttt-tttt-tttttttttttt",
+       "user": {
+         "name": "contoso@microsoft.com",
+         "type": "user"
+       }
+     }
+   ]
+
+1. Specify the GUID for the account you want to use with Azure; for example:
+
+   ```azurecli
+   az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
+   ```
+
+## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a>Создание и настройка Azure Key Vault с помощью Azure CLI
+
+1. Создайте группу ресурсов Azure, которые будут использоваться для хранилища ключей, например:
+   ```azurecli
+   az group create --name wingtiptoysresources --location westus
+   ```
+   Описание
+   | Параметр | Описание |
+   |---|---|
+   | `name` | Указывает уникальное имя для группы ресурсов. |
+   | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
+
+   В Azure CLI отобразятся результаты созданной группы ресурсов, например:  
+
+   ```json
+   {
+     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/wingtiptoysresources",
+     "location": "westus",
+     "managedBy": null,
+     "name": "wingtiptoysresources",
+     "properties": {
+       "provisioningState": "Succeeded"
+     },
+     "tags": null
+   }
+   ```
+
+1. Создайте субъект-службу Azure, связанный с зарегистрированным приложением, например:
+   ```shell
+   az ad sp create-for-rbac --name "wingtiptoysuser"
+   ```
+   | Параметр | Описание |
+   |---|---|
+   | `id` | Указывает идентификатор GUID из предыдущего зарегистрированного приложения. |
+
+   Azure CLI отобразит сообщение о состоянии JSON, которое содержит значения *appId* и *password* (вы будете использовать эти значения в качестве идентификатора клиента и пароля клиента позже), например:
+
+   ```json
+   {
+     "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
+     "displayName": "wingtiptoysuser",
+     "name": "http://wingtiptoysuser",
+     "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
+     "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
+   }
+   ```
+
+1. Создайте хранилище ключей в группе ресурсов, например:
+   ```azurecli
+   az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   ```
+   Описание
+   | Параметр | Описание |
+   |---|---|
+   | `name` | Указывает уникальное имя для хранилища ключей. |
+   | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
+   | `enabled-for-deployment` | Указывает [вариант развертывания хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault). |
+   | `enabled-for-disk-encryption` | Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault). |
+   | `enabled-for-template-deployment` | Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault). |
+   | `sku` | Указывает [вариант номера SKU хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault). |
+   | `query` | Указывает значение, извлекаемое из ответа — URI хранилища ключей, необходимый для работы с этим руководством. |
+
+   Azure CLI отобразит этот URI для хранилища ключей для дальнейшего использования, например:  
+
+   ```
+   "https://wingtiptoyskeyvault.vault.azure.net"
+   ```
+
+1. Настройте политику доступа для ранее созданного субъекта-службы Azure, например:
+   ```azurecli
+   az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
+   ```
+   Описание
+   | Параметр | Описание |
+   |---|---|
+   | `name` | Указывает имя используемого хранилища ключей (см. выше). |
+   | `secret-permission` | Указывает [политики безопасности](https://docs.microsoft.com/en-us/cli/azure/keyvault) для хранилища ключей. |
+   | `object-id` | Указывает идентификатор GUID для зарегистрированного приложения (см. выше). |
+
+   В Azure CLI отобразятся результаты создания политики безопасности, например:  
+
+   ```json
+   {
+     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
+     "location": "westus",
+     "name": "wingtiptoyskeyvault",
+     "properties": {
+       ...
+       ... (A long list of values will be displayed here.)
+       ...
+     },
+     "resourceGroup": "wingtiptoysresources",
+     "tags": {},
+     "type": "Microsoft.KeyVault/vaults"
+   }
+   ```
+
+1. Сохраните секрет в новом хранилище ключей, например:
+   ```azurecli
+   az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   ```
+   Описание
+   | Параметр | Описание |
+   |---|---|
+   | `vault-name` | Указывает имя используемого хранилища ключей (см. выше). |
+   | `name` | Указывает имя секрета. |
+   | `value` | Указывает значение секрета. |
+
+   В Azure CLI отобразятся результаты создания секрета, например:  
+
+   ```json
+   {
+     "attributes": {
+       "created": "2017-12-01T09:00:16+00:00",
+       "enabled": true,
+       "expires": null,
+       "notBefore": null,
+       "recoveryLevel": "Purgeable",
+       "updated": "2017-12-01T09:00:16+00:00"
+     },
+     "contentType": null,
+     "id": "https://wingtiptoyskeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "kid": null,
+     "managed": null,
+     "tags": {
+       "file-encoding": "utf-8"
+     },
+     "value": "jdbc:sqlserver://wingtiptoys.database.windows.net:1433;database=DATABASE;"
+   }
+   ```
+
+## <a name="configure-and-compile-your-spring-boot-application"></a>Настройка и компиляция приложения Spring Boot
+
+1. Распакуйте архив с файлами проекта Spring Boot, которые вы скачали в каталог.
+
+1. В папке *main/src/ресурсы* проекта откройте файл *application.properties* в текстовом редакторе.
+
+1. Добавьте значения для хранилища ключей, используя ранее выполненные действия, например:
+   ```yaml
+   azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
+   azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
+   azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
+   ```
+   Описание
+   | Параметр | Описание |
+   |---|---|
+   | `azure.keyvault.uri` | Указывает URI, полученный при создании хранилища ключей. |
+   | `azure.keyvault.client-id` | Указывает GUID *appId*, полученный при создании субъекта-службы. |
+   | `azure.keyvault.client-key` | Указывает GUID *password*, полученный при создании субъекта-службы. |
+
+1. Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.
+
+1. Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:
+
+   ```java
+   package com.wingtiptoys.secrets;
+
+   import org.springframework.boot.SpringApplication;
+   import org.springframework.boot.autoconfigure.SpringBootApplication;
+   import org.springframework.beans.factory.annotation.Value;
+   import org.springframework.boot.CommandLineRunner;
+
+   @SpringBootApplication
+   public class SecretsApplication implements CommandLineRunner {
+
+      @Value("${connectionString}")
+      private String connectionString;
+
+      public static void main(String[] args) {
+         SpringApplication.run(SecretsApplication.class, args);
+      }
+
+      public void run(String... varl) throws Exception {
+         System.out.println(String.format("\nConnection String stored in Azure Key Vault:\n%s\n",connectionString));
+      }
+   }
+   ```
+   Этот пример кода извлекает строку подключения из хранилища ключей и отображает ее в командной строке.
+
+1. Сохраните и закройте файл Java.
+
+## <a name="build-and-test-your-app"></a>Создание и тестирование приложения
+
+1. Перейдите в каталог с файлом *pom.xml* приложения Spring Boot:
+
+1. Создайте приложение Spring Boot с помощью Maven, например:
+
+   ```bash
+   mvn clean package
+   ```
+
+   В Maven отобразятся результаты создания.
+
+   ![Состояние сборки приложения Spring Boot][build-application-01]
+
+1. Запустите приложение Spring Boot с помощью Maven. В приложении отобразится строка подключения, полученная из хранилища ключей. Например:
+
+   ```bash
+   mvn spring-boot:run
+   ```
+
+   ![Сообщение о времени выполнения Spring Boot][build-application-02]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+См. дополнительные сведения об использовании Azure Key Vault:
+
+* [Документация по Key Vault].
+
+* [Приступая к работе с хранилищем ключей Azure]
+
+Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:
+
+* [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
+
+* [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
+
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+
+<!-- URL List -->
+
+[Документация по Key Vault]: /azure/key-vault/
+[Приступая к работе с хранилищем ключей Azure]: /azure/key-vault/key-vault-get-started
+[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Spring Boot]: http://projects.spring.io/spring-boot/
+[Spring Initializr]: https://start.spring.io/
+[Spring Framework]: https://spring.io/
+
+<!-- IMG List -->
+
+[secrets-01]: media/configure-spring-boot-starter-java-app-with-azure-key-vault/secrets-01.png
+[secrets-02]: media/configure-spring-boot-starter-java-app-with-azure-key-vault/secrets-02.png
+[secrets-03]: media/configure-spring-boot-starter-java-app-with-azure-key-vault/secrets-03.png
+
+[build-application-01]: media/configure-spring-boot-starter-java-app-with-azure-key-vault/build-application-01.png
+[build-application-02]: media/configure-spring-boot-starter-java-app-with-azure-key-vault/build-application-02.png

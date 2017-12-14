@@ -6,31 +6,30 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Maven
 ms.assetid: 
 ms.service: multiple
 ms.workload: web
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 548c294bd576b00b62994c09d82ec21ad72f4dbd
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 7fa375ca805ddd037173f9dbd26b6631021e60a3
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Развертывание приложения Spring Boot в реестре контейнеров Azure в службе приложений Azure с помощью подключаемого модуля Maven для веб-приложений Azure
 
-**[Spring Framework]** — это популярная платформа с открытым кодом, которая помогает Java-разработчикам создавать мобильные приложения, веб-приложения и приложения API. В этом руководстве для удобства используется пример приложения, созданный с помощью [Spring Boot] — подхода к использованию Spring на основе соглашений.
-
-В этой статье демонстрируется, как развернуть пример приложения Spring Boot в реестре контейнера Azure, а затем использовать подключаемый модуль Maven для веб-приложений Azure для развертывания приложения в службе приложений Azure.
+В этой статье описано, как развернуть пример приложения [Spring Boot] в реестре контейнера Azure, а затем использовать подключаемый модуль Maven для веб-приложений Azure для развертывания приложения в службе приложений Azure.
 
 > [!NOTE]
->
+> 
+> Подключаемый модуль Maven для веб-приложений Azure для [Apache Maven](http://maven.apache.org/) обеспечивает эффективную интеграцию службы приложений Azure в проекты Maven и упрощает процесс развертывания веб-приложений в службе приложений Azure.
+> 
 > Подключаемый модуль Maven для веб-приложений Azure в настоящее время доступен в предварительной версии. Сейчас поддерживается только FTP-публикация, но на будущее запланированы дополнительные функции.
->
+> 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -94,7 +93,7 @@ ms.lasthandoff: 11/18/2017
 
 > [!NOTE]
 >
-> При локальном использовании Docker может появиться сообщение об ошибке подключения к локальному компьютеру через порт 2375. В этом случае попробуйте использовать Docker локально без TLS. Для этого откройте параметры Docker и **предоставьте управляющую программу Docker для TCP://localhost:2375 без TLS**.
+> При локальном использовании Docker может появиться сообщение об ошибке подключения к локальному компьютеру через порт 2375. В этом случае попробуйте использовать Docker локально без TLS. Для этого откройте параметры Docker и **предоставьте управляющую программу для TCP://localhost:2375 без TLS**.
 >
 > ![Предоставление управляющей программы Docker для локального TCP-порта 2375][TL01]
 
@@ -383,7 +382,7 @@ Maven выполнит развертывание веб-приложения в
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [портал Azure]: https://portal.azure.com/
 [подключаемому модулю Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal

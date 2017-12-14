@@ -10,27 +10,13 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: ff3ea805daefb3c0a413b109e431d2235a5dc5b8
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 425d4c3a5a347e4706e9c37ebd7247cf0d8c9846
+ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="azure-tools-for-java-developers"></a>Средства Azure для разработчиков Java
-
-## <a name="client-and-management-libraries"></a>Клиентские библиотеки и библиотеки управления
-
-Подключайтесь к службам и управляйте ресурсами Azure из своих приложений с помощью библиотек Azure для Java. Импортируйте библиотеки управления в проекты Maven, добавляя следующую зависимость в файл проекта *pom.xml*.
-
-```XML
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure</artifactId>
-    <version>1.3.0</version>
-</dependency>
-```
-
-Просмотрите [полный список библиотек](java-sdk-azure-install.md) и [начните работу](java-sdk-azure-get-started.md) с библиотеками Azure для Java.
 
 ## <a name="eclipse-and-intellij-plugins"></a>Подключаемые модули Eclipse и IntelliJ
 
@@ -39,6 +25,13 @@ ms.lasthandoff: 10/09/2017
 ![Набор средств IntelliJ с Azure Explorer](media/intelliJ-azure-explorer.png)
 
 [Начало работы с набором средств Azure для Eclipse](https://docs.microsoft.com/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app) | [Начало работы с набором средств Azure для IntelliJ](https://docs.microsoft.com/azure/app-service-web/app-service-web-intellij-create-hello-world-web-app) 
+
+## <a name="visual-studio-code"></a>Visual Studio Code.
+
+VS Code — это легковесный, но в то же время мощный редактор кода, доступный для MacOS, Windows и Linux. VS Code поддерживает простой и современный рабочий процесс разработки с помощью Java, предлагая ряд расширений, которые облегчают навигацию и работу с проектом, а также позволяют выполнять запуск, отладку и форматирование кода.
+
+[Начало работы с VS Code и Java](https://code.visualstudio.com/docs/java)
+[пакет расширений Java для VS Code](https://code.visualstudio.com/docs/java/extensions)  
 
 ## <a name="azure-cli-20"></a>Azure CLI 2.0
 
