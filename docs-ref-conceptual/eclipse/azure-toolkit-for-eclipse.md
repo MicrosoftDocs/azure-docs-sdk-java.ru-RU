@@ -1,6 +1,6 @@
 ---
 title: "Набор средств Azure для Eclipse"
-description: "Узнайте о том, как использовать набор средств Azure для Eclipse."
+description: "Узнайте, как набор средств Azure для подключаемого модуля Eclipse может помочь в создании и развертывании облачных приложений в Azure."
 services: 
 documentationcenter: java
 author: rmcmurray
@@ -14,14 +14,15 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: 1cd0430a6649b1c979da5650b4d817bfb35b5f8c
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 21b757f961096970b7560beac9f15f216f072516
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
-В набор средств Azure для Eclipse входят шаблоны и функциональные возможности для простого создания, разработки, тестирования и развертывания приложений Azure с помощью интегрированной среды разработки Eclipse.
+
+В набор средств Azure для Eclipse входят шаблоны и функции для простого создания, разработки, тестирования и развертывания облачных приложений в Azure с помощью интегрированной среды разработки Eclipse.
 
 > [!NOTE]
 > 
@@ -57,7 +58,7 @@ ms.lasthandoff: 12/06/2017
 
 * [Управление виртуальными машинами с помощью Azure Explorer для Eclipse](azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о наборе средств Azure для Eclipse см. на следующих страницах:
 
