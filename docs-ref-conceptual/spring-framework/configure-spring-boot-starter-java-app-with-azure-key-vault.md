@@ -14,61 +14,61 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 8b35a972a00c995730dfa59b1b6a47fab7716b76
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
+ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a><span data-ttu-id="9ba94-103">Как использовать начальное приложение Spring Boot Starter с Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="9ba94-103">How to use the Spring Boot Starter for Azure Key Vault</span></span>
+# <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a><span data-ttu-id="8484c-103">Как использовать начальное приложение Spring Boot Starter с Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8484c-103">How to use the Spring Boot Starter for Azure Key Vault</span></span>
 
-## <a name="overview"></a><span data-ttu-id="9ba94-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="9ba94-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="8484c-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="8484c-104">Overview</span></span>
 
-<span data-ttu-id="9ba94-105">В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Key Vault для получения строки подключения, которая хранится в виде секрета в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="9ba94-105">This article demonstrates creating an app with the **[Spring Initializr]** which uses the Spring Boot Starter for Azure Key Vault to retrieve a connection string that is stored as a secret in a key vault.</span></span>
+<span data-ttu-id="8484c-105">В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Key Vault для получения строки подключения, которая хранится в виде секрета в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="8484c-105">This article demonstrates creating an app with the **[Spring Initializr]** which uses the Spring Boot Starter for Azure Key Vault to retrieve a connection string that is stored as a secret in a key vault.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="9ba94-106">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="9ba94-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="8484c-106">предварительным требованиям</span><span class="sxs-lookup"><span data-stu-id="8484c-106">Prerequisites</span></span>
 
-<span data-ttu-id="9ba94-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="9ba94-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
+<span data-ttu-id="8484c-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="8484c-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
 
-* <span data-ttu-id="9ba94-108">Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="9ba94-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="9ba94-109">[Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="9ba94-109">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
-* <span data-ttu-id="9ba94-110">[Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="9ba94-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="8484c-108">Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="8484c-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="8484c-109">[Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="8484c-109">A [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), version 1.7 or later.</span></span>
+* <span data-ttu-id="8484c-110">[Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="8484c-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
-## <a name="create-an-app-using-the-spring-initialzr"></a><span data-ttu-id="9ba94-111">Создание приложения с помощью Spring Initialzr</span><span class="sxs-lookup"><span data-stu-id="9ba94-111">Create an app using the Spring Initialzr</span></span>
+## <a name="create-an-app-using-the-spring-initialzr"></a><span data-ttu-id="8484c-111">Создание приложения с помощью Spring Initialzr</span><span class="sxs-lookup"><span data-stu-id="8484c-111">Create an app using the Spring Initialzr</span></span>
 
-1. <span data-ttu-id="9ba94-112">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="9ba94-112">Browse to <https://start.spring.io/>.</span></span>
+1. <span data-ttu-id="8484c-112">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="8484c-112">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="9ba94-113">Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.</span><span class="sxs-lookup"><span data-stu-id="9ba94-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
+1. <span data-ttu-id="8484c-113">Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.</span><span class="sxs-lookup"><span data-stu-id="8484c-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Aritifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
 
    ![Указание имен группы и артефакта][secrets-01]
 
-1. <span data-ttu-id="9ba94-115">Прокрутите вниз до раздела **Azure** статьи и установите флажок рядом с пунктом **Azure Key Vault**.</span><span class="sxs-lookup"><span data-stu-id="9ba94-115">Scroll down to the **Azure** section and check the box for **Azure Key Vault**.</span></span>
+1. <span data-ttu-id="8484c-115">Прокрутите вниз до раздела **Azure** статьи и установите флажок рядом с пунктом **Azure Key Vault**.</span><span class="sxs-lookup"><span data-stu-id="8484c-115">Scroll down to the **Azure** section and check the box for **Azure Key Vault**.</span></span>
 
    ![Выбор начального приложения Azure Key Vault][secrets-02]
 
-1. <span data-ttu-id="9ba94-117">Прокрутите страницу вниз и нажмите кнопку, чтобы **создать проект**.</span><span class="sxs-lookup"><span data-stu-id="9ba94-117">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="8484c-117">Прокрутите страницу вниз и нажмите кнопку, чтобы **создать проект**.</span><span class="sxs-lookup"><span data-stu-id="8484c-117">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
 
    ![Создание проекта Spring Boot][secrets-03]
 
-1. <span data-ttu-id="9ba94-119">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="9ba94-119">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="8484c-119">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="8484c-119">When prompted, download the project to a path on your local computer.</span></span>
 
-## <a name="sign-into-azure-and-select-the-subscription-to-use"></a><span data-ttu-id="9ba94-120">Вход в Azure и выбор подписки для использования</span><span class="sxs-lookup"><span data-stu-id="9ba94-120">Sign into Azure and select the subscription to use</span></span>
+## <a name="sign-into-azure-and-select-the-subscription-to-use"></a><span data-ttu-id="8484c-120">Вход в Azure и выбор подписки для использования</span><span class="sxs-lookup"><span data-stu-id="8484c-120">Sign into Azure and select the subscription to use</span></span>
 
-1. <span data-ttu-id="9ba94-121">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="9ba94-121">Open a command prompt.</span></span>
+1. <span data-ttu-id="8484c-121">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="8484c-121">Open a command prompt.</span></span>
 
-1. <span data-ttu-id="9ba94-122">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="9ba94-122">Sign into your Azure account by using the Azure CLI:</span></span>
+1. <span data-ttu-id="8484c-122">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="8484c-122">Sign into your Azure account by using the Azure CLI:</span></span>
 
    ```azurecli
    az login
    ```
-   <span data-ttu-id="9ba94-123">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="9ba94-123">Follow the instructions to complete the sign-in process.</span></span>
+   <span data-ttu-id="8484c-123">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="8484c-123">Follow the instructions to complete the sign-in process.</span></span>
 
-1. <span data-ttu-id="9ba94-124">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="9ba94-124">List your subscriptions:</span></span>
+1. <span data-ttu-id="8484c-124">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="8484c-124">List your subscriptions:</span></span>
 
    ```azurecli
    az account list
    ```
-   <span data-ttu-id="9ba94-125">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-125">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
+   <span data-ttu-id="8484c-125">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-125">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
 
    ```json
    [
@@ -85,26 +85,27 @@ ms.lasthandoff: 12/06/2017
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the account you want to use with Azure; for example:
+1. <span data-ttu-id="8484c-126">Укажите GUID учетной записи, которую вы собираетесь использовать в Azure, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-126">Specify the GUID for the account you want to use with Azure; for example:</span></span>
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
    ```
 
-## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a><span data-ttu-id="9ba94-126">Создание и настройка Azure Key Vault с помощью Azure CLI</span><span class="sxs-lookup"><span data-stu-id="9ba94-126">Create and configure a new Azure Key Vault using the Azure CLI</span></span>
+## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a><span data-ttu-id="8484c-127">Создание и настройка Azure Key Vault с помощью Azure CLI</span><span class="sxs-lookup"><span data-stu-id="8484c-127">Create and configure a new Azure Key Vault using the Azure CLI</span></span>
 
-1. <span data-ttu-id="9ba94-127">Создайте группу ресурсов Azure, которые будут использоваться для хранилища ключей, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-127">Create a resource group for the Azure resources you will use for your key vault; for example:</span></span>
+1. <span data-ttu-id="8484c-128">Создайте группу ресурсов Azure, которые будут использоваться для хранилища ключей, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-128">Create a resource group for the Azure resources you will use for your key vault; for example:</span></span>
    ```azurecli
    az group create --name wingtiptoysresources --location westus
    ```
-   <span data-ttu-id="9ba94-128">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-128">Where:</span></span>
-   | <span data-ttu-id="9ba94-129">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-129">Parameter</span></span> | <span data-ttu-id="9ba94-130">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-130">Description</span></span> |
+   <span data-ttu-id="8484c-129">Описание</span><span class="sxs-lookup"><span data-stu-id="8484c-129">Where:</span></span>
+   | <span data-ttu-id="8484c-130">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-130">Parameter</span></span> | <span data-ttu-id="8484c-131">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-131">Description</span></span> |
    |---|---|
-   | `name` | <span data-ttu-id="9ba94-131">Указывает уникальное имя для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="9ba94-131">Specifies a unique name for your resource group.</span></span> |
-   | `location` | <span data-ttu-id="9ba94-132">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="9ba94-132">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
+   | `name` | <span data-ttu-id="8484c-132">Указывает уникальное имя для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="8484c-132">Specifies a unique name for your resource group.</span></span> |
+   | `location` | <span data-ttu-id="8484c-133">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="8484c-133">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
 
-   <span data-ttu-id="9ba94-133">В Azure CLI отобразятся результаты созданной группы ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-133">The Azure CLI will display the results of your resource group creation; for example:</span></span>  
+   <span data-ttu-id="8484c-134">В Azure CLI отобразятся результаты созданной группы ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-134">The Azure CLI will display the results of your resource group creation; for example:</span></span>  
 
    ```json
    {
@@ -119,15 +120,15 @@ ms.lasthandoff: 12/06/2017
    }
    ```
 
-1. <span data-ttu-id="9ba94-134">Создайте субъект-службу Azure, связанный с зарегистрированным приложением, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-134">Create an Azure service principal from your application registration; for example:</span></span>
+1. <span data-ttu-id="8484c-135">Создайте субъект-службу Azure, связанный с зарегистрированным приложением, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-135">Create an Azure service principal from your application registration; for example:</span></span>
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
-   | <span data-ttu-id="9ba94-135">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-135">Parameter</span></span> | <span data-ttu-id="9ba94-136">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-136">Description</span></span> |
+   | <span data-ttu-id="8484c-136">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-136">Parameter</span></span> | <span data-ttu-id="8484c-137">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-137">Description</span></span> |
    |---|---|
-   | `id` | <span data-ttu-id="9ba94-137">Указывает идентификатор GUID из предыдущего зарегистрированного приложения.</span><span class="sxs-lookup"><span data-stu-id="9ba94-137">Specifies the GUID from your application registration earlier.</span></span> |
+   | `id` | <span data-ttu-id="8484c-138">Указывает идентификатор GUID из предыдущего зарегистрированного приложения.</span><span class="sxs-lookup"><span data-stu-id="8484c-138">Specifies the GUID from your application registration earlier.</span></span> |
 
-   <span data-ttu-id="9ba94-138">Azure CLI отобразит сообщение о состоянии JSON, которое содержит значения *appId* и *password* (вы будете использовать эти значения в качестве идентификатора клиента и пароля клиента позже), например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-138">The Azure CLI will return a JSON status message that contains the *appId* and *password*, which you will use later as the client id and client password; for example:</span></span>
+   <span data-ttu-id="8484c-139">Azure CLI отобразит сообщение о состоянии JSON, которое содержит значения *appId* и *password* (вы будете использовать эти значения в качестве идентификатора клиента и пароля клиента позже), например:</span><span class="sxs-lookup"><span data-stu-id="8484c-139">The Azure CLI will return a JSON status message that contains the *appId* and *password*, which you will use later as the client id and client password; for example:</span></span>
 
    ```json
    {
@@ -139,39 +140,39 @@ ms.lasthandoff: 12/06/2017
    }
    ```
 
-1. <span data-ttu-id="9ba94-139">Создайте хранилище ключей в группе ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-139">Create a new key vault in the resource group; for example:</span></span>
+1. <span data-ttu-id="8484c-140">Создайте хранилище ключей в группе ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-140">Create a new key vault in the resource group; for example:</span></span>
    ```azurecli
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
-   <span data-ttu-id="9ba94-140">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-140">Where:</span></span>
-   | <span data-ttu-id="9ba94-141">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-141">Parameter</span></span> | <span data-ttu-id="9ba94-142">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-142">Description</span></span> |
+   <span data-ttu-id="8484c-141">Описание</span><span class="sxs-lookup"><span data-stu-id="8484c-141">Where:</span></span>
+   | <span data-ttu-id="8484c-142">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-142">Parameter</span></span> | <span data-ttu-id="8484c-143">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-143">Description</span></span> |
    |---|---|
-   | `name` | <span data-ttu-id="9ba94-143">Указывает уникальное имя для хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="9ba94-143">Specifies a unique name for your key vault.</span></span> |
-   | `location` | <span data-ttu-id="9ba94-144">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="9ba94-144">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
-   | `enabled-for-deployment` | <span data-ttu-id="9ba94-145">Указывает [вариант развертывания хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="9ba94-145">Specifies the [key vault deployment option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
-   | `enabled-for-disk-encryption` | <span data-ttu-id="9ba94-146">Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="9ba94-146">Specifies the [key vault encryption option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
-   | `enabled-for-template-deployment` | <span data-ttu-id="9ba94-147">Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="9ba94-147">Specifies the [key vault encryption option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
-   | `sku` | <span data-ttu-id="9ba94-148">Указывает [вариант номера SKU хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="9ba94-148">Specifies the [key vault SKU option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
-   | `query` | <span data-ttu-id="9ba94-149">Указывает значение, извлекаемое из ответа — URI хранилища ключей, необходимый для работы с этим руководством.</span><span class="sxs-lookup"><span data-stu-id="9ba94-149">Specifies a value to retrieve from the response, which is the key vault URI that you will need to complete this tutorial.</span></span> |
+   | `name` | <span data-ttu-id="8484c-144">Указывает уникальное имя для хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="8484c-144">Specifies a unique name for your key vault.</span></span> |
+   | `location` | <span data-ttu-id="8484c-145">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="8484c-145">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
+   | `enabled-for-deployment` | <span data-ttu-id="8484c-146">Указывает [вариант развертывания хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="8484c-146">Specifies the [key vault deployment option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
+   | `enabled-for-disk-encryption` | <span data-ttu-id="8484c-147">Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="8484c-147">Specifies the [key vault encryption option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
+   | `enabled-for-template-deployment` | <span data-ttu-id="8484c-148">Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="8484c-148">Specifies the [key vault encryption option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
+   | `sku` | <span data-ttu-id="8484c-149">Указывает [вариант номера SKU хранилища ключей](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span><span class="sxs-lookup"><span data-stu-id="8484c-149">Specifies the [key vault SKU option](https://docs.microsoft.com/en-us/cli/azure/keyvault).</span></span> |
+   | `query` | <span data-ttu-id="8484c-150">Указывает значение, извлекаемое из ответа — URI хранилища ключей, необходимый для работы с этим руководством.</span><span class="sxs-lookup"><span data-stu-id="8484c-150">Specifies a value to retrieve from the response, which is the key vault URI that you will need to complete this tutorial.</span></span> |
 
-   <span data-ttu-id="9ba94-150">Azure CLI отобразит этот URI для хранилища ключей для дальнейшего использования, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-150">The Azure CLI will display the URI for key vault, which you will use later; for example:</span></span>  
+   <span data-ttu-id="8484c-151">Azure CLI отобразит этот URI для хранилища ключей для дальнейшего использования, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-151">The Azure CLI will display the URI for key vault, which you will use later; for example:</span></span>  
 
    ```
    "https://wingtiptoyskeyvault.vault.azure.net"
    ```
 
-1. <span data-ttu-id="9ba94-151">Настройте политику доступа для ранее созданного субъекта-службы Azure, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-151">Set the access policy for the Azure service principal you created earlier; for example:</span></span>
+1. <span data-ttu-id="8484c-152">Настройте политику доступа для ранее созданного субъекта-службы Azure, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-152">Set the access policy for the Azure service principal you created earlier; for example:</span></span>
    ```azurecli
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
-   <span data-ttu-id="9ba94-152">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-152">Where:</span></span>
-   | <span data-ttu-id="9ba94-153">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-153">Parameter</span></span> | <span data-ttu-id="9ba94-154">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-154">Description</span></span> |
+   <span data-ttu-id="8484c-153">Описание</span><span class="sxs-lookup"><span data-stu-id="8484c-153">Where:</span></span>
+   | <span data-ttu-id="8484c-154">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-154">Parameter</span></span> | <span data-ttu-id="8484c-155">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-155">Description</span></span> |
    |---|---|
-   | `name` | <span data-ttu-id="9ba94-155">Указывает имя используемого хранилища ключей (см. выше).</span><span class="sxs-lookup"><span data-stu-id="9ba94-155">Specifies your key vault name from earlier.</span></span> |
-   | `secret-permission` | <span data-ttu-id="9ba94-156">Указывает [политики безопасности](https://docs.microsoft.com/en-us/cli/azure/keyvault) для хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="9ba94-156">Specifies the [security policies](https://docs.microsoft.com/en-us/cli/azure/keyvault) for your key vault.</span></span> |
-   | `object-id` | <span data-ttu-id="9ba94-157">Указывает идентификатор GUID для зарегистрированного приложения (см. выше).</span><span class="sxs-lookup"><span data-stu-id="9ba94-157">Specifies the GUID for your application registration from earlier.</span></span> |
+   | `name` | <span data-ttu-id="8484c-156">Указывает имя используемого хранилища ключей (см. выше).</span><span class="sxs-lookup"><span data-stu-id="8484c-156">Specifies your key vault name from earlier.</span></span> |
+   | `secret-permission` | <span data-ttu-id="8484c-157">Указывает [политики безопасности](https://docs.microsoft.com/en-us/cli/azure/keyvault) для хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="8484c-157">Specifies the [security policies](https://docs.microsoft.com/en-us/cli/azure/keyvault) for your key vault.</span></span> |
+   | `object-id` | <span data-ttu-id="8484c-158">Указывает идентификатор GUID для зарегистрированного приложения (см. выше).</span><span class="sxs-lookup"><span data-stu-id="8484c-158">Specifies the GUID for your application registration from earlier.</span></span> |
 
-   <span data-ttu-id="9ba94-158">В Azure CLI отобразятся результаты создания политики безопасности, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-158">The Azure CLI will display the results of your security policy creation; for example:</span></span>  
+   <span data-ttu-id="8484c-159">В Azure CLI отобразятся результаты создания политики безопасности, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-159">The Azure CLI will display the results of your security policy creation; for example:</span></span>  
 
    ```json
    {
@@ -189,18 +190,18 @@ ms.lasthandoff: 12/06/2017
    }
    ```
 
-1. <span data-ttu-id="9ba94-159">Сохраните секрет в новом хранилище ключей, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-159">Store a secret in your new key vault; for example:</span></span>
+1. <span data-ttu-id="8484c-160">Сохраните секрет в новом хранилище ключей, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-160">Store a secret in your new key vault; for example:</span></span>
    ```azurecli
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
-   <span data-ttu-id="9ba94-160">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-160">Where:</span></span>
-   | <span data-ttu-id="9ba94-161">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-161">Parameter</span></span> | <span data-ttu-id="9ba94-162">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-162">Description</span></span> |
+   <span data-ttu-id="8484c-161">Описание</span><span class="sxs-lookup"><span data-stu-id="8484c-161">Where:</span></span>
+   | <span data-ttu-id="8484c-162">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-162">Parameter</span></span> | <span data-ttu-id="8484c-163">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-163">Description</span></span> |
    |---|---|
-   | `vault-name` | <span data-ttu-id="9ba94-163">Указывает имя используемого хранилища ключей (см. выше).</span><span class="sxs-lookup"><span data-stu-id="9ba94-163">Specifies your key vault name from earlier.</span></span> |
-   | `name` | <span data-ttu-id="9ba94-164">Указывает имя секрета.</span><span class="sxs-lookup"><span data-stu-id="9ba94-164">Specifies the name of your secret.</span></span> |
-   | `value` | <span data-ttu-id="9ba94-165">Указывает значение секрета.</span><span class="sxs-lookup"><span data-stu-id="9ba94-165">Specifies the value of your secret.</span></span> |
+   | `vault-name` | <span data-ttu-id="8484c-164">Указывает имя используемого хранилища ключей (см. выше).</span><span class="sxs-lookup"><span data-stu-id="8484c-164">Specifies your key vault name from earlier.</span></span> |
+   | `name` | <span data-ttu-id="8484c-165">Указывает имя секрета.</span><span class="sxs-lookup"><span data-stu-id="8484c-165">Specifies the name of your secret.</span></span> |
+   | `value` | <span data-ttu-id="8484c-166">Указывает значение секрета.</span><span class="sxs-lookup"><span data-stu-id="8484c-166">Specifies the value of your secret.</span></span> |
 
-   <span data-ttu-id="9ba94-166">В Azure CLI отобразятся результаты создания секрета, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-166">The Azure CLI will display the results of your secret creation; for example:</span></span>  
+   <span data-ttu-id="8484c-167">В Azure CLI отобразятся результаты создания секрета, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-167">The Azure CLI will display the results of your secret creation; for example:</span></span>  
 
    ```json
    {
@@ -223,28 +224,28 @@ ms.lasthandoff: 12/06/2017
    }
    ```
 
-## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="9ba94-167">Настройка и компиляция приложения Spring Boot</span><span class="sxs-lookup"><span data-stu-id="9ba94-167">Configure and compile your Spring Boot application</span></span>
+## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="8484c-168">Настройка и компиляция приложения Spring Boot</span><span class="sxs-lookup"><span data-stu-id="8484c-168">Configure and compile your Spring Boot application</span></span>
 
-1. <span data-ttu-id="9ba94-168">Распакуйте архив с файлами проекта Spring Boot, которые вы скачали в каталог.</span><span class="sxs-lookup"><span data-stu-id="9ba94-168">Extract the files from the Spring Boot project archive files that you downloaded earlier into a directory.</span></span>
+1. <span data-ttu-id="8484c-169">Распакуйте архив с файлами проекта Spring Boot, которые вы скачали в каталог.</span><span class="sxs-lookup"><span data-stu-id="8484c-169">Extract the files from the Spring Boot project archive files that you downloaded earlier into a directory.</span></span>
 
-1. <span data-ttu-id="9ba94-169">В папке *main/src/ресурсы* проекта откройте файл *application.properties* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="9ba94-169">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
+1. <span data-ttu-id="8484c-170">В папке *main/src/ресурсы* проекта откройте файл *application.properties* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="8484c-170">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
 
-1. <span data-ttu-id="9ba94-170">Добавьте значения для хранилища ключей, используя ранее выполненные действия, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-170">Add the values for your key vault using values from the steps that you completed earlier in this tutorial; for example:</span></span>
+1. <span data-ttu-id="8484c-171">Добавьте значения для хранилища ключей, используя ранее выполненные действия, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-171">Add the values for your key vault using values from the steps that you completed earlier in this tutorial; for example:</span></span>
    ```yaml
    azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
-   <span data-ttu-id="9ba94-171">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-171">Where:</span></span>
-   | <span data-ttu-id="9ba94-172">Параметр</span><span class="sxs-lookup"><span data-stu-id="9ba94-172">Parameter</span></span> | <span data-ttu-id="9ba94-173">Описание</span><span class="sxs-lookup"><span data-stu-id="9ba94-173">Description</span></span> |
+   <span data-ttu-id="8484c-172">Описание</span><span class="sxs-lookup"><span data-stu-id="8484c-172">Where:</span></span>
+   | <span data-ttu-id="8484c-173">Параметр</span><span class="sxs-lookup"><span data-stu-id="8484c-173">Parameter</span></span> | <span data-ttu-id="8484c-174">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="8484c-174">Description</span></span> |
    |---|---|
-   | `azure.keyvault.uri` | <span data-ttu-id="9ba94-174">Указывает URI, полученный при создании хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="9ba94-174">Specifies the URI from when you created your key vault.</span></span> |
-   | `azure.keyvault.client-id` | <span data-ttu-id="9ba94-175">Указывает GUID *appId*, полученный при создании субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="9ba94-175">Specifies the *appId* GUID from when you created your service principal.</span></span> |
-   | `azure.keyvault.client-key` | <span data-ttu-id="9ba94-176">Указывает GUID *password*, полученный при создании субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="9ba94-176">Specifies the *password* GUID from when you created your service principal.</span></span> |
+   | `azure.keyvault.uri` | <span data-ttu-id="8484c-175">Указывает URI, полученный при создании хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="8484c-175">Specifies the URI from when you created your key vault.</span></span> |
+   | `azure.keyvault.client-id` | <span data-ttu-id="8484c-176">Указывает GUID *appId*, полученный при создании субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8484c-176">Specifies the *appId* GUID from when you created your service principal.</span></span> |
+   | `azure.keyvault.client-key` | <span data-ttu-id="8484c-177">Указывает GUID *password*, полученный при создании субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="8484c-177">Specifies the *password* GUID from when you created your service principal.</span></span> |
 
-1. <span data-ttu-id="9ba94-177">Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.</span><span class="sxs-lookup"><span data-stu-id="9ba94-177">Navigate to the main source code file of your project; for example: */src/main/java/com/wingtiptoys/secrets*.</span></span>
+1. <span data-ttu-id="8484c-178">Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.</span><span class="sxs-lookup"><span data-stu-id="8484c-178">Navigate to the main source code file of your project; for example: */src/main/java/com/wingtiptoys/secrets*.</span></span>
 
-1. <span data-ttu-id="9ba94-178">Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:</span><span class="sxs-lookup"><span data-stu-id="9ba94-178">Open the application's main Java file in a file in a text editor; for example: *SecretsApplication.java*, and add the following lines to the file:</span></span>
+1. <span data-ttu-id="8484c-179">Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:</span><span class="sxs-lookup"><span data-stu-id="8484c-179">Open the application's main Java file in a file in a text editor; for example: *SecretsApplication.java*, and add the following lines to the file:</span></span>
 
    ```java
    package com.wingtiptoys.secrets;
@@ -269,25 +270,25 @@ ms.lasthandoff: 12/06/2017
       }
    }
    ```
-   <span data-ttu-id="9ba94-179">Этот пример кода извлекает строку подключения из хранилища ключей и отображает ее в командной строке.</span><span class="sxs-lookup"><span data-stu-id="9ba94-179">This code example retrieves the connection string from the key vault and displays it to the command line.</span></span>
+   <span data-ttu-id="8484c-180">Этот пример кода извлекает строку подключения из хранилища ключей и отображает ее в командной строке.</span><span class="sxs-lookup"><span data-stu-id="8484c-180">This code example retrieves the connection string from the key vault and displays it to the command line.</span></span>
 
-1. <span data-ttu-id="9ba94-180">Сохраните и закройте файл Java.</span><span class="sxs-lookup"><span data-stu-id="9ba94-180">Save and close the Java file.</span></span>
+1. <span data-ttu-id="8484c-181">Сохраните и закройте файл Java.</span><span class="sxs-lookup"><span data-stu-id="8484c-181">Save and close the Java file.</span></span>
 
-## <a name="build-and-test-your-app"></a><span data-ttu-id="9ba94-181">Создание и тестирование приложения</span><span class="sxs-lookup"><span data-stu-id="9ba94-181">Build and test your app</span></span>
+## <a name="build-and-test-your-app"></a><span data-ttu-id="8484c-182">Создание и тестирование приложения</span><span class="sxs-lookup"><span data-stu-id="8484c-182">Build and test your app</span></span>
 
-1. <span data-ttu-id="9ba94-182">Перейдите в каталог с файлом *pom.xml* приложения Spring Boot:</span><span class="sxs-lookup"><span data-stu-id="9ba94-182">Navigate to the directory where the *pom.xml* file for your Spring Boot app is located:</span></span>
+1. <span data-ttu-id="8484c-183">Перейдите в каталог с файлом *pom.xml* приложения Spring Boot:</span><span class="sxs-lookup"><span data-stu-id="8484c-183">Navigate to the directory where the *pom.xml* file for your Spring Boot app is located:</span></span>
 
-1. <span data-ttu-id="9ba94-183">Создайте приложение Spring Boot с помощью Maven, например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-183">Build your Spring Boot application with Maven; for example:</span></span>
+1. <span data-ttu-id="8484c-184">Создайте приложение Spring Boot с помощью Maven, например:</span><span class="sxs-lookup"><span data-stu-id="8484c-184">Build your Spring Boot application with Maven; for example:</span></span>
 
    ```bash
    mvn clean package
    ```
 
-   <span data-ttu-id="9ba94-184">В Maven отобразятся результаты создания.</span><span class="sxs-lookup"><span data-stu-id="9ba94-184">Maven will display the results of your build.</span></span>
+   <span data-ttu-id="8484c-185">В Maven отобразятся результаты создания.</span><span class="sxs-lookup"><span data-stu-id="8484c-185">Maven will display the results of your build.</span></span>
 
    ![Состояние сборки приложения Spring Boot][build-application-01]
 
-1. <span data-ttu-id="9ba94-186">Запустите приложение Spring Boot с помощью Maven. В приложении отобразится строка подключения, полученная из хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="9ba94-186">Run your Spring Boot application with Maven; the application will display the connection string from your key vault.</span></span> <span data-ttu-id="9ba94-187">Например:</span><span class="sxs-lookup"><span data-stu-id="9ba94-187">For example:</span></span>
+1. <span data-ttu-id="8484c-187">Запустите приложение Spring Boot с помощью Maven. В приложении отобразится строка подключения, полученная из хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="8484c-187">Run your Spring Boot application with Maven; the application will display the connection string from your key vault.</span></span> <span data-ttu-id="8484c-188">Например: </span><span class="sxs-lookup"><span data-stu-id="8484c-188">For example:</span></span>
 
    ```bash
    mvn spring-boot:run
@@ -295,21 +296,21 @@ ms.lasthandoff: 12/06/2017
 
    ![Сообщение о времени выполнения Spring Boot][build-application-02]
 
-## <a name="next-steps"></a><span data-ttu-id="9ba94-189">Дальнейшие действия</span><span class="sxs-lookup"><span data-stu-id="9ba94-189">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="8484c-190">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="8484c-190">Next steps</span></span>
 
-<span data-ttu-id="9ba94-190">См. дополнительные сведения об использовании Azure Key Vault:</span><span class="sxs-lookup"><span data-stu-id="9ba94-190">For more information about using Azure Key Vaults, see the following articles:</span></span>
+<span data-ttu-id="8484c-191">См. дополнительные сведения об использовании Azure Key Vault:</span><span class="sxs-lookup"><span data-stu-id="8484c-191">For more information about using Azure Key Vaults, see the following articles:</span></span>
 
-* <span data-ttu-id="9ba94-191">[Документация по Key Vault].</span><span class="sxs-lookup"><span data-stu-id="9ba94-191">[Key Vault Documentation].</span></span>
+* <span data-ttu-id="8484c-192">[Документация по Key Vault].</span><span class="sxs-lookup"><span data-stu-id="8484c-192">[Key Vault Documentation].</span></span>
 
-* <span data-ttu-id="9ba94-192">[Приступая к работе с хранилищем ключей Azure]</span><span class="sxs-lookup"><span data-stu-id="9ba94-192">[Get started with Azure Key Vault]</span></span>
+* <span data-ttu-id="8484c-193">[Приступая к работе с хранилищем ключей Azure]</span><span class="sxs-lookup"><span data-stu-id="8484c-193">[Get started with Azure Key Vault]</span></span>
 
-<span data-ttu-id="9ba94-193">Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:</span><span class="sxs-lookup"><span data-stu-id="9ba94-193">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+<span data-ttu-id="8484c-194">Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:</span><span class="sxs-lookup"><span data-stu-id="8484c-194">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
 
-* [<span data-ttu-id="9ba94-194">Развертывание приложения Spring Boot Application в службе приложений Azure</span><span class="sxs-lookup"><span data-stu-id="9ba94-194">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+* [<span data-ttu-id="8484c-195">Развертывание приложения Spring Boot Application в службе приложений Azure</span><span class="sxs-lookup"><span data-stu-id="8484c-195">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
 
-* [<span data-ttu-id="9ba94-195">Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure</span><span class="sxs-lookup"><span data-stu-id="9ba94-195">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+* [<span data-ttu-id="8484c-196">Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure</span><span class="sxs-lookup"><span data-stu-id="8484c-196">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
 
-<span data-ttu-id="9ba94-196">Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].</span><span class="sxs-lookup"><span data-stu-id="9ba94-196">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+<span data-ttu-id="8484c-197">Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].</span><span class="sxs-lookup"><span data-stu-id="8484c-197">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
 
 <!-- URL List -->
 
