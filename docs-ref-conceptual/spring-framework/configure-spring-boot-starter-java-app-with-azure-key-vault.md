@@ -14,11 +14,11 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 8b35a972a00c995730dfa59b1b6a47fab7716b76
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
+ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
 
@@ -26,11 +26,11 @@ ms.lasthandoff: 12/06/2017
 
 В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Key Vault для получения строки подключения, которая хранится в виде секрета в хранилище ключей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
 
-* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
 * [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
@@ -85,8 +85,9 @@ ms.lasthandoff: 12/06/2017
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the account you want to use with Azure; for example:
+1. Укажите GUID учетной записи, которую вы собираетесь использовать в Azure, например:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -99,7 +100,7 @@ ms.lasthandoff: 12/06/2017
    az group create --name wingtiptoysresources --location westus
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для группы ресурсов. |
    | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
@@ -123,7 +124,7 @@ ms.lasthandoff: 12/06/2017
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `id` | Указывает идентификатор GUID из предыдущего зарегистрированного приложения. |
 
@@ -144,7 +145,7 @@ ms.lasthandoff: 12/06/2017
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для хранилища ключей. |
    | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
@@ -165,7 +166,7 @@ ms.lasthandoff: 12/06/2017
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает имя используемого хранилища ключей (см. выше). |
    | `secret-permission` | Указывает [политики безопасности](https://docs.microsoft.com/en-us/cli/azure/keyvault) для хранилища ключей. |
@@ -194,7 +195,7 @@ ms.lasthandoff: 12/06/2017
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `vault-name` | Указывает имя используемого хранилища ключей (см. выше). |
    | `name` | Указывает имя секрета. |
@@ -236,7 +237,7 @@ ms.lasthandoff: 12/06/2017
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `azure.keyvault.uri` | Указывает URI, полученный при создании хранилища ключей. |
    | `azure.keyvault.client-id` | Указывает GUID *appId*, полученный при создании субъекта-службы. |
@@ -287,7 +288,7 @@ ms.lasthandoff: 12/06/2017
 
    ![Состояние сборки приложения Spring Boot][build-application-01]
 
-1. Запустите приложение Spring Boot с помощью Maven. В приложении отобразится строка подключения, полученная из хранилища ключей. Например:
+1. Запустите приложение Spring Boot с помощью Maven. В приложении отобразится строка подключения, полученная из хранилища ключей. Например: 
 
    ```bash
    mvn spring-boot:run
@@ -295,7 +296,7 @@ ms.lasthandoff: 12/06/2017
 
    ![Сообщение о времени выполнения Spring Boot][build-application-02]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения об использовании Azure Key Vault:
 
