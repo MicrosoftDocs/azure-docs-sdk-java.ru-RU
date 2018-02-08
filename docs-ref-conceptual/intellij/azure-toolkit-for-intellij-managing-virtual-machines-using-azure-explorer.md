@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: d0fe2a90fd12d2badf277659c7ce4ee768f6943c
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 213efa7fc31705b0ffcba6f2fe40e7186a365fae
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Управление виртуальными машинами с помощью Azure Explorer для IntelliJ
 
@@ -61,7 +61,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
    ![Диалоговое окно "Выбор образа виртуальной машины"][CR03]
 
-5. Щелкните **Далее**. 
+5. Нажмите кнопку **Далее**. 
 
 6. В диалоговом окне **Основные параметры виртуальной машины** введите следующие значения.
 
@@ -75,12 +75,12 @@ Azure Explorer, входящий в состав набора средств Azu
 
    ![Диалоговое окно "Основные параметры виртуальной машины"][CR04]
 
-7. Щелкните **Далее**. 
+7. Нажмите кнопку **Далее**. 
 
 8. В диалоговом окне **Связанные ресурсы** введите следующие значения.
 
    * **Группа ресурсов**: указывает группу ресурсов для виртуальной машины. Выберите один из следующих вариантов:
-      * **Создать**: указывает, что нужно создать группу ресурсов.
+      * **Создать**: определяет, что нужно создать группу ресурсов.
       * **Использовать существующий**: указывает, что нужно выбрать группу ресурсов, связанную с учетной записью Azure.
 
        ![Диалоговое окно "Связанные ресурсы"][CR07]
@@ -140,7 +140,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
    ![Диалоговое окно подтверждения удаления виртуальной машины][DE02]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о размерах виртуальных машин Azure и ценах на них см. в следующих ресурсах:
 

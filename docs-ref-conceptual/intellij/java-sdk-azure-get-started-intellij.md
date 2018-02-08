@@ -2,26 +2,30 @@
 title: "Начало работы с Azure для Java с помощью Intellij"
 description: "Базовое использование библиотек Azure для Java с вашей подпиской Azure."
 keywords: Azure, Java, SDK, API, authenticate, get-started
+services: 
+documentationcenter: java
 author: roygara
-ms.author: v-rogara
 manager: timlt
-ms.date: 10/30/2017
-ms.topic: get-started-article
-ms.prod: azure
-ms.technology: azure
+editor: 
+ms.assetid: 
+ms.author: v-rogara
+ms.date: 02/01/2018
 ms.devlang: java
+ms.prod: azure
 ms.service: multiple
-ms.openlocfilehash: 1e10a7c5a46ed0e36143fd4a99decc037c04e1fe
-ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
+ms.topic: get-started-article
+ms.technology: azure
+ms.openlocfilehash: 0a059366f7cdc139dcb5a8e7e9ca78254384d19e
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="get-started-with-the-azure-libraries-using-intellij"></a>Начало работы с библиотеками Azure с помощью Intellij
 
 В этом руководстве описано, как настроить среду разработки и использовать библиотеки Azure для Java. Вы создадите субъект-службу для аутентификации в Azure и выполните пример кода, который создает и использует ресурсы Azure в вашей подписке. Использование Intellij является необязательным при разработке приложений Java в Azure. Подходит любая среда IDE с интегрированным компонентом Maven. Кроме того, можно выполнять код из командной строки с помощью Maven, если вы предпочитаете не использовать IDE.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Учетная запись Azure. Если у вас ее нет, [получите бесплатную пробную версию](https://azure.microsoft.com/free/).
 - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) или [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2).

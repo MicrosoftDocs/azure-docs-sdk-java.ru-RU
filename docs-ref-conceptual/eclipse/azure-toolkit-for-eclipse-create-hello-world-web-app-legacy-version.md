@@ -7,18 +7,18 @@ author: selvasingh
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 11/15/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: 0483eba17337087fab8e7f9344ebd9967390a8a8
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: app-service
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: web
+ms.openlocfilehash: 8b831f4545be9162d28f8ba86eb7271ffa4391af
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Создание веб-приложения Hello World для Azure с помощью набора средств для Eclipse предыдущих версий
 
@@ -96,11 +96,11 @@ ms.lasthandoff: 11/18/2017
 
 6. Если вы не создавали контейнер веб-приложения Azure или хотите опубликовать приложение в новый контейнер, выполните следующие действия. В противном случае выберите существующий контейнер веб-приложения и перейдите к шагу 7 ниже.
    
-   а. Нажмите кнопку **Создать**
+   a. Нажмите кнопку **Создать**
       
       ![Диалоговое окно развертывания в контейнер веб-приложения Azure][15]
 
-   b. Откроется диалоговое окно **New Web App Container** (Новый контейнер веб-приложения):
+   Б. Откроется диалоговое окно **New Web App Container** (Новый контейнер веб-приложения):
       
       ![Диалоговое окно нового контейнера веб-приложения][07a]
 
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/18/2017
           
          ![Диалоговое окно нового контейнера веб-приложения][07b]
 
-   ж. Нажмите кнопку **ОК**.
+   ж. Последовательно выберите **ОК**.
 
    h. В раскрывающемся меню **План службы приложений** перечислены планы службы приложений, связанные с выбранной группой ресурсов. (В планах службы приложений указываются такие сведения, как расположение веб-приложения, ценовая категория и размер вычислительной операции. Один план службы приложений можно использовать для нескольких веб-приложений, поэтому он поддерживается отдельно от развертывания конкретного веб-приложения.)
       
@@ -201,7 +201,7 @@ ms.lasthandoff: 11/18/2017
    
    ![Остановка существующего веб-приложения][13]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 

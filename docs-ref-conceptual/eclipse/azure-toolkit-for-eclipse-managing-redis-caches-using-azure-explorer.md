@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 010f959b4a381fc625914620c282ef0452f525a9
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 2d3f2363bd0b41808cd409417327b924cb86d85b
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>Управление кэшами Redis с помощью Azure Explorer для Eclipse
 
@@ -42,9 +42,9 @@ ms.lasthandoff: 11/18/2017
 
    ![Диалоговое окно создания кэша Redis][CR02]
 
-   а. **DNS-имя**: определяет поддомен DNS для нового кэша Redis, который добавляется перед адресом redis.cache.windows.net, например: *wingtiptoys.redis.cache.windows.net*.
+   a. **DNS-имя**: определяет поддомен DNS для нового кэша Redis, который добавляется перед адресом redis.cache.windows.net, например: *wingtiptoys.redis.cache.windows.net*.
 
-   b. **Подписка**: указывает подписку Azure, которую нужно использовать для нового кэша Redis.
+   Б. **Подписка**: указывает подписку Azure, которую нужно использовать для нового кэша Redis.
 
    c. **Группа ресурсов**: указывает группу ресурсов для кэша Redis. Нужно выбрать один из следующих параметров:
       * **Создать**: указывает, что нужно создать группу ресурсов.
@@ -52,7 +52,7 @@ ms.lasthandoff: 11/18/2017
 
    d. **Расположение**: указывает расположение, в котором создается кэш Redis (например, *западная часть США*).
 
-   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [странице с ценами на кэш Redis].)
+   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [Кэш Redis. Цены].)
 
    f. **Порт без SSL**: указывает, разрешает ли кэш Redis подключения без использования SSL. По умолчанию разрешены только SSL-подключения.
 
@@ -87,20 +87,20 @@ ms.lasthandoff: 11/18/2017
 
    ![Запрос на удаление кэша Redis][DE02]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о кэшах Redis для Azure, параметрах конфигурации и ценах см. по следующим ссылкам:
 
 * [кэш Azure Redis]
 * [Документация по кэшу Redis]
-* [странице с ценами на кэш Redis]
+* [Кэш Redis. Цены]
 * [Настройка кэша Redis для Azure]
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 
-[странице с ценами на кэш Redis]: https://azure.microsoft.com/pricing/details/cache/
+[Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache/
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure

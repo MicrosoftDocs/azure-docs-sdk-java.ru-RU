@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: yungez;robmcm
-ms.openlocfilehash: 0979c810711a01464c0b2c6e12a582a3f5eefef1
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: storage
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.workload: storage
+ms.openlocfilehash: 50c8475c66250c8e872849007349277fd3fe797b
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Как использовать Spring Boot Starter со службой хранилища Azure
 
@@ -26,11 +26,11 @@ ms.lasthandoff: 12/06/2017
 
 В этой статье описано, как создать с помощью **Spring Initializr** приложения для получения доступа к хранилищу Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
 
-* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/pricing/free-trial/).
 * [Интерфейс командной строки Azure (CLI)](http://docs.microsoft.com/cli/azure/overview).
 * Актуальный [пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 и выше.
 * [Apache Maven](http://maven.apache.org/) версии 3.0 и выше.
@@ -107,7 +107,7 @@ ms.lasthandoff: 12/06/2017
    az group create --name wingtiptoysresources --location westus
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для группы ресурсов. |
    | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
@@ -132,7 +132,7 @@ ms.lasthandoff: 12/06/2017
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для учетной записи хранения. |
    | `resource-group` | Указывает имя созданной ранее группы ресурсов. |
@@ -161,7 +161,7 @@ ms.lasthandoff: 12/06/2017
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
    Описание
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    | ---|---|
    | `name` | Указывает уникальное имя созданной ранее учетной записи хранения. |
    | `resource-group` | Указывает имя созданной ранее группы ресурсов. |
@@ -310,7 +310,7 @@ ms.lasthandoff: 12/06/2017
    > ```
    > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения о других [начальных приложениях Spring Boot для Microsoft Azure](spring-boot-starters-for-azure.md).
 

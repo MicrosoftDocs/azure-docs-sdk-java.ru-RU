@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: asirveda;robmcm
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: ee8d5fecc31df427645c1552e27996592eaf27af
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 9eb37f302835ea40e92b5212d5bbc305d1311bc4
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/06/2017
 
 В этом руководстве представлены пошаговые инструкции по объединению этих двух популярных технологий с открытым кодом для разработки и развертывания приложения Spring Boot в Microsoft Azure. В частности, *[Spring Boot]* используется для разработки приложений, *[Kubernetes]* — для развертывания контейнеров, а [Служба контейнеров Azure] — для размещения приложений.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
@@ -112,8 +112,8 @@ ms.lasthandoff: 12/06/2017
 
    ```json
    {
-  "name": "password",
-  "value": "AbCdEfGhIjKlMnOpQrStUvWxYz"
+     "name": "password",
+     "value": "AbCdEfGhIjKlMnOpQrStUvWxYz"
    }
    ```
 
@@ -225,13 +225,13 @@ ms.lasthandoff: 12/06/2017
 
 1. Когда отобразится страница **Deploy a containerized app** (Развернуть контейнерное приложение), укажите следующие параметры:
 
-   а. Выберите **Specify app details below** (Указать сведения о приложении ниже).
+   a. Выберите **Specify app details below** (Указать сведения о приложении ниже).
 
-   b. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
+   Б. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
 
    c. Укажите сервер входа и образ контейнера, заданные ранее, в поле **Образ контейнера** (например, *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*).
 
-   г) Для параметра **Служба** выберите значение **Внешняя**.
+   d. Для параметра **Служба** выберите значение **Внешняя**.
 
    д. Укажите внешний и внутренний порты в текстовых полях **Порт** и **Целевой порт**.
 
@@ -257,7 +257,7 @@ ms.lasthandoff: 12/06/2017
 
 1. Откройте окно командной строки.
 
-1. Запустите контейнер в кластере Kubernetes с помощью команды `kubectl run`. Присвойте приложению имя службы в Kubernetes и полное имя образа. Например:
+1. Запустите контейнер в кластере Kubernetes с помощью команды `kubectl run`. Присвойте приложению имя службы в Kubernetes и полное имя образа. Например: 
    ```
    kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
    ```
@@ -267,7 +267,7 @@ ms.lasthandoff: 12/06/2017
 
    * Параметр `--image` указывает объединенное имя сервера входа и образа как `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest`.
 
-1. Предоставьте кластер Kubernetes извне с помощью команды `kubectl expose`. Укажите имя службы, общедоступный TCP-порт, используемый для доступа к приложению, и внутренний целевой порт, прослушиваемый приложением. Например:
+1. Предоставьте кластер Kubernetes извне с помощью команды `kubectl expose`. Укажите имя службы, общедоступный TCP-порт, используемый для доступа к приложению, и внутренний целевой порт, прослушиваемый приложением. Например: 
    ```
    kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
    ```
@@ -290,7 +290,7 @@ ms.lasthandoff: 12/06/2017
    ![Просмотр примера приложения в Azure][SB02]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании Spring Boot в Azure см. в следующих статьях:
 

@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 4dba6a6cbce2c8f6d4956717b3358c4e5b501e71
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure
 
@@ -177,7 +177,7 @@ ms.lasthandoff: 01/04/2018
 
 1. После развертывания файлов JAR и *web.config* в веб-приложении необходимо перезапустить его с помощью портала Azure:
 
-   ![][AZ10]
+   ![Перезапуск веб-приложения][AZ10]
 
 1. Протестируйте веб-приложение, перейдя по его URL-адресу в веб-браузере, или, если имеется программа curl, используйте синтаксис, как в следующем примере:
    ```
