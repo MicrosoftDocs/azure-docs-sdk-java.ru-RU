@@ -7,30 +7,30 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm
-ms.openlocfilehash: a999e33674ea01e776db10186e8af83ce157ef20
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: active-directory
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: cf1cad0b87626058f7204a6565d09fb8901b7ce4
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Как использовать приложение Spring Boot Starter с Azure Active Directory
 
 ## <a name="overview"></a>Обзор
 
-В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Active Directory (Azure AD).
+В этой статье описано, как создать с помощью **[Spring Initializr]** начальное приложение Spring Boot для Azure Active Directory.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
+Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
 * [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
@@ -82,7 +82,7 @@ ms.lasthandoff: 12/06/2017
 
 1. Щелкните **Регистрация нового приложения**, введите **имя** приложения, укажите http://localhost:8080 в качестве **URL-адреса входа**, а затем щелкните **Создать**.
 
-   ![Регистрация приложения][directory-05]
+   ![Создание регистрации приложения][directory-05]
 
 1. Щелкните зарегистрированное приложение.
 
@@ -144,11 +144,11 @@ ms.lasthandoff: 12/06/2017
    azure.activedirectory.activeDirectoryGroups=Users
    ```
    Описание
-   Параметр | Описание
-   ---|---|---
-   `azure.activedirectory.clientId` | Содержит **идентификатор приложения** (см. выше).
-   `azure.activedirectory.clientSecret` | Содержит значение ключа, полученное при выполненной ранее регистрации приложения.
-   `azure.activedirectory.activeDirectoryGroups` | Содержит список групп Active Directory, используемых для аутентификации.
+   | Параметр | ОПИСАНИЕ |
+   |---|---|
+   | `azure.activedirectory.clientId` | Содержит **идентификатор приложения** (см. выше). |
+   | `azure.activedirectory.clientSecret` | Содержит значение ключа, полученное при выполненной ранее регистрации приложения. |
+   | `azure.activedirectory.activeDirectoryGroups` | Содержит список групп Active Directory, используемых для аутентификации. |
 
 
 1. Сохраните и закройте файл *application.properties*.
@@ -222,7 +222,7 @@ ms.lasthandoff: 12/06/2017
    mvn clean package
    ```
 
-   ![][build-application]
+   ![Сборка приложения][build-application]
 
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
 
@@ -231,11 +231,9 @@ ms.lasthandoff: 12/06/2017
    mvn spring-boot:run
    ```
 
-
-
 1. Когда созданное приложение будет запущено в Maven, перейдите по адресу <http://localhost:8080> в веб-браузере.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения об использовании Azure Active Directory:
 

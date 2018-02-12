@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: yuwzho;robmcm
-ms.openlocfilehash: 6e33c43d3fb4b63cff1f1c7c04cbf9523aa97770
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 396d0ecfb051109924f09ae8b5d9b8074e49c404
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8
 
@@ -26,11 +26,11 @@ ms.lasthandoff: 12/06/2017
 
 В этом руководстве рассматривается применение подключаемого модуля Fabric8 в Maven для разработки и развертывания приложения на узле Linux в [службе контейнеров Azure].
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством требуется следующее.
 
-* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
 * Актуальная версия [Java Developer Kit (JDK)].
 * Средство сборки [Maven] (версия 3) от Apache.
@@ -253,10 +253,12 @@ ms.lasthandoff: 12/06/2017
    ```azurecli
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
-   Описание  
-      * *wingtiptoys-kubernetes* — имя группы ресурсов, описанной в этой статье.  
-      * *wingtiptoysregistry* — уникальное имя для частного реестра
-      * *westeurope* — соответствующее географическое расположение для приложения.  
+   Описание
+   | Параметр | ОПИСАНИЕ |
+   |---|---|
+   | `wingtiptoys-kubernetes` | Определяет имя группы ресурсов, описанной в этой статье. |
+   | `wingtiptoysregistry` | Определяет уникальное имя для закрытого реестра. |
+   | `westeurope` | Определяет соответствующее географическое расположение для приложения. |
 
    В Azure CLI отобразятся результаты создания реестра, например:  
 
@@ -378,7 +380,7 @@ ms.lasthandoff: 12/06/2017
 
 1. Создайте три файла фрагмента YAML в новой папке *fabric8*.
 
-   а. Создайте файл с именем **deployment.yml** со следующим содержимым:
+   a. Создайте файл с именем **deployment.yml** со следующим содержимым:
       ```yaml
       apiVersion: extensions/v1beta1
       kind: Deployment
@@ -411,7 +413,7 @@ ms.lasthandoff: 12/06/2017
               - name: mysecrets
       ```
 
-   b. Создайте файл с именем **secrets.yml** со следующим содержимым:
+   Б. Создайте файл с именем **secrets.yml** со следующим содержимым:
       ```yaml
       apiVersion: v1
       kind: Secret
@@ -501,7 +503,7 @@ ms.lasthandoff: 12/06/2017
    az group delete --name wingtiptoys-kubernetes --yes --no-wait
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:
 

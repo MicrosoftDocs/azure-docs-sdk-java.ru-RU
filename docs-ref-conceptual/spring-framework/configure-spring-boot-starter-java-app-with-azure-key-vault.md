@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: key-vault
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
-ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: key-vault
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: 52e7dc3f84ea96f22d8e478a597452c76ed8bf22
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/01/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:
+Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
@@ -85,9 +85,8 @@ ms.lasthandoff: 02/01/2018
        }
      }
    ]
-   ```
 
-1. Укажите GUID учетной записи, которую вы собираетесь использовать в Azure, например:
+1. Specify the GUID for the account you want to use with Azure; for example:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -124,9 +123,10 @@ ms.lasthandoff: 02/01/2018
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
+   Описание
    | Параметр | ОПИСАНИЕ |
    |---|---|
-   | `id` | Указывает идентификатор GUID из предыдущего зарегистрированного приложения. |
+   | `name` | Определяет имя пользователя для субъекта-службы Azure. |
 
    Azure CLI отобразит сообщение о состоянии JSON, которое содержит значения *appId* и *password* (вы будете использовать эти значения в качестве идентификатора клиента и пароля клиента позже), например:
 
@@ -170,7 +170,7 @@ ms.lasthandoff: 02/01/2018
    |---|---|
    | `name` | Указывает имя используемого хранилища ключей (см. выше). |
    | `secret-permission` | Указывает [политики безопасности](https://docs.microsoft.com/en-us/cli/azure/keyvault) для хранилища ключей. |
-   | `object-id` | Указывает идентификатор GUID для зарегистрированного приложения (см. выше). |
+   | `spn` | Указывает идентификатор GUID для зарегистрированного приложения (см. выше). |
 
    В Azure CLI отобразятся результаты создания политики безопасности, например:  
 
