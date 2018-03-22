@@ -1,4 +1,4 @@
-- name: Spring в Azure
+- name: Spring в документации по Azure
   href: ./index.yml
   items:
     - name: Руководства по началу работы
