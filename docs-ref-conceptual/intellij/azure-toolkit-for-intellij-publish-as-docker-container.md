@@ -1,12 +1,12 @@
 ---
-title: "Публикация контейнера Docker с помощью набора средств Azure для IntelliJ"
-description: "Вы можете узнать, как опубликовать веб-приложение в Microsoft Azure в виде контейнера Docker с помощью набора средств Azure для IntelliJ."
-services: 
+title: Публикация контейнера Docker с помощью набора средств Azure для IntelliJ
+description: Вы можете узнать, как опубликовать веб-приложение в Microsoft Azure в виде контейнера Docker с помощью набора средств Azure для IntelliJ.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f92040b34b9897d9feea8d2ec5e8748e75fff7f7
-ms.sourcegitcommit: 381a865f2849be8e3044d24cd4b3b54e9bbb7abc
+ms.openlocfilehash: 64cefc1ace5d0377dea25fdbdc83d8dada31ddf7
+ms.sourcegitcommit: ed130145f9e5c2d803791d96bb118023175e644a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Публикация веб-приложение в виде контейнера Docker с помощью набора средств Azure для IntelliJ
 
@@ -103,27 +103,43 @@ ms.lasthandoff: 03/05/2018
 
       * **New log in credentials** (Новые учетные данные для входа). Создайте набор учетных данных для входа в систему. Если вы выбрали этот параметр, сделайте следующее:
 
-        a. На вкладке **Учетные данные для виртуальной машины** укажите следующие параметры учетных данных для входа на виртуальную машину узла Docker: * **Имя пользователя** . Укажите имя пользователя для входа на виртуальную машину.
-             * **Пароль** и **Подтверждение**. Укажите пароль для входа на виртуальную машину.
-             * **SSH**. Укажите параметры Secure Shell (SSH) узла Docker. Выберите один из следующих параметров: * **Нет** . Указывает, что виртуальная машина не разрешает SSH-подключения.
-                * **Auto-generate** (Автоматическое создание). Автоматически создает необходимые параметры для SSH-подключения.
-                * **Import from directory** (Импорт из каталога). Позволяет указать каталог, содержащий набор ранее сохраненных параметров SSH. В частности, каталог должен содержать два следующих файла:
-                
-                  * *id_rsa*: Contains the RSA identification for a user.
-                  * *id_rsa.pub*: Contains the RSA public key that is used for authentication.
-            
-        Б. На вкладке **Docker Daemon Access** (Доступ к управляющей программе Docker) укажите следующие сведения:
+    a. На вкладке **VM Credentials** (Учетные данные виртуальной машины) укажите следующие учетные данные для входа на виртуальную машину узла Docker:
 
-          ![Окно Create Docker Host (Создание узла Docker)][PUB06]
+    * **Username** (Имя пользователя). Укажите имя пользователя для входа на виртуальную машину.
+
+    * **Password** (Пароль) и **Confirm** (Подтверждение). Укажите пароль для входа на виртуальную машину.
+
+    * **SSH.** Укажите параметры Secure Shell (SSH) узла Docker. Вы можете выбрать один из следующих вариантов:
+
+        * **None** (Нет). Указывает, что виртуальная машина не разрешает SSH-подключения.
+
+        * **Auto-generate** (Автоматическое создание). Автоматически создает необходимые параметры для SSH-подключения.
+
+        * **Import from directory** (Импорт из каталога). Позволяет указать каталог, содержащий набор ранее сохраненных параметров SSH. В частности, каталог должен содержать два следующих файла:
+
+            * *id_rsa*. Этот файл содержит идентификационные данные RSA для пользователя.
+
+            * *id_rsa.pub*. Этот файл содержит открытый ключ RSA, который используемый для проверки подлинности.
+
+    Б. На вкладке **Docker Daemon Access** (Доступ к управляющей программе Docker) укажите следующие сведения:
+
+    ![Окно Create Docker Host (Создание узла Docker)][PUB06]
     
-             * **Docker Daemon port**: Enter the unique TCP port for your Docker host.
-             * **TLS Security**: Enter the Transport Layer Security settings for your Docker host. You can choose from the following options:
-                * **None**: Specifies that your virtual machine does not allow TLS connections.
-                * **Auto-generate**: Automatically creates the requisite settings for connecting via TLS.
-                * **Import from directory**: Specifies a directory that contains a set of previously saved TLS settings. The directory must contain the following six files: 
-                   * *ca.pem* and *ca-key.pem*: Contain the certificate and public key for the TLS Certificate Authority.
-                   * *cert.pem* and *key.pem*: Contain client certificate and public key which will be used for TLS authentication.
-                   * *server.pem* and *server-key.pem*: Contain the client certificate and public key that is used for TLS authentication.
+    * **Docker Daemon port** (Порт управляющей программы Docker). Укажите уникальный TCP-порт для узла Docker.
+    
+    * **Безопасность TLS**. Введите параметры безопасности транспортного уровня для узла Docker. Вы можете выбрать один из следующих параметров:
+    
+        * **None** (Нет). Указывает, что виртуальная машина не разрешает TLS-подключения.
+        
+        * **Auto-generate** (Автоматическое создание). Автоматически создает необходимые параметры для TLS-подключения.
+        
+        * **Import from directory** (Импорт из каталога). Позволяет указать каталог, содержащий набор ранее сохраненных параметров TLS. В частности, каталог должен содержать шесть следующих файлов:
+        
+            * *ca.pem* и *ca-key.pem*. Эти файлы содержат сертификат и открытый ключ для центра сертификации TLS.
+            
+            * *cert.pem* и *key.pem*. Эти файлы содержат сертификат клиента и открытый ключ, которые будут использоваться для проверки подлинности TLS.
+            
+            * *server.pem* и *server-key.pem*. Эти файлы содержат сертификат клиента и открытый ключ, которые будут использоваться для проверки подлинности TLS.
 
 7. Указав необходимые сведения, нажмите кнопку **Готово**.  
     После этого снова отобразится мастер **развертывания контейнера Docker в Azure**.
