@@ -1,6 +1,6 @@
 ---
-title: "Документация Майкрософт по Azure для разработчиков Java"
-description: "Справочник по пакету SDK и API Azure для Java"
+title: Документация Майкрософт по Azure для разработчиков Java
+description: Справочник по пакету SDK и API Azure для Java
 keywords: Azure Java, Azure Java API Reference, Azure Java class library, Azure SDK
 author: routlaw
 manager: douge
@@ -10,28 +10,28 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 570f820e1349e1dfd01a6c7f323b5312c14c40c6
-ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
+ms.openlocfilehash: 5c8bb4b81080461285551573eefc0d76b47b2d3d
+ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="azure-libraries-for-java"></a><span data-ttu-id="cb49b-104">Библиотеки Azure для Java</span><span class="sxs-lookup"><span data-stu-id="cb49b-104">Azure libraries for Java</span></span>
+# <a name="azure-libraries-for-java"></a><span data-ttu-id="192cd-104">Библиотеки Azure для Java</span><span class="sxs-lookup"><span data-stu-id="192cd-104">Azure libraries for Java</span></span>
 
-<span data-ttu-id="cb49b-105">Благодаря библиотекам Azure службы Azure можно использовать в приложениях Java с помощью собственных интерфейсов.</span><span class="sxs-lookup"><span data-stu-id="cb49b-105">Azure libraries help you consume Azure services in your Java apps using native interfaces.</span></span> <span data-ttu-id="cb49b-106">Каждая библиотека является независимой и может использоваться отдельно от остальных.</span><span class="sxs-lookup"><span data-stu-id="cb49b-106">Each library is independent and can be used separately from the others another.</span></span>
+<span data-ttu-id="192cd-105">Благодаря библиотекам Azure службы Azure можно использовать в приложениях Java с помощью собственных интерфейсов.</span><span class="sxs-lookup"><span data-stu-id="192cd-105">Azure libraries help you consume Azure services in your Java apps using native interfaces.</span></span> <span data-ttu-id="192cd-106">Каждая библиотека является независимой и может использоваться отдельно от остальных.</span><span class="sxs-lookup"><span data-stu-id="192cd-106">Each library is independent and can be used separately from the others another.</span></span>
 
 | | | | |
 |:-------------:|:----------:|:----:|:---:|
-| [<span data-ttu-id="cb49b-107">Хранилище Azure</span><span class="sxs-lookup"><span data-stu-id="cb49b-107">Azure Storage</span></span>](#azure-storage) | [<span data-ttu-id="cb49b-108">База данных SQL</span><span class="sxs-lookup"><span data-stu-id="cb49b-108">SQL Database</span></span>](#sql-database)  | [<span data-ttu-id="cb49b-109">Кэш Redis</span><span class="sxs-lookup"><span data-stu-id="cb49b-109">Redis Cache</span></span>](#redis-cache)   | [<span data-ttu-id="cb49b-110">DocumentDB</span><span class="sxs-lookup"><span data-stu-id="cb49b-110">DocumentDB</span></span>](#documentdb) |
-| [<span data-ttu-id="cb49b-111">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="cb49b-111">Service Bus</span></span>](#servicebus)  | [<span data-ttu-id="cb49b-112">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="cb49b-112">Azure Active Directory</span></span>](#azuread) | [<span data-ttu-id="cb49b-113">хранилище ключей;</span><span class="sxs-lookup"><span data-stu-id="cb49b-113">Key Vault</span></span>](#keyvault)  | [<span data-ttu-id="cb49b-114">Концентратор событий</span><span class="sxs-lookup"><span data-stu-id="cb49b-114">Event Hub</span></span>](#eventhub)
-| [<span data-ttu-id="cb49b-115">Служба Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="cb49b-115">IoT Service</span></span>](#iotservice) | [<span data-ttu-id="cb49b-116">Устройство IoT</span><span class="sxs-lookup"><span data-stu-id="cb49b-116">IoT Device</span></span>](#iotdevice) | [<span data-ttu-id="cb49b-117">Data Lake</span><span class="sxs-lookup"><span data-stu-id="cb49b-117">Data Lake</span></span>](#datalake)  | [<span data-ttu-id="cb49b-118">AppInsights</span><span class="sxs-lookup"><span data-stu-id="cb49b-118">AppInsights</span></span>](#appinsights) | 
-| [<span data-ttu-id="cb49b-119">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="cb49b-119">Batch</span></span>](#batch) | [<span data-ttu-id="cb49b-120">Getting Started with Resources - Manage Resource - in Java (Приступая к работе с ресурсами: управление ресурсами в Java)</span><span class="sxs-lookup"><span data-stu-id="cb49b-120">Manage Azure resources</span></span>](#management) |
+| [<span data-ttu-id="192cd-107">Хранилище Azure</span><span class="sxs-lookup"><span data-stu-id="192cd-107">Azure Storage</span></span>](#azure-storage) | [<span data-ttu-id="192cd-108">База данных SQL</span><span class="sxs-lookup"><span data-stu-id="192cd-108">SQL Database</span></span>](#sql-database)  | [<span data-ttu-id="192cd-109">Кэш Redis</span><span class="sxs-lookup"><span data-stu-id="192cd-109">Redis Cache</span></span>](#redis-cache)   | [<span data-ttu-id="192cd-110">База данных Azure Cosmos</span><span class="sxs-lookup"><span data-stu-id="192cd-110">Azure Cosmos DB</span></span>](#cosmos-db) |
+| [<span data-ttu-id="192cd-111">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="192cd-111">Service Bus</span></span>](#servicebus)  | [<span data-ttu-id="192cd-112">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="192cd-112">Azure Active Directory</span></span>](#azuread) | [<span data-ttu-id="192cd-113">хранилище ключей;</span><span class="sxs-lookup"><span data-stu-id="192cd-113">Key Vault</span></span>](#keyvault)  | [<span data-ttu-id="192cd-114">Концентратор событий</span><span class="sxs-lookup"><span data-stu-id="192cd-114">Event Hub</span></span>](#eventhub)
+| [<span data-ttu-id="192cd-115">Служба Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="192cd-115">IoT Service</span></span>](#iotservice) | [<span data-ttu-id="192cd-116">Устройство IoT</span><span class="sxs-lookup"><span data-stu-id="192cd-116">IoT Device</span></span>](#iotdevice) | [<span data-ttu-id="192cd-117">Data Lake</span><span class="sxs-lookup"><span data-stu-id="192cd-117">Data Lake</span></span>](#datalake)  | [<span data-ttu-id="192cd-118">AppInsights</span><span class="sxs-lookup"><span data-stu-id="192cd-118">AppInsights</span></span>](#appinsights) | 
+| [<span data-ttu-id="192cd-119">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="192cd-119">Batch</span></span>](#batch) | [<span data-ttu-id="192cd-120">Getting Started with Resources - Manage Resource - in Java (Приступая к работе с ресурсами: управление ресурсами в Java)</span><span class="sxs-lookup"><span data-stu-id="192cd-120">Manage Azure resources</span></span>](#management) |
 
-## <a name="install-with-maven"></a><span data-ttu-id="cb49b-121">Установка с помощью Maven</span><span class="sxs-lookup"><span data-stu-id="cb49b-121">Install with Maven</span></span>
+## <a name="install-with-maven"></a><span data-ttu-id="192cd-121">Установка с помощью Maven</span><span class="sxs-lookup"><span data-stu-id="192cd-121">Install with Maven</span></span>
 
-<span data-ttu-id="cb49b-122">Добавьте запись зависимости в файл `pom.xml`, чтобы импортировать библиотеку в проект [Maven](https://maven.apache.org).</span><span class="sxs-lookup"><span data-stu-id="cb49b-122">Add a dependency entry in your `pom.xml` to import a library into your [Maven](https://maven.apache.org) project.</span></span>
+<span data-ttu-id="192cd-122">Добавьте запись зависимости в файл `pom.xml`, чтобы импортировать библиотеку в проект [Maven](https://maven.apache.org).</span><span class="sxs-lookup"><span data-stu-id="192cd-122">Add a dependency entry in your `pom.xml` to import a library into your [Maven](https://maven.apache.org) project.</span></span>
 
-<span data-ttu-id="cb49b-123">Например, чтобы включить последнюю версию [библиотек управления Azure для Java](#management), используйте следующий код:</span><span class="sxs-lookup"><span data-stu-id="cb49b-123">For example, to include the latest version of the [Azure management libraries for Java](#management):</span></span>
+<span data-ttu-id="192cd-123">Например, чтобы включить последнюю версию [библиотек управления Azure для Java](#management), используйте следующий код:</span><span class="sxs-lookup"><span data-stu-id="192cd-123">For example, to include the latest version of the [Azure management libraries for Java](#management):</span></span>
 
 ```XML
 <dependency>
@@ -41,17 +41,17 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-124">Поддерживаются и другие средства сборки Java, например Gradle, но инструкции по установке с их помощью не приводятся в этой статье.</span><span class="sxs-lookup"><span data-stu-id="cb49b-124">Other Java build tools like Gradle are supported but the install steps are not provided in this article.</span></span> <span data-ttu-id="cb49b-125">Сведения об использовании импортируемых файлов Maven в средстве сборки см. в документации по этому средству.</span><span class="sxs-lookup"><span data-stu-id="cb49b-125">Review the documentation for your build tool on how to consume Maven imports.</span></span>
+<span data-ttu-id="192cd-124">Поддерживаются и другие средства сборки Java, например Gradle, но инструкции по установке с их помощью не приводятся в этой статье.</span><span class="sxs-lookup"><span data-stu-id="192cd-124">Other Java build tools like Gradle are supported but the install steps are not provided in this article.</span></span> <span data-ttu-id="192cd-125">Сведения об использовании импортируемых файлов Maven в средстве сборки см. в документации по этому средству.</span><span class="sxs-lookup"><span data-stu-id="192cd-125">Review the documentation for your build tool on how to consume Maven imports.</span></span>
 
-## <a name="azure-service-libraries"></a><span data-ttu-id="cb49b-126">Библиотеки служб Azure</span><span class="sxs-lookup"><span data-stu-id="cb49b-126">Azure service libraries</span></span>
+## <a name="azure-service-libraries"></a><span data-ttu-id="192cd-126">Библиотеки служб Azure</span><span class="sxs-lookup"><span data-stu-id="192cd-126">Azure service libraries</span></span>
 
-<span data-ttu-id="cb49b-127">Расширьте функциональные возможности своих приложений, интегрировав их со службами Azure с помощью этих библиотек.</span><span class="sxs-lookup"><span data-stu-id="cb49b-127">Integrate Azure services to add functionality to your apps using these libraries.</span></span> <span data-ttu-id="cb49b-128">Дополнительные сведения о создании приложений с помощью служб Azure см. в [центре разработчиков Java](https://azure.microsoft.com/develop/java).</span><span class="sxs-lookup"><span data-stu-id="cb49b-128">Learn more about building apps with Azure services at the [Java developer center](https://azure.microsoft.com/develop/java).</span></span>
+<span data-ttu-id="192cd-127">Расширьте функциональные возможности своих приложений, интегрировав их со службами Azure с помощью этих библиотек.</span><span class="sxs-lookup"><span data-stu-id="192cd-127">Integrate Azure services to add functionality to your apps using these libraries.</span></span> <span data-ttu-id="192cd-128">Дополнительные сведения о создании приложений с помощью служб Azure см. в [центре разработчиков Java](https://azure.microsoft.com/develop/java).</span><span class="sxs-lookup"><span data-stu-id="192cd-128">Learn more about building apps with Azure services at the [Java developer center](https://azure.microsoft.com/develop/java).</span></span>
 
 <a name="azure-storage"></a>
 
-### <a name="azure-storageazurestoragestorage-introduction"></a>[<span data-ttu-id="cb49b-129">Хранилище Azure</span><span class="sxs-lookup"><span data-stu-id="cb49b-129">Azure Storage</span></span>](/azure/storage/storage-introduction)  
+### <a name="azure-storageazurestoragestorage-introduction"></a>[<span data-ttu-id="192cd-129">Хранилище Azure</span><span class="sxs-lookup"><span data-stu-id="192cd-129">Azure Storage</span></span>](/azure/storage/storage-introduction)  
 
-<span data-ttu-id="cb49b-130">Хранение данных и обмен сообщениями в приложениях.</span><span class="sxs-lookup"><span data-stu-id="cb49b-130">Data storage and messaging for your applications.</span></span>
+<span data-ttu-id="192cd-130">Хранение данных и обмен сообщениями в приложениях.</span><span class="sxs-lookup"><span data-stu-id="192cd-130">Data storage and messaging for your applications.</span></span>
 
 ```XML
 <dependency>
@@ -61,13 +61,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```   
 
-<span data-ttu-id="cb49b-131">[Примеры кода](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage) | [Справочник](/java/api/overview/azure/storage) | [GitHub](https://github.com/Azure/azure-storage-java)  | [Заметки о выпуске](https://github.com/Azure/azure-storage-java/blob/master/ChangeLog.txt)</span><span class="sxs-lookup"><span data-stu-id="cb49b-131">[Samples](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage) | [Reference](/java/api/overview/azure/storage) | [GitHub](https://github.com/Azure/azure-storage-java)  | [Release Notes](https://github.com/Azure/azure-storage-java/blob/master/ChangeLog.txt)</span></span>
+<span data-ttu-id="192cd-131">[Примеры кода](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage) | [Справочник](/java/api/overview/azure/storage) | [GitHub](https://github.com/Azure/azure-storage-java)  | [Заметки о выпуске](https://github.com/Azure/azure-storage-java/blob/master/ChangeLog.txt)</span><span class="sxs-lookup"><span data-stu-id="192cd-131">[Samples](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage) | [Reference](/java/api/overview/azure/storage) | [GitHub](https://github.com/Azure/azure-storage-java)  | [Release Notes](https://github.com/Azure/azure-storage-java/blob/master/ChangeLog.txt)</span></span>
 
 <a name="sql-database"></a>
 
-### <a name="sql-databaseazuresql-databasesql-database-technical-overview"></a>[<span data-ttu-id="cb49b-132">База данных SQL</span><span class="sxs-lookup"><span data-stu-id="cb49b-132">SQL Database</span></span>](/azure/sql-database/sql-database-technical-overview)
+### <a name="sql-databaseazuresql-databasesql-database-technical-overview"></a>[<span data-ttu-id="192cd-132">База данных SQL</span><span class="sxs-lookup"><span data-stu-id="192cd-132">SQL Database</span></span>](/azure/sql-database/sql-database-technical-overview)
 
-<span data-ttu-id="cb49b-133">Драйвер JDBC для базы данных SQL Azure.</span><span class="sxs-lookup"><span data-stu-id="cb49b-133">JDBC driver for Azure SQL Database.</span></span>
+<span data-ttu-id="192cd-133">Драйвер JDBC для базы данных SQL Azure.</span><span class="sxs-lookup"><span data-stu-id="192cd-133">JDBC driver for Azure SQL Database.</span></span>
 
 ```XML
 <dependency>
@@ -77,13 +77,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-134">[Примеры кода](/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java) | [Справочник](/java/api/overview/azure/sql) | [GitHub](https://github.com/Microsoft/mssql-jdbc)  | [Заметки о выпуске](https://github.com/Microsoft/mssql-jdbc/blob/master/CHANGELOG.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-134">[Samples](/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java) | [Reference](/java/api/overview/azure/sql) | [GitHub](https://github.com/Microsoft/mssql-jdbc)  | [Release Notes](https://github.com/Microsoft/mssql-jdbc/blob/master/CHANGELOG.md)</span></span>
+<span data-ttu-id="192cd-134">[Примеры кода](/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java) | [Справочник](/java/api/overview/azure/sql) | [GitHub](https://github.com/Microsoft/mssql-jdbc)  | [Заметки о выпуске](https://github.com/Microsoft/mssql-jdbc/blob/master/CHANGELOG.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-134">[Samples](/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java) | [Reference](/java/api/overview/azure/sql) | [GitHub](https://github.com/Microsoft/mssql-jdbc)  | [Release Notes](https://github.com/Microsoft/mssql-jdbc/blob/master/CHANGELOG.md)</span></span>
 
 <a name="redis-cache"></a>
 
-### <a name="redis-cachehttpsazuremicrosoftcomservicescache"></a>[<span data-ttu-id="cb49b-135">Кэш Redis</span><span class="sxs-lookup"><span data-stu-id="cb49b-135">Redis Cache</span></span>](https://azure.microsoft.com/services/cache/)
+### <a name="redis-cachehttpsazuremicrosoftcomservicescache"></a>[<span data-ttu-id="192cd-135">Кэш Redis</span><span class="sxs-lookup"><span data-stu-id="192cd-135">Redis Cache</span></span>](https://azure.microsoft.com/services/cache/)
 
-<span data-ttu-id="cb49b-136">Хранилище данных типа "ключ — значение" с низкими показателями задержки и высокой производительностью.</span><span class="sxs-lookup"><span data-stu-id="cb49b-136">Low-latency, high-performance key-value store.</span></span>
+<span data-ttu-id="192cd-136">Хранилище данных типа "ключ — значение" с низкими показателями задержки и высокой производительностью.</span><span class="sxs-lookup"><span data-stu-id="192cd-136">Low-latency, high-performance key-value store.</span></span>
 
 ```XML
 <dependency>
@@ -95,13 +95,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```   
 
-<span data-ttu-id="cb49b-137">[Примеры кода](/azure/redis-cache/cache-java-get-started) | [Справочник](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [Заметки о выпуске](https://github.com/xetorthio/jedis/releases)</span><span class="sxs-lookup"><span data-stu-id="cb49b-137">[Samples](/azure/redis-cache/cache-java-get-started) | [Reference](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [Release Notes](https://github.com/xetorthio/jedis/releases)</span></span>  
+<span data-ttu-id="192cd-137">[Примеры кода](/azure/redis-cache/cache-java-get-started) | [Справочник](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [Заметки о выпуске](https://github.com/xetorthio/jedis/releases)</span><span class="sxs-lookup"><span data-stu-id="192cd-137">[Samples](/azure/redis-cache/cache-java-get-started) | [Reference](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [Release Notes](https://github.com/xetorthio/jedis/releases)</span></span>  
 
-<a name="documentdb"></a>
+<a name="cosmos-db"></a>
 
-### <a name="cosmos-dbazuredocumentdbdocumentdb-introduction"></a>[<span data-ttu-id="cb49b-138">База данных Cosmos</span><span class="sxs-lookup"><span data-stu-id="cb49b-138">Cosmos DB</span></span>](/azure/documentdb/documentdb-introduction)
+### <a name="azure-cosmos-dbazurecosmos-dbintroduction"></a>[<span data-ttu-id="192cd-138">База данных Azure Cosmos</span><span class="sxs-lookup"><span data-stu-id="192cd-138">Azure Cosmos DB</span></span>](/azure/cosmos-db/introduction)
 
-<span data-ttu-id="cb49b-139">Масштабируемая база данных NoSQL с документами JSON и синтаксисом запросов SQL или JavaScript.</span><span class="sxs-lookup"><span data-stu-id="cb49b-139">Scalable NoSQL database with JSON documents and a SQL or JavaScript query syntax.</span></span>   
+<span data-ttu-id="192cd-139">Масштабируемая база данных NoSQL с документами JSON и синтаксисом запросов SQL или JavaScript.</span><span class="sxs-lookup"><span data-stu-id="192cd-139">Scalable NoSQL database with JSON documents and a SQL or JavaScript query syntax.</span></span>   
 
 ```XML
 <dependency>
@@ -111,13 +111,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-140">[Примеры кода](/azure/documentdb/documentdb-java-application) | [Справочник](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Заметки о выпуске](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-140">[Samples](/azure/documentdb/documentdb-java-application) | [Reference](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Release Notes](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)</span></span>
+<span data-ttu-id="192cd-140">[Примеры кода](/azure/cosmos-db/sql-api-java-application) | [Справочник](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Заметки о выпуске](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-140">[Samples](/azure/cosmos-db/sql-api-java-application) | [Reference](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Release Notes](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)</span></span>
 
 <a name="servicebus"></a>
  
- ### <a name="servicebusazureservice-bus-messagingservice-bus-messaging-overview"></a>[<span data-ttu-id="cb49b-141">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="cb49b-141">ServiceBus</span></span>](/azure/service-bus-messaging/service-bus-messaging-overview) 
+ ### <a name="servicebusazureservice-bus-messagingservice-bus-messaging-overview"></a>[<span data-ttu-id="192cd-141">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="192cd-141">ServiceBus</span></span>](/azure/service-bus-messaging/service-bus-messaging-overview) 
     
- <span data-ttu-id="cb49b-142">Служебная шина — это корпоративная платформа для транзакционного обмена сообщениями.</span><span class="sxs-lookup"><span data-stu-id="cb49b-142">Service Bus is an enterprise-class, transactional messaging platform service.</span></span>
+ <span data-ttu-id="192cd-142">Служебная шина — это корпоративная платформа для транзакционного обмена сообщениями.</span><span class="sxs-lookup"><span data-stu-id="192cd-142">Service Bus is an enterprise-class, transactional messaging platform service.</span></span>
  
  ```XML
  <dependency> 
@@ -127,13 +127,13 @@ ms.lasthandoff: 10/14/2017
  </dependency>   
  ```
  
- <span data-ttu-id="cb49b-143">[Примеры кода](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Заметки о выпуске](https://github.com/Azure/azure-service-bus-java)</span><span class="sxs-lookup"><span data-stu-id="cb49b-143">[Samples](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Reference](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Release Notes](https://github.com/Azure/azure-service-bus-java)</span></span>   
+ <span data-ttu-id="192cd-143">[Примеры кода](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Заметки о выпуске](https://github.com/Azure/azure-service-bus-java)</span><span class="sxs-lookup"><span data-stu-id="192cd-143">[Samples](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Reference](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Release Notes](https://github.com/Azure/azure-service-bus-java)</span></span>   
   
 <a name="azuread"></a>
 
-### <a name="azure-active-directoryazureactive-directoryactive-directory-whatis"></a>[<span data-ttu-id="cb49b-144">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="cb49b-144">Azure Active Directory</span></span>](/azure/active-directory/active-directory-whatis)   
+### <a name="azure-active-directoryazureactive-directoryactive-directory-whatis"></a>[<span data-ttu-id="192cd-144">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="192cd-144">Azure Active Directory</span></span>](/azure/active-directory/active-directory-whatis)   
 
-<span data-ttu-id="cb49b-145">Управление удостоверениями и безопасный вход для приложений.</span><span class="sxs-lookup"><span data-stu-id="cb49b-145">Identity management and secure sign-in for your applications.</span></span>
+<span data-ttu-id="192cd-145">Управление удостоверениями и безопасный вход для приложений.</span><span class="sxs-lookup"><span data-stu-id="192cd-145">Identity management and secure sign-in for your applications.</span></span>
 
 ```XML
 <dependency>
@@ -143,13 +143,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
    
-<span data-ttu-id="cb49b-146">[Примеры кода](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=active%20directory%20&type=&language=java) | [Справочник](/java/api/overview/azure/activedirectory) | [GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) | [Заметки о выпуске](https://github.com/AzureAD/azure-activedirectory-library-for-javaT-)</span><span class="sxs-lookup"><span data-stu-id="cb49b-146">[Samples](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=active%20directory%20&type=&language=java) | [Reference](/java/api/overview/azure/activedirectory) | [GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) | [Release Notes](https://github.com/AzureAD/azure-activedirectory-library-for-javaT-)</span></span>
+<span data-ttu-id="192cd-146">[Примеры кода](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=active%20directory%20&type=&language=java) | [Справочник](/java/api/overview/azure/activedirectory) | [GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) | [Заметки о выпуске](https://github.com/AzureAD/azure-activedirectory-library-for-javaT-)</span><span class="sxs-lookup"><span data-stu-id="192cd-146">[Samples](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=active%20directory%20&type=&language=java) | [Reference](/java/api/overview/azure/activedirectory) | [GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) | [Release Notes](https://github.com/AzureAD/azure-activedirectory-library-for-javaT-)</span></span>
  
 <a name="keyvault"></a>
 
-### <a name="key-vaultazurekey-vault"></a>[<span data-ttu-id="cb49b-147">хранилище ключей;</span><span class="sxs-lookup"><span data-stu-id="cb49b-147">Key Vault</span></span>](/azure/key-vault) 
+### <a name="key-vaultazurekey-vault"></a>[<span data-ttu-id="192cd-147">хранилище ключей;</span><span class="sxs-lookup"><span data-stu-id="192cd-147">Key Vault</span></span>](/azure/key-vault) 
 
-<span data-ttu-id="cb49b-148">Ключи и секреты для безопасного доступа из приложений.</span><span class="sxs-lookup"><span data-stu-id="cb49b-148">Safely access keys and secrets from your applications.</span></span> 
+<span data-ttu-id="192cd-148">Ключи и секреты для безопасного доступа из приложений.</span><span class="sxs-lookup"><span data-stu-id="192cd-148">Safely access keys and secrets from your applications.</span></span> 
 
 ```XML
 <dependency>
@@ -159,13 +159,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-149">[Примеры кода](https://github.com/Azure-Samples/key-vault-java-manage-key-vaults) | [Справочник](/java/api/overview/azure/keyvault) | [GitHub](https://github.com/Azure/azure-keyvault-java) | [Заметки о выпуске](https://github.com/Azure/azure-keyvault-java)</span><span class="sxs-lookup"><span data-stu-id="cb49b-149">[Samples](https://github.com/Azure-Samples/key-vault-java-manage-key-vaults) | [Reference](/java/api/overview/azure/keyvault) | [GitHub](https://github.com/Azure/azure-keyvault-java) | [Release Notes](https://github.com/Azure/azure-keyvault-java)</span></span> 
+<span data-ttu-id="192cd-149">[Примеры кода](https://github.com/Azure-Samples/key-vault-java-manage-key-vaults) | [Справочник](/java/api/overview/azure/keyvault) | [GitHub](https://github.com/Azure/azure-keyvault-java) | [Заметки о выпуске](https://github.com/Azure/azure-keyvault-java)</span><span class="sxs-lookup"><span data-stu-id="192cd-149">[Samples](https://github.com/Azure-Samples/key-vault-java-manage-key-vaults) | [Reference](/java/api/overview/azure/keyvault) | [GitHub](https://github.com/Azure/azure-keyvault-java) | [Release Notes](https://github.com/Azure/azure-keyvault-java)</span></span> 
 
 <a name="eventhub"></a>
 
-### <a name="event-hubazureevent-hubsevent-hubs-what-is-event-hubs"></a>[<span data-ttu-id="cb49b-150">Концентратор событий</span><span class="sxs-lookup"><span data-stu-id="cb49b-150">Event Hub</span></span>](/azure/event-hubs/event-hubs-what-is-event-hubs) 
+### <a name="event-hubazureevent-hubsevent-hubs-what-is-event-hubs"></a>[<span data-ttu-id="192cd-150">Концентратор событий</span><span class="sxs-lookup"><span data-stu-id="192cd-150">Event Hub</span></span>](/azure/event-hubs/event-hubs-what-is-event-hubs) 
    
-<span data-ttu-id="cb49b-151">Обработка событий и данных телеметрии с высокой пропускной способностью для сценариев инструментирования или сценариев Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="cb49b-151">High-throughput event and telemetry handling for your instrumentation or IoT scenarios.</span></span>
+<span data-ttu-id="192cd-151">Обработка событий и данных телеметрии с высокой пропускной способностью для сценариев инструментирования или сценариев Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="192cd-151">High-throughput event and telemetry handling for your instrumentation or IoT scenarios.</span></span>
 
 ```XML
 <dependency> 
@@ -175,13 +175,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>   
 ```
 
-<span data-ttu-id="cb49b-152">[Примеры кода](https://github.com/Azure/azure-event-hubs/tree/master/samples#java) | [Справочник](/java/api/overview/azure/eventhub) | [GitHub](https://github.com/azure/azure-event-hubs-java)  | [Заметки о выпуске](https://github.com/Azure/azure-event-hubs-java)</span><span class="sxs-lookup"><span data-stu-id="cb49b-152">[Samples](https://github.com/Azure/azure-event-hubs/tree/master/samples#java) | [Reference](/java/api/overview/azure/eventhub) | [GitHub](https://github.com/azure/azure-event-hubs-java)  | [Release Notes](https://github.com/Azure/azure-event-hubs-java)</span></span>
+<span data-ttu-id="192cd-152">[Примеры кода](https://github.com/Azure/azure-event-hubs/tree/master/samples#java) | [Справочник](/java/api/overview/azure/eventhub) | [GitHub](https://github.com/azure/azure-event-hubs-java)  | [Заметки о выпуске](https://github.com/Azure/azure-event-hubs-java)</span><span class="sxs-lookup"><span data-stu-id="192cd-152">[Samples](https://github.com/Azure/azure-event-hubs/tree/master/samples#java) | [Reference](/java/api/overview/azure/eventhub) | [GitHub](https://github.com/azure/azure-event-hubs-java)  | [Release Notes](https://github.com/Azure/azure-event-hubs-java)</span></span>
 
 <a name="iotservice"></a> 
 
-### <a name="iot-serviceazureiot-hub"></a>[<span data-ttu-id="cb49b-153">Служба Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="cb49b-153">IoT Service</span></span>](/azure/iot-hub/)
+### <a name="iot-serviceazureiot-hub"></a>[<span data-ttu-id="192cd-153">Служба Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="192cd-153">IoT Service</span></span>](/azure/iot-hub/)
 
-<span data-ttu-id="cb49b-154">Управление удостоверениями, отправка сообщений и получение отчетов об ошибках с устройств, зарегистрированных в Центре Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="cb49b-154">Manage identities, send messages, and get feedback from devices registered with your IoT hub.</span></span>
+<span data-ttu-id="192cd-154">Управление удостоверениями, отправка сообщений и получение отчетов об ошибках с устройств, зарегистрированных в Центре Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="192cd-154">Manage identities, send messages, and get feedback from devices registered with your IoT hub.</span></span>
 
 ```XML
 <dependency>
@@ -191,13 +191,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```   
    
-<span data-ttu-id="cb49b-155">[Примеры кода](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples) | [Справочник](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Заметки о выпуске](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-155">[Samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples) | [Reference](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Release Notes](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span></span>
+<span data-ttu-id="192cd-155">[Примеры кода](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples) | [Справочник](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Заметки о выпуске](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-155">[Samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples) | [Reference](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Release Notes](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span></span>
 
 <a name="iotdevice"></a> 
 
-### <a name="iot-deviceazureiot-hubiot-hub-devguide"></a>[<span data-ttu-id="cb49b-156">Устройство IoT</span><span class="sxs-lookup"><span data-stu-id="cb49b-156">IoT Device</span></span>](/azure/iot-hub/iot-hub-devguide)
+### <a name="iot-deviceazureiot-hubiot-hub-devguide"></a>[<span data-ttu-id="192cd-156">Устройство IoT</span><span class="sxs-lookup"><span data-stu-id="192cd-156">IoT Device</span></span>](/azure/iot-hub/iot-hub-devguide)
 
-<span data-ttu-id="cb49b-157">Отправка сообщений с устройства в Центр Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="cb49b-157">Send a message to an IoT hub from your device.</span></span>  
+<span data-ttu-id="192cd-157">Отправка сообщений с устройства в Центр Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="192cd-157">Send a message to an IoT hub from your device.</span></span>  
 
 ```XML
 <dependency>
@@ -207,13 +207,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```  
 
-<span data-ttu-id="cb49b-158">[Примеры кода](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples) | [Справочник](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Заметки о выпуске](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-158">[Samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples) | [Reference](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Release Notes](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span></span>
+<span data-ttu-id="192cd-158">[Примеры кода](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples) | [Справочник](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Заметки о выпуске](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-158">[Samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples) | [Reference](/java/api/overview/azure/iot) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Release Notes](https://github.com/Azure/azure-iot-sdk-java/blob/master/readme.md)</span></span>
 
 <a name="datalake"></a> 
 
-### <a name="data-lake-storeazuredata-lake-storedata-lake-store-overview"></a>[<span data-ttu-id="cb49b-159">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="cb49b-159">Data Lake Store</span></span>](/azure/data-lake-store/data-lake-store-overview)   
+### <a name="data-lake-storeazuredata-lake-storedata-lake-store-overview"></a>[<span data-ttu-id="192cd-159">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="192cd-159">Data Lake Store</span></span>](/azure/data-lake-store/data-lake-store-overview)   
    
-<span data-ttu-id="cb49b-160">Централизованный сбор данных любого размера и формы для выполнения анализа.</span><span class="sxs-lookup"><span data-stu-id="cb49b-160">Capture data of any size and shape into a single location for performing analytics.</span></span>    
+<span data-ttu-id="192cd-160">Централизованный сбор данных любого размера и формы для выполнения анализа.</span><span class="sxs-lookup"><span data-stu-id="192cd-160">Capture data of any size and shape into a single location for performing analytics.</span></span>    
 
 ```XML
 <dependency>
@@ -223,13 +223,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```   
 
-<span data-ttu-id="cb49b-161">[Примеры кода](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started) | [Справочник](/java/api/overview/azure/datalakestore) | [GitHub](https://github.com/Azure/azure-data-lake-store-java) | [Заметки о выпуске](https://github.com/Azure/azure-data-lake-store-java/blob/master/CHANGES.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-161">[Samples](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started) | [Reference](/java/api/overview/azure/datalakestore) | [GitHub](https://github.com/Azure/azure-data-lake-store-java) | [Release Notes](https://github.com/Azure/azure-data-lake-store-java/blob/master/CHANGES.md)</span></span>
+<span data-ttu-id="192cd-161">[Примеры кода](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started) | [Справочник](/java/api/overview/azure/datalakestore) | [GitHub](https://github.com/Azure/azure-data-lake-store-java) | [Заметки о выпуске](https://github.com/Azure/azure-data-lake-store-java/blob/master/CHANGES.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-161">[Samples](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started) | [Reference](/java/api/overview/azure/datalakestore) | [GitHub](https://github.com/Azure/azure-data-lake-store-java) | [Release Notes](https://github.com/Azure/azure-data-lake-store-java/blob/master/CHANGES.md)</span></span>
 
 <a name="appinsights"></a> 
 
-### <a name="appinsightsazureapplication-insightsapp-insights-overview"></a>[<span data-ttu-id="cb49b-162">AppInsights</span><span class="sxs-lookup"><span data-stu-id="cb49b-162">AppInsights</span></span>](/azure/application-insights/app-insights-overview)
+### <a name="appinsightsazureapplication-insightsapp-insights-overview"></a>[<span data-ttu-id="192cd-162">AppInsights</span><span class="sxs-lookup"><span data-stu-id="192cd-162">AppInsights</span></span>](/azure/application-insights/app-insights-overview)
 
-<span data-ttu-id="cb49b-163">Отслеживание использования, добавление телеметрии и мониторинг веб-приложений.</span><span class="sxs-lookup"><span data-stu-id="cb49b-163">Track usage, add telemetry, and monitor your web apps.</span></span>
+<span data-ttu-id="192cd-163">Отслеживание использования, добавление телеметрии и мониторинг веб-приложений.</span><span class="sxs-lookup"><span data-stu-id="192cd-163">Track usage, add telemetry, and monitor your web apps.</span></span>
 
 ```XML
 <dependency>
@@ -239,13 +239,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-164">[Примеры кода](/azure/application-insights/app-insights-java-get-started) | [Справочник](/java/api/overview/azure/appinsights) | [GitHub](https://github.com/Microsoft/ApplicationInsights-Java) | [Заметки о выпуске](https://github.com/Microsoft/ApplicationInsights-Java#to-upgrade-to-the-latest-sdk)</span><span class="sxs-lookup"><span data-stu-id="cb49b-164">[Samples](/azure/application-insights/app-insights-java-get-started) | [Reference](/java/api/overview/azure/appinsights) | [GitHub](https://github.com/Microsoft/ApplicationInsights-Java) | [Release Notes](https://github.com/Microsoft/ApplicationInsights-Java#to-upgrade-to-the-latest-sdk)</span></span>
+<span data-ttu-id="192cd-164">[Примеры кода](/azure/application-insights/app-insights-java-get-started) | [Справочник](/java/api/overview/azure/appinsights) | [GitHub](https://github.com/Microsoft/ApplicationInsights-Java) | [Заметки о выпуске](https://github.com/Microsoft/ApplicationInsights-Java#to-upgrade-to-the-latest-sdk)</span><span class="sxs-lookup"><span data-stu-id="192cd-164">[Samples](/azure/application-insights/app-insights-java-get-started) | [Reference](/java/api/overview/azure/appinsights) | [GitHub](https://github.com/Microsoft/ApplicationInsights-Java) | [Release Notes](https://github.com/Microsoft/ApplicationInsights-Java#to-upgrade-to-the-latest-sdk)</span></span>
 
 <a name="batch"></a>
 
-### <a name="batchazurebatch"></a>[<span data-ttu-id="cb49b-165">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="cb49b-165">Batch</span></span>](/azure/batch)
+### <a name="batchazurebatch"></a>[<span data-ttu-id="192cd-165">Пакетная служба</span><span class="sxs-lookup"><span data-stu-id="192cd-165">Batch</span></span>](/azure/batch)
 
-<span data-ttu-id="cb49b-166">Обеспечение эффективной работы приложений для крупномасштабных параллельных и высокопроизводительных вычислений в облаке.</span><span class="sxs-lookup"><span data-stu-id="cb49b-166">Run large-scale parallel and high-performance computing applications efficiently in the cloud.</span></span>
+<span data-ttu-id="192cd-166">Обеспечение эффективной работы приложений для крупномасштабных параллельных и высокопроизводительных вычислений в облаке.</span><span class="sxs-lookup"><span data-stu-id="192cd-166">Run large-scale parallel and high-performance computing applications efficiently in the cloud.</span></span>
 
 ```XML
 <dependency>
@@ -255,13 +255,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-167">[Примеры кода](https://github.com/azure/azure-batch-samples) | [Справочник](/java/api/overview/azure/batch) | [GitHub](https://github.com/azure/azure-batch-sdk-for-java) | [Заметки о выпуске](https://github.com/Azure/azure-batch-sdk-for-java/blob/master/README.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-167">[Samples](https://github.com/azure/azure-batch-samples) | [Reference](/java/api/overview/azure/batch) | [GitHub](https://github.com/azure/azure-batch-sdk-for-java) | [Release Notes](https://github.com/Azure/azure-batch-sdk-for-java/blob/master/README.md)</span></span>
+<span data-ttu-id="192cd-167">[Примеры кода](https://github.com/azure/azure-batch-samples) | [Справочник](/java/api/overview/azure/batch) | [GitHub](https://github.com/azure/azure-batch-sdk-for-java) | [Заметки о выпуске](https://github.com/Azure/azure-batch-sdk-for-java/blob/master/README.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-167">[Samples](https://github.com/azure/azure-batch-samples) | [Reference](/java/api/overview/azure/batch) | [GitHub](https://github.com/azure/azure-batch-sdk-for-java) | [Release Notes](https://github.com/Azure/azure-batch-sdk-for-java/blob/master/README.md)</span></span>
 
 <a name="management"></a> 
 
-## <a name="manage-azure-resources"></a><span data-ttu-id="cb49b-168">Управление ресурсами Azure</span><span class="sxs-lookup"><span data-stu-id="cb49b-168">Manage Azure resources</span></span>
+## <a name="manage-azure-resources"></a><span data-ttu-id="192cd-168">Управление ресурсами Azure</span><span class="sxs-lookup"><span data-stu-id="192cd-168">Manage Azure resources</span></span>
 
-<span data-ttu-id="cb49b-169">Создание, обновление и удаление ресурсов Azure в коде приложения.</span><span class="sxs-lookup"><span data-stu-id="cb49b-169">Create, update, and delete Azure resources from your application code.</span></span>
+<span data-ttu-id="192cd-169">Создание, обновление и удаление ресурсов Azure в коде приложения.</span><span class="sxs-lookup"><span data-stu-id="192cd-169">Create, update, and delete Azure resources from your application code.</span></span>
 
 ```XML
 <dependency>
@@ -271,13 +271,13 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-<span data-ttu-id="cb49b-170">[Примеры кода](https://github.com/Azure/azure-sdk-for-java#sample-code) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/) | [GitHub](https://github.com/Azure/azure-sdk-for-java) | [Заметки о выпуске](java-sdk-azure-release-notes.md)</span><span class="sxs-lookup"><span data-stu-id="cb49b-170">[Samples](https://github.com/Azure/azure-sdk-for-java#sample-code) | [Reference](https://docs.microsoft.com/java/api/overview/azure/) | [GitHub](https://github.com/Azure/azure-sdk-for-java) | [Release Notes](java-sdk-azure-release-notes.md)</span></span>
+<span data-ttu-id="192cd-170">[Примеры кода](https://github.com/Azure/azure-sdk-for-java#sample-code) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/) | [GitHub](https://github.com/Azure/azure-sdk-for-java) | [Заметки о выпуске](java-sdk-azure-release-notes.md)</span><span class="sxs-lookup"><span data-stu-id="192cd-170">[Samples](https://github.com/Azure/azure-sdk-for-java#sample-code) | [Reference](https://docs.microsoft.com/java/api/overview/azure/) | [GitHub](https://github.com/Azure/azure-sdk-for-java) | [Release Notes](java-sdk-azure-release-notes.md)</span></span>
 
 <a name="servicebus"></a>
 
-### <a name="servicebushttpsdocsmicrosoftcomazureservice-bus-messagingservice-bus-messaging-overview"></a>[<span data-ttu-id="cb49b-171">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="cb49b-171">ServiceBus</span></span>](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) 
+### <a name="servicebushttpsdocsmicrosoftcomazureservice-bus-messagingservice-bus-messaging-overview"></a>[<span data-ttu-id="192cd-171">Служебная шина</span><span class="sxs-lookup"><span data-stu-id="192cd-171">ServiceBus</span></span>](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) 
    
-<span data-ttu-id="cb49b-172">Служебная шина — это корпоративная платформа для транзакционного обмена сообщениями.</span><span class="sxs-lookup"><span data-stu-id="cb49b-172">Service Bus is an enterprise-class, transactional messaging platform service.</span></span>
+<span data-ttu-id="192cd-172">Служебная шина — это корпоративная платформа для транзакционного обмена сообщениями.</span><span class="sxs-lookup"><span data-stu-id="192cd-172">Service Bus is an enterprise-class, transactional messaging platform service.</span></span>
 
 ```XML
 <dependency> 
@@ -287,5 +287,5 @@ ms.lasthandoff: 10/14/2017
 </dependency>   
 ```
 
-<span data-ttu-id="cb49b-173">[Примеры кода](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Заметки о выпуске](https://github.com/Azure/azure-service-bus-java)</span><span class="sxs-lookup"><span data-stu-id="cb49b-173">[Samples](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Reference](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Release Notes](https://github.com/Azure/azure-service-bus-java)</span></span>
+<span data-ttu-id="192cd-173">[Примеры кода](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Справочник](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Заметки о выпуске](https://github.com/Azure/azure-service-bus-java)</span><span class="sxs-lookup"><span data-stu-id="192cd-173">[Samples](https://github.com/Azure/azure-service-bus/tree/master/samples/Java) | [Reference](https://docs.microsoft.com/java/api/overview/azure/servicebus) | [GitHub](https://github.com/azure/azure-service-bus-java)  | [Release Notes](https://github.com/Azure/azure-service-bus-java)</span></span>
 
