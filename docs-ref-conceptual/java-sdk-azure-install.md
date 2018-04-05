@@ -1,6 +1,6 @@
 ---
-title: "Документация Майкрософт по Azure для разработчиков Java"
-description: "Справочник по пакету SDK и API Azure для Java"
+title: Документация Майкрософт по Azure для разработчиков Java
+description: Справочник по пакету SDK и API Azure для Java
 keywords: Azure Java, Azure Java API Reference, Azure Java class library, Azure SDK
 author: routlaw
 manager: douge
@@ -10,11 +10,11 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 570f820e1349e1dfd01a6c7f323b5312c14c40c6
-ms.sourcegitcommit: 4b63ecd2c92a9115dfae018618e4e4046b061b3e
+ms.openlocfilehash: 5c8bb4b81080461285551573eefc0d76b47b2d3d
+ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="azure-libraries-for-java"></a>Библиотеки Azure для Java
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 10/14/2017
 
 | | | | |
 |:-------------:|:----------:|:----:|:---:|
-| [Хранилище Azure](#azure-storage) | [База данных SQL](#sql-database)  | [Кэш Redis](#redis-cache)   | [DocumentDB](#documentdb) |
+| [Хранилище Azure](#azure-storage) | [База данных SQL](#sql-database)  | [Кэш Redis](#redis-cache)   | [База данных Azure Cosmos](#cosmos-db) |
 | [Служебная шина](#servicebus)  | [Azure Active Directory](#azuread) | [хранилище ключей;](#keyvault)  | [Концентратор событий](#eventhub)
 | [Служба Интернета вещей](#iotservice) | [Устройство IoT](#iotdevice) | [Data Lake](#datalake)  | [AppInsights](#appinsights) | 
 | [Пакетная служба](#batch) | [Getting Started with Resources - Manage Resource - in Java (Приступая к работе с ресурсами: управление ресурсами в Java)](#management) |
@@ -97,9 +97,9 @@ ms.lasthandoff: 10/14/2017
 
 [Примеры кода](/azure/redis-cache/cache-java-get-started) | [Справочник](http://xetorthio.github.io/jedis)  | [GitHub](https://github.com/xetorthio/jedis)  | [Заметки о выпуске](https://github.com/xetorthio/jedis/releases)  
 
-<a name="documentdb"></a>
+<a name="cosmos-db"></a>
 
-### <a name="cosmos-dbazuredocumentdbdocumentdb-introduction"></a>[База данных Cosmos](/azure/documentdb/documentdb-introduction)
+### <a name="azure-cosmos-dbazurecosmos-dbintroduction"></a>[База данных Azure Cosmos](/azure/cosmos-db/introduction)
 
 Масштабируемая база данных NoSQL с документами JSON и синтаксисом запросов SQL или JavaScript.   
 
@@ -111,7 +111,7 @@ ms.lasthandoff: 10/14/2017
 </dependency>
 ```
 
-[Примеры кода](/azure/documentdb/documentdb-java-application) | [Справочник](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Заметки о выпуске](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)
+[Примеры кода](/azure/cosmos-db/sql-api-java-application) | [Справочник](http://azure.github.io/azure-documentdb-java/) | [GitHub](https://github.com/Azure/azure-documentdb-java)   | [Заметки о выпуске](https://github.com/Azure/azure-documentdb-java/blob/master/changelog.md)
 
 <a name="servicebus"></a>
  
