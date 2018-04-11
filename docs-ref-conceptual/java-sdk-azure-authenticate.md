@@ -1,6 +1,6 @@
 ---
-title: "Проверка подлинности с использованием библиотек управления Azure для Java"
-description: "Проверка подлинности с помощью субъекта-службы в библиотеках управления Azure для Java"
+title: Проверка подлинности с использованием библиотек управления Azure для Java
+description: Проверка подлинности с помощью субъекта-службы в библиотеках управления Azure для Java
 keywords: Azure, Java, SDK, API, Maven, Gradle, authentication, active directory, service principal
 author: rloutlaw
 ms.author: routlaw
@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.openlocfilehash: dd1273d5fc79f513e8dae5420eb6a6988d327d58
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 3808c6d56b04f28c84a89a25219e4ec523f87964
+ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Проверка подлинности с использованием библиотек Azure для Java 
 
@@ -42,7 +42,7 @@ final String storageConnection = "DefaultEndpointsProtocol=https;"
         + ";EndpointSuffix=core.windows.net";
 ```
 
-Строки подключения службы используются для проверки подлинности других служб Azure, таких как [DocumentDB](https://docs.microsoft.com/azure/documentdb/documentdb-java-application#a-iduseserviceastep-4-using-the-documentdb-service-in-a-java-application), [кэш Redis](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) и [служебная шина](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues). Строки подключения можно получить с помощью портала или интерфейса командной строки Azure.  Также с помощью библиотек управления Azure для Java можно выполнять запросы к ресурсам для создания строк подключения в коде. 
+Строки подключения службы используются для проверки подлинности других служб Azure, таких как [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-application#UseService), [кэш Redis](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) и [служебная шина](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues). Строки подключения можно получить с помощью портала или интерфейса командной строки Azure.  Также с помощью библиотек управления Azure для Java можно выполнять запросы к ресурсам для создания строк подключения в коде. 
 
 Например, этот код использует библиотеки управления для создания строки подключения к учетной записи хранения:
 
