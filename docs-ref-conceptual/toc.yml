@@ -4,6 +4,12 @@
     - name: Краткие руководства по использованию Java
       expanded: true
       items:
+        - name: Service Fabric
+          items:
+            - name: Spring Boot
+              href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot
+            - name: Надежные службы
+              href: /azure/service-fabric/service-fabric-quickstart-java-reliable-services
         - name: Веб-приложения
           href: /azure/app-service-web/app-service-web-get-started-java
         - name: База данных SQL
@@ -45,6 +51,8 @@
       href: /java/azure/spring-framework/index
     - name: Руководства по Java
       items:
+        - name: Развертывание микрослужб в Service Fabric
+          href: /azure/service-fabric/service-fabric-tutorial-create-java-app
         - name: Spring Boot + MySQL
           href: /azure/app-service-web/app-service-web-tutorial-java-mysql
         - name: Непрерывная интеграция и развертывание Jenkins в службу приложений
@@ -65,6 +73,8 @@
               href: java-sdk-azure-concepts.md
         - name: Spring Boot
           items:
+            - name: Развертывание в Service Fabric
+              href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot
             - name: Развертывание с помощью Docker и Kubernetes
               href: /azure/container-service/container-service-deploy-spring-boot-app-on-kubernetes
               maintainContext: true
@@ -75,6 +85,8 @@
           href: /azure/app-service-web/app-service-web-deploy-spring-boot-app-with-maven-plugin
     - name: Примеры кода Java
       items:
+        - name: Service Fabric
+          href: 'https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/'
         - name: Виртуальные машины
           href: java-sdk-azure-virtual-machine-samples.md
         - name: 'веб-приложений:'
