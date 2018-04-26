@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки службы приложений Azure для Java"
-description: "Автоматизируйте развертывание веб-приложений в службе приложений Azure с помощью API-интерфейсов управления Azure."
+title: Библиотеки службы приложений Azure для Java
+description: Автоматизируйте развертывание веб-приложений в службе приложений Azure с помощью API-интерфейсов управления Azure.
 keywords: Azure, Java, SDK, API, web apps, mobile, App Service
 author: rloutlaw
 ms.author: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: appservice
-ms.openlocfilehash: 7e1d7eed9d8fa8d2f872f2902e2ce3f2b3dab7b6
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: adbb527666553ecc3039ce35c035d017f502c801
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-app-service-libraries-for-java"></a>Библиотеки службы приложений Azure для Java
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 10/09/2017
 ```   
 
 > [!div class="nextstepaction"]
-> [Обзор API-интерфейсов управления](/java/api/overview/azure)
+> [Обзор API-интерфейсов управления](/java/api/overview/azure/appservice/management)
 
 ### <a name="example"></a>Пример
 

@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки Azure DNS для Java"
-description: "Справочная документация по библиотекам управления Azure DNS для Java"
+title: Библиотеки Azure DNS для Java
+description: Справочная документация по библиотекам управления Azure DNS для Java
 keywords: Azure, Java, SDK, API, domains, DNS, name, service, domain name service
 author: rloutlaw
 ms.author: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: dns
-ms.openlocfilehash: adac8e21a401bc91490b92fc5ccf90443eea569f
-ms.sourcegitcommit: f6bf497d9b98f0608aefacf1e914d8be52964234
+ms.openlocfilehash: 2cd8fe7ee4d6a87da32a349fe8f1d2815d3fd36d
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-traffic-manager-libraries-for-java"></a>Библиотеки диспетчера трафика Azure для Java
 
@@ -53,7 +53,7 @@ rootDnsZone = rootDnsZone.update()
 ```
 
 > [!div class="nextstepaction"]
-> [Обзор API-интерфейсов управления](/java/api/overview/azure/dns/managementapi)
+> [Обзор API-интерфейсов управления](/java/api/overview/azure/dns/management)
 
 ## <a name="samples"></a>Примеры
 

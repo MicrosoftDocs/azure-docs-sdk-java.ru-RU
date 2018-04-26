@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки виртуальных машин Azure для Java"
-description: 
+title: Библиотеки виртуальных машин Azure для Java
+description: ''
 keywords: Azure, Java, SDK, API, Compute, Virtual Machines
 author: douge
 ms.author: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: compute
-ms.openlocfilehash: f9a816d5787e41a4ee4643b1bc66bf21192ea298
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: a54bc40e1d28ba6ee1d8b0638cb259adbb69d78d
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-virtual-machine-libraries"></a>Библиотеки виртуальных машин Azure
 
@@ -59,7 +59,7 @@ VirtualMachine newLinuxVm = azure.virtualMachines().define(linuxVmName)
 ```
 
 > [!div class="nextstepaction"]
-> [Обзор API-интерфейсов управления](/java/api/overview/azure/virtualmachines/managementapi)
+> [Обзор API-интерфейсов управления](/java/api/overview/azure/virtualmachines/management)
 
 
 ## <a name="samples"></a>Примеры

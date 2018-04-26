@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки Azure CDN для Java"
-description: "Справочная документация по библиотекам управления CDN для Java"
+title: Библиотеки Azure CDN для Java
+description: Справочная документация по библиотекам управления CDN для Java
 keywords: Azure, Java, SDK, API, content, distribution, network, CDN
 author: rloutlaw
 ms.author: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: cdn
-ms.openlocfilehash: 91df958d2d78fb4fd959c228b28c6ae003716be6
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 199e9b4b2b2431e23954d24e4adeb4326eb4741c
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-cdn-libraries-for-java"></a>Библиотеки Azure CDN для Java
 
@@ -62,7 +62,7 @@ for (CdnEndpoint endpoint : profile.endpoints().values()) {
 ```
 
 > [!div class="nextstepaction"]
-> [Обзор API-интерфейсов управления](/java/api/overview/azure/cdn/managementapi)
+> [Обзор API-интерфейсов управления](/java/api/overview/azure/cdn/management)
 
 ## <a name="samples"></a>Примеры
 
