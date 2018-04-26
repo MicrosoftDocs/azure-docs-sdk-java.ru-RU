@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки службы хранилища Azure для Java"
-description: 
+title: Библиотеки службы хранилища Azure для Java
+description: ''
 keywords: Azure, Java, SDK, API, Storage
 author: douge
 ms.author: douge
@@ -11,25 +11,25 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: storage
-ms.openlocfilehash: 3c7a3a1fcf2e97202e7f38f8df5acb6637fb4b47
-ms.sourcegitcommit: 2ae0d99c02f4ad7efa9e3d3fbd1db7e9de20c6e7
+ms.openlocfilehash: ec06e79374176b5a4795d27c5fbbb2260e65cd8c
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="azure-storage-libraries-for-java"></a><span data-ttu-id="18e04-103">Библиотеки службы хранилища Azure для Java</span><span class="sxs-lookup"><span data-stu-id="18e04-103">Azure Storage libraries for Java</span></span>
+# <a name="azure-storage-libraries-for-java"></a><span data-ttu-id="28ed0-103">Библиотеки службы хранилища Azure для Java</span><span class="sxs-lookup"><span data-stu-id="28ed0-103">Azure Storage libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="18e04-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="18e04-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="28ed0-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="28ed0-104">Overview</span></span>
 
-<span data-ttu-id="18e04-105">Выполняйте чтение и запись файлов, данных BLOB-объектов, пар "ключ — значение" и сообщений в приложениях Java с помощью [службы хранилища Azure](/azure/storage/storage-introduction).</span><span class="sxs-lookup"><span data-stu-id="18e04-105">Read and write files, blob (object) data, key-value pairs, and messages from your Java applications with [Azure Storage](/azure/storage/storage-introduction).</span></span>
+<span data-ttu-id="28ed0-105">Выполняйте чтение и запись файлов, данных BLOB-объектов, пар "ключ — значение" и сообщений в приложениях Java с помощью [службы хранилища Azure](/azure/storage/storage-introduction).</span><span class="sxs-lookup"><span data-stu-id="28ed0-105">Read and write files, blob (object) data, key-value pairs, and messages from your Java applications with [Azure Storage](/azure/storage/storage-introduction).</span></span>
 
-<span data-ttu-id="18e04-106">Чтобы приступить к работе со службой хранилища Azure, ознакомьтесь со статьей [Использование хранилища BLOB-объектов из Java](/azure/storage/storage-java-how-to-use-blob-storage).</span><span class="sxs-lookup"><span data-stu-id="18e04-106">To get started with Azure Storage, see [How to use Blob storage from Java](/azure/storage/storage-java-how-to-use-blob-storage).</span></span>
+<span data-ttu-id="28ed0-106">Чтобы приступить к работе со службой хранилища Azure, ознакомьтесь со статьей [Использование хранилища BLOB-объектов из Java](/azure/storage/storage-java-how-to-use-blob-storage).</span><span class="sxs-lookup"><span data-stu-id="28ed0-106">To get started with Azure Storage, see [How to use Blob storage from Java](/azure/storage/storage-java-how-to-use-blob-storage).</span></span>
 
-## <a name="client-library"></a><span data-ttu-id="18e04-107">Клиентская библиотека</span><span class="sxs-lookup"><span data-stu-id="18e04-107">Client library</span></span>
+## <a name="client-library"></a><span data-ttu-id="28ed0-107">Клиентская библиотека</span><span class="sxs-lookup"><span data-stu-id="28ed0-107">Client library</span></span>
 
-<span data-ttu-id="18e04-108">Подключитесь к учетной записи хранения Azure с помощью [строк подключения](/azure/storage/storage-create-storage-account#manage-your-storage-account), а затем используйте классы и методы клиентских библиотек для работы с хранилищем BLOB-объектов, таблиц, файлов или очередей.</span><span class="sxs-lookup"><span data-stu-id="18e04-108">Use [connection strings](/azure/storage/storage-create-storage-account#manage-your-storage-account) to connect to an Azure Storage account, then use the client libraries' classes and methods to work with blob, table, file, or queue storage.</span></span> 
+<span data-ttu-id="28ed0-108">Подключитесь к учетной записи хранения Azure с помощью [строк подключения](/azure/storage/storage-create-storage-account#manage-your-storage-account), а затем используйте классы и методы клиентских библиотек для работы с хранилищем BLOB-объектов, таблиц, файлов или очередей.</span><span class="sxs-lookup"><span data-stu-id="28ed0-108">Use [connection strings](/azure/storage/storage-create-storage-account#manage-your-storage-account) to connect to an Azure Storage account, then use the client libraries' classes and methods to work with blob, table, file, or queue storage.</span></span> 
 
-<span data-ttu-id="18e04-109">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="18e04-109">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>   
+<span data-ttu-id="28ed0-109">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="28ed0-109">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>   
 
 ```XML
 <dependency>
@@ -39,9 +39,9 @@ ms.lasthandoff: 02/14/2018
 </dependency>
 ```   
 
-### <a name="example"></a><span data-ttu-id="18e04-110">Пример</span><span class="sxs-lookup"><span data-stu-id="18e04-110">Example</span></span>
+### <a name="example"></a><span data-ttu-id="28ed0-110">Пример</span><span class="sxs-lookup"><span data-stu-id="28ed0-110">Example</span></span>
 
-<span data-ttu-id="18e04-111">Запишите файл изображения из локальной файловой системы в новый большой двоичный объект в существующем контейнере больших двоичных объектов службы хранилища Azure.</span><span class="sxs-lookup"><span data-stu-id="18e04-111">Write a image file from the local file system into a new blob in an existing Azure Storage blob container.</span></span>
+<span data-ttu-id="28ed0-111">Запишите файл изображения из локальной файловой системы в новый большой двоичный объект в существующем контейнере больших двоичных объектов службы хранилища Azure.</span><span class="sxs-lookup"><span data-stu-id="28ed0-111">Write a image file from the local file system into a new blob in an existing Azure Storage blob container.</span></span>
 
 
 ```java
@@ -59,13 +59,13 @@ blob.uploadFromFile("/Users/raisa/fabrikam.png");
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="18e04-112">Обзор клиентских API-интерфейсов</span><span class="sxs-lookup"><span data-stu-id="18e04-112">Explore the Client APIs</span></span>](/java/api/overview/azure/storage/clientlibrary)
+> [<span data-ttu-id="28ed0-112">Обзор клиентских API-интерфейсов</span><span class="sxs-lookup"><span data-stu-id="28ed0-112">Explore the Client APIs</span></span>](/java/api/overview/azure/storage/client)
 
-## <a name="management-api"></a><span data-ttu-id="18e04-113">API управления</span><span class="sxs-lookup"><span data-stu-id="18e04-113">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="28ed0-113">API управления</span><span class="sxs-lookup"><span data-stu-id="28ed0-113">Management API</span></span>
 
-<span data-ttu-id="18e04-114">Создавайте учетные записи хранения Azure и ключи подключения и управляйте ими с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="18e04-114">Crete and manage Azure Storage accounts and connection keys with the management API.</span></span>
+<span data-ttu-id="28ed0-114">Создавайте учетные записи хранения Azure и ключи подключения и управляйте ими с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="28ed0-114">Crete and manage Azure Storage accounts and connection keys with the management API.</span></span>
 
-<span data-ttu-id="18e04-115">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="18e04-115">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
+<span data-ttu-id="28ed0-115">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="28ed0-115">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -75,9 +75,9 @@ blob.uploadFromFile("/Users/raisa/fabrikam.png");
 </dependency
 ```   
 
-### <a name="example"></a><span data-ttu-id="18e04-116">Пример</span><span class="sxs-lookup"><span data-stu-id="18e04-116">Example</span></span>
+### <a name="example"></a><span data-ttu-id="28ed0-116">Пример</span><span class="sxs-lookup"><span data-stu-id="28ed0-116">Example</span></span>
 
-<span data-ttu-id="18e04-117">Создайте учетную запись хранилища Azure в своей подписке и получите ключи доступа для нее.</span><span class="sxs-lookup"><span data-stu-id="18e04-117">Create a new Azure Storage account in your subscription and retrieve its access keys.</span></span>
+<span data-ttu-id="28ed0-117">Создайте учетную запись хранилища Azure в своей подписке и получите ключи доступа для нее.</span><span class="sxs-lookup"><span data-stu-id="28ed0-117">Create a new Azure Storage account in your subscription and retrieve its access keys.</span></span>
 
 ```java
 StorageAccount storageAccount = azure.storageAccounts().define(storageAccountName)
@@ -93,14 +93,14 @@ for(StorageAccountKey key : storageAccountKeys)    {
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="18e04-118">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="18e04-118">Explore the Management APIs</span></span>](/java/api/overview/azure/storage/managementapi)
+> [<span data-ttu-id="28ed0-118">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="28ed0-118">Explore the Management APIs</span></span>](/java/api/overview/azure/storage/management)
 
 
-## <a name="samples"></a><span data-ttu-id="18e04-119">Примеры</span><span class="sxs-lookup"><span data-stu-id="18e04-119">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="28ed0-119">Примеры</span><span class="sxs-lookup"><span data-stu-id="28ed0-119">Samples</span></span>
 
-<span data-ttu-id="18e04-120">[Manage Azure storage accounts from your Java applications](../docs-ref-conceptual/java-sdk-manage-storage-accounts.md)   (Управление учетными записями хранения Azure из приложений Java)</span><span class="sxs-lookup"><span data-stu-id="18e04-120">[Manage Azure Storage accounts](../docs-ref-conceptual/java-sdk-manage-storage-accounts.md)  </span></span>  
-<span data-ttu-id="18e04-121">[Read and write objects to blob storage](https://github.com/Azure-Samples/storage-blob-java-getting-started)  (Чтение и запись объектов в хранилище BLOB-объектов)</span><span class="sxs-lookup"><span data-stu-id="18e04-121">[Read and write objects to blob storage](https://github.com/Azure-Samples/storage-blob-java-getting-started) </span></span>  
-<span data-ttu-id="18e04-122">[Read and write messages with queues](https://github.com/Azure-Samples/storage-queue-java-getting-started)  (Чтение и запись сообщений с помощью очередей)</span><span class="sxs-lookup"><span data-stu-id="18e04-122">[Read and write messages with queues](https://github.com/Azure-Samples/storage-queue-java-getting-started) </span></span>  
-<span data-ttu-id="18e04-123">[Read files from blob storage in a web app](https://github.com/Azure-Samples/app-service-java-manage-storage-connections-for-web-apps-on-linux) (Чтение файлов из хранилища BLOB-объектов в веб-приложении)</span><span class="sxs-lookup"><span data-stu-id="18e04-123">[Read files from blob storage in a web app](https://github.com/Azure-Samples/app-service-java-manage-storage-connections-for-web-apps-on-linux)</span></span>
+<span data-ttu-id="28ed0-120">[Manage Azure storage accounts from your Java applications](../docs-ref-conceptual/java-sdk-manage-storage-accounts.md)   (Управление учетными записями хранения Azure из приложений Java)</span><span class="sxs-lookup"><span data-stu-id="28ed0-120">[Manage Azure Storage accounts](../docs-ref-conceptual/java-sdk-manage-storage-accounts.md)  </span></span>  
+<span data-ttu-id="28ed0-121">[Read and write objects to blob storage](https://github.com/Azure-Samples/storage-blob-java-getting-started)  (Чтение и запись объектов в хранилище BLOB-объектов)</span><span class="sxs-lookup"><span data-stu-id="28ed0-121">[Read and write objects to blob storage](https://github.com/Azure-Samples/storage-blob-java-getting-started) </span></span>  
+<span data-ttu-id="28ed0-122">[Read and write messages with queues](https://github.com/Azure-Samples/storage-queue-java-getting-started)  (Чтение и запись сообщений с помощью очередей)</span><span class="sxs-lookup"><span data-stu-id="28ed0-122">[Read and write messages with queues](https://github.com/Azure-Samples/storage-queue-java-getting-started) </span></span>  
+<span data-ttu-id="28ed0-123">[Read files from blob storage in a web app](https://github.com/Azure-Samples/app-service-java-manage-storage-connections-for-web-apps-on-linux) (Чтение файлов из хранилища BLOB-объектов в веб-приложении)</span><span class="sxs-lookup"><span data-stu-id="28ed0-123">[Read files from blob storage in a web app](https://github.com/Azure-Samples/app-service-java-manage-storage-connections-for-web-apps-on-linux)</span></span>
 
-<span data-ttu-id="18e04-124">Ознакомьтесь с другими [примерами кода Java для службы хранилища Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=storage), которые можно использовать в приложениях.</span><span class="sxs-lookup"><span data-stu-id="18e04-124">Explore more [sample Java code for Azure Storage](https://azure.microsoft.com/resources/samples/?platform=java&term=storage) you can use in your apps.</span></span>
+<span data-ttu-id="28ed0-124">Ознакомьтесь с другими [примерами кода Java для службы хранилища Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=storage), которые можно использовать в приложениях.</span><span class="sxs-lookup"><span data-stu-id="28ed0-124">Explore more [sample Java code for Azure Storage](https://azure.microsoft.com/resources/samples/?platform=java&term=storage) you can use in your apps.</span></span>
