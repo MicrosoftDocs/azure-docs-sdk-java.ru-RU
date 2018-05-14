@@ -1,11 +1,11 @@
 ---
-title: "Создание веб-приложения Hello World для Azure в Eclipse"
-description: "В этом учебнике показано, как с помощью набора средств Azure для Eclipse создать веб-приложение Hello World для Azure."
+title: Создание веб-приложения Hello World для Azure в Eclipse
+description: В этом учебнике показано, как с помощью набора средств Azure для Eclipse создать веб-приложение Hello World для Azure.
 services: app-service
 documentationcenter: java
 author: selvasingh
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
@@ -14,11 +14,11 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: bec94e65951330c933e0173fd580c3578e759c18
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a>Создание веб-приложения Hello World для Azure в Eclipse
 
@@ -98,7 +98,7 @@ ms.lasthandoff: 02/03/2018
 
    ![Развертывание службы приложений][deploy-app-service]
 
-1. Набор средств отобразит сообщение о состоянии (**Опубликовано**) в **журнале действий Azure** при успешном развертывании веб-приложения, где будет содержаться гиперссылка с URL-адресом развернутого веб-приложения.
+1. Набор средств отобразит сообщение о состоянии (**Опубликовано**) на вкладке **Журнал действий Azure** при успешном развертывании веб-приложения, где будет содержаться гиперссылка с URL-адресом развернутого веб-приложения.
 
    ![Состояние публикации][publish-status]
 
