@@ -1,7 +1,7 @@
 |  |  |
 |---------|---------|
-| <span data-ttu-id="a5564-101">[Запись в концентратор событий с помощью JMS и чтение из Apache Storm][1]</span><span class="sxs-lookup"><span data-stu-id="a5564-101">[Write to Event Hub via JMS and read from Apache Storm][1]</span></span> | <span data-ttu-id="a5564-102">Записывайте данные в концентратор событий с помощью JMS и обрабатывайте события с помощью топологии Apache Storm.</span><span class="sxs-lookup"><span data-stu-id="a5564-102">Write data to Event Hub via JMS and process events using an Apache Storm topology.</span></span> 
-| <span data-ttu-id="a5564-103">[Чтение и запись из концентраторов событий с помощью гибридной топологии .NET и Java Storm][2]</span><span class="sxs-lookup"><span data-stu-id="a5564-103">[Read and write from EventHubs using a hybrid .NET/Java Storm topology][2]</span></span> | <span data-ttu-id="a5564-104">Пример использования гибридной топологии Apache Storm на основе dotnet и Java для работы с концентраторами событий Azure.</span><span class="sxs-lookup"><span data-stu-id="a5564-104">An example of using a hybrid dotnet/Java-based Apache Storm topology to work with Azure Event Hubs.</span></span>
+| [Запись в концентратор событий с помощью JMS и чтение из Apache Storm][1] | Записывайте данные в концентратор событий с помощью JMS и обрабатывайте события с помощью топологии Apache Storm. 
+| [Чтение и запись из концентраторов событий с помощью гибридной топологии .NET и Java Storm][2] | Пример использования гибридной топологии Apache Storm на основе dotnet и Java для работы с концентраторами событий Azure.
 
 [1]: https://azure.microsoft.com/resources/samples/event-hubs-java-storm-sender-jms-receiver/
 [2]: https://azure.microsoft.com/resources/samples/hdinsight-dotnet-java-storm-eventhub/
