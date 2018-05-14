@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: 7468d9b920debc778e7e3d298fbcb913add6afdd
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: ed830b4f7ffa104174205f75ea2923235029ea80
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="service-bus-libraries-for-java"></a>Библиотеки служебной шины для Java
 
@@ -33,15 +33,18 @@ ms.lasthandoff: 04/26/2018
 
 Для разработчиков Java служебная шина предоставляет собственный API с поддержкой корпорации Майкрософт. Служебную шину можно также использовать с библиотеками, совместимыми с AMQP 1.0, например с поставщиком JMS Apache Qpid Proton.
 
-Официальный клиент служебной шины в [формате исходного кода доступен на сайте GitHub](https://github.com/azure/azure-service-bus-java), а двоичные файлы и упакованные файлы с исходным кодом — [в центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22). 
-
-
 ## <a name="client-library"></a>Клиентская библиотека
 
+Официальный клиент служебной шины в [формате исходного кода доступен на сайте GitHub](https://github.com/azure/azure-service-bus-java), а двоичные файлы и упакованные файлы с исходным кодом — [в центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-servicebus%22).
+
+**[Репозиторий с примерами кода](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/) содержит следующие примеры:**
+* Как использовать [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java)
+* Как использовать [TopicClient и SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java)
+* Как использовать сообщения [MessageSender и MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java) из служебной шины
 
 Добавьте зависимость в файл `pom.xml` проекта Maven, чтобы использовать библиотеку в своем проекте. Укажите версию в случае необходимости.
 
-[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.   
+[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.
 
 ```XML
 <dependency>
@@ -50,11 +53,6 @@ ms.lasthandoff: 04/26/2018
     <version>1.0.0</version>
 </dependency>
 ```
-
-## <a name="examples"></a>Примеры
-
-[Репозиторий примеров кода](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/) содержит примеры отправки и получения сообщений из служебной шины с помощью [QueueClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithQueueClient.java), [TopicClient и SubscriptionClient](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/BasicSendReceiveWithTopicSubscriptionClient.java), [MessageSender и MessageReceiver](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/src/com/microsoft/azure/servicebus/samples/SendReceiveWithMessageSenderReceiver.java).
-
 
 ```java
 public class BasicSendReceiveWithQueueClient {
@@ -116,12 +114,19 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [Обзор клиентских API-интерфейсов](/java/api/overview/azure/servicebus/client)
+> [Просмотр клиентских API](/java/api/overview/azure/servicebus/client)
+> [См. дополнительные примеры здесь (дополнительные сведения см. также по ссылкам выше)](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/)
 
 ## <a name="management-api"></a>API управления
 
 Создание пространств имен, разделов, очередей и подписок и управление ими с помощью API управления.
 
+**Несколько примеров см. здесь:**
+* [Управление очередями служебной шины](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
+* [Создание разделов и подписок служебной шины](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)
+
+**Использование API управления в проекте:**
+\
 [Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.  
 
 ```XML
@@ -134,11 +139,5 @@ public class BasicSendReceiveWithQueueClient {
 
 > [!div class="nextstepaction"]
 > [Обзор API-интерфейсов управления](/java/api/overview/azure/servicebus/management)
-
-
-## <a name="examples"></a>Примеры
-
-[Управление очередями служебной шины](https://github.com/Azure-Samples/service-bus-java-manage-queue-with-basic-features)
-[Создание разделов служебной шины и подписка на них](https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features)
 
 Ознакомьтесь с другими [примерами кода Java для служебной шины Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=bus), которые можно использовать в приложениях.
