@@ -1,1 +1,1 @@
-Дополнительные сведения о создании и развертывании приложений Java в Azure см. в [центре разработчиков Java](https://docs.microsoft.com/java/api).
+<span data-ttu-id="d3452-101">Дополнительные сведения о создании и развертывании приложений Java в Azure см. в [центре разработчиков Java](https://docs.microsoft.com/java/api).</span><span class="sxs-lookup"><span data-stu-id="d3452-101">For more information on creating and deploying Java apps on Azure, visit the [Java developer center](https://docs.microsoft.com/java/api).</span></span>

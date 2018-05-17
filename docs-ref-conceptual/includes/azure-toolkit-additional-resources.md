@@ -1,18 +1,18 @@
-Дополнительные сведения о наборах средств Azure для Eclipse и IntelliJ IDE см. по следующим ссылкам:
+<span data-ttu-id="a0b3b-101">Дополнительные сведения о наборах средств Azure для Eclipse и IntelliJ IDE см. по следующим ссылкам:</span><span class="sxs-lookup"><span data-stu-id="a0b3b-101">For more information about the Azure toolkits for the Eclipse and IntelliJ IDEs, see the following links:</span></span>
 
-* [Набор средств Azure для Eclipse](../eclipse/azure-toolkit-for-eclipse.md) 
-  * [Заметки о выпуске](https://github.com/Microsoft/azure-tools-for-java/releases) 
-  * [Установка набора средств Azure для Eclipse](../eclipse/azure-toolkit-for-eclipse-installation.md) 
-  * [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse](../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md) 
-  * [Инструкции по входу для набора средств Azure для Eclipse](../eclipse/azure-toolkit-for-eclipse-sign-in-instructions.md) 
-* [Набор средств Azure для IntelliJ](../intellij/azure-toolkit-for-intellij.md) 
-  * [Заметки о выпуске](https://github.com/Microsoft/azure-tools-for-java/releases) 
-  * [Установка набора средств Azure для IntelliJ](../intellij/azure-toolkit-for-intellij-installation.md) 
-  * [Создание веб-приложения Azure (цен. категория "Базовый") в IntelliJ](../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md) 
-  * [Инструкции по входу для набора средств Azure для IntelliJ](../intellij/azure-toolkit-for-intellij-sign-in-instructions.md) 
+* [<span data-ttu-id="a0b3b-102">Набор средств Azure для Eclipse</span><span class="sxs-lookup"><span data-stu-id="a0b3b-102">Azure Toolkit for Eclipse</span></span>](../eclipse/azure-toolkit-for-eclipse.md) 
+  * [<span data-ttu-id="a0b3b-103">Заметки о выпуске</span><span class="sxs-lookup"><span data-stu-id="a0b3b-103">Release Notes</span></span>](https://github.com/Microsoft/azure-tools-for-java/releases) 
+  * [<span data-ttu-id="a0b3b-104">Установка набора средств Azure для Eclipse</span><span class="sxs-lookup"><span data-stu-id="a0b3b-104">Installing the Azure Toolkit for Eclipse</span></span>](../eclipse/azure-toolkit-for-eclipse-installation.md) 
+  * [<span data-ttu-id="a0b3b-105">Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse</span><span class="sxs-lookup"><span data-stu-id="a0b3b-105">Create a Hello World web app for Azure in Eclipse</span></span>](../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md) 
+  * [<span data-ttu-id="a0b3b-106">Инструкции по входу для набора средств Azure для Eclipse</span><span class="sxs-lookup"><span data-stu-id="a0b3b-106">Sign-in instructions for the Azure Toolkit for Eclipse</span></span>](../eclipse/azure-toolkit-for-eclipse-sign-in-instructions.md) 
+* [<span data-ttu-id="a0b3b-107">Набор средств Azure для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a0b3b-107">Azure Toolkit for IntelliJ</span></span>](../intellij/azure-toolkit-for-intellij.md) 
+  * [<span data-ttu-id="a0b3b-108">Заметки о выпуске</span><span class="sxs-lookup"><span data-stu-id="a0b3b-108">Release Notes</span></span>](https://github.com/Microsoft/azure-tools-for-java/releases) 
+  * [<span data-ttu-id="a0b3b-109">Установка набора средств Azure для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a0b3b-109">Installing the Azure Toolkit for IntelliJ</span></span>](../intellij/azure-toolkit-for-intellij-installation.md) 
+  * [<span data-ttu-id="a0b3b-110">Создание веб-приложения Azure (цен. категория "Базовый") в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a0b3b-110">Create a Hello World web app for Azure in IntelliJ</span></span>](../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md) 
+  * [<span data-ttu-id="a0b3b-111">Инструкции по входу для набора средств Azure для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a0b3b-111">Sign-in instructions for the Azure Toolkit for IntelliJ</span></span>](../intellij/azure-toolkit-for-intellij-sign-in-instructions.md) 
 
-Дополнительные сведения об использовании Java в Azure см. по следующим ссылкам: 
+<span data-ttu-id="a0b3b-112">Дополнительные сведения об использовании Java в Azure см. по следующим ссылкам:</span><span class="sxs-lookup"><span data-stu-id="a0b3b-112">For more information about using Java with Azure, see the following links:</span></span> 
 
-* [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) 
-* [Java Tools for Visual Studio Team Services](https://java.visualstudio.com/) (Инструменты Java для Visual Studio Team Services) 
+* [<span data-ttu-id="a0b3b-113">Azure для разработчиков Java</span><span class="sxs-lookup"><span data-stu-id="a0b3b-113">Azure for Java Developers</span></span>](https://docs.microsoft.com/java/azure/) 
+* <span data-ttu-id="a0b3b-114">[Java Tools for Visual Studio Team Services](https://java.visualstudio.com/) (Инструменты Java для Visual Studio Team Services)</span><span class="sxs-lookup"><span data-stu-id="a0b3b-114">[Java Tools for Visual Studio Team Services](https://java.visualstudio.com/)</span></span> 
 <!-- TODO: Add URLs for Java in VSCode here --> 
