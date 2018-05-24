@@ -1,12 +1,12 @@
 ---
-title: "Управление учетными записями хранения с помощью Azure Explorer для Eclipse"
-description: "Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для Eclipse."
-services: 
+title: Управление учетными записями хранения с помощью Azure Explorer для Eclipse
+description: Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для Eclipse.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 7b493097e94580df42efcfb8c56736e1f179b280
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 310d95436189af09f794154f4c9f0e71c47d88c8
+ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Управление учетными записями хранения с помощью Azure Explorer для Eclipse
 
@@ -32,7 +32,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
 Чтобы создать учетную запись хранения с помощью Azure Explorer, сделайте следующее:
 
-1. Войдите в свою учетную запись Azure, следуя [инструкциям по входу для набора средств Azure для Eclipse].
+1. Войдите в свою учетную запись Azure, следуя инструкциям из статьи [Инструкции по входу для набора средств Azure для Eclipse](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-sign-in-instructions).
 
 1. В представлении **Azure Explorer** разверните узел **Azure**, щелкните правой кнопкой мыши элемент **Учетные записи хранения** и выберите **Создать учетную запись хранения**.
 
