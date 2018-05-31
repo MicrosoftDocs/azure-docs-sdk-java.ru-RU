@@ -1,12 +1,12 @@
 ---
-title: "Развертывание приложения Spring Boot в облаке с помощью Maven и Azure"
-description: "Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure."
+title: Развертывание приложения Spring Boot в облаке с помощью Maven и Azure
+description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 17c358317d1b96521de87f263a92fa2d7c0ff26c
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 82cb0da3ce49fa77f888808af14455bf226d5cb0
+ms.sourcegitcommit: 024b3127daf396a17bd43d57642e3534ae87f120
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "34462754"
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a>Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Для работы с этим руководством требуется следующее.
+Для работы с этим руководством требуется следующее:
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
@@ -43,7 +44,7 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="clone-the-sample-spring-boot-web-app"></a>Клонирование примера "Веб-приложение Spring Boot"
 
-В этом разделе представлены сведения о клонировании готового приложения Spring Boot и его тестировании на локальном компьютере.
+Из этого раздела вы узнаете, как клонировать готовое приложение Spring Boot и протестировать его на локальном компьютере.
 
 1. Откройте командную строку или окно терминала и создайте локальный каталог для размещения приложения Spring Boot, после чего перейдите в этот каталог, например:
    ```shell
@@ -85,7 +86,7 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="create-an-azure-service-principal"></a>Создание субъекта-службы Azure
 
-В этом разделе представлен порядок создания субъекта-службы Azure, которого подключаемый модуль Maven использует при развертывании веб-приложения в Azure.
+Из этого раздела вы узнаете, как создать субъект-службу Azure, с помощью которого подключаемый модуль Maven развертывает веб-приложение в Azure.
 
 1. Откройте окно командной строки.
 
@@ -120,9 +121,9 @@ ms.lasthandoff: 02/03/2018
 
 ## <a name="configure-maven-to-use-your-azure-service-principal"></a>Настройка Maven для использования субъекта-службы
 
-В этом разделе с помощью значений из субъекта службы Azure выполняется настройка проверки подлинности, используемой Maven при развертывании веб-приложения в Azure.
+Из этого раздела вы узнаете, как с помощью значений из субъекта-службы Azure настроить проверку подлинности, с помощью которой Maven развертывает веб-приложение в Azure.
 
-1. Откройте файл Maven `settings.xml` в текстовом редакторе; этот файл может находиться по пути, аналогичному указанному в следующих примерах.
+1. Откройте файл Maven `settings.xml` в текстовом редакторе. Путь к этому файлу может быть похож на следующие примеры:
    * `/etc/maven/settings.xml`
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
@@ -149,7 +150,7 @@ ms.lasthandoff: 02/03/2018
    | `<client>` | Содержит значение `appId` из субъекта-службы. |
    | `<tenant>` | Содержит значение `tenant` из субъекта-службы. |
    | `<key>` | Содержит значение `password` из субъекта-службы. |
-   | `<environment>` | Определяет целевую облачную среду Azure, которой в этом примере является `AZURE`. (Полный список сред см. в документации по [подключаемому модулю Maven для веб-приложений Azure].) |
+   | `<environment>` | Определяет целевую облачную среду Azure, которой в этом примере является `AZURE`. (Полный список сред см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
 
 1. Сохраните и закройте файл *settings.xml*.
 
@@ -191,16 +192,16 @@ ms.lasthandoff: 02/03/2018
    </plugin>
    ```
 
-Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [подключаемому модулю Maven для веб-приложений Azure]. Существует ряд значений, на которые следует обратить внимание в этой статье.
+Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [Подключаемый модуль Maven для веб-приложений Azure]. Существует ряд значений, на которые следует обратить внимание в этой статье.
 
 | Элемент | ОПИСАНИЕ |
 |---|---|
-| `<version>` | Версия [подключаемому модулю Maven для веб-приложений Azure]. Обратитесь к списку версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22), чтобы убедиться, что вы используете актуальную версию. |
+| `<version>` | Версия [Подключаемый модуль Maven для веб-приложений Azure]. Чтобы убедиться, что вы используете актуальную версию, проверьте, какая версия указана в списке версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22). |
 | `<authentication>` | Сведения для проверки подлинности для Azure, в которых в данном примере содержится элемент `<serverId>`, который, в свою очередь, содержит `azure-auth`; Maven использует это значение для поиска значений субъекта-службы Azure в файле Maven *settings.xml*, который вы определили в предыдущем разделе этой статьи. |
 | `<resourceGroup>` | Целевая группа ресурсов, которой в этом примере является `maven-plugin`. Если эта группа ресурсов не существует, она создается во время развертывания. |
 | `<appName>` | Целевое имя веб-приложения. В этом примере целевое имя — `maven-web-app-${maven.build.timestamp}`, к которому в этом примере добавлен суффикс `${maven.build.timestamp}`, чтобы избежать конфликтов. (Метку времени добавлять необязательно; можно указать любую уникальную строку для имени приложения.) |
-| `<region>` | Целевой регион, которым в данном примере является `westus`. (Полный список см. в документации по [подключаемому модулю Maven для веб-приложений Azure].) |
-| `<javaVersion>` | Версия среды выполнения Java для веб-приложения. (Полный список см. в документации по [подключаемому модулю Maven для веб-приложений Azure].) |
+| `<region>` | Целевой регион, которым в данном примере является `westus`. (Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
+| `<javaVersion>` | Версия среды выполнения Java для веб-приложения. (Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
 | `<deploymentType>` | Тип развертывания для веб-приложения. Сейчас поддерживается только `ftp`, хотя поддержка других типов развертывания находится в разработке. |
 | `<resources>` | Ресурсы и целевые назначения, которые Maven использует при развертывании веб-приложения в Azure. В этом примере два элемента `<resource>` указывают, что Maven развернет JAR-файл для веб-приложения и файл *web.config* из проекта Spring Boot. |
 
@@ -255,7 +256,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.
 
-* [подключаемому модулю Maven для веб-приложений Azure]
+* [Подключаемый модуль Maven для веб-приложений Azure]
 
 * [Вход в Azure из интерфейса командной строки Azure](/azure/xplat-cli-connect)
 
@@ -275,11 +276,11 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot Getting Started]: https://github.com/microsoft/gs-spring-boot
 [Spring Framework]: https://spring.io/
-[подключаемому модулю Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
+[Подключаемый модуль Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 
 <!-- IMG List -->
 

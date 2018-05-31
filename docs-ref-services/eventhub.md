@@ -11,11 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: event-hub
-ms.openlocfilehash: 076906ff3cafcb4eba97b0a022e5214d7834517c
-ms.sourcegitcommit: 02b70b9f5d34415c337601f0b818f7e0985fd884
+ms.openlocfilehash: b6646ef27edace4247090e749c9a52cd6a33a82c
+ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34283028"
 ---
 # <a name="azure-event-hub-libraries-for-java"></a>Библиотеки концентратора событий Azure для Java
 
@@ -30,40 +31,44 @@ ms.lasthandoff: 03/22/2018
 
 Отправляйте события в концентратор событий Azure, чтобы использовать и обрабатывать события из концентратора событий с помощью клиентской библиотеки концентраторов событий.
 
-[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.  
-
-```XML
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-eventhubs</artifactId>
-    <version>0.14.3</version>
-</dependency>
-```   
+[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать [клиентскую библиотеку](https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs) в проекте.
+ 
 
 ## <a name="example"></a>Пример
 
 Отправьте событие в концентратор событий.
 
 ```java
-ConnectionStringBuilder connStr = new ConnectionStringBuilder(namespaceName, eventHubName,sasKeyName, sasKey);
+final ConnectionStringBuilder connStr = new ConnectionStringBuilder()
+                                            .setNamespaceName(namespaceName)
+                                            .setEventHubName(eventHubName)
+                                            .setSasKeyName(sasKeyName)
+                                            .setSasKey(sasKey);
+final EventHubClient ehClient = EventHubClient.createSync(connStr.toString());
 
-byte[] payloadBytes = "Test AMQP message from JMS".getBytes("UTF-8");
-EventData sendEvent = new EventData(payloadBytes);
-EventHubClient ehClient = EventHubClient.createFromConnectionStringSync(connStr.toString());
+final byte[] payloadBytes = "Test AMQP message".getBytes("UTF-8");
+final EventData sendEvent = new EventData(payloadBytes);
+
 ehClient.sendSync(sendEvent);
 ```
 
+
 > [!div class="nextstepaction"]
-> [Обзор клиентских API-интерфейсов](/java/api/overview/azure/eventhub/client)
+> [Обзор клиентских API-интерфейсов](/java/api/overview/azure/eventhubs/client)
+
 
 
 ## <a name="samples"></a>Примеры
 
-[Запись в концентратор событий с помощью JMS и чтение из Apache Storm][1]
-[Чтение и запись из концентраторов событий с помощью гибридной топологии .NET и Java Storm][2] 
+[Изучение возможностей API плоскости данных концентратора событий на примерах][1]
 
-[1]: https://github.com/Azure-Samples/event-hubs-java-storm-sender-jms-receiver
-[2]: https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub
+[Запись в концентратор событий с помощью JMS и чтение из Apache Storm][2]
+
+[Чтение и запись в концентраторах событий с помощью гибридной топологии .NET и Java][3] 
+
+[1]: https://github.com/Azure/azure-event-hubs/tree/master/samples/Java
+[2]: https://github.com/Azure-Samples/event-hubs-java-storm-sender-jms-receiver
+[3]: https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub
 
 Ознакомьтесь с [примерами кода Java для концентраторов событий Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=event), которые можно использовать в своих приложениях.
 
