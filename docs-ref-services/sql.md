@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823717"
 ---
 # <a name="azure-sql-database-libraries-for-java"></a><span data-ttu-id="bc7de-104">Библиотеки базы данных SQL Azure для Java</span><span class="sxs-lookup"><span data-stu-id="bc7de-104">Azure SQL Database libraries for Java</span></span>
 

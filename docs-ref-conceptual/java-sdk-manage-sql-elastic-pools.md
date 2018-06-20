@@ -1,6 +1,6 @@
 ---
-title: "Управление эластичными пулами баз данных SQL с помощью Java | Документация Майкрософт"
-description: "Пример кода для создания и настройки баз данных SQL Azure с помощью пакета Azure SDK для Java"
+title: Управление эластичными пулами баз данных SQL с помощью Java | Документация Майкрософт
+description: Пример кода для создания и настройки баз данных SQL Azure с помощью пакета Azure SDK для Java
 author: rloutlaw
 manager: douge
 ms.assetid: 9b461de8-46bc-4650-8e9e-59531f4e2a53
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931120"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a><span data-ttu-id="5d808-103">Управление базами данных SQL Azure в эластичных пулах с помощью приложений Java</span><span class="sxs-lookup"><span data-stu-id="5d808-103">Manage Azure SQL databases in elastic pools from your Java applications</span></span>
 

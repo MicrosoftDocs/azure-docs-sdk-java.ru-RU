@@ -1,12 +1,12 @@
 ---
-title: "Публикация контейнера Docker с помощью набора средств Azure для Eclipse"
-description: "Вы можете узнать, как опубликовать веб-приложение в Microsoft Azure в виде контейнера Docker с помощью набора средств Azure для Eclipse."
-services: 
+title: Публикация контейнера Docker с помощью набора средств Azure для Eclipse
+description: Вы можете узнать, как опубликовать веб-приложение в Microsoft Azure в виде контейнера Docker с помощью набора средств Azure для Eclipse.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954775"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a><span data-ttu-id="3c4c6-103">Публикация веб-приложения в виде контейнера Docker с помощью набора средств Azure для Eclipse</span><span class="sxs-lookup"><span data-stu-id="3c4c6-103">Publish a web app as a Docker container by using the Azure Toolkit for Eclipse</span></span>
 
@@ -164,6 +165,7 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [веб-сайте Docker]: https://www.docker.com/
+[Docker website]: https://www.docker.com/
 
 <!-- IMG List -->
 

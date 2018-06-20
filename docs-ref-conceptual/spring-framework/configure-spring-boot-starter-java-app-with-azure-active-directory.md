@@ -1,12 +1,12 @@
 ---
-title: "Как использовать приложение Spring Boot Starter с Azure Active Directory"
-description: "Сведения о настройке приложения Spring Initializr с помощью начального приложения Azure Active Directory."
+title: Как использовать приложение Spring Boot Starter с Azure Active Directory
+description: Сведения о настройке приложения Spring Initializr с помощью начального приложения Azure Active Directory.
 services: active-directory
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954685"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a><span data-ttu-id="a317b-103">Как использовать приложение Spring Boot Starter с Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="a317b-103">How to use the Spring Boot Starter for Azure Active Directory</span></span>
 
@@ -252,11 +253,16 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Документация Azure Active Directory]: /azure/active-directory/
+[Azure Active Directory Documentation]: /azure/active-directory/
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/

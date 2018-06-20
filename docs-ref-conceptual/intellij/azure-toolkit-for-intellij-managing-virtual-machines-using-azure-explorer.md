@@ -1,12 +1,12 @@
 ---
-title: "Управление виртуальными машинами с помощью Azure Explorer для IntelliJ"
-description: "Вы можете узнать, как управлять виртуальными машинами Azure с помощью Azure Explorer для IntelliJ."
-services: 
+title: Управление виртуальными машинами с помощью Azure Explorer для IntelliJ
+description: Вы можете узнать, как управлять виртуальными машинами Azure с помощью Azure Explorer для IntelliJ.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954875"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="ac156-103">Управление виртуальными машинами с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="ac156-103">Manage virtual machines by using the Azure Explorer for IntelliJ</span></span>
 
@@ -156,10 +157,15 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Инструкции по входу для набора средств Azure для IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Sign-in instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Размеры виртуальных машин Windows в Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
+[Sizes for Windows virtual machines in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Размеры виртуальных машин Linux в Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Sizes for Linux virtual machines in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
 [Цены на виртуальные машины Windows]: /pricing/details/virtual-machines/windows/
+[Windows virtual-machine pricing]: /pricing/details/virtual-machines/windows/
 [Цены на виртуальные машины Linux]: /pricing/details/virtual-machines/linux/
+[Linux virtual-machine pricing]: /pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

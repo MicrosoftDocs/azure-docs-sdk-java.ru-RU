@@ -1,12 +1,12 @@
 ---
-title: 
-description: "В этом руководстве показано, как с помощью набора средств Azure для Eclipse версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure."
+title: ''
+description: В этом руководстве показано, как с помощью набора средств Azure для Eclipse версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure.
 services: app-service
 documentationcenter: java
 author: selvasingh
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954745"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a><span data-ttu-id="4aa36-102">Создание веб-приложения Hello World для Azure с помощью набора средств для Eclipse предыдущих версий</span><span class="sxs-lookup"><span data-stu-id="4aa36-102">Create a Hello World web app for Azure using the legacy toolkit for Eclipse</span></span>
 
@@ -210,9 +211,12 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [средств Azure для Eclipse]: azure-toolkit-for-eclipse.md
+[Azure Toolkit for Eclipse]: azure-toolkit-for-eclipse.md
 [средства Azure для IntelliJ]: ../intellij/azure-toolkit-for-intellij.md
+[Azure Toolkit for IntelliJ]: ../intellij/azure-toolkit-for-intellij.md
 [intellij-hello-world]: ../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md
 [Обзор веб-приложений]: /azure/app-service/app-service-web-overview
+[Web Apps Overview]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
 [Jetty]: http://www.eclipse.org/jetty/
 [Updated Version]: azure-toolkit-for-eclipse-create-hello-world-web-app.md

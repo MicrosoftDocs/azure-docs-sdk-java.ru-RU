@@ -1,12 +1,12 @@
 ---
-title: "Начальные приложения Spring Boot для Azure"
-description: "В этой статье описаны разные начальные приложения Spring Boot Starter, доступные для Azure."
-services: 
+title: Начальные приложения Spring Boot для Azure
+description: В этой статье описаны разные начальные приложения Spring Boot Starter, доступные для Azure.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954445"
 ---
 # <a name="spring-boot-starters-for-azure"></a><span data-ttu-id="e9cde-103">Spring Boot Starter для Azure</span><span class="sxs-lookup"><span data-stu-id="e9cde-103">Spring Boot Starters for Azure</span></span>
 
@@ -237,9 +238,13 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [приложений Spring Boot]: http://projects.spring.io/spring-boot/
+[Spring Boot]: http://projects.spring.io/spring-boot/
 [здесь]: https://docs.microsoft.com/java/azure/spring-framework/
+[Spring on Azure]: https://docs.microsoft.com/java/azure/spring-framework/
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

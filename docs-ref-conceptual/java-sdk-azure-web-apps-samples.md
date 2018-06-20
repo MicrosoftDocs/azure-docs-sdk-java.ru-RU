@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки управления Azure для примеров веб-приложений Java"
-description: "Получите пример кода для создания и обновления веб-приложений Azure, размещенных в службе приложений, используя библиотеки управления Azure для Java."
+title: Библиотеки управления Azure для примеров веб-приложений Java
+description: Получите пример кода для создания и обновления веб-приложений Azure, размещенных в службе приложений, используя библиотеки управления Azure для Java.
 keywords: Azure, Java, SDK, API, Maven, Gradle, web apps, app service
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930900"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-web-apps"></a><span data-ttu-id="b47c1-104">Библиотеки управления Azure для примеров веб-приложений Java</span><span class="sxs-lookup"><span data-stu-id="b47c1-104">Azure management libraries for Java samples for web apps</span></span>
 

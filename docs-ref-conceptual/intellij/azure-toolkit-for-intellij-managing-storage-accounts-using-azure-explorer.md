@@ -1,12 +1,12 @@
 ---
-title: "Управление учетными записями хранения с помощью Azure Explorer для IntelliJ"
-description: "Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для IntelliJ."
-services: 
+title: Управление учетными записями хранения с помощью Azure Explorer для IntelliJ
+description: Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для IntelliJ.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954845"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="47c7c-103">Управление учетными записями хранения с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-103">Manage storage accounts by using the Azure Explorer for IntelliJ</span></span>
 
@@ -114,14 +115,22 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Инструкции по входу для набора средств Azure для IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Sign-in instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Введение в службу хранилища Microsoft Azure]: /azure/storage/storage-introduction
+[Introduction to Microsoft Azure Storage]: /azure/storage/storage-introduction
 [Об учетных записях хранения Azure]: /azure/storage/storage-create-storage-account
+[About Azure storage accounts]: /azure/storage/storage-create-storage-account
 [Репликация службы хранилища Azure]: /azure/storage/storage-redundancy
+[Azure storage replication]: /azure/storage/storage-redundancy
 [Целевые показатели масштабируемости и производительности службы хранилища Azure]: /azure/storage/storage-scalability-targets
+[Azure storage scalability and Performance Targets]: /azure/storage/storage-scalability-targets
 [Naming and Referencing Containers, Blobs, and Metadata]: http://go.microsoft.com/fwlink/?LinkId=255555 (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них)
+[Naming and referencing containers, blobs, and metadata]: http://go.microsoft.com/fwlink/?LinkId=255555
 
 [Размеры учетных записей хранения Windows в Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
+[Sizes for Windows storage accounts in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Размеры учетных записей хранения Linux в Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Sizes for Linux storage accounts in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
 [Windows storage-account pricing]: /pricing/details/virtual-machines/windows/ (Цены на учетные записи хранения Windows)
 [Linux storage-account pricing]: /pricing/details/virtual-machines/linux/ (Цены на учетные записи хранения Linux)
 

@@ -1,11 +1,11 @@
 ---
-title: "Развертывание веб-приложения Java в Azure за пять минут с помощью Maven | Документация Майкрософт"
-description: "Создание и развертывание приложения Java, созданного с помощью Maven, в Azure"
+title: Развертывание веб-приложения Java в Azure за пять минут с помощью Maven | Документация Майкрософт
+description: Создание и развертывание приложения Java, созданного с помощью Maven, в Azure
 services: app-service\web
-documentationcenter: 
+documentationcenter: ''
 author: rloutlaw
 manager: douge
-editor: 
+editor: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
@@ -18,6 +18,7 @@ ms.sourcegitcommit: 30d502b3150fa14bcc1251f5f88c7c0dd83e531e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/12/2017
+ms.locfileid: "22033636"
 ---
 # <a name="create-and-deploy-a-java-app-to-azure-with-maven"></a><span data-ttu-id="01281-103">Создание и развертывание приложения Java в Azure с помощью Maven</span><span class="sxs-lookup"><span data-stu-id="01281-103">Create and deploy a Java app to Azure with Maven</span></span>
 

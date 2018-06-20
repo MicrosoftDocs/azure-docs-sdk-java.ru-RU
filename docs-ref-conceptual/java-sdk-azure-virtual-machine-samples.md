@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки управления Azure для примеров виртуальных машин Java"
-description: "Получите пример кода для создания и обновления виртуальных машин Azure с помощью библиотек управления Azure для Java."
+title: Библиотеки управления Azure для примеров виртуальных машин Java
+description: Получите пример кода для создания и обновления виртуальных машин Azure с помощью библиотек управления Azure для Java.
 keywords: Azure, Java, SDK, API, Maven, Gradle, virtual machines
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930810"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-virtual-machines"></a><span data-ttu-id="c586f-104">Библиотеки управления Azure для примеров Java для виртуальных машин</span><span class="sxs-lookup"><span data-stu-id="c586f-104">Azure management libraries for Java samples for virtual machines</span></span>
 

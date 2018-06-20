@@ -1,6 +1,6 @@
 ---
-title: "Заметки о выпуске библиотек управления Azure для Java | Документация Майкрософт"
-description: "Узнайте о новых возможностях и критически важных изменениях в библиотеках управления Azure для Java"
+title: Заметки о выпуске библиотек управления Azure для Java | Документация Майкрософт
+description: Узнайте о новых возможностях и критически важных изменениях в библиотеках управления Azure для Java
 keywords: Azure, Java, API, reference, notes, updates, deprecate
 author: routlaw
 manager: douge
@@ -15,6 +15,7 @@ ms.sourcegitcommit: acc83bb537d77568b2a5427479d6354d6ae30885
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/03/2017
+ms.locfileid: "23982166"
 ---
 # <a name="release-notes"></a><span data-ttu-id="9245a-104">Заметки о выпуске</span><span class="sxs-lookup"><span data-stu-id="9245a-104">Release Notes</span></span> 
 

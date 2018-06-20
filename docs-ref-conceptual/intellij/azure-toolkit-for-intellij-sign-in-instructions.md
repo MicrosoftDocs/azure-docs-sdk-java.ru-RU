@@ -1,12 +1,12 @@
 ---
-title: "Инструкции по входу для набора средств Azure для IntelliJ"
-description: "Сведения о входе в Microsoft Azure с помощью набора средств Azure для IntelliJ."
-services: 
+title: Инструкции по входу для набора средств Azure для IntelliJ
+description: Сведения о входе в Microsoft Azure с помощью набора средств Azure для IntelliJ.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954395"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a><span data-ttu-id="c7d4d-103">Инструкции по входу для набора средств Azure для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="c7d4d-103">Sign-in instructions for the Azure Toolkit for IntelliJ</span></span>
 

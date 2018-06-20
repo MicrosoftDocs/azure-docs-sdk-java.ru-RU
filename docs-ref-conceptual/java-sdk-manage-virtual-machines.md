@@ -1,6 +1,6 @@
 ---
-title: "Управление виртуальными машинами Azure с помощью Java | Документация Майкрософт"
-description: "Пример кода для управления виртуальными машинами Azure с помощью пакета Azure SDK для Java"
+title: Управление виртуальными машинами Azure с помощью Java | Документация Майкрософт
+description: Пример кода для управления виртуальными машинами Azure с помощью пакета Azure SDK для Java
 author: rloutlaw
 manager: douge
 ms.assetid: 88629aee-6279-433e-a08b-4f8e290446d0
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931170"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a><span data-ttu-id="fb7b7-103">Управление виртуальными машинами Azure из приложений Java</span><span class="sxs-lookup"><span data-stu-id="fb7b7-103">Manage Azure virtual machines from your Java applications</span></span>
 

@@ -1,12 +1,12 @@
 ---
-title: "Управление кэшами Redis с помощью Azure Explorer для Eclipse"
-description: "Узнайте, как управлять кэшами Redis для Azure с помощью Azure Explorer для Eclipse."
-services: 
+title: Управление кэшами Redis с помощью Azure Explorer для Eclipse
+description: Узнайте, как управлять кэшами Redis для Azure с помощью Azure Explorer для Eclipse.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954825"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a><span data-ttu-id="bbce9-103">Управление кэшами Redis с помощью Azure Explorer для Eclipse</span><span class="sxs-lookup"><span data-stu-id="bbce9-103">Managing Redis Caches using the Azure Explorer for Eclipse</span></span>
 
@@ -101,9 +102,13 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
+[Redis Cache Pricing]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
+[Azure Redis Cache]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache/
+[Redis Cache Documentation]: /azure/redis-cache/
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure
+[How to configure Azure Redis Cache]: /azure/redis-cache/cache-configure
 
 <!-- IMG List -->
 

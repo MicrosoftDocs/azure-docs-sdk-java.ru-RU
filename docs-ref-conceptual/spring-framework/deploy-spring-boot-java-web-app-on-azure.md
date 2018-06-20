@@ -1,12 +1,12 @@
 ---
-title: "Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure"
-description: "В этом руководстве приводятся пошаговые инструкции для разработчиков по развертыванию веб-приложения Spring Boot Getting Started в облаке с помощью службы приложений Azure."
+title: Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure
+description: В этом руководстве приводятся пошаговые инструкции для разработчиков по развертыванию веб-приложения Spring Boot Getting Started в облаке с помощью службы приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: asirveda;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954527"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a><span data-ttu-id="bedcf-103">Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure</span><span class="sxs-lookup"><span data-stu-id="bedcf-103">Deploy a Spring Boot application to the cloud with Azure App Service</span></span>
 
@@ -209,17 +210,25 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [службе приложений Azure]: https://azure.microsoft.com/services/app-service/
+[Azure App Service]: https://azure.microsoft.com/services/app-service/
 [Azure Container Service]: https://azure.microsoft.com/services/container-service/
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [портал Azure]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 [Настройка веб-приложений в службе приложений Azure]: /azure/app-service/web-sites-configure
+[Configure web apps in Azure App Service]: /azure/app-service/web-sites-configure
 [Развертывание приложения в службе приложений Azure с помощью FTP или FTPS]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
+[Deploy your app to Azure App Service using FTP/S]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
