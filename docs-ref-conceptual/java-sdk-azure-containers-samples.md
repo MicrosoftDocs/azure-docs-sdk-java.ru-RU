@@ -1,6 +1,6 @@
 ---
-title: "Примеры Java для решения \"Служба контейнеров Azure\""
-description: "Получите пример кода для работы с решением \"Служба контейнеров Azure\" из приложений Java."
+title: Примеры Java для решения "Служба контейнеров Azure"
+description: Получите пример кода для работы с решением "Служба контейнеров Azure" из приложений Java.
 keywords: Azure, Java, SDK, API, Kubernetes, containers, Docker, ACS, registry, images
 author: rloutlaw
 ms.author: routlaw
@@ -16,6 +16,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930830"
 ---
 # <a name="java-samples-for-azure-container-service"></a>Примеры Java для решения "Служба контейнеров Azure"
 

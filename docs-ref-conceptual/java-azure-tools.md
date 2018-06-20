@@ -1,6 +1,6 @@
 ---
-title: "Средства для разработчиков Java в Azure | Документация Майкрософт"
-description: "Средства интеграции IDE, эмуляторы, обозреватели ресурсов и интерфейсы командной строки для разработчиков Java, работающих со службами Azure."
+title: Средства для разработчиков Java в Azure | Документация Майкрософт
+description: Средства интеграции IDE, эмуляторы, обозреватели ресурсов и интерфейсы командной строки для разработчиков Java, работающих со службами Azure.
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26288313"
 ---
 # <a name="azure-tools-for-java-developers"></a>Средства Azure для разработчиков Java
 

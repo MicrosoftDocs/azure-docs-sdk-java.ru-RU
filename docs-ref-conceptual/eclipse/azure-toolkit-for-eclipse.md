@@ -1,11 +1,11 @@
 ---
-title: "Набор средств Azure для Eclipse"
-description: "Узнайте, как набор средств Azure для подключаемого модуля Eclipse может помочь в создании и развертывании облачных приложений в Azure."
-services: 
+title: Набор средств Azure для Eclipse
+description: Узнайте, как набор средств Azure для подключаемого модуля Eclipse может помочь в создании и развертывании облачных приложений в Azure.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: ef2f3839-2549-4471-9b53-0deb7f4c128b
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954215"
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
 

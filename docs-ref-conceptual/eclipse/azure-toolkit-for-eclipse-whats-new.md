@@ -1,11 +1,11 @@
 ---
-title: "Новые возможности набора средств Azure для Eclipse"
-description: "Сведения о новых функциях набора средств Azure для Eclipse."
-services: 
+title: Новые возможности набора средств Azure для Eclipse
+description: Сведения о новых функциях набора средств Azure для Eclipse.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 16b066ea-aae7-4c30-9a12-fa0c3711b93e
 ms.author: robmcm;asirveda;martinsawicki
 ms.date: 02/01/2018
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954675"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Новые возможности набора средств Azure для Eclipse
 

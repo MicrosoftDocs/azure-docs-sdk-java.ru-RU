@@ -1,6 +1,6 @@
 ---
-title: "Управление масштабируемыми наборами виртуальных машин с помощью Java | Документация Майкрософт"
-description: "Пример кода для управления масштабируемыми наборами виртуальных машин Azure с помощью пакета Azure SDK для Java"
+title: Управление масштабируемыми наборами виртуальных машин с помощью Java | Документация Майкрософт
+description: Пример кода для управления масштабируемыми наборами виртуальных машин Azure с помощью пакета Azure SDK для Java
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931160"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Управление масштабируемыми наборами виртуальных машин Azure из приложений Java
 

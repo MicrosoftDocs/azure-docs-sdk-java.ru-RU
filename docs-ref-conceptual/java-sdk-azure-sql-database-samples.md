@@ -1,6 +1,6 @@
 ---
-title: "Библиотеки управления Azure для примеров баз данных SQL для Java"
-description: "Получите пример кода для создания и обновления баз данных SQL Azure с помощью библиотек управления Azure для Java."
+title: Библиотеки управления Azure для примеров баз данных SQL для Java
+description: Получите пример кода для создания и обновления баз данных SQL Azure с помощью библиотек управления Azure для Java.
 keywords: Azure, Java, SDK, API, Maven, Gradle, SQL database
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930780"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-sql-database"></a>Библиотеки управления Azure для примеров кода Java для базы данных SQL
 

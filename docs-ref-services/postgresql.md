@@ -1,6 +1,6 @@
 ---
-title: "База данных Azure для библиотек PostgreSQL для Java"
-description: "Справочная документация по клиентским библиотекам для базы данных Azure для PostgreSQL для Java"
+title: База данных Azure для библиотек PostgreSQL для Java
+description: Справочная документация по клиентским библиотекам для базы данных Azure для PostgreSQL для Java
 keywords: Azure, Java, SDK, API, SQL, database, PostGres, PostgreSQL
 author: rloutlaw
 ms.author: routlaw
@@ -16,6 +16,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930980"
 ---
 # <a name="azure-database-for-postgresql-libraries-for-java"></a>База данных Azure для библиотек PostgreSQL для Java
 

@@ -1,12 +1,12 @@
 ---
-title: "Как использовать приложение Spring Boot Starter с Azure Active Directory"
-description: "Сведения о настройке приложения Spring Initializr с помощью начального приложения Azure Active Directory."
+title: Как использовать приложение Spring Boot Starter с Azure Active Directory
+description: Сведения о настройке приложения Spring Initializr с помощью начального приложения Azure Active Directory.
 services: active-directory
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954685"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Как использовать приложение Spring Boot Starter с Azure Active Directory
 

@@ -1,12 +1,12 @@
 ---
-title: "Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8"
-description: "В этом руководстве содержатся пошаговые инструкции по развертыванию приложения Spring Boot для Apache Maven с помощью подключаемого модуля Maven Fabric8 в Microsoft Azure."
+title: Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8
+description: В этом руководстве содержатся пошаговые инструкции по развертыванию приложения Spring Boot для Apache Maven с помощью подключаемого модуля Maven Fabric8 в Microsoft Azure.
 services: container-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: yuwzho;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,10 +19,11 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954895"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8
 
-**[Fabric8]** — это решение с открытым кодом на базе **[Kubernetes]**, помогающее разработчикам создавать приложения в контейнерах Linux.
+**[Fabric8]**  — это решение с открытым кодом на базе **[Kubernetes]**, помогающее разработчикам создавать приложения в контейнерах Linux.
 
 В этом руководстве рассматривается применение подключаемого модуля Fabric8 в Maven для разработки и развертывания приложения на узле Linux в [службе контейнеров Azure].
 

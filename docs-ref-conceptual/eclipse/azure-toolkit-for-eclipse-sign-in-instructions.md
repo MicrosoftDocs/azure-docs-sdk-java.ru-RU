@@ -19,6 +19,7 @@ ms.sourcegitcommit: 8230cf6b15ac51a9f8a209e9b76411a0385029aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34216028"
 ---
 # <a name="azure-sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Инструкции по входу для набора средств Azure для Eclipse
 

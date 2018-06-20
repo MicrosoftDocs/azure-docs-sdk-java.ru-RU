@@ -1,11 +1,11 @@
 ---
-title: "Установка набора средств Azure для IntelliJ"
-description: "Узнайте, как установить набор средств Azure для подключаемого модуля IntelliJ, чтобы создавать и развертывать облачные приложения в Azure."
-services: 
+title: Установка набора средств Azure для IntelliJ
+description: Узнайте, как установить набор средств Azure для подключаемого модуля IntelliJ, чтобы создавать и развертывать облачные приложения в Azure.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
 ms.author: robmcm
 ms.date: 02/01/2018
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954175"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>Установка набора средств Azure для IntelliJ
 

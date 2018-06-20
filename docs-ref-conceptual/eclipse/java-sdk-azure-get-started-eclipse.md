@@ -1,12 +1,12 @@
 ---
-title: "Начало работы с Azure для Java с помощью Eclipse"
-description: "Базовое использование библиотек Azure для Java с вашей подпиской Azure."
+title: Начало работы с Azure для Java с помощью Eclipse
+description: Базовое использование библиотек Azure для Java с вашей подпиской Azure.
 keywords: Azure, Java, SDK, API, authenticate, get-started
-services: 
+services: ''
 documentationcenter: java
 author: roygara
 manager: timlt
-editor: 
+editor: ''
 ms.author: v-rogara
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065521"
 ---
 # <a name="get-started-with-the-azure-libraries-using-eclipse"></a>Начало работы с библиотеками Azure с помощью Eclipse
 

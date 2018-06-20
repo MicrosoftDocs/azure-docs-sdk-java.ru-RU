@@ -1,6 +1,6 @@
 ---
-title: "Руководство разработчика Java по библиотекам управления Azure"
-description: "Шаблоны и способы использования библиотек управления Java для управления облачными ресурсами в Azure с помощью Java."
+title: Руководство разработчика Java по библиотекам управления Azure
+description: Шаблоны и способы использования библиотек управления Java для управления облачными ресурсами в Azure с помощью Java.
 keywords: Azure, Java, SDK, API, Maven, Gradle, authentication, active directory, service principal
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26184648"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Шаблоны и рекомендации по разработке с помощью библиотек Azure для Java 
 

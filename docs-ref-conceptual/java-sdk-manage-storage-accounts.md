@@ -1,6 +1,6 @@
 ---
-title: "Управление учетными записями хранения Azure с помощью Java | Документация Майкрософт"
-description: "Пример кода для управления учетными записями хранения Azure с помощью пакета Azure SDK для Java"
+title: Управление учетными записями хранения Azure с помощью Java | Документация Майкрософт
+description: Пример кода для управления учетными записями хранения Azure с помощью пакета Azure SDK для Java
 author: rloutlaw
 manager: douge
 ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931060"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Управление учетными записями хранения Azure из приложений Java
 

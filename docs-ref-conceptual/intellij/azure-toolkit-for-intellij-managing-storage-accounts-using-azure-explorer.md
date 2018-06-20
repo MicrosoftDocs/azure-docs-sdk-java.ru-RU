@@ -1,12 +1,12 @@
 ---
-title: "Управление учетными записями хранения с помощью Azure Explorer для IntelliJ"
-description: "Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для IntelliJ."
-services: 
+title: Управление учетными записями хранения с помощью Azure Explorer для IntelliJ
+description: Вы можете узнать, как управлять учетными записями хранения Azure с помощью Azure Explorer для IntelliJ.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954845"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Управление учетными записями хранения с помощью Azure Explorer для IntelliJ
 

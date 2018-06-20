@@ -1,12 +1,12 @@
 ---
-title: "Создание веб-приложения Hello World для Azure с помощью набора средств для IntelliJ предыдущих версий"
-description: "В этом руководстве показано, как с помощью набора средств Azure для IntelliJ версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure."
+title: Создание веб-приложения Hello World для Azure с помощью набора средств для IntelliJ предыдущих версий
+description: В этом руководстве показано, как с помощью набора средств Azure для IntelliJ версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure.
 services: app-service
 documentationcenter: java
 author: selvasingh
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954785"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>Создание веб-приложения Hello World для Azure с помощью набора средств для IntelliJ предыдущих версий
 

@@ -1,6 +1,6 @@
 ---
-title: "Начало работы с библиотеками Azure для Java"
-description: "Сведения о создании, подключении и использовании облачных ресурсов Azure в приложениях Java."
+title: Начало работы с библиотеками Azure для Java
+description: Сведения о создании, подключении и использовании облачных ресурсов Azure в приложениях Java.
 keywords: Azure, Java, SDK, API, authenticate, get-started
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065531"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Разработка в облаке с помощью библиотек Azure для Java
 

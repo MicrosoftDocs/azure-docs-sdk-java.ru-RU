@@ -1,12 +1,12 @@
 ---
-title: "Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure"
-description: "В этом руководстве приводятся пошаговые инструкции для разработчиков по развертыванию веб-приложения Spring Boot Getting Started в облаке с помощью службы приложений Azure."
+title: Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure
+description: В этом руководстве приводятся пошаговые инструкции для разработчиков по развертыванию веб-приложения Spring Boot Getting Started в облаке с помощью службы приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: asirveda;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954527"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure
 

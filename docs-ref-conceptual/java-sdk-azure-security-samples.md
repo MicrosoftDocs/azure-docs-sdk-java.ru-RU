@@ -1,6 +1,6 @@
 ---
-title: "Примеры Java для Azure Active Directory"
-description: "Получите пример кода для работы с Azure Active Directory из приложений Java."
+title: Примеры Java для Azure Active Directory
+description: Получите пример кода для работы с Azure Active Directory из приложений Java.
 keywords: Azure, Java, SDK, API, active directory, Azure AD, AAD, security, log in, authentication, SSO, SAML
 author: rloutlaw
 ms.author: routlaw
@@ -16,6 +16,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930800"
 ---
 # <a name="java-samples-for-azure-active-directory"></a>Примеры Java для Azure Active Directory
 

@@ -1,6 +1,6 @@
 ---
-title: "Управление виртуальными сетями Azure с помощью Java | Документация Майкрософт"
-description: "Пример кода для управления виртуальными сетями Azure из кода Java"
+title: Управление виртуальными сетями Azure с помощью Java | Документация Майкрософт
+description: Пример кода для управления виртуальными сетями Azure из кода Java
 author: rloutlaw
 manager: douge
 ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931090"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Создание виртуальных сетей Azure и управление ими с помощью приложений Java
 
