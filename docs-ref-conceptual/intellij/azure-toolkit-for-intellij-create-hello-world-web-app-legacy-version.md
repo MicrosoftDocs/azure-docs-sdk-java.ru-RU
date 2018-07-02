@@ -14,20 +14,20 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: ebe98a604b52dc9a4b5a47cbf65a4c68a5c86fe3
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: efc1dffa248987772827bbe7bc0caa9f10a0b4ef
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954785"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090787"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>Создание веб-приложения Hello World для Azure с помощью набора средств для IntelliJ предыдущих версий
 
-В этом руководстве показано, как создать базовое приложение Hello World для Azure и развернуть его как веб-приложение с помощью [средств Azure для IntelliJ] версии 3.0.6 (или более ранней).
+В этом руководстве показано, как создать базовое приложение Hello World для Azure и развернуть его как веб-приложение с помощью [Набор средств Azure для IntelliJ] версии 3.0.6 (или более ранней).
 
 > [!NOTE]
 >
-> Дополнительные сведения о версии, в которой используются [средства Azure для Eclipse], см. в статье [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse][eclipse-hello-world].
+> Дополнительные сведения о версии, в которой используются [Набор средств Azure для Eclipse], см. в статье [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse][eclipse-hello-world].
 >
 
 > [!IMPORTANT]
@@ -161,14 +161,14 @@ ms.locfileid: "28954785"
 
    h. (Необязательно.) По умолчанию Azure автоматически развернет последний дистрибутив Java 8 в ваш контейнер веб-приложения в качестве виртуальной машины Java. Тем не менее можно выбрать другую версию и дистрибутив виртуальной машины Java. Для этого выполните следующие действия.
       
-      * Щелкните вкладку **JDK** в диалоговом окне **New Web App Container** (Создание контейнера веб-приложения).
-      * Можно выбрать один из следующих вариантов:
+   * Щелкните вкладку **JDK** в диалоговом окне **New Web App Container** (Создание контейнера веб-приложения).
+   * Можно выбрать один из следующих вариантов:
         
-         * Развернуть пакет JDK по умолчанию, предлагаемый в Azure.
-         * Развернуть сторонний пакет JDK из раскрывающегося списка дополнительных пакетов JDK, доступных в Azure.
-         * Развернуть пользовательский пакет JDK, который должен быть упакован в виде ZIP-файла и быть общедоступным или находиться в учетной записи хранения Azure.
+      * Развернуть пакет JDK по умолчанию, предлагаемый в Azure.
+      * Развернуть сторонний пакет JDK из раскрывающегося списка дополнительных пакетов JDK, доступных в Azure.
+      * Развернуть пользовательский пакет JDK, который должен быть упакован в виде ZIP-файла и быть общедоступным или находиться в учетной записи хранения Azure.
         
-      ![Вкладка JDK в окне создания контейнера приложения][11b]
+     ![Вкладка JDK в окне создания контейнера приложения][11b]
 
    i. После завершения всех описанных выше действий диалоговое окно "Новый контейнер веб-приложения" должно выглядеть примерно так, как показано ниже:
       
@@ -241,8 +241,8 @@ ms.locfileid: "28954785"
 
 <!-- URL List -->
 
-[средств Azure для IntelliJ]: azure-toolkit-for-intellij.md
-[средства Azure для Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
+[Набор средств Azure для IntelliJ]: azure-toolkit-for-intellij.md
+[Набор средств Azure для Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Обзор веб-приложений]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/

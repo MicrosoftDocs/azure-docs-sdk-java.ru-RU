@@ -14,12 +14,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1dda697cac80a6cad3ebbbbf8a5a4f18b515dfd8
-ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
+ms.openlocfilehash: a2734fc08f2f59f64ba6c6c20ff18d75070b68d5
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33883687"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090717"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
 
@@ -101,6 +101,7 @@ ms.locfileid: "33883687"
    az group create --name wingtiptoysresources --location westus
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для группы ресурсов. |
@@ -121,11 +122,12 @@ ms.locfileid: "33883687"
    }
    ```
 
-1. Создайте субъект-службу Azure, связанный с зарегистрированным приложением, например:
+2. Создайте субъект-службу Azure, связанный с зарегистрированным приложением, например:
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Определяет имя пользователя для субъекта-службы Azure. |
@@ -142,11 +144,12 @@ ms.locfileid: "33883687"
    }
    ```
 
-1. Создайте хранилище ключей в группе ресурсов, например:
+3. Создайте хранилище ключей в группе ресурсов, например:
    ```azurecli
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для хранилища ключей. |
@@ -163,11 +166,12 @@ ms.locfileid: "33883687"
    "https://wingtiptoyskeyvault.vault.azure.net"
    ```
 
-1. Настройте политику доступа для ранее созданного субъекта-службы Azure, например:
+4. Настройте политику доступа для ранее созданного субъекта-службы Azure, например:
    ```azurecli
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает имя используемого хранилища ключей (см. выше). |
@@ -192,11 +196,12 @@ ms.locfileid: "33883687"
    }
    ```
 
-1. Сохраните секрет в новом хранилище ключей, например:
+5. Сохраните секрет в новом хранилище ключей, например:
    ```azurecli
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `vault-name` | Указывает имя используемого хранилища ключей (см. выше). |
@@ -230,24 +235,26 @@ ms.locfileid: "33883687"
 
 1. Распакуйте архив с файлами проекта Spring Boot, которые вы скачали в каталог.
 
-1. В папке *main/src/ресурсы* проекта откройте файл *application.properties* в текстовом редакторе.
+2. В папке *main/src/ресурсы* проекта откройте файл *application.properties* в текстовом редакторе.
 
-1. Добавьте значения для хранилища ключей, используя ранее выполненные действия, например:
+3. Добавьте значения для хранилища ключей, используя ранее выполненные действия, например:
    ```yaml
    azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
    Описание
-   | Параметр | ОПИСАНИЕ |
-   |---|---|
-   | `azure.keyvault.uri` | Указывает URI, полученный при создании хранилища ключей. |
-   | `azure.keyvault.client-id` | Указывает GUID *appId*, полученный при создании субъекта-службы. |
+
+   |          Параметр          |                                 ОПИСАНИЕ                                 |
+   |-----------------------------|-----------------------------------------------------------------------------|
+   |    `azure.keyvault.uri`     |           Указывает URI, полученный при создании хранилища ключей.           |
+   | `azure.keyvault.client-id`  |  Указывает GUID *appId*, полученный при создании субъекта-службы.   |
    | `azure.keyvault.client-key` | Указывает GUID *password*, полученный при создании субъекта-службы. |
 
-1. Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.
 
-1. Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:
+4. Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.
+
+5. Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:
 
    ```java
    package com.wingtiptoys.secrets;
@@ -274,7 +281,7 @@ ms.locfileid: "33883687"
    ```
    Этот пример кода извлекает строку подключения из хранилища ключей и отображает ее в командной строке.
 
-1. Сохраните и закройте файл Java.
+6. Сохраните и закройте файл Java.
 
 ## <a name="build-and-test-your-app"></a>Создание и тестирование приложения
 
@@ -302,7 +309,7 @@ ms.locfileid: "33883687"
 
 См. дополнительные сведения об использовании Azure Key Vault:
 
-* [Документация по Key Vault].
+* [Документация по хранилищу ключей].
 
 * [Приступая к работе с хранилищем ключей Azure]
 
@@ -312,16 +319,16 @@ ms.locfileid: "33883687"
 
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
 
 <!-- URL List -->
 
-[Документация по Key Vault]: /azure/key-vault/
+[Документация по хранилищу ключей]: /azure/key-vault/
 [Приступая к работе с хранилищем ключей Azure]: /azure/key-vault/key-vault-get-started
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/

@@ -1,12 +1,12 @@
 ---
-title: "Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure"
-description: "Сведения о развертываний приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure."
+title: Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
+description: Сведения о развертываний приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm;kevinzha
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 515cf350f32fc8252644e7022846cc2c9d264ed0
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: d9f2cf5c15bb8f990c8e82fddd6455ecbf8cc02c
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090767"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
 
@@ -64,7 +65,7 @@ ms.lasthandoff: 02/03/2018
 
 1. Клонируйте образец проекта [Spring Boot on Docker Getting Started] (Запуск Spring Boot в Docker) в созданный каталог, например:
    ```shell
-   git clone https://github.com/microsoft/gs-spring-boot-docker
+   git clone https://github.com/spring-guides/gs-spring-boot-docker
    ```
 
 1. Перейдите в каталог готового проекта, например:
@@ -95,23 +96,25 @@ ms.lasthandoff: 02/03/2018
 
 1. Откройте окно командной строки.
 
-1. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
+2. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
    ```shell
    az login
    ```
    Для завершения процесса входа следуйте инструкциям.
 
-1. Создайте субъект-службу Azure.
+3. Создайте субъект-службу Azure.
    ```shell
    az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
    ```
    Описание
-   | Параметр | ОПИСАНИЕ |
-   |---|---|
-   | `uuuuuuuu` | Определяет имя пользователя для субъекта-службы. |
-   | `pppppppp` | Определяет пароль для субъекта-службы. |
 
-1. В ответ Azure предоставит код JSON, аналогичный приведенному ниже.
+   | Параметр  |                    ОПИСАНИЕ                     |
+   |------------|----------------------------------------------------|
+   | `uuuuuuuu` | Определяет имя пользователя для субъекта-службы. |
+   | `pppppppp` | Определяет пароль для субъекта-службы.  |
+
+
+4. В ответ Azure предоставит код JSON, аналогичный приведенному ниже.
    ```json
    {
       "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
@@ -137,7 +140,7 @@ ms.lasthandoff: 02/03/2018
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
 
-1. Добавьте параметры субъекта-службы Azure из предыдущего раздела этого учебника в коллекцию `<servers>` в файле *settings.xml*, например:
+2. Добавьте параметры субъекта-службы Azure из предыдущего раздела этого учебника в коллекцию `<servers>` в файле *settings.xml*, например:
 
    ```xml
    <servers>
@@ -153,15 +156,17 @@ ms.lasthandoff: 02/03/2018
    </servers>
    ```
    Описание
-   | Элемент | ОПИСАНИЕ |
-   |---|---|
-   | `<id>` | Задает уникальное имя, которое Maven использует для поиска параметров безопасности при развертывании веб-приложения в Azure. |
-   | `<client>` | Содержит значение `appId` из субъекта-службы. |
-   | `<tenant>` | Содержит значение `tenant` из субъекта-службы. |
-   | `<key>` | Содержит значение `password` из субъекта-службы. |
-   | `<environment>` | Определяет целевую облачную среду Azure, которой в этом примере является `AZURE`. (Полный список сред см. в документации по [подключаемому модулю Maven для веб-приложений Azure].) |
 
-1. Сохраните и закройте файл *settings.xml*.
+   |     Элемент     |                                                                                   ОПИСАНИЕ                                                                                   |
+   |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |     `<id>`      |                                Задает уникальное имя, которое Maven использует для поиска параметров безопасности при развертывании веб-приложения в Azure.                                |
+   |   `<client>`    |                                                             Содержит значение `appId` из субъекта-службы.                                                             |
+   |   `<tenant>`    |                                                            Содержит значение `tenant` из субъекта-службы.                                                             |
+   |     `<key>`     |                                                           Содержит значение `password` из субъекта-службы.                                                            |
+   | `<environment>` | Определяет целевую облачную среду Azure, которой в этом примере является `AZURE`. (Полный список сред см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
+
+
+3. Сохраните и закройте файл *settings.xml*.
 
 ## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>НЕОБЯЗАТЕЛЬНО. Развертывание локального файла Docker в центр Docker
 
@@ -185,7 +190,7 @@ ms.lasthandoff: 02/03/2018
       mvn clean package docker:build
       docker push
       ```
-   
+
    * Если установлен [подключаемый модуль Docker для Maven], можно автоматически создать и отправить образа контейнера в центр Docker с помощью параметра `-DpushImage`.
       ```shell
       mvn clean package docker:build -DpushImage
@@ -220,15 +225,15 @@ ms.lasthandoff: 02/03/2018
    </plugin>
    ```
 
-Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [подключаемому модулю Maven для веб-приложений Azure]. Существует ряд значений, на которые следует обратить внимание в этой статье.
+Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [Подключаемый модуль Maven для веб-приложений Azure]. Существует ряд значений, на которые следует обратить внимание в этой статье.
 
 | Элемент | ОПИСАНИЕ |
 |---|---|
-| `<version>` | Версия [подключаемому модулю Maven для веб-приложений Azure]. Обратитесь к списку версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22), чтобы убедиться, что вы используете актуальную версию. |
+| `<version>` | Версия [Подключаемый модуль Maven для веб-приложений Azure]. Обратитесь к списку версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22), чтобы убедиться, что вы используете актуальную версию. |
 | `<authentication>` | Сведения для проверки подлинности для Azure, в которых в данном примере содержится элемент `<serverId>`, который, в свою очередь, содержит `azure-auth`; Maven использует это значение для поиска значений субъекта-службы Azure в файле Maven *settings.xml*, который вы определили в предыдущем разделе этой статьи. |
 | `<resourceGroup>` | Целевая группа ресурсов, которой в этом примере является `maven-plugin`. Если эта группа ресурсов не существует, она будет создана во время развертывания. |
 | `<appName>` | Целевое имя веб-приложения. В этом примере целевое имя — `maven-linux-app-${maven.build.timestamp}`, к которому в этом примере добавлен суффикс `${maven.build.timestamp}`, чтобы избежать конфликтов. (Метку времени добавлять необязательно; можно указать любую уникальную строку для имени приложения.) |
-| `<region>` | Целевой регион, которым в данном примере является `westus`. (Полный список см. в документации по [подключаемому модулю Maven для веб-приложений Azure].) |
+| `<region>` | Целевой регион, которым в данном примере является `westus`. (Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
 | `<appSettings>` | Любые уникальные настройки для Maven, которые следует использовать при развертывании веб-приложения в Azure. В этом примере элемент `<property>` содержит пару "имя/значение" дочерних элементов, которая задает порт для вашего приложения. |
 
 > [!NOTE]
@@ -272,7 +277,7 @@ Maven выполнит развертывание веб-приложения в
 >
 >
 
-После развертывания веб-приложения вы сможете управлять им с помощью [портала Azure].
+После развертывания веб-приложения вы сможете управлять им с помощью [портал Azure].
 
 * Веб-приложение будет указано в разделе **Службы приложений**:
 
@@ -307,7 +312,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.
 
-* [подключаемому модулю Maven для веб-приложений Azure]
+* [Подключаемый модуль Maven для веб-приложений Azure]
 
 * [Вход в Azure из интерфейса командной строки Azure](/azure/xplat-cli-connect)
 
@@ -317,25 +322,25 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 * [Справочник по параметрам Maven](https://maven.apache.org/settings.html)
 
-* [подключаемый модуль Docker для Maven]
+* [Подключаемый модуль Docker для Maven]
 
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-[портала Azure]: https://portal.azure.com/
+[портал Azure]: https://portal.azure.com/
 [Docker]: https://www.docker.com/
-[подключаемый модуль Docker для Maven]: https://github.com/spotify/docker-maven-plugin
+[Подключаемый модуль Docker для Maven]: https://github.com/spotify/docker-maven-plugin
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
-[подключаемому модулю Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
+[Подключаемый модуль Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 
 <!-- IMG List -->
 
