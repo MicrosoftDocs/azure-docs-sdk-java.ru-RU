@@ -83,6 +83,8 @@
               maintainContext: true
         - name: Развертывание с помощью Maven
           href: /azure/app-service-web/app-service-web-deploy-spring-boot-app-with-maven-plugin
+        - name: Добавление корневого сертификата
+          href: java-sdk-add-certificate-ca-store.md
     - name: Примеры кода Java
       items:
         - name: Service Fabric
