@@ -1,233 +1,229 @@
 ---
 title: Развертывание приложения Spring Boot в облаке с помощью Maven и Azure
-description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure.
+description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для Веб-приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: ''
+editor: brborges
 ms.assetid: ''
-ms.author: robmcm;kevinzha
-ms.date: 02/01/2018
+ms.author: robmcm;kevinzha;brborges
+ms.date: 06/01/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 82cb0da3ce49fa77f888808af14455bf226d5cb0
-ms.sourcegitcommit: 024b3127daf396a17bd43d57642e3534ae87f120
+ms.openlocfilehash: 3610312ed17301131967bd2c047c86656de070e7
+ms.sourcegitcommit: f313c14e92f38c54a3a583270ee85cc928cd39d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34462754"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34689427"
 ---
-# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-web-apps"></a><span data-ttu-id="daf22-103">Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure</span><span class="sxs-lookup"><span data-stu-id="daf22-103">Deploy a Spring Boot app to the cloud using the Maven Plugin for Azure Web Apps</span></span>
+# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a><span data-ttu-id="0fa5d-103">Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для Службы приложений Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-103">Deploy a Spring Boot app to the cloud using the Maven Plugin for Azure App Service</span></span>
 
-<span data-ttu-id="daf22-104">В этой статье демонстрируется использование подключаемого модуля Maven для веб-приложений Azure с целью развертывания примера приложения Spring Boot в службы приложений Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-104">This article demonstrates using the Maven Plugin for Azure Web Apps to deploy a sample Spring Boot application to Azure App Services.</span></span>
+<span data-ttu-id="0fa5d-104">В этой статье демонстрируется использование подключаемого модуля Maven для Веб-приложений Службы приложений Azure с целью развертывания примера приложения Spring Boot.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-104">This article demonstrates using the Maven Plugin for Azure App Service Web Apps to deploy a sample Spring Boot application.</span></span>
 
 > [!NOTE]
 > 
-> <span data-ttu-id="daf22-105">[Подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin) для [Apache Maven](http://maven.apache.org/) обеспечивает эффективную интеграцию службы приложений Azure в проекты Maven и упрощает процесс развертывания веб-приложений в службе приложений Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-105">The [Maven Plugin for Azure Web Apps](https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin) for [Apache Maven](http://maven.apache.org/) provides seamless integration of Azure App Service into Maven projects, and streamlines the process for developers to deploy web apps to Azure App Service.</span></span>
-> 
-> <span data-ttu-id="daf22-106">Подключаемый модуль Maven для веб-приложений Azure в настоящее время доступен в предварительной версии.</span><span class="sxs-lookup"><span data-stu-id="daf22-106">The Maven Plugin for Azure Web Apps is currently available as a preview.</span></span> <span data-ttu-id="daf22-107">Сейчас поддерживается только FTP-публикация, но на будущее запланированы дополнительные функции.</span><span class="sxs-lookup"><span data-stu-id="daf22-107">For now, only FTP publishing is supported, although additional features are planned for the future.</span></span>
-> 
+> <span data-ttu-id="0fa5d-105">[Подключаемый модуль Maven для Веб-приложений Службы приложений Azure](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для [Apache Maven](http://maven.apache.org/) обеспечивает эффективную интеграцию Службы приложений Azure в проекты Maven и упрощает разработчикам развертывание веб-приложений в этой службе.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-105">The [Maven Plugin for Azure App Service Web Apps](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) for [Apache Maven](http://maven.apache.org/) provides seamless integration of Azure App Service into Maven projects, and streamlines the process for developers to deploy web apps to Azure App Service.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="daf22-108">предварительным требованиям</span><span class="sxs-lookup"><span data-stu-id="daf22-108">Prerequisites</span></span>
+<span data-ttu-id="0fa5d-106">Прежде чем использовать подключаемый модуль Maven, проверьте центральный репозиторий Maven на наличие новой версии: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22).</span><span class="sxs-lookup"><span data-stu-id="0fa5d-106">Before using the Maven plugin, check on Maven Central for the latest available version of the plugin: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22)</span></span> 
 
-<span data-ttu-id="daf22-109">Для работы с этим руководством требуется следующее:</span><span class="sxs-lookup"><span data-stu-id="daf22-109">In order to complete the steps in this tutorial, you will need to have the following prerequisites:</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="0fa5d-107">предварительным требованиям</span><span class="sxs-lookup"><span data-stu-id="0fa5d-107">Prerequisites</span></span>
 
-* <span data-ttu-id="daf22-110">Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="daf22-110">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="daf22-111">[Интерфейс командной строки Azure (CLI)].</span><span class="sxs-lookup"><span data-stu-id="daf22-111">The [Azure Command-Line Interface (CLI)].</span></span>
-* <span data-ttu-id="daf22-112">Актуальный [пакет разработчиков Java (JDK)] версии 1.7 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="daf22-112">An up-to-date [Java Development Kit (JDK)], version 1.7 or later.</span></span>
-* <span data-ttu-id="daf22-113">Средство сборки [Maven] (версия 3) от Apache.</span><span class="sxs-lookup"><span data-stu-id="daf22-113">Apache's [Maven] build tool (Version 3).</span></span>
-* <span data-ttu-id="daf22-114">Клиент [Git].</span><span class="sxs-lookup"><span data-stu-id="daf22-114">A [Git] client.</span></span>
+<span data-ttu-id="0fa5d-108">Для работы с этим руководством требуется следующее:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-108">In order to complete the steps in this tutorial, you will need to have the following prerequisites:</span></span>
 
-## <a name="clone-the-sample-spring-boot-web-app"></a><span data-ttu-id="daf22-115">Клонирование примера "Веб-приложение Spring Boot"</span><span class="sxs-lookup"><span data-stu-id="daf22-115">Clone the sample Spring Boot web app</span></span>
+* <span data-ttu-id="0fa5d-109">Подписка Azure. Если у вас ее еще нет, создайте [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-109">An Azure subscription; if you don't already have an Azure subscription, you can sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="0fa5d-110">[Интерфейс командной строки Azure (CLI)].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-110">The [Azure Command-Line Interface (CLI)].</span></span>
+* <span data-ttu-id="0fa5d-111">Актуальный [пакет разработчиков Java (JDK)] версии 1.7 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-111">An up-to-date [Java Development Kit (JDK)], version 1.7 or later.</span></span>
+* <span data-ttu-id="0fa5d-112">Средство сборки [Maven] (версия 3) от Apache.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-112">Apache's [Maven] build tool (Version 3).</span></span>
+* <span data-ttu-id="0fa5d-113">Клиент [Git].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-113">A [Git] client.</span></span>
 
-<span data-ttu-id="daf22-116">Из этого раздела вы узнаете, как клонировать готовое приложение Spring Boot и протестировать его на локальном компьютере.</span><span class="sxs-lookup"><span data-stu-id="daf22-116">In this section, you will clone a completed Spring Boot application and test it locally.</span></span>
+## <a name="clone-the-sample-spring-boot-web-app"></a><span data-ttu-id="0fa5d-114">Клонирование примера "Веб-приложение Spring Boot"</span><span class="sxs-lookup"><span data-stu-id="0fa5d-114">Clone the sample Spring Boot web app</span></span>
 
-1. <span data-ttu-id="daf22-117">Откройте командную строку или окно терминала и создайте локальный каталог для размещения приложения Spring Boot, после чего перейдите в этот каталог, например:</span><span class="sxs-lookup"><span data-stu-id="daf22-117">Open a command prompt or terminal window and create a local directory to hold your Spring Boot application, and change to that directory; for example:</span></span>
+<span data-ttu-id="0fa5d-115">Из этого раздела вы узнаете, как клонировать готовое приложение Spring Boot и протестировать его на локальном компьютере.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-115">In this section, you will clone a completed Spring Boot application and test it locally.</span></span>
+
+1. <span data-ttu-id="0fa5d-116">Откройте командную строку или окно терминала и создайте локальный каталог для размещения приложения Spring Boot, после чего перейдите в этот каталог, например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-116">Open a command prompt or terminal window and create a local directory to hold your Spring Boot application, and change to that directory; for example:</span></span>
    ```shell
    md C:\SpringBoot
    cd C:\SpringBoot
    ```
-   <span data-ttu-id="daf22-118">-- или --</span><span class="sxs-lookup"><span data-stu-id="daf22-118">-- or --</span></span>
+   <span data-ttu-id="0fa5d-117">-- или --</span><span class="sxs-lookup"><span data-stu-id="0fa5d-117">-- or --</span></span>
    ```shell
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   md ~/SpringBoot
+   cd ~/SpringBoot
    ```
 
-1. <span data-ttu-id="daf22-119">Клонируйте образец проекта [Spring Boot Getting Started] в созданный каталог, например:</span><span class="sxs-lookup"><span data-stu-id="daf22-119">Clone the [Spring Boot Getting Started] sample project into the directory you created; for example:</span></span>
+1. <span data-ttu-id="0fa5d-118">Клонируйте образец проекта [Spring Boot Getting Started] в созданный каталог, например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-118">Clone the [Spring Boot Getting Started] sample project into the directory you created; for example:</span></span>
    ```shell
-   git clone https://github.com/microsoft/gs-spring-boot
+   git clone https://github.com/spring-guides/gs-spring-boot
    ```
 
-1. <span data-ttu-id="daf22-120">Перейдите в каталог готового проекта, например:</span><span class="sxs-lookup"><span data-stu-id="daf22-120">Change directory to the completed project; for example:</span></span>
+1. <span data-ttu-id="0fa5d-119">Перейдите в каталог готового проекта, например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-119">Change directory to the completed project; for example:</span></span>
    ```shell
    cd gs-spring-boot/complete
    ```
 
-1. <span data-ttu-id="daf22-121">Выполните сборку файла JAR с помощью Maven, например:</span><span class="sxs-lookup"><span data-stu-id="daf22-121">Build the JAR file using Maven; for example:</span></span>
+1. <span data-ttu-id="0fa5d-120">Выполните сборку файла JAR с помощью Maven, например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-120">Build the JAR file using Maven; for example:</span></span>
    ```shell
    mvn clean package
    ```
 
-1. <span data-ttu-id="daf22-122">При создании веб-приложения запустите веб-приложение с помощью Maven; например:</span><span class="sxs-lookup"><span data-stu-id="daf22-122">When the web app has been created, start the web app using Maven; for example:</span></span>
+1. <span data-ttu-id="0fa5d-121">При создании веб-приложения запустите веб-приложение с помощью Maven; например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-121">When the web app has been created, start the web app using Maven; for example:</span></span>
    ```shell
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="daf22-123">Проверьте веб-приложение, перейдя к нему локально с помощью веб-браузера.</span><span class="sxs-lookup"><span data-stu-id="daf22-123">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="daf22-124">Например, если имеется Curl, можно использовать следующую команду:</span><span class="sxs-lookup"><span data-stu-id="daf22-124">For example, you could use the following command if you have curl available:</span></span>
+1. <span data-ttu-id="0fa5d-122">Проверьте веб-приложение, перейдя к нему локально с помощью веб-браузера.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-122">Test the web app by browsing to it locally using a web browser.</span></span> <span data-ttu-id="0fa5d-123">Например, если имеется Curl, можно использовать следующую команду:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-123">For example, you could use the following command if you have curl available:</span></span>
    ```shell
    curl http://localhost:8080
    ```
 
-1. <span data-ttu-id="daf22-125">Должно появиться следующее сообщение: **Greetings from Spring Boot!**</span><span class="sxs-lookup"><span data-stu-id="daf22-125">You should see the following message displayed: **Greetings from Spring Boot!**</span></span>
+1. <span data-ttu-id="0fa5d-124">Должно появиться следующее сообщение: **Greetings from Spring Boot!**</span><span class="sxs-lookup"><span data-stu-id="0fa5d-124">You should see the following message displayed: **Greetings from Spring Boot!**</span></span>
 
-## <a name="create-an-azure-service-principal"></a><span data-ttu-id="daf22-126">Создание субъекта-службы Azure</span><span class="sxs-lookup"><span data-stu-id="daf22-126">Create an Azure service principal</span></span>
+## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a><span data-ttu-id="0fa5d-125">Настройка проекта для развертывания из WAR-файла в Службе приложений Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-125">Adjust project for WAR-based deployment on Azure App Service</span></span>
 
-<span data-ttu-id="daf22-127">Из этого раздела вы узнаете, как создать субъект-службу Azure, с помощью которого подключаемый модуль Maven развертывает веб-приложение в Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-127">In this section, you will create an Azure service principal that the Maven plugin uses when deploying your web app to Azure.</span></span>
+<span data-ttu-id="0fa5d-126">В этом разделе мы быстро настроим развертывание проекта Spring Boot в Службе приложений Azure из WAR-файла. По умолчанию используется среда выполнения Tomcat.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-126">In this section we will quickly adjust the Spring Boot project to be deployed as a WAR file on Azure App Service, which provides Tomcat as the runtime by default.</span></span> <span data-ttu-id="0fa5d-127">Для этого нам нужно изменить два файла:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-127">For this to work, there are two files to be modified:</span></span>
 
-1. <span data-ttu-id="daf22-128">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="daf22-128">Open a command prompt.</span></span>
+- <span data-ttu-id="0fa5d-128">файл Maven `pom.xml`;</span><span class="sxs-lookup"><span data-stu-id="0fa5d-128">The Maven `pom.xml` file</span></span>
+- <span data-ttu-id="0fa5d-129">класс Java `Application`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-129">The `Application` Java class</span></span>
 
-1. <span data-ttu-id="daf22-129">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-129">Sign into your Azure account by using the Azure CLI:</span></span>
-   ```shell
-   az login
+<span data-ttu-id="0fa5d-130">Начнем с настроек Maven.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-130">Let's start with the Maven settings:</span></span>
+
+1. <span data-ttu-id="0fa5d-131">Откройте файл `pom.xml`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-131">Open `pom.xml`</span></span>
+
+1. <span data-ttu-id="0fa5d-132">В начале файла сразу после определения `<artifactId>` добавьте `<packaging>war</packaging>`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-132">Add `<packaging>war</packaging>` right after the `<artifactId>` definition at the top:</span></span>
+   ```xml
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.springframework</groupId>
+    <artifactId>gs-spring-boot</artifactId>
+
+    <packaging>war</packaging>
    ```
-   <span data-ttu-id="daf22-130">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="daf22-130">Follow the instructions to complete the sign-in process.</span></span>
 
-1. <span data-ttu-id="daf22-131">Создайте субъект-службу Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-131">Create an Azure service principal:</span></span>
-   ```shell
-   az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
+1. <span data-ttu-id="0fa5d-133">Добавьте следующую зависимость:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-133">Add the following dependency:</span></span>
+   ```xml
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
    ```
-   <span data-ttu-id="daf22-132">Где `uuuuuuuu` — это имя пользователя и `pppppppp` — пароль для субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="daf22-132">Where `uuuuuuuu` is the user name and `pppppppp` is the password for the service principal.</span></span>
 
-1. <span data-ttu-id="daf22-133">В ответ Azure предоставит код JSON, аналогичный приведенному ниже.</span><span class="sxs-lookup"><span data-stu-id="daf22-133">Azure responds with JSON that resembles the following example:</span></span>
-   ```json
-   {
-      "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-      "displayName": "uuuuuuuu",
-      "name": "http://uuuuuuuu",
-      "password": "pppppppp",
-      "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
+<span data-ttu-id="0fa5d-134">Теперь откройте класс `Application` (будем надеяться, что интегрированная среда разработки уже считала новые зависимости) и внесите в него следующие изменения:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-134">Now open the class `Application`, hopefully after your IDE has already picked up the new dependencies, and proceed with the following modifications:</span></span>
+
+1. <span data-ttu-id="0fa5d-135">Сделайте класс Application подклассом `SpringBootServletInitializer`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-135">Make class Application a subclass of `SpringBootServletInitializer`:</span></span>
+   ```java
+   @SpringBootApplication
+   public class Application extends SpringBootServletInitializer {
+     // ...
    }
    ```
 
-   > [!NOTE]
-   >
-   > <span data-ttu-id="daf22-134">При настройке подключаемого модуля Maven для развертывания веб-приложения в Azure используйте значения из этого ответа JSON.</span><span class="sxs-lookup"><span data-stu-id="daf22-134">You will use the values from this JSON response when you configure the Maven plugin to deploy your web app to Azure.</span></span> <span data-ttu-id="daf22-135">`aaaaaaaa`, `uuuuuuuu`, `pppppppp` и `tttttttt` являются значениями заполнителя, которые используются в этом примере с целью упростить сопоставление этих значений с соответствующими им элементами во время настройки файла Maven `settings.xml` в следующем разделе.</span><span class="sxs-lookup"><span data-stu-id="daf22-135">The `aaaaaaaa`, `uuuuuuuu`, `pppppppp`, and `tttttttt` are placeholder values, which are used in this example to make it easier to map these values to their respective elements when you configure your Maven `settings.xml` file in the next section.</span></span>
-   >
-   >
-
-## <a name="configure-maven-to-use-your-azure-service-principal"></a><span data-ttu-id="daf22-136">Настройка Maven для использования субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="daf22-136">Configure Maven to use your Azure service principal</span></span>
-
-<span data-ttu-id="daf22-137">Из этого раздела вы узнаете, как с помощью значений из субъекта-службы Azure настроить проверку подлинности, с помощью которой Maven развертывает веб-приложение в Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-137">In this section, you will use the values from your Azure service principal to configure the authentication that Maven uses when deploying your web app to Azure.</span></span>
-
-1. <span data-ttu-id="daf22-138">Откройте файл Maven `settings.xml` в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="daf22-138">Open your Maven `settings.xml` file in a text editor.</span></span> <span data-ttu-id="daf22-139">Путь к этому файлу может быть похож на следующие примеры:</span><span class="sxs-lookup"><span data-stu-id="daf22-139">This file may be in a path similar to the following examples:</span></span>
-   * `/etc/maven/settings.xml`
-   * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
-   * `$HOME/.m2/settings.xml`
-
-1. <span data-ttu-id="daf22-140">Добавьте параметры субъекта-службы Azure из предыдущего раздела этого учебника в коллекцию `<servers>` в файле *settings.xml*, например:</span><span class="sxs-lookup"><span data-stu-id="daf22-140">Add your Azure service principal settings from the previous section of this tutorial to the `<servers>` collection in the *settings.xml* file; for example:</span></span>
-
-   ```xml
-   <servers>
-      <server>
-        <id>azure-auth</id>
-         <configuration>
-            <client>aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa</client>
-            <tenant>tttttttt-tttt-tttt-tttt-tttttttttttt</tenant>
-            <key>pppppppp</key>
-            <environment>AZURE</environment>
-         </configuration>
-      </server>
-   </servers>
+1. <span data-ttu-id="0fa5d-136">Добавьте в класс Application следующий метод:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-136">Add the following method to the Application class:</span></span>
+   ```java
+       @Override
+       protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+           return application.sources(Application.class);
+       }
    ```
-   <span data-ttu-id="daf22-141">Описание</span><span class="sxs-lookup"><span data-stu-id="daf22-141">Where:</span></span>
-   | <span data-ttu-id="daf22-142">Элемент</span><span class="sxs-lookup"><span data-stu-id="daf22-142">Element</span></span> | <span data-ttu-id="daf22-143">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="daf22-143">Description</span></span> |
-   |---|---|
-   | `<id>` | <span data-ttu-id="daf22-144">Задает уникальное имя, которое Maven использует для поиска параметров безопасности при развертывании веб-приложения в Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-144">Specifies a unique name which Maven uses to look up your security settings when you deploy your web app to Azure.</span></span> |
-   | `<client>` | <span data-ttu-id="daf22-145">Содержит значение `appId` из субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="daf22-145">Contains the `appId` value from your service principal.</span></span> |
-   | `<tenant>` | <span data-ttu-id="daf22-146">Содержит значение `tenant` из субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="daf22-146">Contains the `tenant` value from your service principal.</span></span> |
-   | `<key>` | <span data-ttu-id="daf22-147">Содержит значение `password` из субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="daf22-147">Contains the `password` value from your service principal.</span></span> |
-   | `<environment>` | <span data-ttu-id="daf22-148">Определяет целевую облачную среду Azure, которой в этом примере является `AZURE`.</span><span class="sxs-lookup"><span data-stu-id="daf22-148">Defines the target Azure cloud environment, which is `AZURE` in this example.</span></span> <span data-ttu-id="daf22-149">(Полный список сред см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].)</span><span class="sxs-lookup"><span data-stu-id="daf22-149">(A full list of environments is available in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
 
-1. <span data-ttu-id="daf22-150">Сохраните и закройте файл *settings.xml*.</span><span class="sxs-lookup"><span data-stu-id="daf22-150">Save and close the *settings.xml* file.</span></span>
+<span data-ttu-id="0fa5d-137">Теперь ваше приложение готово к развертыванию в Tomcat или любой другой среде выполнения сервлетов (например, Jetty).</span><span class="sxs-lookup"><span data-stu-id="0fa5d-137">Your application is now ready to be deployed to Tomcat and any other Servlet runtime (e.g. Jetty).</span></span>
 
-## <a name="optional-customize-your-pomxml-before-deploying-your-web-app-to-azure"></a><span data-ttu-id="daf22-151">НЕОБЯЗАТЕЛЬНО. Перед развертыванием веб-приложения в Azure настройте pom.xml.</span><span class="sxs-lookup"><span data-stu-id="daf22-151">OPTIONAL: Customize your pom.xml before deploying your web app to Azure</span></span>
+## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a><span data-ttu-id="0fa5d-138">Добавление подключаемого модуля Maven для Веб-приложений Службы приложений Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-138">Add the Maven Plugin for Azure App Service Web Apps</span></span>
 
-<span data-ttu-id="daf22-152">Откройте файл `pom.xml` для приложения Spring Boot в текстовом редакторе, а затем найдите элемент `<plugin>` для `azure-webapp-maven-plugin`.</span><span class="sxs-lookup"><span data-stu-id="daf22-152">Open the `pom.xml` file for your Spring Boot application in a text editor, and then locate the `<plugin>` element for `azure-webapp-maven-plugin`.</span></span> <span data-ttu-id="daf22-153">Этот элемент должен выглядеть примерно следующим образом.</span><span class="sxs-lookup"><span data-stu-id="daf22-153">This element should resemble the following example:</span></span>
+<span data-ttu-id="0fa5d-139">В этом разделе мы добавим подключаемый модуль Maven, который автоматизирует весь процесс развертывания этого приложения в Веб-приложения Службы приложений Azure.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-139">In this section, we will add a Maven plugin that will automate the entire deployment of this application into Azure App Service Web Apps.</span></span>
 
+1. <span data-ttu-id="0fa5d-140">Откройте файл `pom.xml` еще раз.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-140">Open `pom.xml` once again.</span></span>
+
+1. <span data-ttu-id="0fa5d-141">В элементе `<properties>` укажите настраиваемый формат метки времени, используя свойство `maven.build.timestamp.format`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-141">Inside `<properties>`, set a custom timestamp format with the property `maven.build.timestamp.format`.</span></span> <span data-ttu-id="0fa5d-142">Так как Служба приложений Azure создает для вашего приложения общедоступный URL-адрес, этот параметр будет использоваться для создания имени развертывания, что позволит избежать конфликтов с развертываниями других пользователей.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-142">Because Azure App Service creates a public URL for your application, this setting will be used to generate the name of your deployment, and avoid conflict with other users' live deployments.</span></span>
    ```xml
-   <plugin>
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.build.timestamp.format>yyyyMMddHHmmssSSS</maven.build.timestamp.format>
+    </properties>
+   ```
+
+1. <span data-ttu-id="0fa5d-143">В элементе `<plugins>` добавьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-143">In the `<plugins>` element, add the following:</span></span>
+   ```xml
+    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
-      <configuration>
-         <authentication>
-            <serverId>azure-auth</serverId>
-         </authentication>
-         <resourceGroup>maven-plugin</resourceGroup>
-         <appName>maven-web-app-${maven.build.timestamp}</appName>
-         <region>westus</region>
-         <javaVersion>1.8</javaVersion>
-         <deploymentType>ftp</deploymentType>
-         <resources>
-            <resource>
-               <directory>${project.basedir}/target</directory>
-               <targetPath>/</targetPath>
-               <includes>
-                  <include>*.jar</include>
-               </includes>
-            </resource>
-            <resource>
-               <directory>${project.basedir}</directory>
-               <targetPath>/</targetPath>
-               <includes>
-                  <include>web.config</include>
-               </includes>
-            </resource>
-         </resources>
-      </configuration>
-   </plugin>
+      <!-- Check latest version on Maven Central -->
+      <version>1.1.0</version>
+    </plugin>
    ```
 
-<span data-ttu-id="daf22-154">Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].</span><span class="sxs-lookup"><span data-stu-id="daf22-154">There are several values that you can modify for the Maven plugin, and a detailed description for each of these elements is available in the [Maven Plugin for Azure Web Apps] documentation.</span></span> <span data-ttu-id="daf22-155">Существует ряд значений, на которые следует обратить внимание в этой статье.</span><span class="sxs-lookup"><span data-stu-id="daf22-155">That being said, there are several values that are worth highlighting in this article:</span></span>
+<span data-ttu-id="0fa5d-144">С такими параметрами проект Maven можно развертывать в Веб-приложениях Службы приложений Azure.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-144">With these settings, your Maven project is now ready for live deployment to Azure App Service Web App.</span></span>
 
-| <span data-ttu-id="daf22-156">Элемент</span><span class="sxs-lookup"><span data-stu-id="daf22-156">Element</span></span> | <span data-ttu-id="daf22-157">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="daf22-157">Description</span></span> |
+## <a name="install-and-log-in-to-azure-cli"></a><span data-ttu-id="0fa5d-145">Установка и вход в Azure CLI</span><span class="sxs-lookup"><span data-stu-id="0fa5d-145">Install and log in to Azure CLI</span></span>
+
+<span data-ttu-id="0fa5d-146">[Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-146">The simplest and easiest way to get the Maven Plugin deploying your Spring Boot application is by using [Azure CLI](https://docs.microsoft.com/cli/azure/).</span></span> <span data-ttu-id="0fa5d-147">Установите этот компонент.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-147">Make sure you have it installed.</span></span>
+
+1. <span data-ttu-id="0fa5d-148">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-148">Sign into your Azure account by using the Azure CLI:</span></span>
+   ```shell
+   az login
+   ```
+   <span data-ttu-id="0fa5d-149">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-149">Follow the instructions to complete the sign-in process.</span></span>
+
+## <a name="optionally-customize-pomxml-before-deploying"></a><span data-ttu-id="0fa5d-150">Настройка файла pom.xml перед развертыванием (необязательный этап)</span><span class="sxs-lookup"><span data-stu-id="0fa5d-150">Optionally, customize pom.xml before deploying</span></span>
+
+<span data-ttu-id="0fa5d-151">Откройте файл `pom.xml` для приложения Spring Boot в текстовом редакторе, а затем найдите элемент `<plugin>` для `azure-webapp-maven-plugin`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-151">Open the `pom.xml` file for your Spring Boot application in a text editor, and then locate the `<plugin>` element for `azure-webapp-maven-plugin`.</span></span> <span data-ttu-id="0fa5d-152">Этот элемент должен выглядеть примерно следующим образом.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-152">This element should resemble the following example:</span></span>
+
+   ```xml
+  <plugins>
+    <plugin>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>azure-webapp-maven-plugin</artifactId>
+      <!-- Check latest version on Maven Central -->
+      <version>1.1.0</version>
+      <configuration>
+         <resourceGroup>maven-projects</resourceGroup>
+         <appName>${project.artifactId}-${maven.build.timestamp}</appName>
+         <region>westus</region>
+         <javaVersion>1.8</javaVersion>
+         <deploymentType>war</deploymentType>
+      </configuration>
+    </plugin>
+  </plugins>
+   ```
+
+<span data-ttu-id="0fa5d-153">Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-153">There are several values that you can modify for the Maven plugin, and a detailed description for each of these elements is available in the [Maven Plugin for Azure Web Apps] documentation.</span></span> <span data-ttu-id="0fa5d-154">Существует ряд значений, на которые следует обратить внимание в этой статье.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-154">That being said, there are several values that are worth highlighting in this article:</span></span>
+
+| <span data-ttu-id="0fa5d-155">Элемент</span><span class="sxs-lookup"><span data-stu-id="0fa5d-155">Element</span></span> | <span data-ttu-id="0fa5d-156">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="0fa5d-156">Description</span></span> |
 |---|---|
-| `<version>` | <span data-ttu-id="daf22-158">Версия [Подключаемый модуль Maven для веб-приложений Azure].</span><span class="sxs-lookup"><span data-stu-id="daf22-158">Specifies the version of the [Maven Plugin for Azure Web Apps].</span></span> <span data-ttu-id="daf22-159">Чтобы убедиться, что вы используете актуальную версию, проверьте, какая версия указана в списке версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22).</span><span class="sxs-lookup"><span data-stu-id="daf22-159">Verify the version listed in the [Maven Central Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) to ensure that you are using the latest version.</span></span> |
-| `<authentication>` | <span data-ttu-id="daf22-160">Сведения для проверки подлинности для Azure, в которых в данном примере содержится элемент `<serverId>`, который, в свою очередь, содержит `azure-auth`; Maven использует это значение для поиска значений субъекта-службы Azure в файле Maven *settings.xml*, который вы определили в предыдущем разделе этой статьи.</span><span class="sxs-lookup"><span data-stu-id="daf22-160">Specifies the authentication information for Azure, which in this example contains a `<serverId>` element that contains `azure-auth`; Maven uses that value to look up the Azure service principal values in your Maven *settings.xml* file, which you defined in an earlier section of this article.</span></span> |
-| `<resourceGroup>` | <span data-ttu-id="daf22-161">Целевая группа ресурсов, которой в этом примере является `maven-plugin`.</span><span class="sxs-lookup"><span data-stu-id="daf22-161">Specifies the target resource group, which is `maven-plugin` in this example.</span></span> <span data-ttu-id="daf22-162">Если эта группа ресурсов не существует, она создается во время развертывания.</span><span class="sxs-lookup"><span data-stu-id="daf22-162">The resource group is created during deployment if it does not already exist.</span></span> |
-| `<appName>` | <span data-ttu-id="daf22-163">Целевое имя веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="daf22-163">Specifies the target name for your web app.</span></span> <span data-ttu-id="daf22-164">В этом примере целевое имя — `maven-web-app-${maven.build.timestamp}`, к которому в этом примере добавлен суффикс `${maven.build.timestamp}`, чтобы избежать конфликтов.</span><span class="sxs-lookup"><span data-stu-id="daf22-164">In this example, the target name is `maven-web-app-${maven.build.timestamp}`, where the `${maven.build.timestamp}` suffix is appended in this example to avoid conflict.</span></span> <span data-ttu-id="daf22-165">(Метку времени добавлять необязательно; можно указать любую уникальную строку для имени приложения.)</span><span class="sxs-lookup"><span data-stu-id="daf22-165">(The timestamp is optional; you can specify any unique string for the app name.)</span></span> |
-| `<region>` | <span data-ttu-id="daf22-166">Целевой регион, которым в данном примере является `westus`.</span><span class="sxs-lookup"><span data-stu-id="daf22-166">Specifies the target region, which in this example is `westus`.</span></span> <span data-ttu-id="daf22-167">(Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].)</span><span class="sxs-lookup"><span data-stu-id="daf22-167">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
-| `<javaVersion>` | <span data-ttu-id="daf22-168">Версия среды выполнения Java для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="daf22-168">Specifies the Java runtime version for your web app.</span></span> <span data-ttu-id="daf22-169">(Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].)</span><span class="sxs-lookup"><span data-stu-id="daf22-169">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
-| `<deploymentType>` | <span data-ttu-id="daf22-170">Тип развертывания для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="daf22-170">Specifies deployment type for your web app.</span></span> <span data-ttu-id="daf22-171">Сейчас поддерживается только `ftp`, хотя поддержка других типов развертывания находится в разработке.</span><span class="sxs-lookup"><span data-stu-id="daf22-171">For now, only `ftp` is supported, although support for other deployment types is in development.</span></span> |
-| `<resources>` | <span data-ttu-id="daf22-172">Ресурсы и целевые назначения, которые Maven использует при развертывании веб-приложения в Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-172">Specifies resources and target destinations which Maven uses when deploying your web app to Azure.</span></span> <span data-ttu-id="daf22-173">В этом примере два элемента `<resource>` указывают, что Maven развернет JAR-файл для веб-приложения и файл *web.config* из проекта Spring Boot.</span><span class="sxs-lookup"><span data-stu-id="daf22-173">In this example, two `<resource>` elements specify that Maven will deploy the JAR file for your web app and the *web.config* file from the Spring Boot project.</span></span> |
+| `<version>` | <span data-ttu-id="0fa5d-157">Версия [Подключаемый модуль Maven для веб-приложений Azure].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-157">Specifies the version of the [Maven Plugin for Azure Web Apps].</span></span> <span data-ttu-id="0fa5d-158">Чтобы убедиться, что вы используете актуальную версию, проверьте, какая версия указана в списке версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22).</span><span class="sxs-lookup"><span data-stu-id="0fa5d-158">Verify the version listed in the [Maven Central Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) to ensure that you are using the latest version.</span></span> |
+| `<resourceGroup>` | <span data-ttu-id="0fa5d-159">Целевая группа ресурсов, которой в этом примере является `maven-plugin`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-159">Specifies the target resource group, which is `maven-plugin` in this example.</span></span> <span data-ttu-id="0fa5d-160">Если эта группа ресурсов не существует, она создается во время развертывания.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-160">The resource group is created during deployment if it does not already exist.</span></span> |
+| `<appName>` | <span data-ttu-id="0fa5d-161">Целевое имя веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-161">Specifies the target name for your web app.</span></span> <span data-ttu-id="0fa5d-162">В этом примере целевое имя — `maven-web-app-${maven.build.timestamp}`, к которому в этом примере добавлен суффикс `${maven.build.timestamp}`, чтобы избежать конфликтов.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-162">In this example, the target name is `maven-web-app-${maven.build.timestamp}`, where the `${maven.build.timestamp}` suffix is appended in this example to avoid conflict.</span></span> <span data-ttu-id="0fa5d-163">(Метку времени добавлять необязательно; можно указать любую уникальную строку для имени приложения.)</span><span class="sxs-lookup"><span data-stu-id="0fa5d-163">(The timestamp is optional; you can specify any unique string for the app name.)</span></span> |
+| `<region>` | <span data-ttu-id="0fa5d-164">Целевой регион, которым в данном примере является `westus`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-164">Specifies the target region, which in this example is `westus`.</span></span> <span data-ttu-id="0fa5d-165">(Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].)</span><span class="sxs-lookup"><span data-stu-id="0fa5d-165">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
+| `<javaVersion>` | <span data-ttu-id="0fa5d-166">Версия среды выполнения Java для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-166">Specifies the Java runtime version for your web app.</span></span> <span data-ttu-id="0fa5d-167">(Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].)</span><span class="sxs-lookup"><span data-stu-id="0fa5d-167">(A full list is in the [Maven Plugin for Azure Web Apps] documentation.)</span></span> |
+| `<deploymentType>` | <span data-ttu-id="0fa5d-168">Тип развертывания для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-168">Specifies deployment type for your web app.</span></span> <span data-ttu-id="0fa5d-169">Значение по умолчанию — `war`.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-169">Default is `war`.</span></span> |
 
-## <a name="build-and-deploy-your-web-app-to-azure"></a><span data-ttu-id="daf22-174">Сборка и развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="daf22-174">Build and deploy your web app to Azure</span></span>
+## <a name="build-and-deploy-your-web-app-to-azure"></a><span data-ttu-id="0fa5d-170">Сборка и развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-170">Build and deploy your web app to Azure</span></span>
 
-<span data-ttu-id="daf22-175">После настройки всех параметров в предыдущих разделах этой статьи можно приступать к развертыванию веб-приложения в Azure.</span><span class="sxs-lookup"><span data-stu-id="daf22-175">Once you have configured all of the settings in the preceding sections of this article, you are ready to deploy your web app to Azure.</span></span> <span data-ttu-id="daf22-176">Для этого выполните следующие действия.</span><span class="sxs-lookup"><span data-stu-id="daf22-176">To do so, use the following steps:</span></span>
+<span data-ttu-id="0fa5d-171">После настройки всех параметров в предыдущих разделах этой статьи можно приступать к развертыванию веб-приложения в Azure.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-171">Once you have configured all of the settings in the preceding sections of this article, you are ready to deploy your web app to Azure.</span></span> <span data-ttu-id="0fa5d-172">Для этого выполните следующие действия.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-172">To do so, use the following steps:</span></span>
 
-1. <span data-ttu-id="daf22-177">В командной строке или в окне терминала, которые вы использовали ранее, перестройте JAR-файл, используя Maven, если вы внесли изменения в файл *pom.xml*; например:</span><span class="sxs-lookup"><span data-stu-id="daf22-177">From the command prompt or terminal window that you were using earlier, rebuild the JAR file using Maven if you made any changes to the *pom.xml* file; for example:</span></span>
+1. <span data-ttu-id="0fa5d-173">В командной строке или в окне терминала, которые вы использовали ранее, перестройте JAR-файл, используя Maven, если вы внесли изменения в файл *pom.xml*; например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-173">From the command prompt or terminal window that you were using earlier, rebuild the JAR file using Maven if you made any changes to the *pom.xml* file; for example:</span></span>
    ```shell
    mvn clean package
    ```
 
-1. <span data-ttu-id="daf22-178">Разверните веб-приложение в Azure с помощью Maven; например:</span><span class="sxs-lookup"><span data-stu-id="daf22-178">Deploy your web app to Azure by using Maven; for example:</span></span>
+1. <span data-ttu-id="0fa5d-174">Разверните веб-приложение в Azure с помощью Maven; например:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-174">Deploy your web app to Azure by using Maven; for example:</span></span>
    ```shell
    mvn azure-webapp:deploy
    ```
 
-<span data-ttu-id="daf22-179">Maven выполнит развертывание веб-приложения в Azure; если веб-приложение еще не существует, оно будет создано.</span><span class="sxs-lookup"><span data-stu-id="daf22-179">Maven will deploy your web app to Azure; if the web app does not already exist, it will be created.</span></span>
+<span data-ttu-id="0fa5d-175">Maven выполнит развертывание веб-приложения в Azure; если веб-приложение еще не существует, оно будет создано.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-175">Maven will deploy your web app to Azure; if the web app does not already exist, it will be created.</span></span>
 
-<span data-ttu-id="daf22-180">После развертывания веб-приложения вы сможете управлять им с помощью [портала Azure].</span><span class="sxs-lookup"><span data-stu-id="daf22-180">When your web has been deployed, you will be able to manage it by using the [Azure portal].</span></span>
+<span data-ttu-id="0fa5d-176">После развертывания веб-приложения вы сможете управлять им с помощью [портал Azure].</span><span class="sxs-lookup"><span data-stu-id="0fa5d-176">When your web has been deployed, you will be able to manage it by using the [Azure portal].</span></span>
 
-* <span data-ttu-id="daf22-181">Веб-приложение будет указано в разделе **Службы приложений**:</span><span class="sxs-lookup"><span data-stu-id="daf22-181">Your web app will be listed in **App Services**:</span></span>
+* <span data-ttu-id="0fa5d-177">Веб-приложение будет указано в разделе **Службы приложений**:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-177">Your web app will be listed in **App Services**:</span></span>
 
    ![Веб-приложение в разделе "Службы приложений" на портале Azure][AP01]
 
-* <span data-ttu-id="daf22-183">URL-адрес веб-приложения будет указан в разделе **Обзор** для вашего веб-приложения:</span><span class="sxs-lookup"><span data-stu-id="daf22-183">And the URL for your web app will be listed in the **Overview** for your web app:</span></span>
+* <span data-ttu-id="0fa5d-179">URL-адрес веб-приложения будет указан в разделе **Обзор** для вашего веб-приложения:</span><span class="sxs-lookup"><span data-stu-id="0fa5d-179">And the URL for your web app will be listed in the **Overview** for your web app:</span></span>
 
    ![Определение URL-адреса для веб-приложения][AP02]
 
@@ -252,26 +248,26 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 1. Save and close the *application.yml* file.
 -->
 
-## <a name="next-steps"></a><span data-ttu-id="daf22-185">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="daf22-185">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0fa5d-181">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="0fa5d-181">Next steps</span></span>
 
-<span data-ttu-id="daf22-186">Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.</span><span class="sxs-lookup"><span data-stu-id="daf22-186">For more information about the various technologies discussed in this article, see the following articles:</span></span>
+<span data-ttu-id="0fa5d-182">Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.</span><span class="sxs-lookup"><span data-stu-id="0fa5d-182">For more information about the various technologies discussed in this article, see the following articles:</span></span>
 
-* <span data-ttu-id="daf22-187">[Подключаемый модуль Maven для веб-приложений Azure]</span><span class="sxs-lookup"><span data-stu-id="daf22-187">[Maven Plugin for Azure Web Apps]</span></span>
+* <span data-ttu-id="0fa5d-183">[Подключаемый модуль Maven для веб-приложений Azure]</span><span class="sxs-lookup"><span data-stu-id="0fa5d-183">[Maven Plugin for Azure Web Apps]</span></span>
 
-* [<span data-ttu-id="daf22-188">Вход в Azure из интерфейса командной строки Azure</span><span class="sxs-lookup"><span data-stu-id="daf22-188">Log in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
+* [<span data-ttu-id="0fa5d-184">Вход в Azure из интерфейса командной строки Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-184">Log in to Azure from the Azure CLI</span></span>](/azure/xplat-cli-connect)
 
-* [<span data-ttu-id="daf22-189">Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure</span><span class="sxs-lookup"><span data-stu-id="daf22-189">How to use the Maven Plugin for Azure Web Apps to deploy a containerized Spring Boot app to Azure</span></span>](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
+* [<span data-ttu-id="0fa5d-185">Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure</span><span class="sxs-lookup"><span data-stu-id="0fa5d-185">How to use the Maven Plugin for Azure Web Apps to deploy a containerized Spring Boot app to Azure</span></span>](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
 
-* [<span data-ttu-id="daf22-190">Создание субъекта-службы Azure с помощью Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="daf22-190">Create an Azure service principal with Azure CLI 2.0</span></span>](/cli/azure/create-an-azure-service-principal-azure-cli)
+* [<span data-ttu-id="0fa5d-186">Создание субъекта-службы Azure с помощью Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="0fa5d-186">Create an Azure service principal with Azure CLI 2.0</span></span>](/cli/azure/create-an-azure-service-principal-azure-cli)
 
-* [<span data-ttu-id="daf22-191">Справочник по параметрам Maven</span><span class="sxs-lookup"><span data-stu-id="daf22-191">Maven Settings Reference</span></span>](https://maven.apache.org/settings.html)
+* [<span data-ttu-id="0fa5d-187">Справочник по параметрам Maven</span><span class="sxs-lookup"><span data-stu-id="0fa5d-187">Maven Settings Reference</span></span>](https://maven.apache.org/settings.html)
 
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-[портала Azure]: https://portal.azure.com/
+[портал Azure]: https://portal.azure.com/
 [Azure portal]: https://portal.azure.com/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
@@ -279,13 +275,12 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Boot Getting Started]: https://github.com/microsoft/gs-spring-boot
+[Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
-[Подключаемый модуль Maven для веб-приложений Azure]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
-[Maven Plugin for Azure Web Apps]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
+[Подключаемый модуль Maven для веб-приложений Azure]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+[Maven Plugin for Azure Web Apps]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
 
 <!-- IMG List -->
 
