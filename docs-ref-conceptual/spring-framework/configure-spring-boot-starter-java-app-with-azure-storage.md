@@ -14,11 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e10ecfb7f6d705aa3ccffc49d354d1019f7f1a0b
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 2f9381fce2fee207360287c57443b56eb5128e42
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090697"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Как использовать Spring Boot Starter со службой хранилища Azure
 
@@ -108,6 +109,7 @@ ms.lasthandoff: 04/26/2018
    az group create --name wingtiptoysresources --location westus
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для группы ресурсов. |
@@ -128,11 +130,12 @@ ms.lasthandoff: 04/26/2018
    }
    ```
 
-1. Создайте учетную запись хранения Azure в группе ресурсов для приложения Spring Boot, например:
+2. Создайте учетную запись хранения Azure в группе ресурсов для приложения Spring Boot, например:
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает уникальное имя для учетной записи хранения. |
@@ -141,7 +144,7 @@ ms.lasthandoff: 04/26/2018
    | `sku` | Указывает одно из следующих значений: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`. |
 
    Azure вернет длинную строку JSON, которая содержит сведения о состоянии подготовки, например:
-   
+
    ```json
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
@@ -157,11 +160,12 @@ ms.lasthandoff: 04/26/2018
    }
    ```
 
-1. Извлеките строку подключения для учетной записи хранения, например:
+3. Извлеките строку подключения для учетной записи хранения, например:
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    | ---|---|
    | `name` | Указывает уникальное имя созданной ранее учетной записи хранения. |
@@ -270,7 +274,7 @@ ms.lasthandoff: 04/26/2018
    ```shell
    mvn clean package spring-boot:run
    ```
-   
+
    Приложение создаст контейнер и отправит в контейнер текстовый файл как большой двоичный объект, который появится в списке в вашей учетной записи хранения на [портале Azure](https://portal.azure.com).
 
    ![Список больших двоичных объектов на портале Azure](media/configure-spring-boot-starter-java-app-with-azure-storage/list-blobs-in-portal.png)

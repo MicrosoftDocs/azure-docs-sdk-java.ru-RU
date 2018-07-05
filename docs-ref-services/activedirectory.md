@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: active-directory
-ms.openlocfilehash: 28063a1a4299fd78ba76533d0ffdc0346434eea2
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 4a610e2f0d9fb2e219c42155e2b0cb76fc78b09a
+ms.sourcegitcommit: 5bfb3af5778167500a061157cbd0ad1cede8f90e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823787"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37799702"
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>Библиотеки Azure Active Directory для Java
 
@@ -87,14 +87,14 @@ RoleAssignment roleAssignment2 = authenticated.roleAssignments()
 ```
 
 > [!div class="nextstepaction"]
-> [Обзор API-интерфейсов управления](/java/api/overview/azure/activedirectory/management)
+> [Обзор API-интерфейсов управления](/java/api/activedirectory/management)
 
 
 ## <a name="samples"></a>Примеры
 
-[Manage groups, users, and roles](https://github.com/Azure-Samples/aad-java-browse-graph-and-manage-roles)   (Управление группами, пользователями и ролями)  
+[Manage groups, users, and roles](https://github.com/Azure-Samples/aad-java-manage-users-groups-and-roles)   (Управление группами, пользователями и ролями)  
 [Sign-in and sign-out users in a Java web app](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect)   (Вход пользователей в веб-приложение Java и выход из него)  
 [Access an API with Azure AD using a command line app](https://github.com/Azure-Samples/active-directory-java-native-headless)  (Использование приложения командной строки для доступа к API с помощью Azure AD)  
-[Call the Active AD Graph API from your Java web app](https://github.com/Azure-Samples/active-directory-java-graphapi-web/) (Вызов API Graph Active AD из веб-приложения Java)  
+[Call the Active AD Graph API from your Java web app](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect) (Вызов API Graph Active AD из веб-приложения Java)  
 
 Ознакомьтесь с другими [примерами кода Java для Azure AD](https://azure.microsoft.com/en-us/resources/samples/?term=active+directory&platform=java), которые можно использовать в приложениях.
