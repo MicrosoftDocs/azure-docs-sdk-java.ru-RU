@@ -14,24 +14,24 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 396d0ecfb051109924f09ae8b5d9b8074e49c404
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: f05dca50f84b27f157892d63cda02286c6755795
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954895"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090817"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Развертывание приложения Spring Boot с помощью подключаемого модуля Maven Fabric8
 
 **[Fabric8]**  — это решение с открытым кодом на базе **[Kubernetes]**, помогающее разработчикам создавать приложения в контейнерах Linux.
 
-В этом руководстве рассматривается применение подключаемого модуля Fabric8 в Maven для разработки и развертывания приложения на узле Linux в [службе контейнеров Azure].
+В этом руководстве рассматривается применение подключаемого модуля Fabric8 в Maven для разработки и развертывания приложения на узле Linux в [Служба контейнеров Azure].
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством требуется следующее.
 
-* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
 * Актуальная версия [Java Developer Kit (JDK)].
 * Средство сборки [Maven] (версия 3) от Apache.
@@ -77,7 +77,7 @@ ms.locfileid: "28954895"
    mvn clean package spring-boot:run
    ```
 
-1. Чтобы протестировать веб-приложение, перейдите по адресу http://localhost:8080 или введите команду `curl`:
+1. Чтобы протестировать веб-приложение, перейдите по адресу http://localhost:8080 или введите такую команду `curl`:
    ```shell
    curl http://localhost:8080
    ```
@@ -96,7 +96,7 @@ ms.locfileid: "28954895"
    az login
    ```
    Для завершения процесса входа следуйте инструкциям.
-   
+
    В интерфейсе командной строки Azure отобразится список учетных записей, например:
 
    ```json
@@ -255,6 +255,7 @@ ms.locfileid: "28954895"
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `wingtiptoys-kubernetes` | Определяет имя группы ресурсов, описанной в этой статье. |
@@ -285,7 +286,7 @@ ms.locfileid: "28954895"
    }
    ```
 
-1. Получите пароль для реестра контейнеров из Azure CLI.
+2. Получите пароль для реестра контейнеров из Azure CLI.
    ```azurecli
    az acr credential show --name wingtiptoysregistry --query passwords[0]
    ```
@@ -299,10 +300,10 @@ ms.locfileid: "28954895"
    }
    ```
 
-1. Перейдите в каталог конфигурации для установки Maven (по умолчанию ~/.m2/ или C:\Users\username\.m2) и откройте файл *settings.xml* в текстовом редакторе.
+3. Перейдите в каталог конфигурации для установки Maven (по умолчанию ~/.m2/ или C:\Users\username\.m2) и откройте файл *settings.xml* в текстовом редакторе.
 
-1. Добавьте URL-адрес, имя пользователя и пароль реестра контейнеров Azure для новой коллекции `<server>` в файле *settings.xml*.
-`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
+4. Добавьте URL-адрес, имя пользователя и пароль реестра контейнеров Azure для новой коллекции `<server>` в файле *settings.xml*.
+   `id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
 
    ```xml
    <servers>
@@ -314,9 +315,9 @@ ms.locfileid: "28954895"
    </servers>
    ```
 
-1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например, *C:\SpringBoot\gs-spring-boot-docker\complete* или */home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*) и откройте файл *pom.xml* в текстовом редакторе.
+5. Перейдите в каталог завершенного проекта для приложения Spring Boot (например, *C:\SpringBoot\gs-spring-boot-docker\complete* или */home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*) и откройте файл *pom.xml* в текстовом редакторе.
 
-1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив значение сервера входа для реестра контейнеров Azure.
+6. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив значение сервера входа для реестра контейнеров Azure.
 
    ```xml
    <properties>
@@ -325,7 +326,7 @@ ms.locfileid: "28954895"
    </properties>
    ```
 
-1. Обновите коллекцию `<plugins>` в файле *pom.xml* таким образом, чтобы в `<plugin>` содержались адрес сервера входа и имя реестра контейнеров Azure.
+7. Обновите коллекцию `<plugins>` в файле *pom.xml* таким образом, чтобы в `<plugin>` содержались адрес сервера входа и имя реестра контейнеров Azure.
 
    ```xml
    <plugin>
@@ -340,7 +341,7 @@ ms.locfileid: "28954895"
    </plugin>
    ```
 
-1. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните указанную ниже команду Maven для создания контейнера Docker и отправки образа в реестр:
+8. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните указанную ниже команду Maven для создания контейнера Docker и отправки образа в реестр:
 
    ```shell
    mvn package dockerfile:build -DpushImage
@@ -485,13 +486,13 @@ ms.locfileid: "28954895"
    ```
 
    В `kubectl` отобразятся внутренний и внешний IP-адреса, например:
-   
+
    ```shell
    NAME                    CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
    kubernetes              10.0.0.1     <none>        443/TCP        19h
    gs-spring-boot-docker   10.0.242.8   13.65.196.3   80:31215/TCP   3m
    ```
-   
+
    Вы можете использовать внешний IP-адрес, чтобы открыть приложение в веб-браузере.
 
    ![Просмотр примера приложения извне][SB02]
@@ -512,20 +513,20 @@ ms.locfileid: "28954895"
 * [Развертывание приложения Spring Boot в Linux в службе контейнеров Azure](deploy-spring-boot-java-app-on-linux.md)
 * [Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
 
 Дополнительные сведения о Spring Boot в образце проекта Docker см. в разделе [Spring Boot on Docker Getting Started] (Начало работы с Spring Boot в Docker).
 
-Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr** по адресу <https://start.spring.io/>.
+Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr**: <https://start.spring.io/>.
 
-Дополнительные сведения о начале создания простого приложения Spring Boot см. на странице Spring Initializr по адресу <https://start.spring.io/>.
+Дополнительные сведения о создании простого приложения Spring Boot см. на странице Spring Initializr: <https://start.spring.io/>.
 
 Дополнительные примеры использования пользовательских образов Docker в Azure см. в разделе [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux].
 
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
-[службе контейнеров Azure]: https://azure.microsoft.com/services/container-service/
+[Служба контейнеров Azure]: https://azure.microsoft.com/services/container-service/
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
@@ -535,10 +536,10 @@ ms.locfileid: "28954895"
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [Kubernetes]: https://kubernetes.io/
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/

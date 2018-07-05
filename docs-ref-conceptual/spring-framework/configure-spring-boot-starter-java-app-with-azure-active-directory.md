@@ -4,22 +4,22 @@ description: Сведения о настройке приложения Spring 
 services: active-directory
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 06/20/2018
 ms.devlang: java
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: cf1cad0b87626058f7204a6565d09fb8901b7ce4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: adcbc78cc129daf589bf070741308e4024432e5d
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954685"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090837"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Как использовать приложение Spring Boot Starter с Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "28954685"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
 * [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
@@ -61,7 +61,7 @@ ms.locfileid: "28954685"
 
 ### <a name="create-the-active-directory-instance"></a>Создание экземпляра Active Directory
 
-1. Перейдите по адресу <https://portal.azure.com>.
+1. Войдите на сайт <https://portal.azure.com>.
 
 1. Щелкните **+Создать**, **Безопасность и идентификация**, **Azure Active Directory**.
 
@@ -74,6 +74,10 @@ ms.locfileid: "28954685"
 1. Выберите новый экземпляр Azure Active Directory в раскрывающемся меню на панели сверху на портале Azure.
 
    ![Выбор экземпляра Azure Active Directory][directory-03]
+
+1. В меню портала выберите **Azure Active Directory**, щелкните **Свойства** и скопируйте значение **Идентификатор каталога**. Оно вам понадобится позже.
+
+   ![Копирование идентификатора каталога Azure Active Directory][directory-13]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Регистрация приложения для приложения Spring Boot
 
@@ -89,7 +93,7 @@ ms.locfileid: "28954685"
 
    ![Выбор зарегистрированного приложения][directory-06]
 
-1. Когда откроется страница приложения, скопируйте **идентификатор приложения** для дальнейшего использования, а затем щелкните **Ключи**.
+1. Когда откроется страница зарегистрированного приложения, скопируйте значение **Идентификатор приложения** (оно вам понадобится позже), после чего последовательно щелкните **Настройки** и **Ключи**.
 
    ![Создание ключей зарегистрированного приложения][directory-07]
 
@@ -97,7 +101,7 @@ ms.locfileid: "28954685"
 
    ![Указание параметров зарегистрированного приложения][directory-08]
 
-1. На главной странице приложения щелкните **Требуемые разрешения**.
+1. На главной странице зарегистрированного приложения последовательно щелкните **Параметры** и **Требуемые разрешения**.
 
    ![Добавление требуемых разрешений для приложения][directory-09]
 
@@ -113,105 +117,162 @@ ms.locfileid: "28954685"
 
    ![Предоставление разрешений на доступ][directory-12]
 
+1. На главной странице зарегистрированного приложения последовательно щелкните **Параметры** и **URL-адреса ответа**.
+
+   ![Изменение URL-адресов ответа][directory-14]
+
+1. Введите http://localhost:8080/login/oauth2/code/azure в качестве нового URL-адреса ответа, а затем нажмите кнопку **Сохранить**.
+
+   ![Добавление нового URL-адреса ответа][directory-15]
+
 ## <a name="configure-and-compile-your-spring-boot-application"></a>Настройка и компиляция приложения Spring Boot
 
 1. Распакуйте скачанный архив с файлами проекта в каталог.
 
-1. Перейдите в родительскую папку проекта и откройте файл *pom.xml* в текстовом редакторе.
+2. Перейдите в родительскую папку проекта и откройте файл *pom.xml* в текстовом редакторе.
 
-1. Добавьте зависимости для компонента Spring Security OAuth2, например:
+3. Добавьте зависимости для защиты Spring OAuth2, например:
 
    ```xml
    <dependency>
-      <groupId>org.springframework.security.oauth</groupId>
-      <artifactId>spring-security-oauth2</artifactId>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-oauth2-client</artifactId>
+   </dependency>
+   <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-oauth2-jose</artifactId>
    </dependency>
    ```
 
-1. Сохраните и закройте файл *pom.xml*.
+4. Сохраните и закройте файл *pom.xml*.
 
-1. В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.
+5. В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.
 
-1. Добавьте ключ для учетной записи, используя полученные ранее значения, например:
+6. Добавьте ключ для учетной записи, используя полученные ранее значения, например:
 
    ```yaml
-   # Specifies your Active Directory Application ID:
-   azure.activedirectory.clientId=11111111-1111-1111-1111-1111111111111111
+   # Specifies your Active Directory ID:
+   azure.activedirectory.tenant-id=22222222-2222-2222-2222-222222222222
 
-   # Specifies your secret key:
-   azure.activedirectory.clientSecret=AbCdEfGhIjKlMnOpQrStUvWxYz==
+   # Specifies your App Registration's Application ID:
+   spring.security.oauth2.client.registration.azure.client-id=11111111-1111-1111-1111-1111111111111111
+
+   # Specifies your App Registration's secret key:
+   spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
    # Specifies the list of Active Directory groups to use for authentication:
-   azure.activedirectory.activeDirectoryGroups=Users
+   azure.activedirectory.active-directory-groups=Users
    ```
    Описание
+
    | Параметр | ОПИСАНИЕ |
    |---|---|
-   | `azure.activedirectory.clientId` | Содержит **идентификатор приложения** (см. выше). |
-   | `azure.activedirectory.clientSecret` | Содержит значение ключа, полученное при выполненной ранее регистрации приложения. |
-   | `azure.activedirectory.activeDirectoryGroups` | Содержит список групп Active Directory, используемых для аутентификации. |
+   | `azure.activedirectory.tenant-id` | Содержит **идентификатор каталога** Active Directory, который вы скопировали ранее. |
+   | `spring.security.oauth2.client.registration.azure.client-id` | Содержит **идентификатор приложения**, полученный после регистрации приложения. |
+   | `spring.security.oauth2.client.registration.azure.client-secret` | Содержит **значение** ключа, полученное после регистрации приложения. |
+   | `azure.activedirectory.active-directory-groups` | Содержит список групп Active Directory, используемых для аутентификации. |
 
+   > [!NOTE]
+   > 
+   > Полный список значений, доступных в файле *application.properties*, см. на [сайте GitHub][AAD Spring Boot Sample].
+   >
 
-1. Сохраните и закройте файл *application.properties*.
+7. Сохраните и закройте файл *application.properties*.
 
-1. Создайте папку с именем *controller* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/controller*.
+8. Создайте папку с именем *controller* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/controller*.
 
-1. Создайте файл Java с именем *HelloController.java* в папке *controller* и откройте его в текстовом редакторе.
+9. Создайте файл Java с именем *HelloController.java* в папке *controller* и откройте его в текстовом редакторе.
 
-1. Вставьте следующий код, а затем сохраните и закройте файл:
+10. Вставьте следующий код, а затем сохраните и закройте файл:
 
    ```java
    package com.wingtiptoys.security;
-   
+
    import org.springframework.web.bind.annotation.RequestMapping;
    import org.springframework.web.bind.annotation.RestController;
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+   import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.security.access.prepost.PreAuthorize;
-   import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
-   
+   import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+   import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+   import org.springframework.ui.Model;
+
    @RestController
    public class HelloController {
+      @Autowired
       @PreAuthorize("hasRole('Users')")
       @RequestMapping("/")
-      public String hello() {
+      public String helloWorld() {
          return "Hello World!";
       }
    }
    ```
+   > [!NOTE]
+   > 
+   > Имя группы, указываемое для метода `@PreAuthorize("hasRole('')")`, должно содержать одну из групп, указанных в поле `azure.activedirectory.active-directory-groups` в файле *application.properties*.
+   >
 
-1. Создайте папку с именем *security* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/security*.
+   > [!NOTE]
+   > 
+   > Для разных сопоставлений запросов можно указывать разные параметры авторизации, например:
+   >
+   > ``` java
+   > public class HelloController {
+   >    @Autowired
+   >    @PreAuthorize("hasRole('Users')")
+   >    @RequestMapping("/")
+   >    public String helloWorld() {
+   >       return "Hello Users!";
+   >    }
+   >    @PreAuthorize("hasRole('Group1')")
+   >    @RequestMapping("/Group1")
+   >    public String groupOne() {
+   >       return "Hello Group 1 Users!";
+   >    }
+   >    @PreAuthorize("hasRole('Group2')")
+   >    @RequestMapping("/Group2")
+   >    public String groupTwo() {
+   >       return "Hello Group 2 Users!";
+   >    }
+   > }
+   > ```
+   >    
 
-1. Создайте файл Java с именем *WebSecurityConfig.java* в папке *security* и откройте его в текстовом редакторе.
+11. Создайте папку с именем *security* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/security*.
 
-1. Вставьте следующий код, а затем сохраните и закройте файл:
+12. Создайте файл Java с именем *WebSecurityConfig.java* в папке *security* и откройте его в текстовом редакторе.
 
-   ```java
-   package com.wingtiptoys.security;
+13. Вставьте следующий код, а затем сохраните и закройте файл:
 
-   import com.microsoft.azure.spring.autoconfigure.aad.AADAuthenticationFilter;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-   import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-   import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-   import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-   import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-   import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-   
-   @EnableOAuth2Sso
-   @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
-   
-   public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-      @Autowired
-      private AADAuthenticationFilter aadAuthFilter;
-      @Override
-      protected void configure(HttpSecurity http) throws Exception {
-         http.authorizeRequests().anyRequest().permitAll();
-         http.addFilterBefore(aadAuthFilter, UsernamePasswordAuthenticationFilter.class);
-      }
-   }
-   ```
+    ```java
+    package com.wingtiptoys.security;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+    import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+    import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+    import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+    import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest;
+    import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+    import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+
+    @EnableWebSecurity
+    @EnableGlobalMethodSecurity(prePostEnabled = true)
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+        @Autowired
+        private OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2Login()
+                .userInfoEndpoint()
+                .oidcUserService(oidcUserService);
+        }
+    }
+    ```
 
 ## <a name="build-and-test-your-app"></a>Создание и тестирование приложения
 
@@ -221,24 +282,29 @@ ms.locfileid: "28954685"
 
    ```shell
    mvn clean package
+   mvn spring-boot:run
    ```
 
    ![Сборка приложения][build-application]
 
-1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
+1. Скомпилировав и запустив приложение с помощью Maven, перейдите в веб-браузере по адресу <http://localhost:8080> и введите имя пользователя и пароль.
 
-   ```shell
-   mvn clean package
-   mvn spring-boot:run
-   ```
+   ![Вход в приложение][application-login]
 
-1. Когда созданное приложение будет запущено в Maven, перейдите по адресу <http://localhost:8080> в веб-браузере.
+1. Войдя в приложение, вы увидите сообщение контроллера "Hello World".
+
+   ![Успешный вход в приложение][hello-world]
+
+   > [!NOTE]
+   > 
+   > Пользователи с неавторизованными учетными записями получат сообщение **HTTP 403 — не авторизовано**.
+   >
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения об использовании Azure Active Directory:
 
-* [Документация Azure Active Directory].
+* [Документация по Azure Active Directory].
 
 Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:
 
@@ -246,21 +312,24 @@ ms.locfileid: "28954685"
 
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
 
-**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java. Чтобы помочь разработчикам приступить к работе со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения. Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.
+**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java. В помощь разработчикам, начинающим работать со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения. Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.
+
+Более подробный пример см. [на сайте GitHub][AAD Spring Boot Sample].
 
 <!-- URL List -->
 
-[Документация Azure Active Directory]: /azure/active-directory/
+[Документация по Azure Active Directory]: /azure/active-directory/
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
 
 <!-- IMG List -->
 
@@ -281,5 +350,10 @@ ms.locfileid: "28954685"
 [directory-10]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-10.png
 [directory-11]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-11.png
 [directory-12]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-12.png
+[directory-13]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-13.png
+[directory-14]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-14.png
+[directory-15]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-15.png
 
 [build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
+[application-login]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/application-login.png
+[hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png

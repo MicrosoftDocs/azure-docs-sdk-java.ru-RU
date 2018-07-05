@@ -15,22 +15,22 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: c3a10a0d6029ba31b13f82907311d9182f98acb6
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 49d94d11ad6a4e103ded849e477d99f01955c693
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954755"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090867"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>Развертывание приложения Spring Boot в Linux в службе контейнеров Azure
 
-В этом руководстве описано, как использовать [Docker] для разработки и развертывания приложения [Spring Boot] на узле Linux в [Службе контейнеров Azure].
+В этом руководстве описано, как использовать [Docker] для разработки и развертывания приложения [Spring Boot] на узле Linux в [Служба контейнеров Azure].
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством требуется следующее.
 
-* Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
 * Актуальная версия [Java Developer Kit (JDK)].
 * Средство сборки [Maven] (версия 3) от Apache.
@@ -193,11 +193,11 @@ ms.locfileid: "28954755"
 
 1. Перейдите на [портал Azure] и выполните вход.
 
-1. Щелкните значок меню **+ Создать**, нажмите кнопку **Интернет + мобильные устройства**, а затем нажмите кнопку **веб-приложения на платформе Linux**.
+2. Щелкните значок меню **+ Создать**, нажмите кнопку **Интернет + мобильные устройства**, а затем нажмите кнопку **веб-приложения на платформе Linux**.
    
    ![Создание веб-приложения на портале Azure][LX01]
 
-1. Когда отобразится страница **Веб-приложение в Linux**, введите следующие сведения.
+3. Когда отобразится страница **Веб-приложение в Linux**, введите следующие сведения.
 
    a. Введите уникальное имя в поле **Имя приложения**, например "*wingtiptoyslinux*."
 
@@ -207,19 +207,19 @@ ms.locfileid: "28954755"
 
    d. Нажмите кнопку **Настройка контейнера** и введите следующие сведения.
 
-      * Выберите **Частный реестр**.
+   * Выберите **Частный реестр**.
 
-      * **Образ и дополнительный тег**: задайте имя контейнера из более ранней версии, например "*wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*"
+   * **Образ и дополнительный тег**: задайте имя контейнера из более ранней версии, например "*wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*"
 
-      * **URL-адрес сервера**: укажите URL-адрес реестра из более ранней версии, например "*https://wingtiptoysregistry.azurecr.io*"
+   * **URL-адрес сервера**: укажите URL-адрес реестра из более ранней версии, например *<https://wingtiptoysregistry.azurecr.io>*.
 
-      * **Имя входа пользователя** и **Пароль**: укажите учетные данные для входа из своих **ключей доступа**, которые использовались на предыдущих шагах.
+   * **Имя входа пользователя** и **Пароль**: укажите учетные данные для входа из своих **ключей доступа**, которые использовались на предыдущих шагах.
    
    д. После ввода всех этих данных нажмите кнопку **ОК**.
 
    ![Настройка параметров веб-приложения][LX02]
 
-1. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **Создать**.
 
 > [!NOTE]
 >
@@ -268,20 +268,20 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 * [Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
 
 Дополнительные сведения о Spring Boot в образце проекта Docker см. в разделе [Spring Boot on Docker Getting Started] (Начало работы с Spring Boot в Docker).
 
-Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr** по адресу https://start.spring.io/.
+Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr**: https://start.spring.io/.
 
-Дополнительные сведения о начале создания простого приложения Spring Boot см. на странице Spring Initializr по адресу https://start.spring.io/.
+Дополнительные сведения о создании простого приложения Spring Boot см. на странице Spring Initializr: https://start.spring.io/.
 
 Дополнительные примеры использования пользовательских образов Docker в Azure см. в разделе [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux].
 
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
-[Службе контейнеров Azure]: https://azure.microsoft.com/services/container-service/
+[Служба контейнеров Azure]: https://azure.microsoft.com/services/container-service/
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [портал Azure]: https://portal.azure.com/
 [Создание частного реестра контейнеров Docker с помощью портала Azure]: /azure/container-registry/container-registry-get-started-portal
@@ -290,9 +290,9 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
