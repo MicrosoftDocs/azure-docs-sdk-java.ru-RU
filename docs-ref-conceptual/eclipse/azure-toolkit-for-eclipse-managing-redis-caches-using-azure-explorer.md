@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 2d3f2363bd0b41808cd409417327b924cb86d85b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954825"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075423"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>Управление кэшами Redis с помощью Azure Explorer для Eclipse
 
@@ -53,7 +53,7 @@ ms.locfileid: "28954825"
 
    d. **Расположение**: указывает расположение, в котором создается кэш Redis (например, *западная часть США*).
 
-   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [Кэш Redis. Цены].)
+   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [странице с ценами на кэш Redis].)
 
    f. **Порт без SSL**: указывает, разрешает ли кэш Redis подключения без использования SSL. По умолчанию разрешены только SSL-подключения.
 
@@ -94,14 +94,14 @@ ms.locfileid: "28954825"
 
 * [кэш Azure Redis]
 * [Документация по кэшу Redis]
-* [Кэш Redis. Цены]
+* [странице с ценами на кэш Redis]
 * [Настройка кэша Redis для Azure]
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 
-[Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
+[странице с ценами на кэш Redis]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache/
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure

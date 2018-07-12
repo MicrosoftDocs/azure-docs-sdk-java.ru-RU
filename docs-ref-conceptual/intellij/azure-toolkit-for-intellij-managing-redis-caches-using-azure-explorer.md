@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954185"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075373"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>Управление кэшами Redis с помощью Azure Explorer для IntelliJ
 
@@ -53,7 +53,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
    d. **Расположение**: указывает расположение, в котором создается кэш Redis (например, *западная часть США*).
 
-   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [Кэш Redis. Цены].)
+   д. **Ценовая категория**: указывает ценовую категорию для кэша Redis. Этот параметр ограничивает количество клиентских подключений. (Дополнительные сведения см. на [странице с ценами на кэш Redis].)
 
    f. **Порт без SSL**: указывает, разрешает ли кэш Redis подключения без использования SSL. По умолчанию разрешены только SSL-подключения.
 
@@ -94,14 +94,14 @@ Azure Explorer, входящий в состав набора средств Azu
 
 * [кэш Azure Redis]
 * [Документация по кэшу Redis]
-* [Кэш Redis. Цены]
+* [странице с ценами на кэш Redis]
 * [Настройка кэша Redis для Azure]
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
 <!-- URL List -->
 
-[Кэш Redis. Цены]: https://azure.microsoft.com/pricing/details/cache/
+[странице с ценами на кэш Redis]: https://azure.microsoft.com/pricing/details/cache/
 [кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Документация по кэшу Redis]: /azure/redis-cache
 [Настройка кэша Redis для Azure]: /azure/redis-cache/cache-configure

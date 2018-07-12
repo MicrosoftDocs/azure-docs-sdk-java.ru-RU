@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 310d95436189af09f794154f4c9f0e71c47d88c8
-ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34283018"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075413"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Управление учетными записями хранения с помощью Azure Explorer для Eclipse
 
