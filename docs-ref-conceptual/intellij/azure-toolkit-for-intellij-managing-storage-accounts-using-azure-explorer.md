@@ -15,100 +15,100 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 4edb8c1ceef508dd251db693ccc3b98d77ec452b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954845"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075433"
 ---
-# <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="47c7c-103">Управление учетными записями хранения с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-103">Manage storage accounts by using the Azure Explorer for IntelliJ</span></span>
+# <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="a1b2b-103">Управление учетными записями хранения с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a1b2b-103">Manage storage accounts by using the Azure Explorer for IntelliJ</span></span>
 
-<span data-ttu-id="47c7c-104">Azure Explorer, входящий в состав набора средств Azure для IntelliJ, предоставляет разработчикам на Java удобное решение для управления учетными записями хранения в их учетной записи Azure из интегрированной среды разработки IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="47c7c-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing storage accounts in their Azure account from inside the IntelliJ integrated development environment (IDE).</span></span>
+<span data-ttu-id="a1b2b-104">Azure Explorer, входящий в состав набора средств Azure для IntelliJ, предоставляет разработчикам на Java удобное решение для управления учетными записями хранения в их учетной записи Azure из интегрированной среды разработки IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing storage accounts in their Azure account from inside the IntelliJ integrated development environment (IDE).</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
 [!INCLUDE [azure-toolkit-for-intellij-show-azure-explorer](../includes/azure-toolkit-for-intellij-show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-intellij"></a><span data-ttu-id="47c7c-105">Создание учетной записи хранения в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-105">Create a storage account in IntelliJ</span></span>
+## <a name="create-a-storage-account-in-intellij"></a><span data-ttu-id="a1b2b-105">Создание учетной записи хранения в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a1b2b-105">Create a storage account in IntelliJ</span></span>
 
-<span data-ttu-id="47c7c-106">Чтобы создать учетную запись хранения с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="47c7c-106">To create a storage account by using the Azure Explorer, do the following:</span></span>
+<span data-ttu-id="a1b2b-106">Чтобы создать учетную запись хранения с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-106">To create a storage account by using the Azure Explorer, do the following:</span></span>
 
-1. <span data-ttu-id="47c7c-107">Войдите в свою учетную запись Azure, следуя [Инструкции по входу для набора средств Azure для IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="47c7c-107">Sign in to your Azure account by using the [Sign-in instructions for the Azure Toolkit for IntelliJ].</span></span> 
+1. <span data-ttu-id="a1b2b-107">Войдите в свою учетную запись Azure, следуя [Инструкции по входу для набора средств Azure для IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="a1b2b-107">Sign in to your Azure account by using the [Sign-in instructions for the Azure Toolkit for IntelliJ].</span></span> 
 
-2. <span data-ttu-id="47c7c-108">В представлении **Azure Explorer** разверните узел **Azure**, щелкните правой кнопкой мыши элемент **Учетные записи хранения** и выберите **Создать учетную запись хранения**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-108">In the **Azure Explorer** view, expand the **Azure** node, right-click **Storage Accounts**, and then click **Create Storage Account**.</span></span>
+2. <span data-ttu-id="a1b2b-108">В представлении **Azure Explorer** разверните узел **Azure**, щелкните правой кнопкой мыши элемент **Учетные записи хранения** и выберите **Создать учетную запись хранения**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-108">In the **Azure Explorer** view, expand the **Azure** node, right-click **Storage Accounts**, and then click **Create Storage Account**.</span></span>
 
    ![Команда "Создать учетную запись хранения"][CS01]
 
-3. <span data-ttu-id="47c7c-110">В диалоговом окне **Создание учетной записи хранения** укажите следующие параметры.</span><span class="sxs-lookup"><span data-stu-id="47c7c-110">In the **Create Storage Account** dialog box, specify the following options:</span></span>
+3. <span data-ttu-id="a1b2b-110">В диалоговом окне **Создание учетной записи хранения** укажите следующие параметры.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-110">In the **Create Storage Account** dialog box, specify the following options:</span></span>
 
    ![Диалоговое окно "Создание учетной записи хранения"][CS02]
 
-   * <span data-ttu-id="47c7c-112">**Имя**: указывает имя для новой учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="47c7c-112">**Name**: Specifies the name for the new storage account.</span></span>
+   * <span data-ttu-id="a1b2b-112">**Имя**: указывает имя для новой учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-112">**Name**: Specifies the name for the new storage account.</span></span>
 
-   * <span data-ttu-id="47c7c-113">**Тип учетной записи**: указывает тип создаваемой учетной записи хранения (например, "хранилище BLOB-объектов").</span><span class="sxs-lookup"><span data-stu-id="47c7c-113">**Account kind**: Specifies the type of storage account to create (for example, "Blob storage").</span></span> <span data-ttu-id="47c7c-114">Дополнительные сведения см. в статье [Об учетных записях хранения Azure].</span><span class="sxs-lookup"><span data-stu-id="47c7c-114">For more information, see [About Azure storage accounts].</span></span> 
+   * <span data-ttu-id="a1b2b-113">**Тип учетной записи**: указывает тип создаваемой учетной записи хранения (например, "хранилище BLOB-объектов").</span><span class="sxs-lookup"><span data-stu-id="a1b2b-113">**Account kind**: Specifies the type of storage account to create (for example, "Blob storage").</span></span> <span data-ttu-id="a1b2b-114">Дополнительные сведения см. в статье [Об учетных записях хранения Azure].</span><span class="sxs-lookup"><span data-stu-id="a1b2b-114">For more information, see [About Azure storage accounts].</span></span> 
 
-   * <span data-ttu-id="47c7c-115">**Производительность**: определяет, какое предложение по учетной записи хранения выбранного издателя нужно использовать (например, "Премиум").</span><span class="sxs-lookup"><span data-stu-id="47c7c-115">**Performance**: Specifies which storage account offering to use from the selected publisher (for example, "Premium").</span></span> <span data-ttu-id="47c7c-116">Дополнительные сведения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure].</span><span class="sxs-lookup"><span data-stu-id="47c7c-116">For more information, see [Azure storage scalability and performance targets].</span></span> 
+   * <span data-ttu-id="a1b2b-115">**Производительность**: определяет, какое предложение по учетной записи хранения выбранного издателя нужно использовать (например, "Премиум").</span><span class="sxs-lookup"><span data-stu-id="a1b2b-115">**Performance**: Specifies which storage account offering to use from the selected publisher (for example, "Premium").</span></span> <span data-ttu-id="a1b2b-116">Дополнительные сведения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure].</span><span class="sxs-lookup"><span data-stu-id="a1b2b-116">For more information, see [Azure storage scalability and performance targets].</span></span> 
 
-   * <span data-ttu-id="47c7c-117">**Репликация**: указывает репликацию для учетной записи хранения (например, "избыточная в пределах зоны").</span><span class="sxs-lookup"><span data-stu-id="47c7c-117">**Replication**: Specifies the replication for the storage account (for example, "Zone-Redundant").</span></span> <span data-ttu-id="47c7c-118">Дополнительные сведения см. в статье [Репликация службы хранилища Azure].</span><span class="sxs-lookup"><span data-stu-id="47c7c-118">For more information, see [Azure storage replication].</span></span> 
+   * <span data-ttu-id="a1b2b-117">**Репликация**: указывает репликацию для учетной записи хранения (например, "избыточная в пределах зоны").</span><span class="sxs-lookup"><span data-stu-id="a1b2b-117">**Replication**: Specifies the replication for the storage account (for example, "Zone-Redundant").</span></span> <span data-ttu-id="a1b2b-118">Дополнительные сведения см. в статье [Репликация службы хранилища Azure].</span><span class="sxs-lookup"><span data-stu-id="a1b2b-118">For more information, see [Azure storage replication].</span></span> 
 
-   * <span data-ttu-id="47c7c-119">**Подписка**: указывает подписку Azure, которую нужно использовать для новой учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="47c7c-119">**Subscription**: Specifies the Azure subscription that you want to use for the new storage account.</span></span>
+   * <span data-ttu-id="a1b2b-119">**Подписка**: указывает подписку Azure, которую нужно использовать для новой учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-119">**Subscription**: Specifies the Azure subscription that you want to use for the new storage account.</span></span>
 
-   * <span data-ttu-id="47c7c-120">**Расположение**: указывает расположение для создания учетной записи хранения (например, "западная часть США").</span><span class="sxs-lookup"><span data-stu-id="47c7c-120">**Location**: Specifies the location where your storage account will be created (for example, "West US").</span></span>
+   * <span data-ttu-id="a1b2b-120">**Расположение**: указывает расположение для создания учетной записи хранения (например, "западная часть США").</span><span class="sxs-lookup"><span data-stu-id="a1b2b-120">**Location**: Specifies the location where your storage account will be created (for example, "West US").</span></span>
 
-   * <span data-ttu-id="47c7c-121">**Группа ресурсов**: указывает группу ресурсов для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="47c7c-121">**Resource Group**: Specifies the resource group for your virtual machine.</span></span> <span data-ttu-id="47c7c-122">Выберите один из следующих вариантов:</span><span class="sxs-lookup"><span data-stu-id="47c7c-122">Select one of the following options:</span></span>
-      * <span data-ttu-id="47c7c-123">**Создать**: указывает, что нужно создать группу ресурсов.</span><span class="sxs-lookup"><span data-stu-id="47c7c-123">**Create new**: Specifies that you want to create a new resource group.</span></span>
-      * <span data-ttu-id="47c7c-124">**Использовать существующий**: указывает, что вы выберете группу ресурсов, связанную с учетной записью Azure.</span><span class="sxs-lookup"><span data-stu-id="47c7c-124">**Use existing**: Specifies that you will select from a list of resource groups that are associated with your Azure account.</span></span>
+   * <span data-ttu-id="a1b2b-121">**Группа ресурсов**: указывает группу ресурсов для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-121">**Resource Group**: Specifies the resource group for your virtual machine.</span></span> <span data-ttu-id="a1b2b-122">Выберите один из следующих вариантов:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-122">Select one of the following options:</span></span>
+      * <span data-ttu-id="a1b2b-123">**Создать**: указывает, что нужно создать группу ресурсов.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-123">**Create new**: Specifies that you want to create a new resource group.</span></span>
+      * <span data-ttu-id="a1b2b-124">**Использовать существующий**: указывает, что вы выберете группу ресурсов, связанную с учетной записью Azure.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-124">**Use existing**: Specifies that you will select from a list of resource groups that are associated with your Azure account.</span></span>
 
-4. <span data-ttu-id="47c7c-125">Указав все перечисленные выше параметры, нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-125">When you have specified all of the preceding options, click **OK**.</span></span>
+4. <span data-ttu-id="a1b2b-125">Указав все перечисленные выше параметры, нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-125">When you have specified all of the preceding options, click **OK**.</span></span>
 
-## <a name="create-a-storage-container-in-intellij"></a><span data-ttu-id="47c7c-126">Создание контейнера хранилища в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-126">Create a storage container in IntelliJ</span></span>
+## <a name="create-a-storage-container-in-intellij"></a><span data-ttu-id="a1b2b-126">Создание контейнера хранилища в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a1b2b-126">Create a storage container in IntelliJ</span></span>
 
-<span data-ttu-id="47c7c-127">Чтобы создать контейнер хранилища с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="47c7c-127">To create a storage container by using the Azure Explorer, do the following:</span></span>
+<span data-ttu-id="a1b2b-127">Чтобы создать контейнер хранилища с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-127">To create a storage container by using the Azure Explorer, do the following:</span></span>
 
-1. <span data-ttu-id="47c7c-128">В представлении Azure Explorer щелкните правой кнопкой мыши учетную запись хранения, для которой нужно создать контейнер, а затем нажмите кнопку **Create blob container** (Создать контейнер BLOB-объектов).</span><span class="sxs-lookup"><span data-stu-id="47c7c-128">In the Azure Explorer view, right-click the storage account where you want to create a container, and then click **Create blob container**.</span></span>
+1. <span data-ttu-id="a1b2b-128">В представлении Azure Explorer щелкните правой кнопкой мыши учетную запись хранения, для которой нужно создать контейнер, а затем нажмите кнопку **Create blob container** (Создать контейнер BLOB-объектов).</span><span class="sxs-lookup"><span data-stu-id="a1b2b-128">In the Azure Explorer view, right-click the storage account where you want to create a container, and then click **Create blob container**.</span></span>
 
    ![Команда Create blob container (Создать контейнер BLOB-объектов)][CC01]
 
-2. <span data-ttu-id="47c7c-130">В диалоговом окне **Создание контейнера BLOB-объектов** укажите имя для своего контейнера и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-130">In the **Create blob container** dialog box, specify the name for your container, and then click **OK**.</span></span> <span data-ttu-id="47c7c-131">Дополнительные сведения об именовании контейнеров хранилища см. в статье [Naming and Referencing Containers, Blobs, and Metadata] (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).</span><span class="sxs-lookup"><span data-stu-id="47c7c-131">For more information about naming storage containers, see [Naming and referencing containers, blobs, and metadata].</span></span>
+2. <span data-ttu-id="a1b2b-130">В диалоговом окне **Создание контейнера BLOB-объектов** укажите имя для своего контейнера и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-130">In the **Create blob container** dialog box, specify the name for your container, and then click **OK**.</span></span> <span data-ttu-id="a1b2b-131">Дополнительные сведения об именовании контейнеров хранилища см. в статье [Naming and Referencing Containers, Blobs, and Metadata] (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).</span><span class="sxs-lookup"><span data-stu-id="a1b2b-131">For more information about naming storage containers, see [Naming and referencing containers, blobs, and metadata].</span></span>
 
    ![Диалоговое окно Create Storage Container (Создание контейнера хранилища)][CC02]
 
-## <a name="delete-a-storage-container-in-intellij"></a><span data-ttu-id="47c7c-133">Удаление контейнера хранилища в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-133">Delete a storage container in IntelliJ</span></span>
+## <a name="delete-a-storage-container-in-intellij"></a><span data-ttu-id="a1b2b-133">Удаление контейнера хранилища в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a1b2b-133">Delete a storage container in IntelliJ</span></span>
 
-<span data-ttu-id="47c7c-134">Чтобы удалить контейнер хранилища с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="47c7c-134">To delete a storage container by using the Azure Explorer, do the following:</span></span>
+<span data-ttu-id="a1b2b-134">Чтобы удалить контейнер хранилища с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-134">To delete a storage container by using the Azure Explorer, do the following:</span></span>
 
-1. <span data-ttu-id="47c7c-135">В представлении Azure Explorer щелкните правой кнопкой мыши контейнер хранилища и выберите **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-135">In the Azure Explorer view, right-click the storage container, and then click **Delete**.</span></span>
+1. <span data-ttu-id="a1b2b-135">В представлении Azure Explorer щелкните правой кнопкой мыши контейнер хранилища и выберите **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-135">In the Azure Explorer view, right-click the storage container, and then click **Delete**.</span></span>
 
    ![Команда Delete storage container (Удаление контейнера хранилища)][DC01]
 
-2. <span data-ttu-id="47c7c-137">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-137">In the confirmation window, click **Yes**.</span></span>
+2. <span data-ttu-id="a1b2b-137">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-137">In the confirmation window, click **Yes**.</span></span>
 
    ![Окно подтверждения удаления контейнера хранилища][DC02]
 
-## <a name="delete-a-storage-account-in-intellij"></a><span data-ttu-id="47c7c-139">Удаление учетной записи хранения в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="47c7c-139">Delete a storage account in IntelliJ</span></span>
+## <a name="delete-a-storage-account-in-intellij"></a><span data-ttu-id="a1b2b-139">Удаление учетной записи хранения в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="a1b2b-139">Delete a storage account in IntelliJ</span></span>
 
-<span data-ttu-id="47c7c-140">Чтобы удалить учетную запись хранения с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="47c7c-140">To delete a storage account by using the Azure Explorer, do the following:</span></span>
+<span data-ttu-id="a1b2b-140">Чтобы удалить учетную запись хранения с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-140">To delete a storage account by using the Azure Explorer, do the following:</span></span>
 
-1. <span data-ttu-id="47c7c-141">В представлении **Azure Explorer** щелкните правой кнопкой мыши учетную запись хранения и выберите пункт **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-141">In the **Azure Explorer** view, right-click the storage account, and then select **Delete**.</span></span>
+1. <span data-ttu-id="a1b2b-141">В представлении **Azure Explorer** щелкните правой кнопкой мыши учетную запись хранения и выберите пункт **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-141">In the **Azure Explorer** view, right-click the storage account, and then select **Delete**.</span></span>
 
    ![Меню "Удаление учетной записи хранения"][DS01]
 
-2. <span data-ttu-id="47c7c-143">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="47c7c-143">In the confirmation window, click **Yes**.</span></span>
+2. <span data-ttu-id="a1b2b-143">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="a1b2b-143">In the confirmation window, click **Yes**.</span></span>
 
    ![Окно подтверждения удаления учетной записи хранения][DS02]
 
-## <a name="next-steps"></a><span data-ttu-id="47c7c-145">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="47c7c-145">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="a1b2b-145">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="a1b2b-145">Next steps</span></span>
 
-<span data-ttu-id="47c7c-146">Дополнительные сведения об учетных записях хранения, размерах и ценах см. в следующих ресурсах:</span><span class="sxs-lookup"><span data-stu-id="47c7c-146">For more information about Azure storage accounts, sizes, and pricing, see the following resources:</span></span>
+<span data-ttu-id="a1b2b-146">Дополнительные сведения об учетных записях хранения, размерах и ценах см. в следующих ресурсах:</span><span class="sxs-lookup"><span data-stu-id="a1b2b-146">For more information about Azure storage accounts, sizes, and pricing, see the following resources:</span></span>
 
-* <span data-ttu-id="47c7c-147">[Введение в службу хранилища Microsoft Azure]</span><span class="sxs-lookup"><span data-stu-id="47c7c-147">[Introduction to Microsoft Azure Storage]</span></span>
-* <span data-ttu-id="47c7c-148">[Об учетных записях хранения Azure]</span><span class="sxs-lookup"><span data-stu-id="47c7c-148">[About Azure storage accounts]</span></span>
-* <span data-ttu-id="47c7c-149">Размеры учетных записей хранения Azure</span><span class="sxs-lookup"><span data-stu-id="47c7c-149">Azure storage-account sizes</span></span>
-  * <span data-ttu-id="47c7c-150">[Размеры учетных записей хранения Windows в Azure]</span><span class="sxs-lookup"><span data-stu-id="47c7c-150">[Sizes for Windows storage accounts in Azure]</span></span>
-  * <span data-ttu-id="47c7c-151">[Размеры учетных записей хранения Linux в Azure]</span><span class="sxs-lookup"><span data-stu-id="47c7c-151">[Sizes for Linux storage accounts in Azure]</span></span>
-* <span data-ttu-id="47c7c-152">Цены на учетные записи хранения Azure</span><span class="sxs-lookup"><span data-stu-id="47c7c-152">Azure storage-account pricing</span></span>
-  * <span data-ttu-id="47c7c-153">[Windows storage-account pricing] (Цены на учетные записи хранения Windows)</span><span class="sxs-lookup"><span data-stu-id="47c7c-153">[Windows storage-account pricing]</span></span>
-  * <span data-ttu-id="47c7c-154">[Linux storage-account pricing] (Цены на учетные записи хранения Linux)</span><span class="sxs-lookup"><span data-stu-id="47c7c-154">[Linux storage-account pricing]</span></span>
+* <span data-ttu-id="a1b2b-147">[Введение в службу хранилища Microsoft Azure]</span><span class="sxs-lookup"><span data-stu-id="a1b2b-147">[Introduction to Microsoft Azure Storage]</span></span>
+* <span data-ttu-id="a1b2b-148">[Об учетных записях хранения Azure]</span><span class="sxs-lookup"><span data-stu-id="a1b2b-148">[About Azure storage accounts]</span></span>
+* <span data-ttu-id="a1b2b-149">Размеры учетных записей хранения Azure</span><span class="sxs-lookup"><span data-stu-id="a1b2b-149">Azure storage-account sizes</span></span>
+  * <span data-ttu-id="a1b2b-150">[Размеры учетных записей хранения Windows в Azure]</span><span class="sxs-lookup"><span data-stu-id="a1b2b-150">[Sizes for Windows storage accounts in Azure]</span></span>
+  * <span data-ttu-id="a1b2b-151">[Размеры учетных записей хранения Linux в Azure]</span><span class="sxs-lookup"><span data-stu-id="a1b2b-151">[Sizes for Linux storage accounts in Azure]</span></span>
+* <span data-ttu-id="a1b2b-152">Цены на учетные записи хранения Azure</span><span class="sxs-lookup"><span data-stu-id="a1b2b-152">Azure storage-account pricing</span></span>
+  * <span data-ttu-id="a1b2b-153">[Windows storage-account pricing] (Цены на учетные записи хранения Windows)</span><span class="sxs-lookup"><span data-stu-id="a1b2b-153">[Windows storage-account pricing]</span></span>
+  * <span data-ttu-id="a1b2b-154">[Linux storage-account pricing] (Цены на учетные записи хранения Linux)</span><span class="sxs-lookup"><span data-stu-id="a1b2b-154">[Linux storage-account pricing]</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
