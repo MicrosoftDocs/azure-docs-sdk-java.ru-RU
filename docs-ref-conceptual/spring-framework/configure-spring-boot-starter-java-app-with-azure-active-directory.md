@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 06/20/2018
+ms.date: 07/02/2018
 ms.devlang: java
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: adcbc78cc129daf589bf070741308e4024432e5d
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 6d20593620c7fb73f8481be8705bdc42d4e9ce32
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090837"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864054"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Как использовать приложение Spring Boot Starter с Azure Active Directory
 
@@ -67,7 +67,7 @@ ms.locfileid: "37090837"
 
    ![Создание экземпляра Azure Active Directory][directory-01]
 
-1. Укажите **имя организации** и **первоначальное доменное имя**, а затем щелкните **Создать**.
+1. Укажите **имя организации** и **первоначальное доменное имя**. Скопируйте полный URL-адрес вашего каталога. Он вам понадобится, чтобы добавить учетные записи пользователей, как описывается далее в этом руководстве. (Например, `wingtiptoysdirectory.onmicrosoft.com`.) По завершении нажмите кнопку **Создать**.
 
    ![Указание имен Azure Active Directory][directory-02]
 
@@ -75,7 +75,7 @@ ms.locfileid: "37090837"
 
    ![Выбор экземпляра Azure Active Directory][directory-03]
 
-1. В меню портала выберите **Azure Active Directory**, щелкните **Свойства** и скопируйте значение **Идентификатор каталога**. Оно вам понадобится позже.
+1. В меню портала выберите **Azure Active Directory**, щелкните **Свойства** и скопируйте значение параметра **Идентификатор каталога**. Оно вам понадобится при настройке файла *application.properties*, как описывается далее в этом руководстве.
 
    ![Копирование идентификатора каталога Azure Active Directory][directory-13]
 
@@ -93,11 +93,11 @@ ms.locfileid: "37090837"
 
    ![Выбор зарегистрированного приложения][directory-06]
 
-1. Когда откроется страница зарегистрированного приложения, скопируйте значение **Идентификатор приложения** (оно вам понадобится позже), после чего последовательно щелкните **Настройки** и **Ключи**.
+1. Когда появится страница для регистрации приложения, скопируйте **идентификатор приложения**. Он вам понадобится при настройке файла *application.properties*, как описывается далее в этом руководстве. Щелкните **Параметры**, а затем выберите **Ключи**.
 
    ![Создание ключей зарегистрированного приложения][directory-07]
 
-1. Добавьте **описание** и укажите **длительность** использования нового ключа, а затем щелкните **Сохранить**. Значение ключа будет указано автоматически, когда вы щелкнете значок **Сохранить**. Вам нужно скопировать это значение для дальнейшего использования. (Вы не сможете получить это значение позже.)
+1. Добавьте **описание** и укажите **длительность** использования нового ключа, а затем щелкните **Сохранить**. Значение ключа будет указано автоматически, когда вы щелкнете значок **Сохранить**. Скопируйте это значение, чтобы использовать его при настройке файла *application.properties*, как описывается далее в этом руководстве. (Вы не сможете получить это значение позже.)
 
    ![Указание параметров зарегистрированного приложения][directory-08]
 
@@ -125,13 +125,55 @@ ms.locfileid: "37090837"
 
    ![Добавление нового URL-адреса ответа][directory-15]
 
+1. На главной странице регистрации приложения щелкните **Манифест**, затем установите для параметра `oauth2AllowImplicitFlow` значение `true` и нажмите кнопку **Сохранить**.
+
+   ![Настройка манифеста приложения][directory-16]
+
+   > [!NOTE]
+   > 
+   > Дополнительные сведения о параметре `oauth2AllowImplicitFlow` и других параметрах приложения см. в статье [Манифест приложения Azure Active Directory][AAD app manifest]. 
+   >
+
+### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>Добавление учетной записи пользователя в каталог и в группу
+
+1. На странице **Обзор** в Active Directory щелкните **Пользователи**.
+
+   ![Открытие панели "Пользователи"][directory-17]
+
+1. Когда появится панель **Пользователи**, щелкните **Новый пользователь**.
+
+   ![Добавление новой учетной записи пользователя][directory-18]
+
+1. Когда появится панель **Пользователь**, введите значения в поля **Имя** и **Имя пользователя**.
+
+   ![Ввод сведений об учетной записи пользователя][directory-19]
+
+   > [!NOTE]
+   > 
+   > При вводе имени пользователя укажите URL-адрес каталога, ранее скопированный в рамках этого руководства. Например:
+   >
+   > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
+   > 
+
+1. Щелкните **Группы**, затем выберите группы, которые будут использоваться для авторизации в приложении, и нажмите кнопку **Выбрать**. (В рамках этого руководства добавьте учетную запись в группу _Пользователи_.)
+
+   ![Выбор групп пользователей][directory-20]
+
+1. Установите флажок **Показать пароль** и скопируйте пароль. Он вам понадобится при входе в приложение, как описывается далее в этом руководстве.
+
+   ![Отображение пароля][directory-21]
+
+1. Нажмите кнопку **Создать**, чтобы добавить в каталог новую учетную запись пользователя.
+
+   ![Создание учетной записи пользователя][directory-22]
+
 ## <a name="configure-and-compile-your-spring-boot-application"></a>Настройка и компиляция приложения Spring Boot
 
-1. Распакуйте скачанный архив с файлами проекта в каталог.
+1. Распакуйте архив с файлами проекта, который вы создали и скачали в каталог ранее в рамках этого руководства.
 
-2. Перейдите в родительскую папку проекта и откройте файл *pom.xml* в текстовом редакторе.
+1. Перейдите в родительскую папку проекта и откройте файл *pom.xml* в текстовом редакторе.
 
-3. Добавьте зависимости для защиты Spring OAuth2, например:
+1. Добавьте зависимости для защиты Spring OAuth2, например:
 
    ```xml
    <dependency>
@@ -144,11 +186,11 @@ ms.locfileid: "37090837"
    </dependency>
    ```
 
-4. Сохраните и закройте файл *pom.xml*.
+1. Сохраните и закройте файл *pom.xml*.
 
-5. В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.
+1. В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.
 
-6. Добавьте ключ для учетной записи, используя полученные ранее значения, например:
+1. Задайте параметры для регистрации вашего приложения, используя созданные ранее значения. Например:
 
    ```yaml
    # Specifies your Active Directory ID:
@@ -160,7 +202,7 @@ ms.locfileid: "37090837"
    # Specifies your App Registration's secret key:
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
-   # Specifies the list of Active Directory groups to use for authentication:
+   # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
    Описание
@@ -170,20 +212,20 @@ ms.locfileid: "37090837"
    | `azure.activedirectory.tenant-id` | Содержит **идентификатор каталога** Active Directory, который вы скопировали ранее. |
    | `spring.security.oauth2.client.registration.azure.client-id` | Содержит **идентификатор приложения**, полученный после регистрации приложения. |
    | `spring.security.oauth2.client.registration.azure.client-secret` | Содержит **значение** ключа, полученное после регистрации приложения. |
-   | `azure.activedirectory.active-directory-groups` | Содержит список групп Active Directory, используемых для аутентификации. |
+   | `azure.activedirectory.active-directory-groups` | Содержит список групп Active Directory, используемых для авторизации. |
 
    > [!NOTE]
    > 
    > Полный список значений, доступных в файле *application.properties*, см. на [сайте GitHub][AAD Spring Boot Sample].
    >
 
-7. Сохраните и закройте файл *application.properties*.
+1. Сохраните и закройте файл *application.properties*.
 
-8. Создайте папку с именем *controller* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/controller*.
+1. Создайте папку с именем *controller* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/controller*.
 
-9. Создайте файл Java с именем *HelloController.java* в папке *controller* и откройте его в текстовом редакторе.
+1. Создайте файл Java с именем *HelloController.java* в папке *controller* и откройте его в текстовом редакторе.
 
-10. Вставьте следующий код, а затем сохраните и закройте файл:
+1. Вставьте следующий код, а затем сохраните и закройте файл:
 
    ```java
    package com.wingtiptoys.security;
@@ -237,11 +279,11 @@ ms.locfileid: "37090837"
    > ```
    >    
 
-11. Создайте папку с именем *security* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/security*.
+1. Создайте папку с именем *security* в папке с исходным кодом Java для приложения, например: *src/main/java/com/wingtiptoys/security/security*.
 
-12. Создайте файл Java с именем *WebSecurityConfig.java* в папке *security* и откройте его в текстовом редакторе.
+1. Создайте файл Java с именем *WebSecurityConfig.java* в папке *security* и откройте его в текстовом редакторе.
 
-13. Вставьте следующий код, а затем сохраните и закройте файл:
+1. Вставьте следующий код, а затем сохраните и закройте файл:
 
     ```java
     package com.wingtiptoys.security;
@@ -291,6 +333,13 @@ ms.locfileid: "37090837"
 
    ![Вход в приложение][application-login]
 
+   > [!NOTE]
+   > 
+   > Если это первый вход с новой учетной записью пользователя, возможно, вам будет предложено изменить пароль.
+   > 
+   > ![Изменение пароля][update-password]
+   > 
+
 1. Войдя в приложение, вы увидите сообщение контроллера "Hello World".
 
    ![Успешный вход в приложение][hello-world]
@@ -321,8 +370,9 @@ ms.locfileid: "37090837"
 <!-- URL List -->
 
 [Документация по Azure Active Directory]: /azure/active-directory/
+[AAD app manifest]: /azure/active-directory/develop/active-directory-application-manifest
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
-[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure для разработчиков Java]: /java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -353,7 +403,15 @@ ms.locfileid: "37090837"
 [directory-13]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-13.png
 [directory-14]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-14.png
 [directory-15]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-15.png
+[directory-16]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-16.png
+[directory-17]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-17.png
+[directory-18]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-18.png
+[directory-19]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-19.png
+[directory-20]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-20.png
+[directory-21]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-21.png
+[directory-22]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-22.png
 
-[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [application-login]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/application-login.png
+[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
+[update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
