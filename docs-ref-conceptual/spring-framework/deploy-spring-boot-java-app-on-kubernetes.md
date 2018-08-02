@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения Spring Boot в Kubernetes в Службе контейнеров Azure
+title: Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 description: В этом руководстве содержатся пошаговые инструкции по развертыванию приложения Spring Boot в кластере Kubernetes в Microsoft Azure.
 services: container-service
 documentationcenter: java
@@ -8,27 +8,27 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: asirveda;robmcm
-ms.date: 02/01/2018
+ms.date: 07/05/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 9eb37f302835ea40e92b5212d5bbc305d1311bc4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: cb83a7d6ec3a9a83fbfd3b2e34e5a4e498aa36d3
+ms.sourcegitcommit: 51dc05a96a8cbc8a6c9b45e094d8f3cfec16a607
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954645"
+ms.lasthandoff: 07/21/2018
+ms.locfileid: "39189674"
 ---
-# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure
+# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 
-**[Kubernetes]** и **[Docker]**  — это решения с открытым кодом, которые помогают разработчикам автоматизировать развертывание и масштабирование выполняемых в контейнере приложений, а также управление ими.
+**[Kubernetes]** и **[Docker]** — это решения с открытым кодом, которые помогают разработчикам автоматизировать развертывание и масштабирование выполняемых в контейнерах приложений, а также управление ими.
 
-В этом руководстве представлены пошаговые инструкции по объединению этих двух популярных технологий с открытым кодом для разработки и развертывания приложения Spring Boot в Microsoft Azure. В частности, *[Spring Boot]* используется для разработки приложений, *[Kubernetes]* — для развертывания контейнеров, а [Служба контейнеров Azure] — для размещения приложений.
+В этом руководстве представлены пошаговые инструкции по объединению этих двух популярных технологий с открытым кодом для разработки и развертывания приложения Spring Boot в Microsoft Azure. В частности, *[Spring Boot]* используется для разработки приложений, *[Kubernetes]* — для развертывания контейнеров, а [Служба Azure Kubernetes (AKS)] — для размещения приложений.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
@@ -73,7 +73,7 @@ ms.locfileid: "28954645"
    mvn package spring-boot:run
    ```
 
-1. Чтобы протестировать веб-приложение, перейдите по адресу http://localhost:8080 или введите команду `curl`:
+1. Чтобы протестировать веб-приложение, перейдите по адресу http://localhost:8080 или введите такую команду `curl`:
    ```
    curl http://localhost:8080
    ```
@@ -89,6 +89,11 @@ ms.locfileid: "28954645"
 1. Войдите в свою учетную запись Azure.
    ```azurecli
    az login
+   ```
+
+1. Выберите подписку Azure:
+   ```azurecli
+   az account set -s <YourSubscriptionID>
    ```
 
 1. Создайте группу ресурсов Azure, используемых в этом руководстве.
@@ -119,7 +124,7 @@ ms.locfileid: "28954645"
    ```
 
 1. Добавьте идентификатор и пароль реестра контейнеров Azure для новой коллекции `<server>` в файле *settings.xml*.
-`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
+`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
 
    ```xml
    <servers>
@@ -151,7 +156,11 @@ ms.locfileid: "28954645"
       <version>0.4.11</version>
       <configuration>
          <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <dockerDirectory>src/main/docker</dockerDirectory>
+         <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+         </buildArgs>
+         <baseImage>java</baseImage>
+         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
          <resources>
             <resource>
                <targetPath>/</targetPath>
@@ -189,22 +198,24 @@ ms.locfileid: "28954645"
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Создание в Службе контейнеров Azure кластера Kubernetes с помощью Azure CLI
 
-1. Создайте кластер Kubernetes в службе контейнеров Azure. Следующая команда отвечает за создание кластера *kubernetes* в группе ресурсов *wingtiptoys-kubernetes* с именем кластера *wingtiptoys-containerservice* и префиксом DNS *wingtiptoys kubernetes*:
+1. Создайте кластер Kubernetes в Службе Azure Kubernetes. Следующая команда отвечает за создание кластера *kubernetes* в группе ресурсов *wingtiptoys-kubernetes* с именем кластера *wingtiptoys-akscluster* и префиксом DNS *wingtiptoys-kubernetes*:
    ```azurecli
-   az acs create --orchestrator-type=kubernetes --resource-group=wingtiptoys-kubernetes \ 
-    --name=wingtiptoys-containerservice --dns-prefix=wingtiptoys-kubernetes
+   az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
+    --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
    ```
    Выполнение этой команды может занять некоторое время.
 
+1. При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. Чтобы предоставить AKS доступ к ACR, выполните инструкции из статьи [Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes].
+
+
 1. Установите `kubectl` с использованием Azure CLI. Пользователи Linux могут добавить к этой команде префикс `sudo`, так как она развертывает интерфейс командной строки Kubernetes в `/usr/local/bin`.
    ```azurecli
-   az acs kubernetes install-cli
+   az aks install-cli
    ```
 
 1. Скачайте сведения о конфигурации кластера, чтобы управлять им из веб-интерфейса Kubernetes и `kubectl`. 
    ```azurecli
-   az acs kubernetes get-credentials --resource-group=wingtiptoys-kubernetes  \ 
-    --name=wingtiptoys-containerservice
+   az aks get-credentials --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>Развертывание образа в кластере Kubernetes
@@ -217,18 +228,18 @@ ms.locfileid: "28954645"
 
 1. Откройте веб-сайт конфигурации кластера Kubernetes в браузере по умолчанию:
    ```
-   az acs kubernetes browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-containerservice
+   az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
 1. Когда в браузере откроется веб-сайт конфигурации Kubernetes, щелкните ссылку, чтобы **развернуть контейнерное приложение**:
 
    ![Веб-сайт конфигурации Kubernetes][KB01]
 
-1. Когда отобразится страница **Deploy a containerized app** (Развернуть контейнерное приложение), укажите следующие параметры:
+1. Когда отобразится страница **Resource Creation** (Создание ресурса), укажите следующие параметры:
 
-   a. Выберите **Specify app details below** (Указать сведения о приложении ниже).
+   a. Выберите **Create an App** (Создать приложение).
 
-   Б. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
+   b. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
 
    c. Укажите сервер входа и образ контейнера, заданные ранее, в поле **Образ контейнера** (например, *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*).
 
@@ -241,7 +252,7 @@ ms.locfileid: "28954645"
 
 1. Нажмите кнопку **Развернуть**, чтобы развернуть контейнер.
 
-   ![Развертывание контейнера][KB05]
+   ![Развертывание Kubernetes][KB05]
 
 1. После развертывания приложение Spring Boot отобразится в списке **Службы**.
 
@@ -298,7 +309,9 @@ ms.locfileid: "28954645"
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 * [Развертывание приложения Spring Boot в Linux в службе контейнеров Azure](deploy-spring-boot-java-app-on-linux.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
+
+<!-- Newly added --> Дополнительные сведения о развертывании приложения Java в кластере Kubernetes с помощью Visual Studio Code см. в [Руководства по Java для Visual Studio Code].
 
 Дополнительные сведения о примере проекта Spring Boot в Docker см. в разделе [Spring Boot on Docker Getting Started].
 
@@ -308,8 +321,7 @@ ms.locfileid: "28954645"
 
 По следующим ссылкам представлены дополнительные сведения об использовании Kubernetes с Azure:
 
-* [Развертывание кластера Kubernetes для контейнеров Linux](https://docs.microsoft.com/azure/container-service/container-service-kubernetes-walkthrough)
-* [Использование веб-интерфейса Kubernetes со службой контейнеров Azure](https://docs.microsoft.com/azure/container-service/container-service-kubernetes-ui)
+* [Начало работы с кластером Kubernetes в Службе Azure Kubernetes](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)
 
 Дополнительные сведения об использовании интерфейса командной строки Kubernetes доступны в руководстве пользователя **kubectl** по адресу <https://kubernetes.io/docs/user-guide/kubectl/>.
 
@@ -324,7 +336,7 @@ ms.locfileid: "28954645"
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
-[Служба контейнеров Azure]: https://azure.microsoft.com/services/container-service/
+[Служба Azure Kubernetes (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
@@ -333,17 +345,21 @@ ms.locfileid: "28954645"
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
 [Kubernetes]: https://kubernetes.io/
 [Kubernetes Command-Line Interface (kubectl)]: https://kubernetes.io/docs/user-guide/kubectl-overview/
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 [Configure Service Accounts for Pods]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/ (Настройка учетных записей службы для модулей Pod)
 [Namespaces]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ (Пространства имен)
 [Pull an Image from a Private Registry]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/ (Извлечение образа из частного реестра)
+
+<!-- Newly added -->
+[Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-aks/
+[Руководства по Java для Visual Studio Code]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->
 
