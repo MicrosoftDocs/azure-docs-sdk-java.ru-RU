@@ -4,6 +4,8 @@
     - name: Краткие руководства по использованию Java
       expanded: true
       items:
+        - name: Приступая к работе
+          href: java-sdk-azure-get-started.md
         - name: Service Fabric
           items:
             - name: Spring Boot
@@ -12,24 +14,18 @@
               href: /azure/service-fabric/service-fabric-quickstart-java-reliable-services
         - name: Веб-приложения
           href: /azure/app-service-web/app-service-web-get-started-java
-        - name: База данных SQL
-          href: /azure/sql-database/sql-database-connect-query-java
-        - name: MySQL
-          href: /azure/mysql/connect-java
-        - name: PostgreSQL
-          href: /azure/postgresql/connect-java
+        - name: База данных
+          items:
+            - name: База данных SQL
+              href: /azure/sql-database/sql-database-connect-query-java
+            - name: MySQL
+              href: /azure/mysql/connect-java
+            - name: PostgreSQL
+              href: /azure/postgresql/connect-java
         - name: База данных Cosmos
           href: /azure/cosmos-db/create-documentdb-java
         - name: Хранилище BLOB-объектов
           href: /azure/storage/blobs/storage-quickstart-blobs-java
-        - name: Библиотеки Azure для Java
-          items:
-            - name: Maven
-              href: java-sdk-azure-get-started.md
-            - name: Eclipse
-              href: eclipse/java-sdk-azure-get-started-eclipse.md
-            - name: Intellij
-              href: intellij/java-sdk-azure-get-started-intellij.md
     - name: Средства
       expanded: true
       href: java-azure-tools.md
