@@ -12,18 +12,18 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: f069183c96cdc42d590d2e58a5a6a500be5ab69a
-ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
+ms.openlocfilehash: dee41f08dc303fc95fcfa6a585a5d1a06726f2ef
+ms.sourcegitcommit: dad28b332346dfa9af249b5a64e042cbb1eb90d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29065531"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39625040"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Разработка в облаке с помощью библиотек Azure для Java
 
 В этом руководстве описано, как настроить среду разработки и использовать библиотеки Azure для Java. Вы создадите ресурсы Azure и подключите их для выполнения таких базовых задач, как передача файла или развертывание веб-приложения. Когда все будет готово, вы будете готовы приступить к использованию служб Azure в приложениях Java.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure. Если у вас ее нет, [получите бесплатную пробную версию](https://azure.microsoft.com/free/).
 - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) или [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2).
@@ -93,7 +93,9 @@ export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 setx AZURE_AUTH_LOCATION "C:\<fullpath>\azureauth.properties" /m
 ```
 
-## <a name="create-a-new-maven-project"></a>Создание нового проекта Maven
+## <a name="tooling"></a>Инструментарий
+
+### <a name="create-a-new-maven-project"></a>Создание нового проекта Maven
 
 > [!NOTE]
 > В этом руководстве пример кода создается и запускается с помощью средства сборки Maven. Но с библиотеками Azure для Java можно использовать и другие инструменты, например Gradle. 
@@ -142,7 +144,27 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \
     </plugins>
 </build>
  ```
-   
+
+### <a name="install-the-azure-toolkit-for-intellij"></a>Установка Azure Toolkit for IntelliJ
+
+[Набор средств Azure](intellij/azure-toolkit-for-intellij-installation.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. См. дополнительные сведения об [установке набора средств Azure для IntelliJ](intellij/azure-toolkit-for-intellij-installation.md).
+
+В меню **Файл** выберите **Параметры**. 
+
+Выберите **Обзор репозиториев...** найдите "Azure" и установите **набор средств Azure для Intellij**.
+
+Перезапустите Intellij.
+
+### <a name="install-the-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
+
+[Набор средств Azure](eclipse/azure-toolkit-for-eclipse.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. См. дополнительные сведения об [установке набора средств Azure для Eclipse](eclipse/azure-toolkit-for-eclipse.md).
+
+В меню **Help** (Справка) выберите пункт **Install New Software** (Установка нового программного обеспечения).
+
+В поле **Work with:** (Работа с:) введите `http://dl.microsoft.com/eclipse` и нажмите клавишу ВВОД.
+
+Затем установите флажок рядом с пунктом **Azure toolkit for Java** (Набор средств Azure для Java) и снимите флажок рядом с пунктом **Contact all update sites during install to find required software** (Проверить все сайты обновления во время установки для поиска требуемого ПО). Затем нажмите кнопку "Далее".
+
 ## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 
 Создайте файл с именем `AzureApp.java` в каталоге проекта `src/main/java/com/fabirkam` и вставьте следующий блок кода. Обновите переменные `userName` и `sshKey`, указав реальные значения для своего компьютера. Код создает виртуальную машину Linux с именем `testLinuxVM` в группе ресурсов `sampleResourceGroup`, которая выполняется в регионе Azure "Восточная часть США".
