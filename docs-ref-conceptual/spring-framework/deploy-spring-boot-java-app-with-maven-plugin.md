@@ -1,6 +1,6 @@
 ---
 title: Развертывание приложения Spring Boot в облаке с помощью Maven и Azure
-description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для Веб-приложений Azure.
+description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure.
 services: app-service
 documentationcenter: java
 author: rmcmurray
@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3610312ed17301131967bd2c047c86656de070e7
-ms.sourcegitcommit: f313c14e92f38c54a3a583270ee85cc928cd39d7
+ms.openlocfilehash: d58cafe3456150069ec8572c101c62d1b2c29c5d
+ms.sourcegitcommit: e1a5d9687e006e8bf12d11747d45cf130a2c82af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689427"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42703358"
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для Службы приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "34689427"
 
 Прежде чем использовать подключаемый модуль Maven, проверьте центральный репозиторий Maven на наличие новой версии: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством требуется следующее:
 
@@ -163,9 +163,11 @@ ms.locfileid: "34689427"
 [Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven. Установите этот компонент.
 
 1. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
+   
    ```shell
    az login
    ```
+   
    Для завершения процесса входа следуйте инструкциям.
 
 ## <a name="optionally-customize-pomxml-before-deploying"></a>Настройка файла pom.xml перед развертыванием (необязательный этап)
