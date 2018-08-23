@@ -7,30 +7,28 @@ ms.author: routlaw
 manager: douge
 ms.date: 05/17/2017
 ms.topic: article
-ms.prod: azure
-ms.technology: azure
 ms.devlang: java
 ms.service: mysql
-ms.openlocfilehash: 72c94ef4bdad7adeae63da2efda93b52a9afef53
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: f3c0b84a8c6577e5a844c4084b3d9cfaf3a52323
+ms.sourcegitcommit: 1b22376e4ceb3d2f2734c8fc80823a44cc5fe8fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931020"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42703334"
 ---
-# <a name="azure-database-for-mysql-libraries-for-java"></a><span data-ttu-id="a988c-104">Библиотеки Java для базы данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="a988c-104">Azure Database for MySQL libraries for Java</span></span>
+# <a name="azure-database-for-mysql-libraries-for-java"></a><span data-ttu-id="8277c-104">Библиотеки Java для базы данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="8277c-104">Azure Database for MySQL libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="a988c-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="a988c-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="8277c-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="8277c-105">Overview</span></span>
 
-<span data-ttu-id="a988c-106">[База данных Azure для MySQL](/azure/sql-database/sql-database-technical-overview) — это служба реляционной базы данных на основе ядра СУБД [MySQL](https://www.mysql.com/) с открытым кодом.</span><span class="sxs-lookup"><span data-stu-id="a988c-106">[Azure Database for MySQL](/azure/sql-database/sql-database-technical-overview) is a relational database service based on the open source [MySQL](https://www.mysql.com/) Server engine.</span></span> 
+<span data-ttu-id="8277c-106">[База данных Azure для MySQL](/azure/sql-database/sql-database-technical-overview) — это служба реляционной базы данных на основе ядра СУБД [MySQL](https://www.mysql.com/) с открытым кодом.</span><span class="sxs-lookup"><span data-stu-id="8277c-106">[Azure Database for MySQL](/azure/sql-database/sql-database-technical-overview) is a relational database service based on the open source [MySQL](https://www.mysql.com/) Server engine.</span></span> 
 
-<span data-ttu-id="a988c-107">Чтобы приступить к работе с базой данных Azure для MySQL, ознакомьтесь со статьей [База данных Azure для MySQL: подключение и запрос данных с помощью Java](/azure/mysql/connect-java).</span><span class="sxs-lookup"><span data-stu-id="a988c-107">To get started with Azure Database for MySQL, see [Use Java to connect and query data](/azure/mysql/connect-java).</span></span>
+<span data-ttu-id="8277c-107">Чтобы приступить к работе с базой данных Azure для MySQL, ознакомьтесь со статьей [База данных Azure для MySQL: подключение и запрос данных с помощью Java](/azure/mysql/connect-java).</span><span class="sxs-lookup"><span data-stu-id="8277c-107">To get started with Azure Database for MySQL, see [Use Java to connect and query data](/azure/mysql/connect-java).</span></span>
 
-## <a name="client-jbdc-driver"></a><span data-ttu-id="a988c-108">Клиентский драйвер JBDC</span><span class="sxs-lookup"><span data-stu-id="a988c-108">Client JBDC driver</span></span>
+## <a name="client-jbdc-driver"></a><span data-ttu-id="8277c-108">Клиентский драйвер JBDC</span><span class="sxs-lookup"><span data-stu-id="8277c-108">Client JBDC driver</span></span>
 
-<span data-ttu-id="a988c-109">Подключайтесь к базе данных Azure для MySQL из приложений с помощью [драйвера JDBC с открытым кодом для MySQL](https://dev.mysql.com/downloads/connector/j/).</span><span class="sxs-lookup"><span data-stu-id="a988c-109">Connect to Azure Database for MySQL from your applications using the open-source [MySQL JDBC driver](https://dev.mysql.com/downloads/connector/j/).</span></span> <span data-ttu-id="a988c-110">Вы можете использовать [API-интерфейс JDBC для Java](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/), чтобы подключаться непосредственно к базе данных, или платформы доступа к данным, которые взаимодействуют с базой данных через JDBC, например [Hibernate](http://hibernate.org/).</span><span class="sxs-lookup"><span data-stu-id="a988c-110">You can use the [Java JDBC API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) to directly connect to the database or use data access frameworks that interact with the database through JDBC such as [Hibernate](http://hibernate.org/).</span></span>
+<span data-ttu-id="8277c-109">Подключайтесь к базе данных Azure для MySQL из приложений с помощью [драйвера JDBC с открытым кодом для MySQL](https://dev.mysql.com/downloads/connector/j/).</span><span class="sxs-lookup"><span data-stu-id="8277c-109">Connect to Azure Database for MySQL from your applications using the open-source [MySQL JDBC driver](https://dev.mysql.com/downloads/connector/j/).</span></span> <span data-ttu-id="8277c-110">Вы можете использовать [API-интерфейс JDBC для Java](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/), чтобы подключаться непосредственно к базе данных, или платформы доступа к данным, которые взаимодействуют с базой данных через JDBC, например [Hibernate](http://hibernate.org/).</span><span class="sxs-lookup"><span data-stu-id="8277c-110">You can use the [Java JDBC API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) to directly connect to the database or use data access frameworks that interact with the database through JDBC such as [Hibernate](http://hibernate.org/).</span></span>
 
-<span data-ttu-id="a988c-111">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентский драйвер JDBC в проекте.</span><span class="sxs-lookup"><span data-stu-id="a988c-111">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client JDBC driver in your project.</span></span>  
+<span data-ttu-id="8277c-111">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентский драйвер JDBC в проекте.</span><span class="sxs-lookup"><span data-stu-id="8277c-111">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client JDBC driver in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -40,9 +38,9 @@ ms.locfileid: "21931020"
 </dependency>
 ```   
 
-## <a name="example"></a><span data-ttu-id="a988c-112">Пример</span><span class="sxs-lookup"><span data-stu-id="a988c-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8277c-112">Пример</span><span class="sxs-lookup"><span data-stu-id="8277c-112">Example</span></span>
 
-<span data-ttu-id="a988c-113">Подключитесь к базе данных Azure для MySQL с помощью JDBC и выберите все записи в таблице продаж.</span><span class="sxs-lookup"><span data-stu-id="a988c-113">Connect to Azure Database for MySQL using JDBC and select all records in the sales table.</span></span> <span data-ttu-id="a988c-114">Строку подключения JDBC для базы данных можно получить на портале Azure.</span><span class="sxs-lookup"><span data-stu-id="a988c-114">You can get the JDBC connection string for the database from the Azure Portal.</span></span>
+<span data-ttu-id="8277c-113">Подключитесь к базе данных Azure для MySQL с помощью JDBC и выберите все записи в таблице продаж.</span><span class="sxs-lookup"><span data-stu-id="8277c-113">Connect to Azure Database for MySQL using JDBC and select all records in the sales table.</span></span> <span data-ttu-id="8277c-114">Строку подключения JDBC для базы данных можно получить на портале Azure.</span><span class="sxs-lookup"><span data-stu-id="8277c-114">You can get the JDBC connection string for the database from the Azure Portal.</span></span>
 
 ```java
 String url = String.format("jdbc:mysql://fabrikamysql.mysql.database.azure.com:3306/fabrikamdb?verifyServerCertificate=true&useSSL=true&requireSSL=false");
@@ -54,9 +52,9 @@ try {
 }
 ```
 
-## <a name="samples"></a><span data-ttu-id="a988c-115">Примеры</span><span class="sxs-lookup"><span data-stu-id="a988c-115">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="8277c-115">Примеры</span><span class="sxs-lookup"><span data-stu-id="8277c-115">Samples</span></span>
 
-<span data-ttu-id="a988c-116">[Создание веб-приложения Java в Azure с подключением к базе данных MySQL](/azure/app-service-web/app-service-web-tutorial-java-mysql) </span><span class="sxs-lookup"><span data-stu-id="a988c-116">[Build a Java and MySQL web app](/azure/app-service-web/app-service-web-tutorial-java-mysql) </span></span>  
-[<span data-ttu-id="a988c-117">Проектирование первой базы данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="a988c-117">Design a MySQL database using the Azure CLI</span></span>](/azure/mysql/tutorial-design-database-using-cli)   
+<span data-ttu-id="8277c-116">[Создание веб-приложения Java в Azure с подключением к базе данных MySQL](/azure/app-service-web/app-service-web-tutorial-java-mysql) </span><span class="sxs-lookup"><span data-stu-id="8277c-116">[Build a Java and MySQL web app](/azure/app-service-web/app-service-web-tutorial-java-mysql) </span></span>  
+[<span data-ttu-id="8277c-117">Проектирование первой базы данных Azure для MySQL</span><span class="sxs-lookup"><span data-stu-id="8277c-117">Design a MySQL database using the Azure CLI</span></span>](/azure/mysql/tutorial-design-database-using-cli)   
 
-<span data-ttu-id="a988c-118">Ознакомьтесь с другими [примерами кода Java для базы данных Azure для MySQL](https://azure.microsoft.com/resources/samples/?platform=java&term=mysql), которые можно использовать в приложениях.</span><span class="sxs-lookup"><span data-stu-id="a988c-118">Explore more [sample Java code for Azure Database for MySQL](https://azure.microsoft.com/resources/samples/?platform=java&term=mysql) you can use in your apps.</span></span>
+<span data-ttu-id="8277c-118">Ознакомьтесь с другими [примерами кода Java для базы данных Azure для MySQL](https://azure.microsoft.com/resources/samples/?platform=java&term=mysql), которые можно использовать в приложениях.</span><span class="sxs-lookup"><span data-stu-id="8277c-118">Explore more [sample Java code for Azure Database for MySQL](https://azure.microsoft.com/resources/samples/?platform=java&term=mysql) you can use in your apps.</span></span>
