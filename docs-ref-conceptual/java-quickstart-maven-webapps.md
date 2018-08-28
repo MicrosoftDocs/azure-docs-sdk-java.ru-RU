@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: routlaw
-ms.openlocfilehash: 1adc0a104ba22bcd353664e68323165890e46c64
-ms.sourcegitcommit: 30d502b3150fa14bcc1251f5f88c7c0dd83e531e
+ms.openlocfilehash: 70b508118c50b75693e2d746dc1e2919c827cb29
+ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2017
-ms.locfileid: "22033636"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42703547"
 ---
 # <a name="create-and-deploy-a-java-app-to-azure-with-maven"></a>Создание и развертывание приложения Java в Azure с помощью Maven
 
@@ -28,7 +28,7 @@ ms.locfileid: "22033636"
 
 Прежде чем начать, настройте следующие компоненты:
 
-- [Git.](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - [Java 8](https://www.azul.com/downloads/zulu/);
 - [Maven 3](http://maven.apache.org/download.cgi)
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)
@@ -53,7 +53,7 @@ mvn package
 mvn tomcat7:run-war
 ```
 
-Откройте веб-браузер и перейдите по адресу http://localhost:8080, чтобы просмотреть приложение:
+Откройте веб-браузер и перейдите к по адресу http://localhost:8080, чтобы просмотреть приложение:
 
   ![Выходные данные Hello World из примера приложения Java](media/maven-quickstart/java-app-hello-world-output.png)
 
@@ -147,7 +147,7 @@ az webapp config set \
 
 ## <a name="configure-maven"></a>Настройка Maven 
 
-Пример файла Maven `pom.xml` включает конфигурацию, которая передает пример в Azure по протоколу FTP. Но для развертывания веб-приложения это файл необходимо настроить. Получите учетные данные службы приложений с помощью команды [az appservice web deployment list-publishing-profiles](/cli/azure/appservice/web/deployment#list-publishing-profiles):
+Пример файла Maven `pom.xml` включает конфигурацию, которая передает пример в Azure по протоколу FTP. Но для развертывания веб-приложения это файл необходимо настроить. Получите учетные данные Службы приложений с помощью команды [az appservice web deployment list-publishing-profiles](/cli/azure/appservice/web/deployment#list-publishing-profiles):
 
 ```azurecli
 az webapp deployment list-publishing-profiles  \
@@ -260,6 +260,6 @@ curl http://<appname>.azurewebsites.net/?[1-30]
 az group delete --name myResrouceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Просмотрите полный список [примеров кода Java для Azure](https://azure.microsoft.com/resources/samples/?term=java).
