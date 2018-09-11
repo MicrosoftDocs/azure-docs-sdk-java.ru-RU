@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: batch
-ms.openlocfilehash: 67381d68d23f98579a472aefbebaa929af622b8d
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: d8e7a6969bf35d98f03c5d3e335fbaf2f6b3a51d
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823597"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324361"
 ---
 # <a name="azure-batch-libraries-for-java"></a>Библиотеки пакетной службы Azure для Java
 
@@ -30,13 +30,13 @@ ms.locfileid: "31823597"
 
 Клиентские библиотеки пакетной службы Azure позволяют настроить вычислительные узлы и пулы, определить и настроить выполняемые задачи в заданиях, а также настроить диспетчер заданий, чтобы отслеживать выполнение заданий и управлять им. Дополнительные сведения об использовании этих объектов для запуска решений для крупномасштабных параллельных вычислений см. [здесь](/azure/batch/batch-api-basics).
 
-[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.
+[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте. Исходный код клиентской библиотеки можно найти в [GitHub](https://github.com/Azure/azure-batch-sdk-for-java).
 
 ```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-batch</artifactId>
-    <version>2.0.0</version>
+    <version>4.0.0</version>
 </dependency>
 ```   
 
