@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d58cafe3456150069ec8572c101c62d1b2c29c5d
-ms.sourcegitcommit: e1a5d9687e006e8bf12d11747d45cf130a2c82af
+ms.openlocfilehash: ca788354d26964bd9f1e21a0d3a8005ff65ce4bc
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42703358"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324350"
 ---
 # <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для Службы приложений Azure
 
@@ -129,6 +129,7 @@ ms.locfileid: "42703358"
            return application.sources(Application.class);
        }
    ```
+1. Упорядочите операции импорта, чтобы обеспечить правильный импорт `SpringApplicationBuilder` и `SpringBootServletInitializer`.
 
 Теперь ваше приложение готово к развертыванию в Tomcat или любой другой среде выполнения сервлетов (например, Jetty).
 

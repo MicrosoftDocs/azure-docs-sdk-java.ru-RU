@@ -3,9 +3,9 @@ title: Развертывание приложения MicroProfile в обла�
 description: Узнайте, как развернуть приложение MicroProfile в облаке с помощью Docker и службы "Экземпляры контейнеров Azure".
 services: container-instances;container-retistry
 documentationcenter: java
-author: brborges
+author: brunoborges
 manager: routlaw
-editor: brborges
+editor: brunoborges
 ms.assetid: ''
 ms.author: brborges
 ms.date: 07/30/2018
@@ -14,12 +14,12 @@ ms.service: container-instances
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: c6254d11ee1596a23076931c9a2a2370b5f52409
-ms.sourcegitcommit: 3d0896f821907278547c283c54b53fbd7f4f30f0
+ms.openlocfilehash: 336af51bbdf5d2f843c3868ebc2358e128daaeaa
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43153864"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324330"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Развертывание приложения MicroProfile в облаке с помощью Docker и Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "43153864"
 
 * Подписка Azure. Если у вас ее еще нет, создайте [бесплатной учетной записи Azure].
 * [Интерфейс командной строки Azure (CLI)].
-* Актуальный [пакет разработчиков Java (JDK)] версии 1.8 или более поздней версии.
+* Актуальный [пакет средств разработки Java (JDK)] версии 1.8 или более поздней версии.
 * Средство сборки [Maven] от Apache (версии 3 или более поздней версии).
 * Клиент [Git].
 
@@ -64,7 +64,7 @@ $ curl http://localhost:8080/api/hello
 Hello, Azure!
 ```
 
-## <a name="deploy-to-azure"></a>Развертывание в Azure
+## <a name="deploy-to-azure"></a>Развернуть в Azure
 
 Теперь развернем это приложение в облаке с помощью служб [Экземпляры контейнеров Azure] и [Реестр контейнеров Azure].
 
@@ -75,9 +75,9 @@ Hello, Azure!
 Для сборки образа и его подготовки к запуску в Azure выполните следующие действия:
 
 1. Установите Azure CLI и выполните вход.
-1. Создайте группу ресурсов Azure.
+1. Создание группы ресурсов Azure
 1. Создайте Реестр контейнеров Azure (ACR).
-1. Соберите образ Docker.
+1. Создание образа Docker
 1. Опубликуйте образ Docker в созданном ранее реестре ACR.
 1. Дополнительно: выполните сборку образа и опубликуйте его в ACR с помощью одной команды.
 
@@ -98,7 +98,7 @@ export ADCL=eastus
 az group create --name $ARG --location $ADCL
 ```
 
-#### <a name="create-an-azure-container-registry-instance"></a>Создание экземпляра Реестра контейнеров Azure
+#### <a name="create-an-azure-container-registry-instance"></a>создадите экземпляр реестра контейнеров Azure;
 
 С помощью этой команды должен быть создан глобально уникальный реестр контейнеров с использованием базового имени и случайного числа.
 
@@ -157,7 +157,7 @@ curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 
 <!-- URL List -->
 
-[Служба "Сборка Реестра контейнеров Azure"]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-build-overview
+[Служба "Сборка Реестра контейнеров Azure"]: https://docs.microsoft.com/azure/container-registry/container-registry-build-overview
 [MicroProfile.io]: https://microprofile.io
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
@@ -165,3 +165,6 @@ curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Maven]: http://maven.apache.org/
+[Пакет средств разработки Java (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Экземпляры контейнеров Azure]: https://docs.microsoft.com/azure/container-instances/;
+[Реестр контейнеров Azure]:  https://docs.microsoft.com/azure/container-registry
