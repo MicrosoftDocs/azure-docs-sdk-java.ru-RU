@@ -14,12 +14,12 @@ ms.service: container-registry;app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 323ae247c3df8c7d7b180d9d60b9014e4e2d7382
-ms.sourcegitcommit: 77dc6c03a2e6264df688d91a04fc6b40950779ef
+ms.openlocfilehash: 1eb0e7d7a718a1c106adebbf89011f6e3fa1504e
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43240964"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040252"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Развертывание службы MicroProfile на основе Java в службе Azure "Веб-приложение для контейнеров"
 
@@ -137,7 +137,7 @@ public class API {
 После успешной сборки и запуска приложения MicroProfile на локальном компьютере следующим шагом станет отправка этого контейнера в созданный ранее реестр. Для выполнения задач нашего руководства мы используем Реестр контейнеров Azure, но вы можете использовать любой реестр контейнеров (при условии, что в файле `pom.xml` будет указано соответствующее расположение).
 
 1. Выполните `mvn clean package`, чтобы очистить, скомпилировать и создать локальный образ Docker.
-2. Выполните `mvn dockerfile:push`, чтобы отправить его в Реестр контейнеров Azure.
+2. Выполните `mvn dockerfile:push`, чтобы отправить образ в Реестр контейнеров Azure.
 
 На этом этапе мы отправили образ контейнера Docker в Реестр контейнеров Azure, но он еще не запущен, потому что образ необходимо развернуть в экземпляре службы Azure "Веб-приложение для контейнеров". Сейчас мы этим займемся.
 

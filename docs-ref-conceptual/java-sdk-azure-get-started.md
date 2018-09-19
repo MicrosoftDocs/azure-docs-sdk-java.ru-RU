@@ -12,14 +12,14 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: dee41f08dc303fc95fcfa6a585a5d1a06726f2ef
-ms.sourcegitcommit: dad28b332346dfa9af249b5a64e042cbb1eb90d7
+ms.openlocfilehash: fdf0334a8796d636a1968943cc34d7ae98d6361c
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39625040"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040262"
 ---
-# <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Разработка в облаке с помощью библиотек Azure для Java
+# <a name="get-started-with-cloud-development-using-java-on-azure"></a>Начало работы с разработкой в облаке с помощью Java в Azure
 
 В этом руководстве описано, как настроить среду разработки и использовать библиотеки Azure для Java. Вы создадите ресурсы Azure и подключите их для выполнения таких базовых задач, как передача файла или развертывание веб-приложения. Когда все будет готово, вы будете готовы приступить к использованию служб Azure в приложениях Java.
 
