@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: cb83a7d6ec3a9a83fbfd3b2e34e5a4e498aa36d3
-ms.sourcegitcommit: 51dc05a96a8cbc8a6c9b45e094d8f3cfec16a607
+ms.openlocfilehash: 546aa2dc18143ca173d72198ea8e6c30bda3c97f
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/21/2018
-ms.locfileid: "39189674"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639727"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 
@@ -124,7 +124,7 @@ ms.locfileid: "39189674"
    ```
 
 1. Добавьте идентификатор и пароль реестра контейнеров Azure для новой коллекции `<server>` в файле *settings.xml*.
-`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
+`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
 
    ```xml
    <servers>
@@ -309,7 +309,7 @@ ms.locfileid: "39189674"
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 * [Развертывание приложения Spring Boot в Linux в службе контейнеров Azure](deploy-spring-boot-java-app-on-linux.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
 
 <!-- Newly added --> Дополнительные сведения о развертывании приложения Java в кластере Kubernetes с помощью Visual Studio Code см. в [Руководства по Java для Visual Studio Code].
 
@@ -321,7 +321,7 @@ ms.locfileid: "39189674"
 
 По следующим ссылкам представлены дополнительные сведения об использовании Kubernetes с Azure:
 
-* [Начало работы с кластером Kubernetes в Службе Azure Kubernetes](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)
+* [Начало работы с кластером Kubernetes в Службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
 
 Дополнительные сведения об использовании интерфейса командной строки Kubernetes доступны в руководстве пользователя **kubectl** по адресу <https://kubernetes.io/docs/user-guide/kubectl/>.
 
@@ -345,7 +345,7 @@ ms.locfileid: "39189674"
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
 [Kubernetes]: https://kubernetes.io/
 [Kubernetes Command-Line Interface (kubectl)]: https://kubernetes.io/docs/user-guide/kubectl-overview/
 [Maven]: http://maven.apache.org/
@@ -358,7 +358,7 @@ ms.locfileid: "39189674"
 [Pull an Image from a Private Registry]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/ (Извлечение образа из частного реестра)
 
 <!-- Newly added -->
-[Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-aks/
+[Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks/
 [Руководства по Java для Visual Studio Code]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->

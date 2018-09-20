@@ -14,12 +14,12 @@ ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0e57bfb304185b8b98dedfdecb2e0374c4a72fe5
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: e78987a05527aef739bc1467511381665513a3ab
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090777"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639737"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Настройка Application Insights в инициализаторе Spring Boot
 
@@ -91,11 +91,11 @@ ms.locfileid: "37090777"
  <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>applicationinsights-spring-boot-starter</artifactId>
-    <version>1.0.0-BETA</version>
+    <version>1.0.1-BETA</version>
 </dependency>
 ```
 
-1. В программном каталоге *resources* найдите файл *application.properties*. Если такой файл не существует, создайте его.
+1. Найдите файл *application.properties* в каталоге *resources* приложения или создайте файл, если он еще не существует.
 
    ![Поиск файла application.properties][RE01]
 
@@ -222,7 +222,7 @@ ms.locfileid: "37090777"
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>applicationinsights-spring-boot-starter</artifactId>
-        <version>1.0.0-BETA</version>
+        <version>1.0.1-BETA</version>
     </dependency>
 
     <dependency>
@@ -278,7 +278,7 @@ ms.locfileid: "37090777"
 
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Application Insights поддерживает автоматический сбор внешних зависимостей и его корреляцию с входящими запросами. Автоматический сбор сейчас поддерживается для Oracle, MsSQL, MySQL и Redis. Дополнительные сведения о включении автоматического сбора см. в статье [Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-java-agent).
+Application Insights поддерживает автоматический сбор внешних зависимостей и его корреляцию с входящими запросами. Автоматический сбор сейчас поддерживается для Oracle, MsSQL, MySQL и Redis. Дополнительные сведения о включении автоматического сбора см. в статье [Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java](https://docs.microsoft.com/azure/application-insights/app-insights-java-agent).
 
 Дополнительные сведения о службе Azure Application Insights и ее возможностях мониторинга см. **[Application Insights]**.
 
@@ -286,7 +286,7 @@ Application Insights поддерживает автоматический сб�
 
 Запросы на новые функции и сообщения о потенциальных ошибках оставляйте в нашем репозитории [GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues).
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [Java Tools for Visual Studio Team Services].
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
 
 **[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса. Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java. В помощь разработчикам, начинающим работать со Spring Boot, по адресу [https://github.com/spring-guides/](https://github.com/spring-guides/) доступно несколько примеров пакетов этого приложения. Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.
 
@@ -294,13 +294,13 @@ Application Insights поддерживает автоматический сб�
 
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Свойства профилей Spring Boot]: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-profile-specific-properties
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[Application Insights]: https://docs.microsoft.com/en-us/azure/application-insights/
+[Application Insights]: https://docs.microsoft.com/azure/application-insights/
 
 <!-- IMG List -->
 

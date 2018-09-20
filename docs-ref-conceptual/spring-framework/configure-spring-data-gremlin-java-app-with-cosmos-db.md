@@ -13,12 +13,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 4e0138e3cc474b4c47d3bf492e696ec49ea3ef37
-ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
+ms.openlocfilehash: 3e7ec1a2f6b15ec9444dc6ee8d8f2d0f779b1f10
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040272"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639797"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Использование начального приложения Spring Data Gremlin с API SQL Azure Cosmos DB
 
@@ -163,9 +163,11 @@ ms.locfileid: "44040272"
       password: 57686f6120447564652c20426f6220526f636b73==
       telemetryAllowed: false
    ```
+   
    Описание
+   
    | Поле | ОПИСАНИЕ |
-   | ---|---|
+   |---|---|
    | `endpoint` | Указывает URI Gremlin, который создается на основе уникального **ИД**, введенного при создании базы данных Azure Cosmos DB ранее в этом руководстве. |
    | `port` | Указывает порт TCP/IP, который для протокола HTTPS должен иметь значение **443**. |
    | `username` | Указывает уникальные значения параметров **Идентификатор базы данных** и **Идентификатор графа**, которые использовались при добавлении графа ранее в этом руководстве. Это значение нужно вводить, используя следующий синтаксис: "/dbs/**{Идентификатор базы данных}**/colls/**{Идентификатор графа}**". |
