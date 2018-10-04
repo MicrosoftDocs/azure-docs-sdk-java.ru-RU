@@ -7,28 +7,27 @@ ms.author: routlaw
 manager: douge
 ms.date: 07/20/2017
 ms.topic: article
-ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: iot-hub
-ms.openlocfilehash: 5e6a102b062b2fff6b297c7e3dda423d1448bcb0
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 497b2a72d851b8e43a48384c6f1a160e8a38cbe6
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823617"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047151"
 ---
-# <a name="azure-iot-libraries-for-java"></a><span data-ttu-id="362f5-104">Библиотеки Интернета вещей Azure для Java</span><span class="sxs-lookup"><span data-stu-id="362f5-104">Azure IoT libraries for Java</span></span>
+# <a name="azure-iot-libraries-for-java"></a><span data-ttu-id="c55ad-104">Библиотеки Интернета вещей Azure для Java</span><span class="sxs-lookup"><span data-stu-id="c55ad-104">Azure IoT libraries for Java</span></span>
 
-<span data-ttu-id="362f5-105">Подключайте, отслеживайте и администрируйте миллионы ресурсов Интернета вещей с помощью [Центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub).</span><span class="sxs-lookup"><span data-stu-id="362f5-105">Connect, monitor, and control Internet of Things assets with [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub).</span></span>
+<span data-ttu-id="c55ad-105">Подключайте, отслеживайте и администрируйте миллионы ресурсов Интернета вещей с помощью [Центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub).</span><span class="sxs-lookup"><span data-stu-id="c55ad-105">Connect, monitor, and control Internet of Things assets with [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub).</span></span>
 
-<span data-ttu-id="362f5-106">Чтобы приступить к работе с Центром Интернета вещей, см. инструкции по [подключению устройств к Центру Интернета вещей с помощью Java](/azure/iot-hub/iot-hub-java-java-getstarted).</span><span class="sxs-lookup"><span data-stu-id="362f5-106">To get started with Azure IoT Hub, see [Connect your device to your IoT hub using Java](/azure/iot-hub/iot-hub-java-java-getstarted).</span></span>
+<span data-ttu-id="c55ad-106">Чтобы приступить к работе с Центром Интернета вещей, см. инструкции по [подключению устройств к Центру Интернета вещей с помощью Java](/azure/iot-hub/iot-hub-java-java-getstarted).</span><span class="sxs-lookup"><span data-stu-id="c55ad-106">To get started with Azure IoT Hub, see [Connect your device to your IoT hub using Java](/azure/iot-hub/iot-hub-java-java-getstarted).</span></span>
 
-## <a name="iot-service-library"></a><span data-ttu-id="362f5-107">Библиотека службы Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="362f5-107">IoT Service library</span></span>
+## <a name="iot-service-library"></a><span data-ttu-id="c55ad-107">Библиотека службы Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="c55ad-107">IoT Service library</span></span>
 
-<span data-ttu-id="362f5-108">Регистрируйте устройства и отправляйте сообщения из облака в зарегистрированные устройства с помощью библиотеки службы Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="362f5-108">Register devices and send messages from the cloud to registered devices using the IoT Service library.</span></span>
+<span data-ttu-id="c55ad-108">Регистрируйте устройства и отправляйте сообщения из облака в зарегистрированные устройства с помощью библиотеки службы Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="c55ad-108">Register devices and send messages from the cloud to registered devices using the IoT Service library.</span></span>
 
-<span data-ttu-id="362f5-109">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="362f5-109">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>  
+<span data-ttu-id="c55ad-109">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="c55ad-109">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -38,11 +37,11 @@ ms.locfileid: "31823617"
 </dependency>
 ```   
 
-## <a name="iot-device-library"></a><span data-ttu-id="362f5-110">Библиотека устройств Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="362f5-110">Iot Device library</span></span>
+## <a name="iot-device-library"></a><span data-ttu-id="c55ad-110">Библиотека устройств Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="c55ad-110">Iot Device library</span></span>
 
-<span data-ttu-id="362f5-111">Отправляйте сообщения в облако и получайте их на устройствах с помощью библиотеки устройств Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="362f5-111">Send messages to the cloud and receive messages on devices using the IoT Device library.</span></span>
+<span data-ttu-id="c55ad-111">Отправляйте сообщения в облако и получайте их на устройствах с помощью библиотеки устройств Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="c55ad-111">Send messages to the cloud and receive messages on devices using the IoT Device library.</span></span>
 
-<span data-ttu-id="362f5-112">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="362f5-112">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>  
+<span data-ttu-id="c55ad-112">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать клиентскую библиотеку в проекте.</span><span class="sxs-lookup"><span data-stu-id="c55ad-112">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the client library in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -53,11 +52,11 @@ ms.locfileid: "31823617"
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="362f5-113">Обзор клиентских API-интерфейсов</span><span class="sxs-lookup"><span data-stu-id="362f5-113">Explore the Client APIs</span></span>](/java/api/overview/azure/iot/client)   
+> [<span data-ttu-id="c55ad-113">Обзор клиентских API-интерфейсов</span><span class="sxs-lookup"><span data-stu-id="c55ad-113">Explore the Client APIs</span></span>](/java/api/overview/azure/iot/client)   
 
-## <a name="example"></a><span data-ttu-id="362f5-114">Пример</span><span class="sxs-lookup"><span data-stu-id="362f5-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c55ad-114">Пример</span><span class="sxs-lookup"><span data-stu-id="c55ad-114">Example</span></span>
 
-<span data-ttu-id="362f5-115">Отправляйте сообщения из Центра Интернета вещей на устройства.</span><span class="sxs-lookup"><span data-stu-id="362f5-115">Send a message from Azure IoT Hub to a device.</span></span>
+<span data-ttu-id="c55ad-115">Отправляйте сообщения из Центра Интернета вещей на устройства.</span><span class="sxs-lookup"><span data-stu-id="c55ad-115">Send a message from Azure IoT Hub to a device.</span></span>
 
 ```java
 Message messageToSend = new Message(messageText);
@@ -79,9 +78,9 @@ catch (ExecutionException e) {
 ```
 
 
-## <a name="samples"></a><span data-ttu-id="362f5-116">Примеры</span><span class="sxs-lookup"><span data-stu-id="362f5-116">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="c55ad-116">Примеры</span><span class="sxs-lookup"><span data-stu-id="c55ad-116">Samples</span></span>
 
-<span data-ttu-id="362f5-117">[Примеры устройств Интернета вещей](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples)   </span><span class="sxs-lookup"><span data-stu-id="362f5-117">[IoT Device samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples)   </span></span>  
-[<span data-ttu-id="362f5-118">Примеры службы Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="362f5-118">IoT Service samples</span></span>](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples)
+<span data-ttu-id="c55ad-117">[Примеры устройств Интернета вещей](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples)   </span><span class="sxs-lookup"><span data-stu-id="c55ad-117">[IoT Device samples](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples)   </span></span>  
+[<span data-ttu-id="c55ad-118">Примеры службы Интернета вещей</span><span class="sxs-lookup"><span data-stu-id="c55ad-118">IoT Service samples</span></span>](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples)
 
-<span data-ttu-id="362f5-119">Ознакомьтесь с [примерами кода Java для Интернета вещей Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=iot), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="362f5-119">Explore more [sample Java code for Azure IoT](https://azure.microsoft.com/resources/samples/?platform=java&term=iot) you can use in your apps.</span></span>
+<span data-ttu-id="c55ad-119">Ознакомьтесь с [примерами кода Java для Интернета вещей Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=iot), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="c55ad-119">Explore more [sample Java code for Azure IoT](https://azure.microsoft.com/resources/samples/?platform=java&term=iot) you can use in your apps.</span></span>
