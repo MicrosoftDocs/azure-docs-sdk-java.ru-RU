@@ -1,38 +1,48 @@
+items:
 - name: Таблицы Azure
   tocHref: /azure/
   topicHref: /azure/
   items:
-    - name: Azure для разработчиков Java
-      tocHref: /java/
-      topicHref: /java/azure/
+  - name: Azure для разработчиков Java
+    tocHref: /java/
+    topicHref: /java/azure/
+    items:
+    - name: Install
+      tocHref: /java/azure/java-sdk-azure-install
+      topicHref: /java/azure/java-sdk-azure-install
+    - name: Начало работы
+      tocHref: /java/azure/java-sdk-azure-get-started
+      topicHref: /java/azure/java-sdk-azure-get-started
+    - name: Основные понятия
+      tocHref: /java/azure/java-sdk-azure-concepts
+      topicHref: /java/azure/java-sdk-azure-concepts
+    - name: Authentication
+      tocHref: /java/azure/java-sdk-azure-authenticate
+      topicHref: /java/azure/java-sdk-azure-authenticate
       items:
-        - name: Установить
-          tocHref: /java/azure/java-sdk-azure-install
-          topicHref: /java/azure/java-sdk-azure-install
-        - name: Начало работы
-          tocHref: /java/azure/java-sdk-azure-get-started
-          topicHref: /java/azure/java-sdk-azure-get-started
-        - name: Основные понятия
-          tocHref: /java/azure/java-sdk-azure-concepts
-          topicHref: /java/azure/java-sdk-azure-concepts
-        - name: Аутентификация
-          tocHref: /java/azure/java-sdk-azure-authenticate
-          topicHref: /java/azure/java-sdk-azure-authenticate
-          items:
-            - name: Создание субъекта-службы
-              tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
-              topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
-        - name: Заметки о выпуске
-          tocHref: /java/azure/java-sdk-azure-release-notes
-          topicHref: /java/azure/java-sdk-azure-release-notes
-    - name: Пример кода
-      items:
-        - name: Виртуальные машины
-          tocHref: /java/azure/java-sdk-azure-virtual-machine-samples
-          topicHref: /java/azure/java-sdk-azure-virtual-machine-samples
-        - name: 'веб-приложений:'
-          tocHref: /java/azure/java-sdk-azure-web-apps-samples
-          topicHref: /java/azure/java-sdk-azure-web-apps-samples
-        - name: База данных SQL
-          tocHref: /java/azure/java-sdk-azure-sql-database-samples
-          topicHref: /java/azure/java-sdk-azure-sql-database-samples
+      - name: Создание субъекта-службы
+        tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
+        topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
+    - name: Заметки о выпуске
+      tocHref: /java/azure/java-sdk-azure-release-notes
+      topicHref: /java/azure/java-sdk-azure-release-notes
+  - name: Spring в Azure
+    tocHref: /java/azure/spring-framework
+    topicHref: /java/azure/spring-framework
+  - name: Пример кода
+    items:
+    - name: Виртуальные машины
+      tocHref: /java/azure/java-sdk-azure-virtual-machine-samples
+      topicHref: /java/azure/java-sdk-azure-virtual-machine-samples
+    - name: 'веб-приложений:'
+      tocHref: /java/azure/java-sdk-azure-web-apps-samples
+      topicHref: /java/azure/java-sdk-azure-web-apps-samples
+    - name: База данных SQL
+      tocHref: /java/azure/java-sdk-azure-sql-database-samples
+      topicHref: /java/azure/java-sdk-azure-sql-database-samples
+ms.openlocfilehash: cf486dba041d928bfb7275ff6fdbe17f2859cac6
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047091"
