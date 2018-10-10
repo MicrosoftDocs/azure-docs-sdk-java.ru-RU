@@ -10,12 +10,12 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: 425d4c3a5a347e4706e9c37ebd7247cf0d8c9846
-ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
+ms.openlocfilehash: fad860e19382fb320892dcc5eada95e6d663739e
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2017
-ms.locfileid: "26288313"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047121"
 ---
 # <a name="azure-tools-for-java-developers"></a>Средства Azure для разработчиков Java
 
@@ -29,7 +29,7 @@ ms.locfileid: "26288313"
 
 ## <a name="visual-studio-code"></a>Visual Studio Code.
 
-VS Code — это легковесный, но в то же время мощный редактор кода, доступный для MacOS, Windows и Linux. VS Code поддерживает простой и современный рабочий процесс разработки с помощью Java, предлагая ряд расширений, которые облегчают навигацию и работу с проектом, а также позволяют выполнять запуск, отладку и форматирование кода.
+[VS Code](https://code.visualstudio.com/) — это легковесный, но в то же время мощный редактор кода, доступный для MacOS, Windows и Linux. VS Code поддерживает простой и современный рабочий процесс разработки с помощью Java, предлагая ряд расширений, которые облегчают навигацию и работу с проектом, а также позволяют выполнять запуск, отладку и форматирование кода.
 
 [Начало работы с VS Code и Java](https://code.visualstudio.com/docs/java)
 [пакет расширений Java для VS Code](https://code.visualstudio.com/docs/java/extensions)  
