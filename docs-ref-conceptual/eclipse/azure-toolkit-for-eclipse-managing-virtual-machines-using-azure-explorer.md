@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: c04f5225f0bb99898f69b26a4782aa57d75c4f22
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38074569"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48899369"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Управление виртуальными машинами с помощью Azure Explorer для Eclipse
 
@@ -59,7 +59,7 @@ ms.locfileid: "38074569"
 
    ![Диалоговое окно "Выбор образа виртуальной машины"][CR03]
 
-5. Нажмите кнопку **Далее**.
+5. Щелкните **Далее**.
 
 6. В диалоговом окне **Основные параметры виртуальной машины** введите следующие значения.
 
@@ -73,7 +73,7 @@ ms.locfileid: "38074569"
 
    ![Диалоговое окно "Основные параметры виртуальной машины"][CR04]
 
-7. Нажмите кнопку **Далее**.
+7. Щелкните **Далее**.
 
 8. В окне **Создание учетной записи хранения** введите следующие сведения.
 

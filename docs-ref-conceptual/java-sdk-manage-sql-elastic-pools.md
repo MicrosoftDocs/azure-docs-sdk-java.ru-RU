@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 9ec0cf3083b8659fa850b798ca0ecf18b2757234
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931120"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893575"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Управление базами данных SQL Azure в эластичных пулах с помощью приложений Java
 
@@ -135,6 +135,6 @@ sqlServer.elasticPools().delete(elasticPoolName);
 | [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_database_activity) | Получен из `SqlElasticPool.listDatabaseActivities()`. Каждый объект этого типа представляет действие, примененное к базе данных в эластичном пуле.
 | [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_activity) | Извлечен в виде списка из `SqlElasticPool.listActivities()`. Каждый объект в списке представляет действие, примененное к эластичному пулу (а не к базам данных в эластичном пуле).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

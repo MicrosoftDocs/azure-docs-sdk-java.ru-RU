@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 213efa7fc31705b0ffcba6f2fe40e7186a365fae
-ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38074534"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893525"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Управление виртуальными машинами с помощью Azure Explorer для IntelliJ
 
@@ -62,7 +62,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
    ![Диалоговое окно "Выбор образа виртуальной машины"][CR03]
 
-5. Нажмите кнопку **Далее**. 
+5. Щелкните **Далее**. 
 
 6. В диалоговом окне **Основные параметры виртуальной машины** введите следующие значения.
 
@@ -76,7 +76,7 @@ Azure Explorer, входящий в состав набора средств Azu
 
    ![Диалоговое окно "Основные параметры виртуальной машины"][CR04]
 
-7. Нажмите кнопку **Далее**. 
+7. Щелкните **Далее**. 
 
 8. В диалоговом окне **Связанные ресурсы** введите следующие значения.
 

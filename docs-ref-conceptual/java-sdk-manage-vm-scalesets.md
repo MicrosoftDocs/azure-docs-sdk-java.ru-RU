@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 4653726b387369c18942b6c11392f15b9f0351f3
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931160"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893495"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Управление масштабируемыми наборами виртуальных машин Azure из приложений Java
 
@@ -236,6 +236,6 @@ virtualMachineScaleSet.update()
 | [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_sku_types) | Класс статических полей, используемый для задания [уровня масштабируемого набора виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/). Этот уровень определяет количество ресурсов, которые могут использовать элементы масштабируемого набора.
 | [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_nic_i_p_configuration) | Используется для запроса IP-конфигурации, связанной с сетевым интерфейсом в масштабируемом наборе виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

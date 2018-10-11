@@ -1,27 +1,34 @@
+items:
 - name: Набор средств Azure для Eclipse
   href: azure-toolkit-for-eclipse.md
   items:
-    - name: Установить
-      href: azure-toolkit-for-eclipse-installation.md
-    - name: Начало работы
-      href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
-    - name: Учебники
+  - name: Install
+    href: azure-toolkit-for-eclipse-installation.md
+  - name: Начало работы
+    href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
+  - name: Учебники
+    items:
+    - name: Развертывание контейнеров в виртуальных машинах Azure
+      href: azure-toolkit-for-eclipse-publish-as-docker-container.md
+    - name: Развертывание веб-приложения в службе приложений Azure
+      href: azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md
+  - name: Инструкции
+    items:
+    - name: Настройка проверки подлинности
+      href: azure-toolkit-for-eclipse-sign-in-instructions.md
+    - name: Управление ресурсами Azure
       items:
-        - name: Развертывание контейнеров в виртуальных машинах Azure
-          href: azure-toolkit-for-eclipse-publish-as-docker-container.md
-        - name: Развертывание веб-приложения в службе приложений Azure
-          href: azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md
-    - name: Инструкции
-      items:
-        - name: Настройка проверки подлинности
-          href: azure-toolkit-for-eclipse-sign-in-instructions.md
-        - name: Управление ресурсами Azure
-          items:
-            - name: Виртуальные машины
-              href: azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
-            - name: учетные записи хранения;
-              href: azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
-            - name: кэш Azure Redis
-              href: azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md
-    - name: Заметки о выпуске
-      href: 'https://github.com/Microsoft/azure-tools-for-java/releases'
+      - name: Виртуальные машины
+        href: azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
+      - name: учетные записи хранения;
+        href: azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
+      - name: кэш Azure Redis
+        href: azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md
+  - name: Заметки о выпуске
+    href: https://github.com/Microsoft/azure-tools-for-java/releases
+ms.openlocfilehash: b55ad0badb7ce2e042b479032c450940d9de0df8
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892505"

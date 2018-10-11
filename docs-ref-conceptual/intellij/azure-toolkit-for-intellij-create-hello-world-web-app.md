@@ -15,19 +15,19 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: cc68e16a6940a1f0f2b08f0b63c90c58ec6dbc4e
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954195"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892865"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a>Создание веб-приложения Hello World для Azure с помощью Eclipse
 
-В этом руководстве показано, как создать базовое приложение Hello World для Azure и развернуть его как веб-приложение с помощью [набора средств Azure для IntelliJ].
+В этом руководстве показано, как создать базовое приложение Hello World для Azure и развернуть его как веб-приложение с помощью [Набор средств Azure для IntelliJ].
 
 > [!NOTE]
 >
-> Дополнительные сведения о версии, в которой используются [средства Azure для Eclipse], см. в статье [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse][eclipse-hello-world].
+> Дополнительные сведения о версии, в которой используются [Набор средств Azure для Eclipse], см. в статье [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse][eclipse-hello-world].
 >
 
 > [!IMPORTANT]
@@ -119,8 +119,8 @@ ms.locfileid: "28954195"
 
 <!-- URL List -->
 
-[набора средств Azure для IntelliJ]: azure-toolkit-for-intellij.md
-[средства Azure для Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
+[Набор средств Azure для IntelliJ]: azure-toolkit-for-intellij.md
+[Набор средств Azure для Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Обзор веб-приложений]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/

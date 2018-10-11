@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 678d4b279cecb83c95b3bf0f6bcdf1581924aa62
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954445"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893505"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter для Azure
 
@@ -229,18 +229,18 @@ ms.locfileid: "28954445"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об использовании [приложений Spring Boot] в Azure см. [здесь].
+Дополнительные сведения об использовании [Spring Boot] в Azure см. [Spring в Azure].
 
 Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
 
-Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr** по адресу https://start.spring.io/.
+Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr**: https://start.spring.io/.
 
 <!-- URL List -->
 
 [Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
-[приложений Spring Boot]: http://projects.spring.io/spring-boot/
-[здесь]: https://docs.microsoft.com/java/azure/spring-framework/
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
+[Spring Boot]: http://projects.spring.io/spring-boot/
+[Spring в Azure]: https://docs.microsoft.com/java/azure/spring-framework/
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

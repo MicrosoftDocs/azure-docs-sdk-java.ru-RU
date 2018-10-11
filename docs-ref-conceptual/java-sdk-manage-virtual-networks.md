@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 3d21cdd890912c1fc58fc65a79ba972b8327edeb
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931090"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892545"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Создание виртуальных сетей Azure и управление ими с помощью приложений Java
 
@@ -181,6 +181,6 @@ azure.networks().deleteByResourceGroup(rgName,vnetName1);
 | [Подсеть](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | Создание подсетей в виртуальной сети при определении или обновлении сети с помощью `withSubnet()`. Получение представлений объекта подсети с помощью `Network.subnets().get()` или `Network.subnets().entrySet()`. Эти объекты содержат методы для запроса свойств подсети.
 | [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | Создан с помощью текучей цепочки `azure.networkSecurityGroups().define()...create()`. Применяется к подсетям при обновлении или создании подсетей в виртуальной сети. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

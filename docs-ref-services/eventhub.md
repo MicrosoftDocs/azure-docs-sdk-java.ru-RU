@@ -12,24 +12,24 @@ ms.technology: azure
 ms.devlang: java
 ms.service: event-hub
 ms.openlocfilehash: b6646ef27edace4247090e749c9a52cd6a33a82c
-ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34283028"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893475"
 ---
 # <a name="azure-event-hub-libraries-for-java"></a>Библиотеки концентратора событий Azure для Java
 
 ## <a name="overview"></a>Обзор
 
-Собирайте и администрируйте миллионы событий в секунду, поступающих от подключенных устройств и приложений Интернета вещей с помощью [концентраторов событий Azure](/azure/event-hubs/event-hubs-what-is-event-hubs).
+Собирайте и администрируйте миллионы событий в секунду, поступающих от подключенных устройств и приложений Интернета вещей с помощью [Центров событий Azure](/azure/event-hubs/event-hubs-what-is-event-hubs).
 
-Чтобы приступить к работе с концентраторами событий Azure, см. инструкции по [получению событий из концентраторов событий Azure с помощью Java](/azure/event-hubs/event-hubs-java-get-started-receive-eph).
+Чтобы приступить к работе с Центрами событий Azure, см. инструкции по [получению событий из Центров событий Azure с помощью Java](/azure/event-hubs/event-hubs-java-get-started-receive-eph).
 
 
 ## <a name="client-library"></a>Клиентская библиотека
 
-Отправляйте события в концентратор событий Azure, чтобы использовать и обрабатывать события из концентратора событий с помощью клиентской библиотеки концентраторов событий.
+Отправляйте события в Центры событий Azure, чтобы использовать и обрабатывать события из концентратора событий с помощью клиентской библиотеки Центров событий.
 
 [Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать [клиентскую библиотеку](https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs) в проекте.
  
@@ -70,5 +70,5 @@ ehClient.sendSync(sendEvent);
 [2]: https://github.com/Azure-Samples/event-hubs-java-storm-sender-jms-receiver
 [3]: https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub
 
-Ознакомьтесь с [примерами кода Java для концентраторов событий Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=event), которые можно использовать в своих приложениях.
+Ознакомьтесь с [примерами кода Java для Центров событий Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=event), которые можно использовать в своих приложениях.
 

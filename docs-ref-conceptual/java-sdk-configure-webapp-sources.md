@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 910d1e43c9942d6402aeccb8757ba819b7453dab
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931190"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893145"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Настройка источников развертывания в службе приложений Azure из приложений Java
 
@@ -164,6 +164,6 @@ WebApp app4 = azure.webApps()
 | [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_pricing_tier) | Класс со статическими общедоступными полями, которые представляют уровни службы приложений. Используется для определения встроенного уровня плана при создании приложения с использованием `withPricingTier()` или непосредственно при определении плана с помощью `azure.appServices().appServicePlans().define()`.
 | [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._java_version) | Класс со статическими общедоступными полями, которые представляют версии Java, поддерживаемые службой приложений. Используется с `withJavaVersion()` во время выполнения цепочки `define()...create()` при создании нового веб-приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

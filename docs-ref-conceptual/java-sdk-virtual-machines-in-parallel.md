@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: e20feb555c3a360eceae60c1569af9a00a5cd027
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931200"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893215"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Создание виртуальных машин в нескольких регионах из приложений Java
 
@@ -194,6 +194,6 @@ finally {
 | [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Набор параметров виртуальной машины Linux, которые используются в качестве параметров для метода `withPopularLinuxImage()` при определении виртуальной машины.
 | [Сеть](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | В примере определяется одна виртуальная сеть для каждого региона с помощью `azure.networks().define()`. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

@@ -14,5 +14,5 @@
 Дополнительные сведения об использовании Java в Azure см. по следующим ссылкам: 
 
 * [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) 
-* [Java Tools for Visual Studio Team Services](https://java.visualstudio.com/) (Инструменты Java для Visual Studio Team Services) 
+* [Работа с Visual Studio Team Services (VSTS) и Java](https://java.visualstudio.com/) 
 <!-- TODO: Add URLs for Java in VSCode here --> 

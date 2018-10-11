@@ -15,21 +15,21 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954527"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893165"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью службы приложений Azure
 
 В этом руководстве описано, как создать пример начального веб-приложения [Spring Boot] и развернуть его в [службе приложений Azure].
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется следующее.
 
-* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
+* Подписка Azure; если у вас еще нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN] или зарегистрироваться для получения [Бесплатная учетная запись Azure].
 * Актуальная версия [Java Developer Kit (JDK)].
 * Средство сборки [Maven] (версия 3) от Apache.
 * Клиент [Git].
@@ -71,7 +71,7 @@ ms.locfileid: "28954527"
    java -jar gs-spring-boot-0.1.0.jar
    ```
 
-1. Протестируйте веб-приложение, перейдя по адресу http://localhost:8080 в веб-браузере, или, если имеется программа curl, используйте синтаксис, как в следующем примере:
+1. Протестируйте веб-приложение. Для этого перейдите в веб-браузере по адресу http://localhost:8080 или используйте следующий синтаксис в cURL:
    ```
    curl http://localhost:8080
    ```
@@ -114,7 +114,7 @@ ms.locfileid: "28954527"
 
    a. Выберите пункт меню **Параметры приложения**.
 
-   Б. В качестве версии Java выберите **Java 8**.
+   b. В качестве версии Java выберите **Java 8**.
 
    c. В качестве дополнительного номера версии Java выберите **Самые новые**.
 
@@ -128,7 +128,7 @@ ms.locfileid: "28954527"
 
    a. Выберите пункт меню **Учетные данные развертывания**.
 
-   Б. Укажите имя пользователя и пароль.
+   b. Укажите имя пользователя и пароль.
 
    c. Выберите команду **Сохранить**.
 
@@ -138,7 +138,7 @@ ms.locfileid: "28954527"
 
    a. Выберите пункт меню **Учетные данные развертывания**.
 
-   Б. Скопируйте полное имя пользователя и URL-адрес FTP, а затем сохраните их. Они понадобятся в следующем разделе этого учебника.
+   b. Скопируйте полное имя пользователя и URL-адрес FTP, а затем сохраните их. Они понадобятся в следующем разделе этого учебника.
 
    ![URL-адрес и учетные данные FTP][AZ09]
 
@@ -203,7 +203,7 @@ ms.locfileid: "28954527"
 
 Дополнительные сведения об образце проекта Spring Boot см. на странице [Spring Boot Getting Started].
 
-Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr** по адресу https://start.spring.io/.
+Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr**: https://start.spring.io/.
 
 Дополнительные сведения о настройке дополнительных параметров для веб-приложения см. в статье [Настройка веб-приложений в службе приложений Azure].
 
@@ -215,12 +215,12 @@ ms.locfileid: "28954527"
 [портал Azure]: https://portal.azure.com/
 [Настройка веб-приложений в службе приложений Azure]: /azure/app-service/web-sites-configure
 [Развертывание приложения в службе приложений Azure с помощью FTP или FTPS]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
-[бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[Бесплатная учетная запись Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/ (Инструменты Java для Visual Studio Team Services)
+[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/

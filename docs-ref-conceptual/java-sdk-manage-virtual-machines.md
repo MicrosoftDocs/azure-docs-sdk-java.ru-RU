@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: e3048b3317477f4b1fb8edf93e4bebad6b7fafce
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931170"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893615"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Управление виртуальными машинами Azure из приложений Java
 
@@ -163,6 +163,6 @@ azure.virtualMachines().deleteByResourceGroup(rgName,windowsVmName);
 | [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Класс с набором параметров виртуальной машины Linux, используемых с методом `withPopularLinuxImage()` при определении виртуальной машины.
 | [KnownWindowsVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_windows_virtual_machine_image) | Класс с набором параметров виртуальной машины Windows, используемых с методом `withPopularWindowsImage()` при определении виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]
