@@ -12,25 +12,25 @@ ms.technology: azure
 ms.devlang: java
 ms.service: networking
 ms.openlocfilehash: bb74ccd8826df7b627e0b5f4e4ffd2da44b2642d
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823607"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893385"
 ---
-# <a name="azure-network-libraries-for-java"></a><span data-ttu-id="dc538-104">Библиотеки Azure Network для Java</span><span class="sxs-lookup"><span data-stu-id="dc538-104">Azure Network libraries for Java</span></span>
+# <a name="azure-network-libraries-for-java"></a><span data-ttu-id="5febc-104">Библиотеки Azure Network для Java</span><span class="sxs-lookup"><span data-stu-id="5febc-104">Azure Network libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="dc538-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="dc538-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="5febc-105">Обзор</span><span class="sxs-lookup"><span data-stu-id="5febc-105">Overview</span></span>
 
-<span data-ttu-id="dc538-106">Подключайте ресурсы Azure, фильтруйте и балансируйте трафик, а также управляйте маршрутизацией с помощью [сетей Azure](/azure/networking/networking-overview).</span><span class="sxs-lookup"><span data-stu-id="dc538-106">Connect Azure resources, filter and balance traffic, and manage routing with [Azure Networking](/azure/networking/networking-overview).</span></span>
+<span data-ttu-id="5febc-106">Подключайте ресурсы Azure, фильтруйте и балансируйте трафик, а также управляйте маршрутизацией с помощью [сетей Azure](/azure/networking/networking-overview).</span><span class="sxs-lookup"><span data-stu-id="5febc-106">Connect Azure resources, filter and balance traffic, and manage routing with [Azure Networking](/azure/networking/networking-overview).</span></span>
 
-<span data-ttu-id="dc538-107">Чтобы приступить к работе с сетями Azure, см. инструкции по [созданию виртуальной сети](/azure/virtual-network/virtual-network-get-started-vnet-subnet).</span><span class="sxs-lookup"><span data-stu-id="dc538-107">To get started with Azure Networking, see [Create your first virtual network](/azure/virtual-network/virtual-network-get-started-vnet-subnet).</span></span>
+<span data-ttu-id="5febc-107">Чтобы приступить к работе с сетями Azure, см. инструкции по [созданию виртуальной сети](/azure/virtual-network/virtual-network-get-started-vnet-subnet).</span><span class="sxs-lookup"><span data-stu-id="5febc-107">To get started with Azure Networking, see [Create your first virtual network](/azure/virtual-network/virtual-network-get-started-vnet-subnet).</span></span>
 
-## <a name="management-api"></a><span data-ttu-id="dc538-108">API управления</span><span class="sxs-lookup"><span data-stu-id="dc538-108">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="5febc-108">API управления</span><span class="sxs-lookup"><span data-stu-id="5febc-108">Management API</span></span>
 
-<span data-ttu-id="dc538-109">Создавайте и администрируйте [виртуальные сети](/azure/virtual-network/virtual-networks-overview), [каналы ExpressRoute](/azure/expressroute/) и [шлюзы приложений](/azure/application-gateway/) Azure с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="dc538-109">Create and manage Azure [virtual networks](/azure/virtual-network/virtual-networks-overview) , [ExpressRoutes](/azure/expressroute/) , and [Application Gateways](/azure/application-gateway/) with the management API.</span></span>
+<span data-ttu-id="5febc-109">Создавайте и администрируйте [виртуальные сети](/azure/virtual-network/virtual-networks-overview), [каналы ExpressRoute](/azure/expressroute/) и [шлюзы приложений](/azure/application-gateway/) Azure с помощью API управления.</span><span class="sxs-lookup"><span data-stu-id="5febc-109">Create and manage Azure [virtual networks](/azure/virtual-network/virtual-networks-overview) , [ExpressRoutes](/azure/expressroute/) , and [Application Gateways](/azure/application-gateway/) with the management API.</span></span>
 
-<span data-ttu-id="dc538-110">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="dc538-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
+<span data-ttu-id="5febc-110">[Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.</span><span class="sxs-lookup"><span data-stu-id="5febc-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>  
 
 ```XML
 <dependency>
@@ -40,9 +40,9 @@ ms.locfileid: "31823607"
 </dependency>
 ```   
 
-### <a name="example"></a><span data-ttu-id="dc538-111">Пример</span><span class="sxs-lookup"><span data-stu-id="dc538-111">Example</span></span>
+### <a name="example"></a><span data-ttu-id="5febc-111">Пример</span><span class="sxs-lookup"><span data-stu-id="5febc-111">Example</span></span>
 
-<span data-ttu-id="dc538-112">Создайте виртуальную сеть с одной подсетью.</span><span class="sxs-lookup"><span data-stu-id="dc538-112">Create a new virtual network with a single subnet.</span></span>
+<span data-ttu-id="5febc-112">Создайте виртуальную сеть с одной подсетью.</span><span class="sxs-lookup"><span data-stu-id="5febc-112">Create a new virtual network with a single subnet.</span></span>
 
 ```java
 Network virtualNetwork1 = azure.networks().define(vnetName1)
@@ -56,13 +56,13 @@ Network virtualNetwork1 = azure.networks().define(vnetName1)
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="dc538-113">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="dc538-113">Explore the Management APIs</span></span>](/java/api/overview/azure/networking/management)
+> [<span data-ttu-id="5febc-113">Обзор API-интерфейсов управления</span><span class="sxs-lookup"><span data-stu-id="5febc-113">Explore the Management APIs</span></span>](/java/api/overview/azure/networking/management)
 
-## <a name="samples"></a><span data-ttu-id="dc538-114">Примеры</span><span class="sxs-lookup"><span data-stu-id="dc538-114">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="5febc-114">Примеры</span><span class="sxs-lookup"><span data-stu-id="5febc-114">Samples</span></span>
 
-<span data-ttu-id="dc538-115">[Управление виртуальными сетями](https://github.com/Azure-Samples/network-java-manage-virtual-network) </span><span class="sxs-lookup"><span data-stu-id="dc538-115">[Manage virtual networks](https://github.com/Azure-Samples/network-java-manage-virtual-network) </span></span>  
-<span data-ttu-id="dc538-116">[Управление сетевыми интерфейсами](https://github.com/Azure-Samples/network-java-manage-network-interface) </span><span class="sxs-lookup"><span data-stu-id="dc538-116">[Manage network interfaces](https://github.com/Azure-Samples/network-java-manage-network-interface) </span></span>  
-<span data-ttu-id="dc538-117">[Управление шлюзами приложения](https://github.com/Azure-Samples/application-gateway-java-manage-simple-application-gateways) </span><span class="sxs-lookup"><span data-stu-id="dc538-117">[Manage Application Gateways](https://github.com/Azure-Samples/application-gateway-java-manage-simple-application-gateways) </span></span>  
-[<span data-ttu-id="dc538-118">Управление подсистемами балансировки нагрузки для Интернета</span><span class="sxs-lookup"><span data-stu-id="dc538-118">Manage internet facing load balancers</span></span>](https://github.com/Azure-Samples/network-java-manage-internet-facing-load-balancers)   
+<span data-ttu-id="5febc-115">[Управление виртуальными сетями](https://github.com/Azure-Samples/network-java-manage-virtual-network) </span><span class="sxs-lookup"><span data-stu-id="5febc-115">[Manage virtual networks](https://github.com/Azure-Samples/network-java-manage-virtual-network) </span></span>  
+<span data-ttu-id="5febc-116">[Управление сетевыми интерфейсами](https://github.com/Azure-Samples/network-java-manage-network-interface) </span><span class="sxs-lookup"><span data-stu-id="5febc-116">[Manage network interfaces](https://github.com/Azure-Samples/network-java-manage-network-interface) </span></span>  
+<span data-ttu-id="5febc-117">[Управление шлюзами приложения](https://github.com/Azure-Samples/application-gateway-java-manage-simple-application-gateways) </span><span class="sxs-lookup"><span data-stu-id="5febc-117">[Manage Application Gateways](https://github.com/Azure-Samples/application-gateway-java-manage-simple-application-gateways) </span></span>  
+[<span data-ttu-id="5febc-118">Управление подсистемами балансировки нагрузки для Интернета</span><span class="sxs-lookup"><span data-stu-id="5febc-118">Manage internet facing load balancers</span></span>](https://github.com/Azure-Samples/network-java-manage-internet-facing-load-balancers)   
 
-<span data-ttu-id="dc538-119">Ознакомьтесь с [примерами кода Java для сетей Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=network), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="dc538-119">Explore more [sample Java code for Azure Networking](https://azure.microsoft.com/resources/samples/?platform=java&term=network) you can use in your apps.</span></span>
+<span data-ttu-id="5febc-119">Ознакомьтесь с [примерами кода Java для сетей Azure](https://azure.microsoft.com/resources/samples/?platform=java&term=network), которые можно использовать в своих приложениях.</span><span class="sxs-lookup"><span data-stu-id="5febc-119">Explore more [sample Java code for Azure Networking](https://azure.microsoft.com/resources/samples/?platform=java&term=network) you can use in your apps.</span></span>
