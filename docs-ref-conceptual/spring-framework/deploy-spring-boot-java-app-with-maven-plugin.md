@@ -1,47 +1,40 @@
 ---
-title: Развертывание приложения Spring Boot в облаке с помощью Maven и Azure
-description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure.
+title: Развертывание приложения Spring Boot в виде файла JAR в облаке с помощью Maven и Azure
+description: Узнайте, как развернуть приложение Spring Boot в облаке с помощью подключаемого модуля Maven для веб-приложений Azure на платформе Linux.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: brborges
-ms.assetid: ''
 ms.author: robmcm;kevinzha;brborges
-ms.date: 06/01/2018
+ms.date: 10/04/2018
 ms.devlang: java
 ms.service: app-service
-ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: web
-ms.openlocfilehash: ca788354d26964bd9f1e21a0d3a8005ff65ce4bc
-ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
+ms.openlocfilehash: 36afcc764c1cb984779518ddec004ecbfa1b7c57
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43324350"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48876398"
 ---
-# <a name="deploy-a-spring-boot-app-to-the-cloud-using-the-maven-plugin-for-azure-app-service"></a>Развертывание приложения Spring Boot в облаке с помощью подключаемого модуля Maven для Службы приложений Azure
+# <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Развертывание веб-приложения Spring Boot в виде файла JAR в Службе приложений Azure на платформе Linux
 
-В этой статье демонстрируется использование подключаемого модуля Maven для Веб-приложений Службы приложений Azure с целью развертывания примера приложения Spring Boot.
+В этой статье показано, как использовать [подключаемый модуль Maven для веб-приложений службы приложений Azure](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme), чтобы развернуть приложение Spring Boot, упакованное в виде файла JAR Java SE, в [Службе приложений Azure на платформе Linux](https://docs.microsoft.com/en-us/azure/app-service/containers/). Развертывание Java SE является предпочтительным по сравнению с [Tomcat и файлами WAR](/azure/app-service/containers/quickstart-java) в тех случаях, когда нужно объединить зависимости, среду выполнения и файлы конфигурации приложения в единый артефакт, пригодный для развертывания.
 
-> [!NOTE]
-> 
-> [Подключаемый модуль Maven для Веб-приложений Службы приложений Azure](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для [Apache Maven](http://maven.apache.org/) обеспечивает эффективную интеграцию Службы приложений Azure в проекты Maven и упрощает разработчикам развертывание веб-приложений в этой службе.
 
-Прежде чем использовать подключаемый модуль Maven, проверьте центральный репозиторий Maven на наличие новой версии: [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.azure/azure-webapp-maven-plugin.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-webapp-maven-plugin%22). 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством требуется следующее:
+Для выполнения шагов, описанных в этом руководстве, вам понадобиться установить и настроить следующие компоненты:
 
-* Подписка Azure. Если у вас ее еще нет, создайте [бесплатной учетной записи Azure].
-* [Интерфейс командной строки Azure (CLI)].
-* Актуальный [пакет разработчиков Java (JDK)] версии 1.7 или более поздней.
-* Средство сборки [Maven] (версия 3) от Apache.
-* Клиент [Git].
+* [Azure CLI](/cli/azure/) на локальном компьютере или в [Azure Cloud Shell](https://shell.azure.com).
+* [Пакет разработчиков Java (JDK)](https://www.azul.com/downloads/azure-only/zulu/) версии 1.7 или более поздней.
+* Apache [Maven](https://maven.apache.org/) версии 3.
+* Клиент [Git](https://git-scm.com/downloads).
 
-## <a name="clone-the-sample-spring-boot-web-app"></a>Клонирование примера "Веб-приложение Spring Boot"
+## <a name="clone-the-sample-app"></a>Клонирования примера приложения
 
 Из этого раздела вы узнаете, как клонировать готовое приложение Spring Boot и протестировать его на локальном компьютере.
 
@@ -83,85 +76,54 @@ ms.locfileid: "43324350"
 
 1. Должно появиться следующее сообщение: **Greetings from Spring Boot!**
 
-## <a name="adjust-project-for-war-based-deployment-on-azure-app-service"></a>Настройка проекта для развертывания из WAR-файла в Службе приложений Azure
+## <a name="configure-maven-plugin-for-azure-app-service"></a>Настройка подключаемого модуля Maven для Службы приложений Azure
 
-В этом разделе мы быстро настроим развертывание проекта Spring Boot в Службе приложений Azure из WAR-файла. По умолчанию используется среда выполнения Tomcat. Для этого нам нужно изменить два файла:
+В этом разделе вы настроите проект Spring Boot `pom.xml`, чтобы развернуть приложение в Службе приложений Azure на платформе Linux с помощью Maven.
 
-- файл Maven `pom.xml`;
-- класс Java `Application`.
+1. Откройте файл `pom.xml` в редакторе кода.
 
-Начнем с настроек Maven.
+1. В разделе `<build>` файла pom.xml добавьте следующую запись `<plugin>` внутри тега `<plugins>`.
 
-1. Откройте файл `pom.xml`.
-
-1. В начале файла сразу после определения `<artifactId>` добавьте `<packaging>war</packaging>`.
    ```xml
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-spring-boot</artifactId>
+  <plugin>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-webapp-maven-plugin</artifactId>
+    <version>1.4.0</version>
+    <configuration>
+      <deploymentType>jar</deploymentType>
 
-    <packaging>war</packaging>
-   ```
+      <!-- configure app to run on port 80, required by App Service -->
+      <appSettings>
+        <property> 
+          <name>JAVA_OPTS</name> 
+          <value>-Dserver.port=80</value> 
+        </property> 
+      </appSettings>
 
-1. Добавьте следующую зависимость:
-   ```xml
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-   ```
+      <!-- Web App information -->
+      <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+      <appName>${WEBAPP_NAME}</appName>
+      <region>${REGION}</region>  
 
-Теперь откройте класс `Application` (будем надеяться, что интегрированная среда разработки уже считала новые зависимости) и внесите в него следующие изменения:
+      <!-- Java Runtime Stack for Web App on Linux-->
+      <linuxRuntime>jre8</linuxRuntime>
+    </configuration>
+  </plugin>
+  ```
 
-1. Сделайте класс Application подклассом `SpringBootServletInitializer`.
-   ```java
-   @SpringBootApplication
-   public class Application extends SpringBootServletInitializer {
-     // ...
-   }
-   ```
+1. Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
 
-1. Добавьте в класс Application следующий метод:
-   ```java
-       @Override
-       protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-           return application.sources(Application.class);
-       }
-   ```
-1. Упорядочите операции импорта, чтобы обеспечить правильный импорт `SpringApplicationBuilder` и `SpringBootServletInitializer`.
+| Placeholder | ОПИСАНИЕ |
+| ----------- | ----------- |
+| `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается веб-приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *TestResources*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
+| `WEBAPP_NAME` | Имя приложения будет частью имени узла для веб-приложения, которое будет развернуто в Azure (WEBAPP_NAME.azurewebsites.net). Измените значение этого параметра на уникальное имя нового веб-приложения Azure, в котором будет размещено ваше приложение Java, например *contoso*. |
+| `REGION` | Регион Azure, в котором размещено веб-приложение, например `westus2`. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
 
-Теперь ваше приложение готово к развертыванию в Tomcat или любой другой среде выполнения сервлетов (например, Jetty).
-
-## <a name="add-the-maven-plugin-for-azure-app-service-web-apps"></a>Добавление подключаемого модуля Maven для Веб-приложений Службы приложений Azure
-
-В этом разделе мы добавим подключаемый модуль Maven, который автоматизирует весь процесс развертывания этого приложения в Веб-приложения Службы приложений Azure.
-
-1. Откройте файл `pom.xml` еще раз.
-
-1. В элементе `<properties>` укажите настраиваемый формат метки времени, используя свойство `maven.build.timestamp.format`. Так как Служба приложений Azure создает для вашего приложения общедоступный URL-адрес, этот параметр будет использоваться для создания имени развертывания, что позволит избежать конфликтов с развертываниями других пользователей.
-   ```xml
-    <properties>
-        <java.version>1.8</java.version>
-        <maven.build.timestamp.format>yyyyMMddHHmmssSSS</maven.build.timestamp.format>
-    </properties>
-   ```
-
-1. В элементе `<plugins>` добавьте следующий код:
-   ```xml
-    <plugin>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-webapp-maven-plugin</artifactId>
-      <!-- Check latest version on Maven Central -->
-      <version>1.1.0</version>
-    </plugin>
-   ```
-
-С такими параметрами проект Maven можно развертывать в Веб-приложениях Службы приложений Azure.
+Полный список параметров конфигурации см. в [справочном руководстве по подключаемому модулю Maven на сайте GitHub](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin).
 
 ## <a name="install-and-log-in-to-azure-cli"></a>Установка и вход в Azure CLI
 
-[Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven. Установите этот компонент.
+[Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven.
 
 1. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
    
@@ -171,40 +133,7 @@ ms.locfileid: "43324350"
    
    Для завершения процесса входа следуйте инструкциям.
 
-## <a name="optionally-customize-pomxml-before-deploying"></a>Настройка файла pom.xml перед развертыванием (необязательный этап)
-
-Откройте файл `pom.xml` для приложения Spring Boot в текстовом редакторе, а затем найдите элемент `<plugin>` для `azure-webapp-maven-plugin`. Этот элемент должен выглядеть примерно следующим образом.
-
-   ```xml
-  <plugins>
-    <plugin>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-webapp-maven-plugin</artifactId>
-      <!-- Check latest version on Maven Central -->
-      <version>1.1.0</version>
-      <configuration>
-         <resourceGroup>maven-projects</resourceGroup>
-         <appName>${project.artifactId}-${maven.build.timestamp}</appName>
-         <region>westus</region>
-         <javaVersion>1.8</javaVersion>
-         <deploymentType>war</deploymentType>
-      </configuration>
-    </plugin>
-  </plugins>
-   ```
-
-Существует несколько значений, которые можно изменить для подключаемого модуля Maven. Подробное описание каждого из этих элементов см. в документации по [Подключаемый модуль Maven для веб-приложений Azure]. Существует ряд значений, на которые следует обратить внимание в этой статье.
-
-| Элемент | ОПИСАНИЕ |
-|---|---|
-| `<version>` | Версия [Подключаемый модуль Maven для веб-приложений Azure]. Чтобы убедиться, что вы используете актуальную версию, проверьте, какая версия указана в списке версий в [центральном репозитории Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22). |
-| `<resourceGroup>` | Целевая группа ресурсов, которой в этом примере является `maven-plugin`. Если эта группа ресурсов не существует, она создается во время развертывания. |
-| `<appName>` | Целевое имя веб-приложения. В этом примере целевое имя — `maven-web-app-${maven.build.timestamp}`, к которому в этом примере добавлен суффикс `${maven.build.timestamp}`, чтобы избежать конфликтов. (Метку времени добавлять необязательно; можно указать любую уникальную строку для имени приложения.) |
-| `<region>` | Целевой регион, которым в данном примере является `westus`. (Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
-| `<javaVersion>` | Версия среды выполнения Java для веб-приложения. (Полный список см. в документации по [Подключаемый модуль Maven для веб-приложений Azure].) |
-| `<deploymentType>` | Тип развертывания для веб-приложения. Значение по умолчанию — `war`. |
-
-## <a name="build-and-deploy-your-web-app-to-azure"></a>Сборка и развертывание веб-приложения в Azure
+## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
 После настройки всех параметров в предыдущих разделах этой статьи можно приступать к развертыванию веб-приложения в Azure. Для этого выполните следующие действия.
 
@@ -218,7 +147,7 @@ ms.locfileid: "43324350"
    mvn azure-webapp:deploy
    ```
 
-Maven выполнит развертывание веб-приложения в Azure; если веб-приложение еще не существует, оно будет создано.
+Maven развернет веб-приложение в Azure. Если веб-приложение или план службы приложений отсутствуют, они будут созданы.
 
 После развертывания веб-приложения вы сможете управлять им с помощью [портал Azure].
 
@@ -230,34 +159,13 @@ Maven выполнит развертывание веб-приложения в
 
    ![Определение URL-адреса для веб-приложения][AP02]
 
-<!--
-##  OPTIONAL: Configure the embedded Tomcat server to run on a different port
-
-The embedded Tomcat server in the sample Spring Boot application is configured to run on port 8080 by default. However, if you want to run the embedded Tomcat server to run on a different port, such as port 80 for local testing, you can configure the port by using the following steps.
-
-1. Go to the *resources* directory (or create the directory if it does not exist); for example:
-   ```shell
-   cd src/main/resources
-   ```
-
-1. Open the *application.yml* file in a text editor if it exists, or create a new YAML file if it does not exist.
-
-1. Modify the **server** setting so that the server runs on port 80; for example:
-   ```yaml
-   server:
-      port: 80
-   ```
-
-1. Save and close the *application.yml* file.
--->
+Убедитесь, что развертывание прошло успешно, воспользовавшись описанной выше командой cURL. При этом вместо `localhost` введите URL-адрес веб-приложения, указанный на портале. Должно появиться следующее сообщение: **Greetings from Spring Boot!** 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.
 
 * [Подключаемый модуль Maven для веб-приложений Azure]
-
-* [Вход в Azure из интерфейса командной строки Azure](/azure/xplat-cli-connect)
 
 * [Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure](deploy-containerized-spring-boot-java-app-with-maven-plugin.md)
 
@@ -267,10 +175,10 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 <!-- URL List -->
 
-[Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
+[Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [портал Azure]: https://portal.azure.com/
-[бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
