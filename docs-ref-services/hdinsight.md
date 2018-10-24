@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
 ms.date: 9/20/2018
-ms.openlocfilehash: 5e3887341ddb2fdcab336f0a8a232e6e8bfbe0f2
-ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
+ms.openlocfilehash: 1271f70fff876f4d24c8afa81123c54735f2d522
+ms.sourcegitcommit: 788b49d0b37909c575c9e5176e484cba627e7921
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48047161"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49120542"
 ---
 # <a name="hdinsight-java-management-sdk-preview"></a>Пакет SDK для управления HDInsight для Java (предварительная версия)
 
 ## <a name="overview"></a>Обзор
 
-Пакет SDK HDInsight для Java предоставляет классы и методы для управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и др.
+Пакет SDK HDInsight для Java предоставляет классы и методы для управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -340,9 +340,9 @@ client.clusters.delete("<Resource Group Name>", "<Cluster Name>");
 client.clusters.update("<Resource Group Name>", "<Cluster Name>", <Map<String,String> of Tags>);
 ```
 
-### <a name="scale-cluster"></a>Масштабирование кластера
+### <a name="resize-cluster"></a>Изменение размера кластера
 
-Вы можете масштабировать кластер, изменяя количество его рабочих узлов так:
+Вы можете изменить размер кластера, изменяя количество его рабочих узлов. Укажите новый размер, как показано ниже:
 
 ```java
 client.clusters.resize("<Resource Group Name>", "<Cluster Name>", <Num of Worker Nodes (int)>)
