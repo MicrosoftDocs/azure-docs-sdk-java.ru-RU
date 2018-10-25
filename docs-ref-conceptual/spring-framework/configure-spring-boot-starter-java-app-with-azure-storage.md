@@ -14,12 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 1a219a066f0f89adbf3f541856b36b842520bfbb
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 4838b6dbd354ad941df12933dddfa7f3e7eef905
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46505922"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799970"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Как использовать Spring Boot Starter со службой хранилища Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "46505922"
    * Укажите **расположение** для учетной записи хранения.
    * Выберите **подписку**, которую нужно использовать для учетной записи хранения.
    * Укажите, следует ли создать новую **группу ресурсов** для учетной записи хранения или использовать существующую.
-   
+
    ![Создание учетной записи хранения Azure][IMG02]
 
 1. Указав эти параметры, щелкните **Создать**, чтобы создать учетную запись хранения.
@@ -207,7 +207,7 @@ ms.locfileid: "46505922"
 
    `/users/example/home/storage/src/main/resources/application.properties`
 
-1.  Откройте файл *application.properties* в текстовом редакторе, добавьте указанные ниже строки в файл и замените примеры значений соответствующими параметрами учетной записи хранения:
+2. Откройте файл *application.properties* в текстовом редакторе, добавьте указанные ниже строки в файл и замените примеры значений соответствующими параметрами учетной записи хранения:
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -216,14 +216,16 @@ ms.locfileid: "46505922"
    spring.cloud.azure.storage.account=wingtiptoysstorage
    ```
    Описание
-   | Поле | ОПИСАНИЕ |
-   | ---|---|
-   | `spring.cloud.azure.credential-file-path` | Определяет файл учетных данных Azure, который был создан ранее в этом примере. |
-   | `spring.cloud.azure.resource-group` | Определяет группу ресурсов Azure, которая содержит учетную запись хранения Azure. |
-   | `spring.cloud.azure.region` | Определяет географический регион, указанный при создании учетной записи хранения Azure. |
-   | `spring.cloud.azure.storage.account` | Определяет учетную запись хранения Azure, которая была создана ранее в этом примере.
 
-1. Сохраните и закройте файл *application.properties*.
+   |                   Поле                   |                                            ОПИСАНИЕ                                            |
+   |-------------------------------------------|---------------------------------------------------------------------------------------------------|
+   | `spring.cloud.azure.credential-file-path` |            Определяет файл учетных данных Azure, который был создан ранее в этом примере.             |
+   |    `spring.cloud.azure.resource-group`    |           Определяет группу ресурсов Azure, которая содержит учетную запись хранения Azure.            |
+   |        `spring.cloud.azure.region`        | Определяет географический регион, указанный при создании учетной записи хранения Azure. |
+   |   `spring.cloud.azure.storage.account`    |            Определяет учетную запись хранения Azure, которая была создана ранее в этом примере.             |
+
+
+3. Сохраните и закройте файл *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>Добавление примера кода для реализации базовых функций службы хранилища Azure
 
@@ -243,10 +245,10 @@ ms.locfileid: "46505922"
 
    ```java
    package com.wingtiptoys.storage;
-   
+
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+
    @SpringBootApplication
    public class StorageApplication {
       public static void main(String[] args) {
@@ -271,7 +273,7 @@ ms.locfileid: "46505922"
 
    ```java
    package com.wingtiptoys.storage;
-   
+
    import org.springframework.beans.factory.annotation.Value;
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
@@ -280,14 +282,14 @@ ms.locfileid: "46505922"
    import org.springframework.web.bind.annotation.PostMapping;
    import org.springframework.web.bind.annotation.RequestBody;
    import org.springframework.web.bind.annotation.RestController;
-   
+
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
-   
+
    @RestController
    public class WebController {
-   
+
       @Value("blob://test/myfile.txt")
       private Resource blobFile;
 
@@ -297,7 +299,7 @@ ms.locfileid: "46505922"
             this.blobFile.getInputStream(),
             Charset.defaultCharset()) + "\n";
       }
-   
+
       @PostMapping(value = "/")
       public String writeBlobFile(@RequestBody String data) throws IOException {
          try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
@@ -307,7 +309,7 @@ ms.locfileid: "46505922"
       }
    }
    ```
-   
+
    Синтаксис `@Value("blob://[container]/[blob]")` определяет имена контейнера и большого двоичного объекта для хранения данных.
 
 1. Сохраните и закройте файл Java веб-контроллера.
