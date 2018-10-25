@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 3f7eeffe8bd36196f9b79edd60830b5d202ea285
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: dfc3b6121bddcb637735047e2e7bc7485da9a4fe
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506581"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799950"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Создание приложения Spring Cloud Stream Binder с помощью Центров событий Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "46506581"
    * Выберите **подписку** для пространства имен.
    * Укажите, следует ли создать новую **группу ресурсов** для пространства имен или использовать существующую.
    * Укажите **расположение** для пространства имен Центров событий.
-   
+
    ![Создание пространства имен для концентратора событий Azure][IMG02]
 
 1. Указав эти параметры, щелкните **Создать**, чтобы создать пространство имен.
@@ -72,7 +72,7 @@ ms.locfileid: "46506581"
 
 1. Щелкните **Центры событий**, а затем **+Концентратор событий**.
 
-   ![Добавление нового концентратора событий Azure][IMG04]
+   ![Добавление нового концентратора событий][IMG04]
 
 1. В области **Создание концентратора событий** введите уникальное **имя** для концентратора событий и щелкните **Создать**.
 
@@ -97,8 +97,8 @@ ms.locfileid: "46506581"
    * Укажите **расположение** для учетной записи хранения.
    * Выберите **подписку**, которую нужно использовать для учетной записи хранения.
    * Укажите, следует ли создать новую **группу ресурсов** для учетной записи хранения или использовать существующую.
-   
-   ![Создание учетной записи хранения][IMG08]
+
+   ![Создание учетной записи хранения Azure][IMG08]
 
 1. Указав эти параметры, щелкните **Создать**, чтобы создать учетную запись хранения.
 
@@ -236,7 +236,7 @@ ms.locfileid: "46506581"
 
    `/users/example/home/eventhub/src/main/resources/application.properties`
 
-1.  Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:
+2. Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -250,18 +250,20 @@ ms.locfileid: "46506581"
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
    ```
    Описание
-   | Поле | ОПИСАНИЕ |
-   | ---|---|
-   | `spring.cloud.azure.credential-file-path` | Определяет файл учетных данных Azure, который был создан ранее в этом примере. |
-   | `spring.cloud.azure.resource-group` | Определяет группу ресурсов Azure, которая содержит концентратор событий Azure. |
-   | `spring.cloud.azure.region` | Определяет географический регион, указанный при создании концентратора событий Azure. |
-   | `spring.cloud.azure.eventhub.namespace` | Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure. |
-   | `spring.cloud.azure.eventhub.checkpoint-storage-account` | Определяет учетную запись хранения Azure, которая была создана ранее в этом примере.
-   | `spring.cloud.stream.bindings.input.destination` | Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее. |
-   | `spring.cloud.stream.bindings.input.group `| Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure. |
-   | `spring.cloud.stream.bindings.output.destination` | Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных. |
 
-1. Сохраните и закройте файл *application.properties*.
+   |                          Поле                           |                                                                                   ОПИСАНИЕ                                                                                    |
+   |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |        `spring.cloud.azure.credential-file-path`         |                                                    Определяет файл учетных данных Azure, который был создан ранее в этом примере.                                                    |
+   |           `spring.cloud.azure.resource-group`            |                                                      Определяет группу ресурсов Azure, которая содержит концентратор событий Azure.                                                      |
+   |               `spring.cloud.azure.region`                |                                           Определяет географический регион, указанный при создании концентратора событий Azure.                                            |
+   |         `spring.cloud.azure.eventhub.namespace`          |                                          Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure.                                           |
+   | `spring.cloud.azure.eventhub.checkpoint-storage-account` |                                                    Определяет учетную запись хранения Azure, которая была создана ранее в этом примере.                                                    |
+   |     `spring.cloud.stream.bindings.input.destination`     |                            Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее.                            |
+   |       `spring.cloud.stream.bindings.input.group `        | Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure. |
+   |    `spring.cloud.stream.bindings.output.destination`     |                               Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных.                               |
+
+
+3. Сохраните и закройте файл *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Добавление примера кода для реализации базовых функций концентратора событий
 
@@ -281,10 +283,10 @@ ms.locfileid: "46506581"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+
    @SpringBootApplication
    public class EventhubApplication {
       public static void main(String[] args) {
@@ -301,7 +303,7 @@ ms.locfileid: "46506581"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.cloud.stream.annotation.EnableBinding;
    import org.springframework.cloud.stream.messaging.Source;
@@ -309,14 +311,14 @@ ms.locfileid: "46506581"
    import org.springframework.web.bind.annotation.PostMapping;
    import org.springframework.web.bind.annotation.RequestBody;
    import org.springframework.web.bind.annotation.RestController;
-   
+
    @EnableBinding(Source.class)
    @RestController
    public class EventhubSource {
-   
+
       @Autowired
       private Source source;
-   
+
       @PostMapping("/messages")
       public String postMessage(@RequestBody String message) {
          this.source.output().send(new GenericMessage<>(message));
@@ -332,7 +334,7 @@ ms.locfileid: "46506581"
 
    ```java
    package com.wingtiptoys.eventhub;
-   
+
    import com.microsoft.azure.spring.integration.core.AzureHeaders;
    import com.microsoft.azure.spring.integration.core.api.Checkpointer;
    import org.slf4j.Logger;
@@ -341,10 +343,10 @@ ms.locfileid: "46506581"
    import org.springframework.cloud.stream.annotation.StreamListener;
    import org.springframework.cloud.stream.messaging.Sink;
    import org.springframework.messaging.handler.annotation.Header;
-   
+
    @EnableBinding(Sink.class)
    public class EventhubSink {
-   
+
       private static final Logger LOGGER = LoggerFactory.getLogger(EventhubSink.class);
 
       @StreamListener(Sink.INPUT)

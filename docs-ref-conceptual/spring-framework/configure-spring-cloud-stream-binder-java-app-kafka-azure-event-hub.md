@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 00062f5442e072af30036388f2f1f066221d7316
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 85fe1d9c56530b716a1f1750713f4c87d43dfad3
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506586"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799960"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Использование начального приложения Spring Boot для Apache Kafka в Центрах событий Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "46506586"
    * Выберите **подписку** для пространства имен.
    * Укажите, следует ли создать новую **группу ресурсов** для пространства имен или использовать существующую.
    * Укажите **расположение** для пространства имен Центров событий.
-   
+
    ![Создание пространства имен для концентратора событий Azure][IMG02]
 
 1. Указав эти параметры, щелкните **Создать**, чтобы создать пространство имен.
@@ -222,7 +222,7 @@ ms.locfileid: "46506586"
 
    `/users/example/home/eventhub/src/main/resources/application.properties`
 
-1.  Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:
+2. Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -235,17 +235,19 @@ ms.locfileid: "46506586"
    spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
    Описание
-   | Поле | ОПИСАНИЕ |
-   | ---|---|
-   | `spring.cloud.azure.credential-file-path` | Определяет файл учетных данных Azure, который был создан ранее в этом примере. |
-   | `spring.cloud.azure.resource-group` | Определяет группу ресурсов Azure, которая содержит концентратор событий Azure. |
-   | `spring.cloud.azure.region` | Определяет географический регион, указанный при создании концентратора событий Azure. |
-   | `spring.cloud.azure.eventhub.namespace` | Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure. |
-   | `spring.cloud.stream.bindings.input.destination` | Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее. |
-   | `spring.cloud.stream.bindings.input.group `| Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure. |
-   | `spring.cloud.stream.bindings.output.destination` | Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных. |
 
-1. Сохраните и закройте файл *application.properties*.
+   |                       Поле                       |                                                                                   ОПИСАНИЕ                                                                                    |
+   |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |     `spring.cloud.azure.credential-file-path`     |                                                    Определяет файл учетных данных Azure, который был создан ранее в этом примере.                                                    |
+   |        `spring.cloud.azure.resource-group`        |                                                      Определяет группу ресурсов Azure, которая содержит концентратор событий Azure.                                                      |
+   |            `spring.cloud.azure.region`            |                                           Определяет географический регион, указанный при создании концентратора событий Azure.                                            |
+   |      `spring.cloud.azure.eventhub.namespace`      |                                          Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure.                                           |
+   | `spring.cloud.stream.bindings.input.destination`  |                            Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее.                            |
+   |    `spring.cloud.stream.bindings.input.group `    | Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure. |
+   | `spring.cloud.stream.bindings.output.destination` |                               Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных.                               |
+
+
+3. Сохраните и закройте файл *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Добавление примера кода для реализации базовых функций концентратора событий
 
@@ -265,10 +267,10 @@ ms.locfileid: "46506586"
 
    ```java
    package com.wingtiptoys.kafka;
-   
+
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
-   
+
    @SpringBootApplication
    public class KafkaApplication {
       public static void main(String[] args) {
@@ -286,7 +288,7 @@ ms.locfileid: "46506586"
 
    ```java
    package com.wingtiptoys.kafka;
-   
+
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.cloud.stream.annotation.EnableBinding;
    import org.springframework.cloud.stream.messaging.Source;
@@ -295,7 +297,7 @@ ms.locfileid: "46506586"
    import org.springframework.web.bind.annotation.RequestBody;
    import org.springframework.web.bind.annotation.RequestParam;
    import org.springframework.web.bind.annotation.RestController;
-   
+
    @EnableBinding(Source.class)
    @RestController
    public class KafkaSource {
@@ -318,13 +320,13 @@ ms.locfileid: "46506586"
 
    ```java
    package com.wingtiptoys.kafka;
-   
+
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
    import org.springframework.cloud.stream.annotation.EnableBinding;
    import org.springframework.cloud.stream.annotation.StreamListener;
    import org.springframework.cloud.stream.messaging.Sink;
-   
+
    @EnableBinding(Sink.class)
    public class KafkaSink {
       private static final Logger LOGGER = LoggerFactory.getLogger(KafkaSink.class);
