@@ -6,17 +6,17 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: brborges
-ms.author: robmcm;kevinzha;brborges
-ms.date: 10/04/2018
+ms.author: robmcm
+ms.date: 10/18/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 36afcc764c1cb984779518ddec004ecbfa1b7c57
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: dc3038fed6859203f36e0c4dc9a9b01e81a7c4c5
+ms.sourcegitcommit: dae7511a9d93ca7f388d5b0e05dc098e22c2f2f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876398"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49962498"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Развертывание веб-приложения Spring Boot в виде файла JAR в Службе приложений Azure на платформе Linux
 
@@ -33,6 +33,18 @@ ms.locfileid: "48876398"
 * [Пакет разработчиков Java (JDK)](https://www.azul.com/downloads/azure-only/zulu/) версии 1.7 или более поздней.
 * Apache [Maven](https://maven.apache.org/) версии 3.
 * Клиент [Git](https://git-scm.com/downloads).
+
+## <a name="install-and-sign-in-to-azure-cli"></a>Установка и вход в Azure CLI
+
+[Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven.
+
+Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
+   
+   ```shell
+   az login
+   ```
+   
+Для завершения процесса входа следуйте инструкциям.
 
 ## <a name="clone-the-sample-app"></a>Клонирования примера приложения
 
@@ -82,10 +94,10 @@ ms.locfileid: "48876398"
 
 1. Откройте файл `pom.xml` в редакторе кода.
 
-1. В разделе `<build>` файла pom.xml добавьте следующую запись `<plugin>` внутри тега `<plugins>`.
+2. В разделе `<build>` файла pom.xml добавьте следующую запись `<plugin>` внутри тега `<plugins>`.
 
    ```xml
-  <plugin>
+   <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
     <version>1.4.0</version>
@@ -108,10 +120,10 @@ ms.locfileid: "48876398"
       <!-- Java Runtime Stack for Web App on Linux-->
       <linuxRuntime>jre8</linuxRuntime>
     </configuration>
-  </plugin>
-  ```
+   </plugin>
+   ```
 
-1. Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
+3. Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
 
 | Placeholder | ОПИСАНИЕ |
 | ----------- | ----------- |
@@ -120,18 +132,6 @@ ms.locfileid: "48876398"
 | `REGION` | Регион Azure, в котором размещено веб-приложение, например `westus2`. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
 
 Полный список параметров конфигурации см. в [справочном руководстве по подключаемому модулю Maven на сайте GitHub](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin).
-
-## <a name="install-and-log-in-to-azure-cli"></a>Установка и вход в Azure CLI
-
-[Azure CLI](https://docs.microsoft.com/cli/azure/) — самый простой и наиболее удобный способ развернуть приложение Spring Boot с помощью подключаемого модуля Maven.
-
-1. Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.
-   
-   ```shell
-   az login
-   ```
-   
-   Для завершения процесса входа следуйте инструкциям.
 
 ## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
