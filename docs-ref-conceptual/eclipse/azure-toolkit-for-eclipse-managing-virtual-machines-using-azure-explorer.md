@@ -4,22 +4,22 @@ description: Вы можете узнать, как управлять вирт�
 services: ''
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 11/13/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: c04f5225f0bb99898f69b26a4782aa57d75c4f22
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 53dfbfb0de2bcb56ebfc4d5ca2c4c19528edcfbf
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48899369"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338698"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Управление виртуальными машинами с помощью Azure Explorer для Eclipse
 
