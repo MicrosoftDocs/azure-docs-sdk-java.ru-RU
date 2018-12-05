@@ -3,23 +3,23 @@ title: ''
 description: В этом руководстве показано, как с помощью набора средств Azure для Eclipse версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure.
 services: app-service
 documentationcenter: java
-author: selvasingh
-manager: routlaw
+author: rmcmurray
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/13/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 896e7eff389bc7d3ac119d315c50aae505a381da
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: b05dcd52f36524ab17652f83c6ced4006f874365
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892565"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338718"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Создание веб-приложения Hello World для Azure с помощью набора средств для Eclipse предыдущих версий
 
@@ -109,7 +109,7 @@ ms.locfileid: "48892565"
 
    d. В раскрывающемся меню **Веб-контейнер** выберите для своего приложения соответствующее программное обеспечение.
       
-      На данный момент можно выбрать Tomcat 8, Tomcat 7 или Jetty 9. Последний дистрибутив выбранного программного обеспечения, предоставленный Azure, будет запущен в последнем дистрибутиве JDK 8, созданном Oracle и предоставленном Azure.
+      На данный момент можно выбрать Tomcat 8, Tomcat 7 или Jetty 9. Последний дистрибутив выбранного ПО будет предоставлен Azure. Он будет работать с последним дистрибутивом JDK, также предоставленным Azure.
 
    д. В раскрывающемся меню **Подписка** выберите подписку, которую вы хотите использовать для этого развертывания.
 
@@ -124,7 +124,7 @@ ms.locfileid: "48892565"
    * В текстовое поле **Имя** введите имя новой группы ресурсов.
    * В раскрывающемся меню **Регион** выберите расположение центра обработки данных Azure для группы ресурсов.
    * Необязательно. По умолчанию Azure автоматически развернет последний дистрибутив Java 8 в ваш контейнер веб-приложения в качестве виртуальной машины Java. Тем не менее, если это нужно веб-приложению, то можно указать другую версию и дистрибутив виртуальной машины Java. Чтобы указать пакет JDK для веб-приложения, щелкните **JDK** и выберите один из следующих параметров.
-     * **Deploy the default JDK offered by Azure Web Apps service** (Развернуть пакет JDK по умолчанию, предлагаемый службой веб-приложений Azure). Этот параметр позволит развернуть последний дистрибутив Java 8.
+     * **Deploy the default JDK offered by Azure Web Apps service** (Развернуть пакет JDK по умолчанию, предлагаемый службой веб-приложений Azure). Этот параметр позволит развернуть последний дистрибутив Java.
      * **Deploy a 3rd party JDK available on Azure** (Развернуть сторонний пакет JDK, доступный в Azure). Этот параметр позволяет выбрать из списка пакетов JDK, предоставляемых Microsoft Azure.
      * **Deploy my own JDK from this download location** (Развернуть собственный пакет JDK из этого расположения для скачивания). Этот параметр позволяет указать собственный дистрибутив JDK, который должен быть упакован в ZIP-файл и передан либо в общедоступное расположение для скачивания, либо в учетную запись хранения Azure, к которой у вас есть доступ.
           

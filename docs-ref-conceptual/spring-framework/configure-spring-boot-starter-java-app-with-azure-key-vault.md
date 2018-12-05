@@ -4,22 +4,22 @@ description: Сведения о настройке приложения Spring 
 services: key-vault
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 78b7a9a2e26168b19dc8a1d12e47456752b57ffc
-ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
+ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45639777"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339158"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
 
@@ -32,10 +32,10 @@ ms.locfileid: "45639777"
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
-* [Пакет разработчиков Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) версии 1.7 или более поздней.
+* Поддерживаемая версия Java Development Kit (JDK). Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
-## <a name="create-an-app-using-the-spring-initialzr"></a>Создание приложения с помощью Spring Initialzr
+## <a name="create-an-app-using-spring-initializr"></a>Создание приложения с помощью Spring Initializr
 
 1. Перейдите по адресу <https://start.spring.io/>.
 
@@ -53,7 +53,7 @@ ms.locfileid: "45639777"
 
 1. При появлении запроса скачайте проект на локальный компьютер.
 
-## <a name="sign-into-azure-and-select-the-subscription-to-use"></a>Вход в Azure и выбор подписки для использования
+## <a name="sign-into-azure"></a>Вход в Azure
 
 1. Откройте окно командной строки.
 
@@ -94,7 +94,7 @@ ms.locfileid: "45639777"
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
    ```
 
-## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a>Создание и настройка Azure Key Vault с помощью Azure CLI
+## <a name="create-a-new-azure-key-vault"></a>Создание нового хранилища Azure Key Vault
 
 1. Создайте группу ресурсов Azure, которые будут использоваться для хранилища ключей, например:
    ```azurecli
@@ -231,7 +231,7 @@ ms.locfileid: "45639777"
    }
    ```
 
-## <a name="configure-and-compile-your-spring-boot-application"></a>Настройка и компиляция приложения Spring Boot
+## <a name="configure-and-compile-your-app"></a>Настройка и компиляция приложения
 
 1. Распакуйте архив с файлами проекта Spring Boot, которые вы скачали в каталог.
 
@@ -305,7 +305,9 @@ ms.locfileid: "45639777"
 
    ![Сообщение о времени выполнения Spring Boot][build-application-02]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="summary"></a>Сводка
+
+В этом руководстве вы создали веб-приложение Java с помощью **[Spring Initializr]**, создали хранилище Azure Key Vault для хранения конфиденциальной информации, а затем настроили созданное приложение для получения сведений из хранилища ключей.
 
 См. дополнительные сведения об использовании Azure Key Vault:
 
@@ -320,6 +322,13 @@ ms.locfileid: "45639777"
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
 Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
 
 <!-- URL List -->
 

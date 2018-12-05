@@ -3,23 +3,23 @@ title: Создание веб-приложения Hello World для Azure с 
 description: В этом руководстве показано, как с помощью набора средств Azure для IntelliJ версии 3.0.6 (или более ранней) создать веб-приложение Hello World для Azure.
 services: app-service
 documentationcenter: java
-author: selvasingh
-manager: routlaw
+author: rmcmurray
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 11/13/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: efc1dffa248987772827bbe7bc0caa9f10a0b4ef
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 4a1d9ee79fdc4284dff65f6b026ec103b3d623ce
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893398"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338978"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>Создание веб-приложения Hello World для Azure с помощью набора средств для IntelliJ предыдущих версий
 
@@ -127,7 +127,7 @@ ms.locfileid: "48893398"
 
    d. В раскрывающемся меню **Веб-контейнер** выберите для своего приложения соответствующее программное обеспечение.
       
-      На данный момент можно выбрать Tomcat 8, Tomcat 7 или Jetty 9. Последний дистрибутив выбранного программного обеспечения, предоставленный Azure, будет запущен в последнем дистрибутиве JDK 8, созданном Oracle и предоставленном Azure.
+      На данный момент можно выбрать Tomcat 8, Tomcat 7 или Jetty 9. Последний дистрибутив выбранного ПО будет предоставлен Azure. Он будет работать с последним дистрибутивом JDK, также предоставленным Azure.
 
    д. В раскрывающемся меню **Подписка** выберите подписку, которую вы хотите использовать для этого развертывания.
 
