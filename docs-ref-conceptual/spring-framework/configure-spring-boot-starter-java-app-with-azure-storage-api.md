@@ -8,76 +8,76 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 94f7b1148d9282d33bc67da0e0d97a284a81d4d4
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 984a3edb89608c806537f991b42e309f31130896
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339058"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991448"
 ---
-# <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a><span data-ttu-id="f21d3-103">Использование начального приложения Spring Boot с API службы хранилища Azure</span><span class="sxs-lookup"><span data-stu-id="f21d3-103">How to use the Spring Boot Starter with the Azure Storage API</span></span>
+# <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a><span data-ttu-id="4bd12-103">Использование начального приложения Spring Boot с API службы хранилища Azure</span><span class="sxs-lookup"><span data-stu-id="4bd12-103">How to use the Spring Boot Starter with the Azure Storage API</span></span>
 
-## <a name="overview"></a><span data-ttu-id="f21d3-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="f21d3-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="4bd12-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="4bd12-104">Overview</span></span>
 
-<span data-ttu-id="f21d3-105">В этой статье описано, как с помощью **Spring Initializr** создать приложение для получения доступа к хранилищу Azure с помощью API службы хранилища Azure.</span><span class="sxs-lookup"><span data-stu-id="f21d3-105">This article walks you through creating a custom application using the **Spring Initializr**, and then using that application to access Azure storage by using the Azure Storage API.</span></span>
+<span data-ttu-id="4bd12-105">В этой статье описано, как с помощью **Spring Initializr** создать приложение для получения доступа к хранилищу Azure с помощью API службы хранилища Azure.</span><span class="sxs-lookup"><span data-stu-id="4bd12-105">This article walks you through creating a custom application using the **Spring Initializr**, and then using that application to access Azure storage by using the Azure Storage API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="f21d3-106">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="f21d3-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="4bd12-106">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="4bd12-106">Prerequisites</span></span>
 
-<span data-ttu-id="f21d3-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="f21d3-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
+<span data-ttu-id="4bd12-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="4bd12-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
 
-* <span data-ttu-id="f21d3-108">Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/pricing/free-trial/).</span><span class="sxs-lookup"><span data-stu-id="f21d3-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free Azure account](https://azure.microsoft.com/pricing/free-trial/).</span></span>
-* <span data-ttu-id="f21d3-109">[Интерфейс командной строки Azure (CLI)](http://docs.microsoft.com/cli/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="f21d3-109">The [Azure Command-Line Interface (CLI)](http://docs.microsoft.com/cli/azure/overview).</span></span>
-* <span data-ttu-id="f21d3-110">Поддерживаемая версия Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="f21d3-110">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="f21d3-111">Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="f21d3-111">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="f21d3-112">[Apache Maven](http://maven.apache.org/) версии 3.0 и выше.</span><span class="sxs-lookup"><span data-stu-id="f21d3-112">Apache's [Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="4bd12-108">Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/pricing/free-trial/).</span><span class="sxs-lookup"><span data-stu-id="4bd12-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free Azure account](https://azure.microsoft.com/pricing/free-trial/).</span></span>
+* <span data-ttu-id="4bd12-109">[Интерфейс командной строки Azure (CLI)](http://docs.microsoft.com/cli/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="4bd12-109">The [Azure Command-Line Interface (CLI)](http://docs.microsoft.com/cli/azure/overview).</span></span>
+* <span data-ttu-id="4bd12-110">Поддерживаемая версия Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="4bd12-110">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="4bd12-111">Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="4bd12-111">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
+* <span data-ttu-id="4bd12-112">[Apache Maven](http://maven.apache.org/) версии 3.0 и выше.</span><span class="sxs-lookup"><span data-stu-id="4bd12-112">Apache's [Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
-## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="f21d3-113">Создание пользовательского приложения с помощью Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="f21d3-113">Create a custom application using the Spring Initializr</span></span>
+## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="4bd12-113">Создание пользовательского приложения с помощью Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="4bd12-113">Create a custom application using the Spring Initializr</span></span>
 
-1. <span data-ttu-id="f21d3-114">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="f21d3-114">Browse to <https://start.spring.io/>.</span></span>
+1. <span data-ttu-id="4bd12-114">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="4bd12-114">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="f21d3-115">Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.</span><span class="sxs-lookup"><span data-stu-id="f21d3-115">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
+1. <span data-ttu-id="4bd12-115">Укажите, что необходимо создать проект **Maven** с помощью **Java**, введите имя **группы** и **артефакта** вашего приложения, а затем щелкните ссылку, чтобы **перейти к полной версии** Spring Initializr.</span><span class="sxs-lookup"><span data-stu-id="4bd12-115">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, and then click the link to **Switch to the full version** of the Spring Initializr.</span></span>
 
    ![Основные параметры Spring Initializr](media/configure-spring-boot-starter-java-app-with-azure-storage/spring-initializr-basic.png)
 
    > [!NOTE]
    >
-   > <span data-ttu-id="f21d3-117">Spring Initializr будет использовать имена **группы** и **артефакта** для создания имени пакета, например *com.contoso.wingtiptoysdemo*.</span><span class="sxs-lookup"><span data-stu-id="f21d3-117">The Spring Initializr will use the **Group** and **Artifact** names to create the package name; for example: *com.contoso.wingtiptoysdemo*.</span></span>
+   > <span data-ttu-id="4bd12-117">Spring Initializr будет использовать имена **группы** и **артефакта** для создания имени пакета, например *com.contoso.wingtiptoysdemo*.</span><span class="sxs-lookup"><span data-stu-id="4bd12-117">The Spring Initializr will use the **Group** and **Artifact** names to create the package name; for example: *com.contoso.wingtiptoysdemo*.</span></span>
    >
 
-1. <span data-ttu-id="f21d3-118">Прокрутите вниз до раздела **Azure** статьи и установите флажок рядом с пунктом **Azure Storage** (Служба хранилища Azure).</span><span class="sxs-lookup"><span data-stu-id="f21d3-118">Scroll down to the **Azure** section and check the box for **Azure Storage**.</span></span>
+1. <span data-ttu-id="4bd12-118">Прокрутите вниз до раздела **Azure** статьи и установите флажок рядом с пунктом **Azure Storage** (Служба хранилища Azure).</span><span class="sxs-lookup"><span data-stu-id="4bd12-118">Scroll down to the **Azure** section and check the box for **Azure Storage**.</span></span>
 
    ![Все параметры Spring Initializr](media/configure-spring-boot-starter-java-app-with-azure-storage/spring-initializr-advanced.png)
 
-1. <span data-ttu-id="f21d3-120">Прокрутите страницу вниз и нажмите соответствующую кнопку, чтобы **создать проект**.</span><span class="sxs-lookup"><span data-stu-id="f21d3-120">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="4bd12-120">Прокрутите страницу вниз и нажмите соответствующую кнопку, чтобы **создать проект**.</span><span class="sxs-lookup"><span data-stu-id="4bd12-120">Scroll to the bottom of the page and click the button to **Generate Project**.</span></span>
 
    ![Все параметры Spring Initializr](media/configure-spring-boot-starter-java-app-with-azure-storage/spring-initializr-generate.png)
 
-1. <span data-ttu-id="f21d3-122">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="f21d3-122">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="4bd12-122">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="4bd12-122">When prompted, download the project to a path on your local computer.</span></span>
 
    ![Скачивание пользовательского проекта Spring Boot](media/configure-spring-boot-starter-java-app-with-azure-storage/download-app.png)
 
-## <a name="sign-into-azure-and-select-the-subscription-to-use"></a><span data-ttu-id="f21d3-124">Вход в Azure и выбор подписки для использования</span><span class="sxs-lookup"><span data-stu-id="f21d3-124">Sign into Azure and select the subscription to use</span></span>
+## <a name="sign-into-azure-and-select-the-subscription-to-use"></a><span data-ttu-id="4bd12-124">Вход в Azure и выбор подписки для использования</span><span class="sxs-lookup"><span data-stu-id="4bd12-124">Sign into Azure and select the subscription to use</span></span>
 
-1. <span data-ttu-id="f21d3-125">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="f21d3-125">Open a command prompt.</span></span>
+1. <span data-ttu-id="4bd12-125">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="4bd12-125">Open a command prompt.</span></span>
 
-1. <span data-ttu-id="f21d3-126">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="f21d3-126">Sign into your Azure account by using the Azure CLI:</span></span>
+1. <span data-ttu-id="4bd12-126">Войдите в учетную запись Azure с помощью интерфейса командной строки Azure.</span><span class="sxs-lookup"><span data-stu-id="4bd12-126">Sign into your Azure account by using the Azure CLI:</span></span>
 
    ```azurecli
    az login
    ```
-   <span data-ttu-id="f21d3-127">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="f21d3-127">Follow the instructions to complete the sign-in process.</span></span>
+   <span data-ttu-id="4bd12-127">Для завершения процесса входа следуйте инструкциям.</span><span class="sxs-lookup"><span data-stu-id="4bd12-127">Follow the instructions to complete the sign-in process.</span></span>
 
-1. <span data-ttu-id="f21d3-128">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="f21d3-128">List your subscriptions:</span></span>
+1. <span data-ttu-id="4bd12-128">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="4bd12-128">List your subscriptions:</span></span>
 
    ```azurecli
    az account list
    ```
-   <span data-ttu-id="f21d3-129">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-129">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
+   <span data-ttu-id="4bd12-129">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-129">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
 
    ```json
    [
@@ -96,26 +96,26 @@ ms.locfileid: "52339058"
    ]
    ```
 
-1. <span data-ttu-id="f21d3-130">Укажите GUID учетной записи, которую вы собираетесь использовать в Azure, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-130">Specify the GUID for the account you want to use with Azure; for example:</span></span>
+1. <span data-ttu-id="4bd12-130">Укажите GUID учетной записи, которую вы собираетесь использовать в Azure, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-130">Specify the GUID for the account you want to use with Azure; for example:</span></span>
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
    ```
 
-## <a name="create-an-azure-storage-account"></a><span data-ttu-id="f21d3-131">Создание учетной записи хранения Azure</span><span class="sxs-lookup"><span data-stu-id="f21d3-131">Create an Azure Storage account</span></span>
+## <a name="create-an-azure-storage-account"></a><span data-ttu-id="4bd12-131">Создание учетной записи хранения Azure</span><span class="sxs-lookup"><span data-stu-id="4bd12-131">Create an Azure Storage account</span></span>
 
-1. <span data-ttu-id="f21d3-132">Создайте группу ресурсов Azure, используемых в этой статье, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-132">Create a resource group for the Azure resources you will use in this article; for example:</span></span>
+1. <span data-ttu-id="4bd12-132">Создайте группу ресурсов Azure, используемых в этой статье, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-132">Create a resource group for the Azure resources you will use in this article; for example:</span></span>
    ```azurecli
    az group create --name wingtiptoysresources --location westus
    ```
-   <span data-ttu-id="f21d3-133">Описание</span><span class="sxs-lookup"><span data-stu-id="f21d3-133">Where:</span></span>
+   <span data-ttu-id="4bd12-133">Описание</span><span class="sxs-lookup"><span data-stu-id="4bd12-133">Where:</span></span>
 
-   | <span data-ttu-id="f21d3-134">Параметр</span><span class="sxs-lookup"><span data-stu-id="f21d3-134">Parameter</span></span> | <span data-ttu-id="f21d3-135">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="f21d3-135">Description</span></span> |
+   | <span data-ttu-id="4bd12-134">Параметр</span><span class="sxs-lookup"><span data-stu-id="4bd12-134">Parameter</span></span> | <span data-ttu-id="4bd12-135">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="4bd12-135">Description</span></span> |
    |---|---|
-   | `name` | <span data-ttu-id="f21d3-136">Указывает уникальное имя для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="f21d3-136">Specifies a unique name for your resource group.</span></span> |
-   | `location` | <span data-ttu-id="f21d3-137">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="f21d3-137">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
+   | `name` | <span data-ttu-id="4bd12-136">Указывает уникальное имя для группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="4bd12-136">Specifies a unique name for your resource group.</span></span> |
+   | `location` | <span data-ttu-id="4bd12-137">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="4bd12-137">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your resource group will be hosted.</span></span> |
 
-   <span data-ttu-id="f21d3-138">В Azure CLI отобразятся результаты созданной группы ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-138">The Azure CLI will display the results of your resource group creation; for example:</span></span>  
+   <span data-ttu-id="4bd12-138">В Azure CLI отобразятся результаты созданной группы ресурсов, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-138">The Azure CLI will display the results of your resource group creation; for example:</span></span>  
 
    ```json
    {
@@ -130,20 +130,20 @@ ms.locfileid: "52339058"
    }
    ```
 
-2. <span data-ttu-id="f21d3-139">Создайте учетную запись хранения Azure в группе ресурсов для приложения Spring Boot, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-139">Create an Azure storage account in the in the resource group for your Spring Boot app; for example:</span></span>
+2. <span data-ttu-id="4bd12-139">Создайте учетную запись хранения Azure в группе ресурсов для приложения Spring Boot, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-139">Create an Azure storage account in the in the resource group for your Spring Boot app; for example:</span></span>
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
-   <span data-ttu-id="f21d3-140">Описание</span><span class="sxs-lookup"><span data-stu-id="f21d3-140">Where:</span></span>
+   <span data-ttu-id="4bd12-140">Описание</span><span class="sxs-lookup"><span data-stu-id="4bd12-140">Where:</span></span>
 
-   | <span data-ttu-id="f21d3-141">Параметр</span><span class="sxs-lookup"><span data-stu-id="f21d3-141">Parameter</span></span> | <span data-ttu-id="f21d3-142">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="f21d3-142">Description</span></span> |
+   | <span data-ttu-id="4bd12-141">Параметр</span><span class="sxs-lookup"><span data-stu-id="4bd12-141">Parameter</span></span> | <span data-ttu-id="4bd12-142">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="4bd12-142">Description</span></span> |
    |---|---|
-   | `name` | <span data-ttu-id="f21d3-143">Указывает уникальное имя для учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="f21d3-143">Specifies a unique name for your storage account.</span></span> |
-   | `resource-group` | <span data-ttu-id="f21d3-144">Указывает имя созданной ранее группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="f21d3-144">Specifies the name of the resource group group you created in the previous step.</span></span> |
-   | `location` | <span data-ttu-id="f21d3-145">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="f21d3-145">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your storage account will be hosted.</span></span> |
-   | `sku` | <span data-ttu-id="f21d3-146">Указывает одно из следующих значений: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`.</span><span class="sxs-lookup"><span data-stu-id="f21d3-146">Specifies one of the following: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`.</span></span> |
+   | `name` | <span data-ttu-id="4bd12-143">Указывает уникальное имя для учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="4bd12-143">Specifies a unique name for your storage account.</span></span> |
+   | `resource-group` | <span data-ttu-id="4bd12-144">Указывает имя созданной ранее группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="4bd12-144">Specifies the name of the resource group group you created in the previous step.</span></span> |
+   | `location` | <span data-ttu-id="4bd12-145">Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="4bd12-145">Specifies the [Azure region](https://azure.microsoft.com/regions/) where your storage account will be hosted.</span></span> |
+   | `sku` | <span data-ttu-id="4bd12-146">Указывает одно из следующих значений: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`.</span><span class="sxs-lookup"><span data-stu-id="4bd12-146">Specifies one of the following: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`.</span></span> |
 
-   <span data-ttu-id="f21d3-147">Azure вернет длинную строку JSON, которая содержит сведения о состоянии подготовки, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-147">Azure will return a long JSON string which contains the provisioning state; for example: |</span></span>
+   <span data-ttu-id="4bd12-147">Azure вернет длинную строку JSON, которая содержит сведения о состоянии подготовки, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-147">Azure will return a long JSON string which contains the provisioning state; for example: |</span></span>
 
    ```json
    {
@@ -160,18 +160,18 @@ ms.locfileid: "52339058"
    }
    ```
 
-3. <span data-ttu-id="f21d3-148">Извлеките строку подключения для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-148">Retrieve the connection string for your storage account; for example:</span></span>
+3. <span data-ttu-id="4bd12-148">Извлеките строку подключения для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-148">Retrieve the connection string for your storage account; for example:</span></span>
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
-   <span data-ttu-id="f21d3-149">Описание</span><span class="sxs-lookup"><span data-stu-id="f21d3-149">Where:</span></span>
+   <span data-ttu-id="4bd12-149">Описание</span><span class="sxs-lookup"><span data-stu-id="4bd12-149">Where:</span></span>
 
-   | <span data-ttu-id="f21d3-150">Параметр</span><span class="sxs-lookup"><span data-stu-id="f21d3-150">Parameter</span></span> | <span data-ttu-id="f21d3-151">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="f21d3-151">Description</span></span> |
+   | <span data-ttu-id="4bd12-150">Параметр</span><span class="sxs-lookup"><span data-stu-id="4bd12-150">Parameter</span></span> | <span data-ttu-id="4bd12-151">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="4bd12-151">Description</span></span> |
    | ---|---|
-   | `name` | <span data-ttu-id="f21d3-152">Указывает уникальное имя созданной ранее учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="f21d3-152">Specifies a unique name of the storage account you created in previous steps.</span></span> |
-   | `resource-group` | <span data-ttu-id="f21d3-153">Указывает имя созданной ранее группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="f21d3-153">Specifies the name of the resource group you created in previous steps.</span></span> |
+   | `name` | <span data-ttu-id="4bd12-152">Указывает уникальное имя созданной ранее учетной записи хранения.</span><span class="sxs-lookup"><span data-stu-id="4bd12-152">Specifies a unique name of the storage account you created in previous steps.</span></span> |
+   | `resource-group` | <span data-ttu-id="4bd12-153">Указывает имя созданной ранее группы ресурсов.</span><span class="sxs-lookup"><span data-stu-id="4bd12-153">Specifies the name of the resource group you created in previous steps.</span></span> |
 
-   <span data-ttu-id="f21d3-154">Azure вернет строку JSON, которая содержит строку подключения для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-154">Azure will return a JSON string which contains the connection string for your storage account; for example:</span></span>
+   <span data-ttu-id="4bd12-154">Azure вернет строку JSON, которая содержит строку подключения для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-154">Azure will return a JSON string which contains the connection string for your storage account; for example:</span></span>
 
    ```json
    {
@@ -179,20 +179,20 @@ ms.locfileid: "52339058"
    }
    ```
 
-## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="f21d3-155">Настройка и компиляция приложения Spring Boot</span><span class="sxs-lookup"><span data-stu-id="f21d3-155">Configure and compile your Spring Boot application</span></span>
+## <a name="configure-and-compile-your-spring-boot-application"></a><span data-ttu-id="4bd12-155">Настройка и компиляция приложения Spring Boot</span><span class="sxs-lookup"><span data-stu-id="4bd12-155">Configure and compile your Spring Boot application</span></span>
 
-1. <span data-ttu-id="f21d3-156">Распакуйте скачанный архив с файлами проекта в каталог.</span><span class="sxs-lookup"><span data-stu-id="f21d3-156">Extract the files from the downloaded project archive into a directory.</span></span>
+1. <span data-ttu-id="4bd12-156">Распакуйте скачанный архив с файлами проекта в каталог.</span><span class="sxs-lookup"><span data-stu-id="4bd12-156">Extract the files from the downloaded project archive into a directory.</span></span>
 
-1. <span data-ttu-id="f21d3-157">В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="f21d3-157">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
+1. <span data-ttu-id="4bd12-157">В папке *src/main/resources* проекта откройте файл *application.properties* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="4bd12-157">Navigate to the *src/main/resources* folder in your project and open the *application.properties* file in a text editor.</span></span>
 
-1. <span data-ttu-id="f21d3-158">Добавьте ключ для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="f21d3-158">Add the key for your storage account; for example:</span></span>
+1. <span data-ttu-id="4bd12-158">Добавьте ключ для учетной записи хранения, например:</span><span class="sxs-lookup"><span data-stu-id="4bd12-158">Add the key for your storage account; for example:</span></span>
    ```yaml
    azure.storage.connection-string=DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=wingtiptoysstorage;AccountKey=AbCdEfGhIjKlMnOpQrStUvWxYz==
    ```
 
-1. <span data-ttu-id="f21d3-159">В папке */src/main/java/com/example/wingtiptoysdemo* проекта откройте файл *WingtiptoysdemoApplication.java* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="f21d3-159">Navigate to the */src/main/java/com/example/wingtiptoysdemo* folder in your project and open the *WingtiptoysdemoApplication.java* file in a text editor.</span></span>
+1. <span data-ttu-id="4bd12-159">В папке */src/main/java/com/example/wingtiptoysdemo* проекта откройте файл *WingtiptoysdemoApplication.java* в текстовом редакторе.</span><span class="sxs-lookup"><span data-stu-id="4bd12-159">Navigate to the */src/main/java/com/example/wingtiptoysdemo* folder in your project and open the *WingtiptoysdemoApplication.java* file in a text editor.</span></span>
 
-1. <span data-ttu-id="f21d3-160">Замените существующий код Java следующим примером, который содержит список больших двоичных объектов в контейнере:</span><span class="sxs-lookup"><span data-stu-id="f21d3-160">Replace the existing Java code with the following example that lists the blobs in a container:</span></span>
+1. <span data-ttu-id="4bd12-160">Замените существующий код Java следующим примером, который содержит список больших двоичных объектов в контейнере:</span><span class="sxs-lookup"><span data-stu-id="4bd12-160">Replace the existing Java code with the following example that lists the blobs in a container:</span></span>
 
    ```java
    package com.example.wingtiptoysdemo;
@@ -267,21 +267,21 @@ ms.locfileid: "52339058"
    ```
    > [!NOTE]
    >
-   > <span data-ttu-id="f21d3-161">Этот пример автоматически передает параметры учетной записи хранения, определенные в файле *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="f21d3-161">The above example autowires the storage account settings that you defined in the *application.properties* file.</span></span>
+   > <span data-ttu-id="4bd12-161">Этот пример автоматически передает параметры учетной записи хранения, определенные в файле *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="4bd12-161">The above example autowires the storage account settings that you defined in the *application.properties* file.</span></span>
    >
 
-1. <span data-ttu-id="f21d3-162">Скомпилируйте и запустите приложение:</span><span class="sxs-lookup"><span data-stu-id="f21d3-162">Compile and run the application:</span></span>
+1. <span data-ttu-id="4bd12-162">Скомпилируйте и запустите приложение:</span><span class="sxs-lookup"><span data-stu-id="4bd12-162">Compile and run the application:</span></span>
    ```shell
    mvn clean package spring-boot:run
    ```
 
-   <span data-ttu-id="f21d3-163">Приложение создаст контейнер и отправит в контейнер текстовый файл как большой двоичный объект, который появится в списке в вашей учетной записи хранения на [портале Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="f21d3-163">The application will create a container and upload a text file as a blob to the container, which will be listed under your storage account in the [Azure portal](https://portal.azure.com).</span></span>
+   <span data-ttu-id="4bd12-163">Приложение создаст контейнер и отправит в контейнер текстовый файл как большой двоичный объект, который появится в списке в вашей учетной записи хранения на [портале Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="4bd12-163">The application will create a container and upload a text file as a blob to the container, which will be listed under your storage account in the [Azure portal](https://portal.azure.com).</span></span>
 
    ![Список больших двоичных объектов на портале Azure](media/configure-spring-boot-starter-java-app-with-azure-storage/list-blobs-in-portal.png)
 
    > [!NOTE]
    > 
-   > <span data-ttu-id="f21d3-165">При компиляции приложения может появиться следующее сообщение об ошибке:</span><span class="sxs-lookup"><span data-stu-id="f21d3-165">When you compile your application, you might see the following error message:</span></span>
+   > <span data-ttu-id="4bd12-165">При компиляции приложения может появиться следующее сообщение об ошибке:</span><span class="sxs-lookup"><span data-stu-id="4bd12-165">When you compile your application, you might see the following error message:</span></span>
    > 
    > `[INFO] ------------------------------------------------------------------------`<br/>
    > `[INFO] BUILD FAILURE`<br/>
@@ -301,7 +301,7 @@ ms.locfileid: "52339058"
    > `robert/SpringBoot/wingtiptoysdemo/target/surefire/surefire_01414159391084128068tmp`<br/>
    > `[ERROR] -> [Help 1]`<br/>
    > 
-   > <span data-ttu-id="f21d3-166">В таком случае можно отключить тестирование Maven Surefire. Для этого добавьте следующую запись подключаемого модуля в файл *pom.xml*:</span><span class="sxs-lookup"><span data-stu-id="f21d3-166">If this happens, you might want to disable the Maven Surefire testing; to do so, add the following plugin entry in your *pom.xml* file:</span></span>
+   > <span data-ttu-id="4bd12-166">В таком случае можно отключить тестирование Maven Surefire. Для этого добавьте следующую запись подключаемого модуля в файл *pom.xml*:</span><span class="sxs-lookup"><span data-stu-id="4bd12-166">If this happens, you might want to disable the Maven Surefire testing; to do so, add the following plugin entry in your *pom.xml* file:</span></span>
    > 
    > ```xml
    > <plugin>
@@ -315,14 +315,21 @@ ms.locfileid: "52339058"
    > ```
    > 
 
-## <a name="next-steps"></a><span data-ttu-id="f21d3-167">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="f21d3-167">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="4bd12-167">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="4bd12-167">Next steps</span></span>
 
-<span data-ttu-id="f21d3-168">См. дополнительные сведения о других [начальных приложениях Spring Boot для Microsoft Azure](spring-boot-starters-for-azure.md).</span><span class="sxs-lookup"><span data-stu-id="f21d3-168">For more information about the additional Spring Boot Starters that are available for Microsoft Azure, see [Spring Boot Starters for Azure](spring-boot-starters-for-azure.md).</span></span>
+<span data-ttu-id="4bd12-168">Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.</span><span class="sxs-lookup"><span data-stu-id="4bd12-168">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
 
-<span data-ttu-id="f21d3-169">См. дополнительные сведения об интеграции функций Azure в приложения на основе Spring в руководстве по [Spring Framework в Azure](/java/azure/spring-framework/).</span><span class="sxs-lookup"><span data-stu-id="f21d3-169">For additional information about integrating Azure functionality into your Spring-based applications, see [Spring Framework on Azure](/java/azure/spring-framework/).</span></span>
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="4bd12-169">Spring в Azure</span><span class="sxs-lookup"><span data-stu-id="4bd12-169">Spring on Azure</span></span>](/java/azure/spring-framework)
 
-<span data-ttu-id="f21d3-170">См. дополнительные сведения о других API-интерфейсах службы хранилища Azure, которые можно вызывать из приложений Spring Boot:</span><span class="sxs-lookup"><span data-stu-id="f21d3-170">For detailed information about additional Azure storage APIs that you can call from your Spring Boot applications, see the following articles:</span></span>
-* [<span data-ttu-id="f21d3-171">Использование хранилища BLOB-объектов Azure из Java</span><span class="sxs-lookup"><span data-stu-id="f21d3-171">How to use Azure Blob storage from Java</span></span>](/azure/storage/blobs/storage-java-how-to-use-blob-storage)
-* [<span data-ttu-id="f21d3-172">Использование хранилища очередей Azure из Java</span><span class="sxs-lookup"><span data-stu-id="f21d3-172">How to use Azure Queue storage from Java</span></span>](/azure/storage/queues/storage-java-how-to-use-queue-storage)
-* [<span data-ttu-id="f21d3-173">Использование хранилища таблиц Azure из Java</span><span class="sxs-lookup"><span data-stu-id="f21d3-173">How to use Azure Table storage from Java</span></span>](/azure/cosmos-db/table-storage-how-to-use-java)
-* [<span data-ttu-id="f21d3-174">Использование хранилища файлов Azure из Java</span><span class="sxs-lookup"><span data-stu-id="f21d3-174">How to use Azure File storage from Java</span></span>](/azure/storage/files/storage-java-how-to-use-file-storage)
+### <a name="additional-resources"></a><span data-ttu-id="4bd12-170">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="4bd12-170">Additional Resources</span></span>
+
+<span data-ttu-id="4bd12-171">См. дополнительные сведения о других [начальных приложениях Spring Boot для Microsoft Azure](spring-boot-starters-for-azure.md).</span><span class="sxs-lookup"><span data-stu-id="4bd12-171">For more information about the additional Spring Boot Starters that are available for Microsoft Azure, see [Spring Boot Starters for Azure](spring-boot-starters-for-azure.md).</span></span>
+
+<span data-ttu-id="4bd12-172">См. дополнительные сведения об интеграции функций Azure в приложения на основе Spring в руководстве по [Spring Framework в Azure](/java/azure/spring-framework/).</span><span class="sxs-lookup"><span data-stu-id="4bd12-172">For additional information about integrating Azure functionality into your Spring-based applications, see [Spring Framework on Azure](/java/azure/spring-framework/).</span></span>
+
+<span data-ttu-id="4bd12-173">См. дополнительные сведения о других API-интерфейсах службы хранилища Azure, которые можно вызывать из приложений Spring Boot:</span><span class="sxs-lookup"><span data-stu-id="4bd12-173">For detailed information about additional Azure storage APIs that you can call from your Spring Boot applications, see the following articles:</span></span>
+* [<span data-ttu-id="4bd12-174">Использование хранилища BLOB-объектов Azure из Java</span><span class="sxs-lookup"><span data-stu-id="4bd12-174">How to use Azure Blob storage from Java</span></span>](/azure/storage/blobs/storage-java-how-to-use-blob-storage)
+* [<span data-ttu-id="4bd12-175">Использование хранилища очередей Azure из Java</span><span class="sxs-lookup"><span data-stu-id="4bd12-175">How to use Azure Queue storage from Java</span></span>](/azure/storage/queues/storage-java-how-to-use-queue-storage)
+* [<span data-ttu-id="4bd12-176">Использование хранилища таблиц Azure из Java</span><span class="sxs-lookup"><span data-stu-id="4bd12-176">How to use Azure Table storage from Java</span></span>](/azure/cosmos-db/table-storage-how-to-use-java)
+* [<span data-ttu-id="4bd12-177">Использование хранилища файлов Azure из Java</span><span class="sxs-lookup"><span data-stu-id="4bd12-177">How to use Azure File storage from Java</span></span>](/azure/storage/files/storage-java-how-to-use-file-storage)
