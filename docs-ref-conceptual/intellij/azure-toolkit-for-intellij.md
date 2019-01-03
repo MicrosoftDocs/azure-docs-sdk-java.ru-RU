@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: ''
 ms.assetid: 115a095d-1b70-41d6-adb4-78f24b2a4451
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 12/12/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: dd76cb3a0355e4e8471b7a32b6b33cb71bd3f16b
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 0cbb515a62e540fdc9decb8055bb57e0cb35e7b2
+ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892795"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53638993"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Набор средств Azure для IntelliJ
 В набор средств Azure для IntelliJ входят шаблоны и функциональные возможности для простого создания, разработки, тестирования и развертывания приложений Azure с помощью интегрированной среды разработки IntelliJ.
@@ -66,7 +66,7 @@ ms.locfileid: "48892795"
 
 * [Набор средств Azure для IntelliJ в репозитории подключаемых модулей JetBrains](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) и [инструментах Java для Visual Studio Team Services](https://java.visualstudio.com/).
+Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) и [инструментах Java для Visual Studio Team Services](/azure/devops/java/).
 
 > [!NOTE]
 > 
@@ -78,7 +78,6 @@ ms.locfileid: "48892795"
 <!-- URL List -->
 
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 
 <!-- Temporarily Deprecated URLs -->
 
