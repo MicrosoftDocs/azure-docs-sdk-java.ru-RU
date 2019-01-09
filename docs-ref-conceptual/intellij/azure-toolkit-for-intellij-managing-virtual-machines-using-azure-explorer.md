@@ -14,143 +14,143 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 57441a9cbdf0805e08f303c1f05049ce7f668ac0
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: a3aff77bc2fd2dac0396187d9e6b27910bc60e58
+ms.sourcegitcommit: 24f037d133875f86761ec893dfa74e723de040b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338668"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53636419"
 ---
-# <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="149ee-103">Управление виртуальными машинами с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="149ee-103">Manage virtual machines by using the Azure Explorer for IntelliJ</span></span>
+# <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="19c4d-103">Управление виртуальными машинами с помощью Azure Explorer для IntelliJ</span><span class="sxs-lookup"><span data-stu-id="19c4d-103">Manage virtual machines by using the Azure Explorer for IntelliJ</span></span>
 
-<span data-ttu-id="149ee-104">Azure Explorer, входящий в состав набора средств Azure для IntelliJ, предоставляет разработчикам на Java удобное решение для управления виртуальными машинами в их учетной записи Azure из интегрированной среды разработки IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="149ee-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing virtual machines in their Azure account from inside the IntelliJ integrated development environment (IDE).</span></span>
+<span data-ttu-id="19c4d-104">Azure Explorer, входящий в состав набора средств Azure для IntelliJ, предоставляет разработчикам на Java удобное решение для управления виртуальными машинами в их учетной записи Azure из интегрированной среды разработки IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="19c4d-104">The Azure Explorer, which is part of the Azure Toolkit for IntelliJ, provides Java developers with an easy-to-use solution for managing virtual machines in their Azure account from inside the IntelliJ integrated development environment (IDE).</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
 [!INCLUDE [azure-toolkit-for-intellij-show-azure-explorer](../includes/azure-toolkit-for-intellij-show-azure-explorer.md)]
 
-## <a name="create-a-virtual-machine-in-intellij"></a><span data-ttu-id="149ee-105">Создание виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="149ee-105">Create a virtual machine in IntelliJ</span></span>
+## <a name="create-a-virtual-machine-in-intellij"></a><span data-ttu-id="19c4d-105">Создание виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="19c4d-105">Create a virtual machine in IntelliJ</span></span>
 
-<span data-ttu-id="149ee-106">Чтобы создать виртуальную машину с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="149ee-106">To create a virtual machine by using the Azure Explorer, do the following:</span></span> 
+<span data-ttu-id="19c4d-106">Чтобы создать виртуальную машину с помощью Azure Explorer, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="19c4d-106">To create a virtual machine by using the Azure Explorer, do the following:</span></span> 
 
-1. <span data-ttu-id="149ee-107">Войдите в свою учетную запись Azure, следуя инструкциям из статьи [Инструкции по входу для набора средств Azure для IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="149ee-107">Sign in to your Azure account by using the steps in the [Sign-in instructions for the Azure Toolkit for IntelliJ] article.</span></span>
+1. <span data-ttu-id="19c4d-107">Войдите в свою учетную запись Azure, следуя инструкциям из статьи [Инструкции по входу для набора средств Azure для IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="19c4d-107">Sign in to your Azure account by using the steps in the [Sign-in instructions for the Azure Toolkit for IntelliJ] article.</span></span>
 
-2. <span data-ttu-id="149ee-108">В представлении **Azure Explorer** разверните узел **Azure**, щелкните правой кнопкой мыши **Виртуальные машины** и выберите **Создать виртуальную машину**.</span><span class="sxs-lookup"><span data-stu-id="149ee-108">In the **Azure Explorer** view, expand the **Azure** node, right-click **Virtual Machines**, and then click **Create VM**.</span></span> 
+2. <span data-ttu-id="19c4d-108">В представлении **Azure Explorer** разверните узел **Azure**, щелкните правой кнопкой мыши **Виртуальные машины** и выберите **Создать виртуальную машину**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-108">In the **Azure Explorer** view, expand the **Azure** node, right-click **Virtual Machines**, and then click **Create VM**.</span></span> 
 
-   <span data-ttu-id="149ee-109">![Команда "Создать виртуальную машину"][CR01]</span><span class="sxs-lookup"><span data-stu-id="149ee-109">![The Create VM command][CR01]</span></span>  
-    <span data-ttu-id="149ee-110">Откроется мастер **создания виртуальной машины**.</span><span class="sxs-lookup"><span data-stu-id="149ee-110">The **Create new Virtual Machine** wizard opens.</span></span>
+   <span data-ttu-id="19c4d-109">![Команда "Создать виртуальную машину"][CR01]</span><span class="sxs-lookup"><span data-stu-id="19c4d-109">![The Create VM command][CR01]</span></span>  
+    <span data-ttu-id="19c4d-110">Откроется мастер **создания виртуальной машины**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-110">The **Create new Virtual Machine** wizard opens.</span></span>
 
-3. <span data-ttu-id="149ee-111">В диалоговом окне **Выбор подписки** выберите подписку и нажмите кнопку **Далее**.</span><span class="sxs-lookup"><span data-stu-id="149ee-111">In the **Choose a Subscription** window, select your subscription, and then click **Next**.</span></span> 
+3. <span data-ttu-id="19c4d-111">В диалоговом окне **Выбор подписки** выберите подписку и нажмите кнопку **Далее**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-111">In the **Choose a Subscription** window, select your subscription, and then click **Next**.</span></span> 
 
    ![Диалоговое окно "Выбор подписки"][CR02]
 
-4. <span data-ttu-id="149ee-113">В диалоговом окне **Выбор образа виртуальной машины** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="149ee-113">In the **Select a Virtual Machine Image** window, enter the following information:</span></span>
+4. <span data-ttu-id="19c4d-113">В диалоговом окне **Выбор образа виртуальной машины** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="19c4d-113">In the **Select a Virtual Machine Image** window, enter the following information:</span></span>
 
-   * <span data-ttu-id="149ee-114">**Расположение**: указывает расположение для создания виртуальной машины (например, *Западная часть США*).</span><span class="sxs-lookup"><span data-stu-id="149ee-114">**Location**: Specifies where your virtual machine will be created (for example, *West US*).</span></span> 
+   * <span data-ttu-id="19c4d-114">**Расположение.** Указывает расположение для создания виртуальной машины (например, *Западная часть США*).</span><span class="sxs-lookup"><span data-stu-id="19c4d-114">**Location**: Specifies where your virtual machine will be created (for example, *West US*).</span></span> 
 
-   * <span data-ttu-id="149ee-115">**Recommended Image** (Рекомендуемый образ): указывает, что вы выберете образ из сокращенного списка часто используемых образов.</span><span class="sxs-lookup"><span data-stu-id="149ee-115">**Recommended image**: Specifies that you will choose an image from an abbreviated list of commonly used images.</span></span>
+   * <span data-ttu-id="19c4d-115">**Recommended Image** (Рекомендуемый образ). Определяет выбор образа из сокращенного списка часто используемых образов.</span><span class="sxs-lookup"><span data-stu-id="19c4d-115">**Recommended image**: Specifies that you will choose an image from an abbreviated list of commonly used images.</span></span>
 
-   * <span data-ttu-id="149ee-116">**Пользовательский образ**: указывает, что вы выберете пользовательский образ, указав следующие сведения:</span><span class="sxs-lookup"><span data-stu-id="149ee-116">**Custom image**: Specifies that you will choose a custom image by providing the following information:</span></span>
+   * <span data-ttu-id="19c4d-116">**Пользовательский образ**. Определяет выбор пользовательского образа с указанием следующих сведений:</span><span class="sxs-lookup"><span data-stu-id="19c4d-116">**Custom image**: Specifies that you will choose a custom image by providing the following information:</span></span>
 
-      * <span data-ttu-id="149ee-117">**Издатель**: указывает издателя, создавшего образ, который будет использоваться для виртуальной машины (например, *Майкрософт*).</span><span class="sxs-lookup"><span data-stu-id="149ee-117">**Publisher**: Specifies the publisher that created the image that you will use for your virtual machine (for example, *Microsoft*).</span></span>
+      * <span data-ttu-id="19c4d-117">**Издатель**: определяет издателя, создавшего образ, который будет использоваться для виртуальной машины (например *Майкрософт*).</span><span class="sxs-lookup"><span data-stu-id="19c4d-117">**Publisher**: Specifies the publisher that created the image that you will use for your virtual machine (for example, *Microsoft*).</span></span>
 
-      * <span data-ttu-id="149ee-118">**Предложение**: определяет предложение виртуальной машины выбранного издателя (например, *JDK*).</span><span class="sxs-lookup"><span data-stu-id="149ee-118">**Offer**: Specifies the virtual machine offering to use from the selected publisher (for example, *JDK*).</span></span>
+      * <span data-ttu-id="19c4d-118">**Предложение**: определяет предложение виртуальной машины выбранного издателя (например, *JDK*).</span><span class="sxs-lookup"><span data-stu-id="19c4d-118">**Offer**: Specifies the virtual machine offering to use from the selected publisher (for example, *JDK*).</span></span>
 
-      * <span data-ttu-id="149ee-119">**SKU**: указывает нужный номер SKU из выбранного предложения (например, *JDK_8*).</span><span class="sxs-lookup"><span data-stu-id="149ee-119">**Sku**: Specifies the stockkeeping unit (SKU) to use from the selected offering (for example, *JDK_8*).</span></span>
+      * <span data-ttu-id="19c4d-119">**SKU**. Указывает нужный номер SKU из выбранного предложения (например, *JDK_8*).</span><span class="sxs-lookup"><span data-stu-id="19c4d-119">**Sku**: Specifies the stockkeeping unit (SKU) to use from the selected offering (for example, *JDK_8*).</span></span>
 
-      * <span data-ttu-id="149ee-120">**Номер версии**: указывает, какую версию из выбранного номера SKU нужно использовать.</span><span class="sxs-lookup"><span data-stu-id="149ee-120">**Version #**: Specifies which version of the selected SKU to use.</span></span>
+      * <span data-ttu-id="19c4d-120">**Номер версии**. Указывает, какую версию из выбранного номера SKU нужно использовать.</span><span class="sxs-lookup"><span data-stu-id="19c4d-120">**Version #**: Specifies which version of the selected SKU to use.</span></span>
 
    ![Диалоговое окно "Выбор образа виртуальной машины"][CR03]
 
-5. <span data-ttu-id="149ee-122">Щелкните **Далее**.</span><span class="sxs-lookup"><span data-stu-id="149ee-122">Click **Next**.</span></span> 
+5. <span data-ttu-id="19c4d-122">Щелкните **Далее**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-122">Click **Next**.</span></span> 
 
-6. <span data-ttu-id="149ee-123">В диалоговом окне **Основные параметры виртуальной машины** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="149ee-123">In the **Virtual Machine Basic Settings** window, enter the following information:</span></span>
+6. <span data-ttu-id="19c4d-123">В диалоговом окне **Основные параметры виртуальной машины** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="19c4d-123">In the **Virtual Machine Basic Settings** window, enter the following information:</span></span>
 
-   * <span data-ttu-id="149ee-124">**Имя виртуальной машины**: указывает имя новой виртуальной машины, которое должно начинаться с буквы и содержать только буквы, цифры и дефисы.</span><span class="sxs-lookup"><span data-stu-id="149ee-124">**Virtual machine name**: Specifies the name for your new virtual machine, which must start with a letter and contain only letters, numbers, and hyphens.</span></span>
+   * <span data-ttu-id="19c4d-124">**Имя виртуальной машины**. Указывает имя новой виртуальной машины, которое должно начинаться с буквы и содержать только буквы, цифры и дефисы.</span><span class="sxs-lookup"><span data-stu-id="19c4d-124">**Virtual machine name**: Specifies the name for your new virtual machine, which must start with a letter and contain only letters, numbers, and hyphens.</span></span>
 
-   * <span data-ttu-id="149ee-125">**Размер**: указывает количество ядер и объем памяти, выделяемые для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="149ee-125">**Size**: Specifies the number of cores and memory to allocate for your virtual machine.</span></span>
+   * <span data-ttu-id="19c4d-125">**Размер**: Указывает количество ядер и объем памяти, выделяемые для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="19c4d-125">**Size**: Specifies the number of cores and memory to allocate for your virtual machine.</span></span>
 
-   * <span data-ttu-id="149ee-126">**Имя пользователя**: указывает учетную запись администратора, создаваемую для управления виртуальной машиной.</span><span class="sxs-lookup"><span data-stu-id="149ee-126">**User name**: Specifies the administrator account to create for managing your virtual machine.</span></span>
+   * <span data-ttu-id="19c4d-126">**Имя пользователя**. Указывает учетную запись администратора, создаваемую для управления виртуальной машиной.</span><span class="sxs-lookup"><span data-stu-id="19c4d-126">**User name**: Specifies the administrator account to create for managing your virtual machine.</span></span>
 
-   * <span data-ttu-id="149ee-127">**Пароль** и **Подтверждение**: указывают пароль для учетной записи администратора.</span><span class="sxs-lookup"><span data-stu-id="149ee-127">**Password** and **Confirm**: Specifies the password for your administrator account.</span></span>
+   * <span data-ttu-id="19c4d-127">**Пароль** и **Подтверждение**. Указывают пароль для учетной записи администратора.</span><span class="sxs-lookup"><span data-stu-id="19c4d-127">**Password** and **Confirm**: Specifies the password for your administrator account.</span></span>
 
    ![Диалоговое окно "Основные параметры виртуальной машины"][CR04]
 
-7. <span data-ttu-id="149ee-129">Щелкните **Далее**.</span><span class="sxs-lookup"><span data-stu-id="149ee-129">Click **Next**.</span></span> 
+7. <span data-ttu-id="19c4d-129">Щелкните **Далее**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-129">Click **Next**.</span></span> 
 
-8. <span data-ttu-id="149ee-130">В диалоговом окне **Связанные ресурсы** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="149ee-130">In the **Associated Resources** window, enter the following information:</span></span>
+8. <span data-ttu-id="19c4d-130">В диалоговом окне **Связанные ресурсы** введите следующие значения.</span><span class="sxs-lookup"><span data-stu-id="19c4d-130">In the **Associated Resources** window, enter the following information:</span></span>
 
-   * <span data-ttu-id="149ee-131">**Группа ресурсов**: указывает группу ресурсов для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="149ee-131">**Resource group**: Specifies the resource group for your virtual machine.</span></span> <span data-ttu-id="149ee-132">Выберите один из следующих вариантов:</span><span class="sxs-lookup"><span data-stu-id="149ee-132">Select one of the following options:</span></span>
-      * <span data-ttu-id="149ee-133">**Создать**: определяет, что нужно создать группу ресурсов.</span><span class="sxs-lookup"><span data-stu-id="149ee-133">**Create new**: Specifies that you want to create a new resource group.</span></span>
-      * <span data-ttu-id="149ee-134">**Использовать существующий**: указывает, что нужно выбрать группу ресурсов, связанную с учетной записью Azure.</span><span class="sxs-lookup"><span data-stu-id="149ee-134">**Use existing**: Specifies that you want to select from a list of resource groups that are associated with your Azure account.</span></span>
+   * <span data-ttu-id="19c4d-131">**Группа ресурсов.** Определяет группу ресурсов для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="19c4d-131">**Resource group**: Specifies the resource group for your virtual machine.</span></span> <span data-ttu-id="19c4d-132">Выберите один из следующих вариантов:</span><span class="sxs-lookup"><span data-stu-id="19c4d-132">Select one of the following options:</span></span>
+      * <span data-ttu-id="19c4d-133">**Create new** (Создать). Определяет, что нужно создать группу ресурсов.</span><span class="sxs-lookup"><span data-stu-id="19c4d-133">**Create new**: Specifies that you want to create a new resource group.</span></span>
+      * <span data-ttu-id="19c4d-134">**Использовать существующую**. Определяет, что нужно выбрать группу ресурсов, связанную с учетной записью Azure.</span><span class="sxs-lookup"><span data-stu-id="19c4d-134">**Use existing**: Specifies that you want to select from a list of resource groups that are associated with your Azure account.</span></span>
 
        ![Диалоговое окно "Связанные ресурсы"][CR07]
 
-   * <span data-ttu-id="149ee-136">**Учетная запись хранения**: указывает учетную запись хранения, используемую для хранения виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="149ee-136">**Storage account**: Specifies the storage account to use for storing your virtual machine.</span></span> <span data-ttu-id="149ee-137">Вы можете выбрать имеющуюся учетную запись хранения или создать ее.</span><span class="sxs-lookup"><span data-stu-id="149ee-137">You can choose an existing storage account or create a new account.</span></span> <span data-ttu-id="149ee-138">При выборе элемента **Создать** отображается следующее диалоговое окно.</span><span class="sxs-lookup"><span data-stu-id="149ee-138">If you choose **Create New**, the following dialog box appears:</span></span>
+   * <span data-ttu-id="19c4d-136">**Учетная запись хранения**. Определяет учетную запись хранения, используемую для хранения виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="19c4d-136">**Storage account**: Specifies the storage account to use for storing your virtual machine.</span></span> <span data-ttu-id="19c4d-137">Вы можете выбрать имеющуюся учетную запись хранения или создать ее.</span><span class="sxs-lookup"><span data-stu-id="19c4d-137">You can choose an existing storage account or create a new account.</span></span> <span data-ttu-id="19c4d-138">При выборе элемента **Создать** отображается следующее диалоговое окно.</span><span class="sxs-lookup"><span data-stu-id="19c4d-138">If you choose **Create New**, the following dialog box appears:</span></span>
 
       ![Диалоговое окно "Создание учетной записи хранения"][CR05]
 
-   * <span data-ttu-id="149ee-140">**Виртуальная сеть** и **Подсеть**: указывают виртуальную сеть и подсеть, к которым будет подключена виртуальная машина.</span><span class="sxs-lookup"><span data-stu-id="149ee-140">**Virtual Network** and **Subnet**: Specifies the virtual network and subnet that your virtual machine will connect to.</span></span> <span data-ttu-id="149ee-141">Вы можете выбрать имеющуюся сеть и подсеть или создать их.</span><span class="sxs-lookup"><span data-stu-id="149ee-141">You can use an existing network and subnet, or you can create a new network and subnet.</span></span> <span data-ttu-id="149ee-142">При выборе элемента **Создать** отображается следующее диалоговое окно.</span><span class="sxs-lookup"><span data-stu-id="149ee-142">If you select **Create new**, the following dialog box appears:</span></span>
+   * <span data-ttu-id="19c4d-140">**Виртуальная сеть** и **Подсеть**. Определяют виртуальную сеть и подсеть, к которым будет подключена виртуальная машина.</span><span class="sxs-lookup"><span data-stu-id="19c4d-140">**Virtual Network** and **Subnet**: Specifies the virtual network and subnet that your virtual machine will connect to.</span></span> <span data-ttu-id="19c4d-141">Вы можете выбрать имеющуюся сеть и подсеть или создать их.</span><span class="sxs-lookup"><span data-stu-id="19c4d-141">You can use an existing network and subnet, or you can create a new network and subnet.</span></span> <span data-ttu-id="19c4d-142">При выборе элемента **Создать** отображается следующее диалоговое окно.</span><span class="sxs-lookup"><span data-stu-id="19c4d-142">If you select **Create new**, the following dialog box appears:</span></span>
 
       ![Диалоговое окно "Создание виртуальной сети"][CR06]
 
-   * <span data-ttu-id="149ee-144">**Общедоступный IP-адрес**: указывает внешний IP-адрес для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="149ee-144">**Public IP address**: Specifies an external-facing IP address for your virtual machine.</span></span> <span data-ttu-id="149ee-145">Вы можете создать IP-адрес или выбрать значение **(Нет)**, если у виртуальной машины не будет общедоступного IP-адреса.</span><span class="sxs-lookup"><span data-stu-id="149ee-145">You can choose to create a new IP address or, if your virtual machine will not have a public IP address, you can select **(None)**.</span></span> 
+   * <span data-ttu-id="19c4d-144">**Общедоступный IP-адрес**. Указывает внешний IP-адрес для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="19c4d-144">**Public IP address**: Specifies an external-facing IP address for your virtual machine.</span></span> <span data-ttu-id="19c4d-145">Вы можете создать IP-адрес или выбрать значение **(Нет)**, если у виртуальной машины не будет общедоступного IP-адреса.</span><span class="sxs-lookup"><span data-stu-id="19c4d-145">You can choose to create a new IP address or, if your virtual machine will not have a public IP address, you can select **(None)**.</span></span> 
 
-   * <span data-ttu-id="149ee-146">**Группа безопасности сети**: определяет необязательный брандмауэр для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="149ee-146">**Network security group**: Specifies an optional networking firewall for your virtual machine.</span></span> <span data-ttu-id="149ee-147">Вы можете выбрать имеющийся брандмауэр или задать значение **(Нет)**, чтобы не использовать брандмауэр.</span><span class="sxs-lookup"><span data-stu-id="149ee-147">You can select an existing firewall or, if your virtual machine will not use a network firewall, you can select **(None)**.</span></span> 
+   * <span data-ttu-id="19c4d-146">**Группа безопасности сети**. Определяет необязательный сетевой брандмауэр для виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="19c4d-146">**Network security group**: Specifies an optional networking firewall for your virtual machine.</span></span> <span data-ttu-id="19c4d-147">Вы можете выбрать имеющийся брандмауэр или задать значение **(Нет)**, чтобы не использовать брандмауэр.</span><span class="sxs-lookup"><span data-stu-id="19c4d-147">You can select an existing firewall or, if your virtual machine will not use a network firewall, you can select **(None)**.</span></span> 
 
-   * <span data-ttu-id="149ee-148">**Группа доступности**: указывает необязательную группу доступности, в которую может входить виртуальная машина.</span><span class="sxs-lookup"><span data-stu-id="149ee-148">**Availability set**: Specifies an optional availability set that your virtual machine can belong to.</span></span> <span data-ttu-id="149ee-149">Вы можете выбрать имеющуюся группу доступности, создать ее или задать значение **(Нет)**, если виртуальная машина не будет входить в группу доступности.</span><span class="sxs-lookup"><span data-stu-id="149ee-149">You can select an existing availability set, create a new availability set or, if your virtual machine will not belong to an availability set, select **(None)**.</span></span>
+   * <span data-ttu-id="19c4d-148">**Группа доступности**. Определяет необязательную группу доступности, в которую может входить виртуальная машина.</span><span class="sxs-lookup"><span data-stu-id="19c4d-148">**Availability set**: Specifies an optional availability set that your virtual machine can belong to.</span></span> <span data-ttu-id="19c4d-149">Вы можете выбрать имеющуюся группу доступности, создать ее или задать значение **(Нет)**, если виртуальная машина не будет входить в группу доступности.</span><span class="sxs-lookup"><span data-stu-id="19c4d-149">You can select an existing availability set, create a new availability set or, if your virtual machine will not belong to an availability set, select **(None)**.</span></span>
 
-9. <span data-ttu-id="149ee-150">Нажмите кнопку **Готово**</span><span class="sxs-lookup"><span data-stu-id="149ee-150">Click **Finish**.</span></span>  
-    <span data-ttu-id="149ee-151">Новая виртуальная машина отобразится в окне средства Azure Explorer.</span><span class="sxs-lookup"><span data-stu-id="149ee-151">Your new virtual machine appears in the Azure Explorer tool window.</span></span> 
+9. <span data-ttu-id="19c4d-150">Нажмите кнопку **Готово**</span><span class="sxs-lookup"><span data-stu-id="19c4d-150">Click **Finish**.</span></span>  
+    <span data-ttu-id="19c4d-151">Новая виртуальная машина отобразится в окне средства Azure Explorer.</span><span class="sxs-lookup"><span data-stu-id="19c4d-151">Your new virtual machine appears in the Azure Explorer tool window.</span></span> 
 
    ![Новая виртуальная машина в представлении Azure Explorer][CR08]
 
-## <a name="restart-a-virtual-machine-in-intellij"></a><span data-ttu-id="149ee-153">Перезапуск виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="149ee-153">Restart a virtual machine in IntelliJ</span></span>
+## <a name="restart-a-virtual-machine-in-intellij"></a><span data-ttu-id="19c4d-153">Перезапуск виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="19c4d-153">Restart a virtual machine in IntelliJ</span></span>
 
-<span data-ttu-id="149ee-154">Чтобы перезапустить виртуальную машину с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="149ee-154">To restart a virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
+<span data-ttu-id="19c4d-154">Чтобы перезапустить виртуальную машину с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="19c4d-154">To restart a virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
 
-1. <span data-ttu-id="149ee-155">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Перезапустить**.</span><span class="sxs-lookup"><span data-stu-id="149ee-155">In the **Azure Explorer** view, right-click the virtual machine, and then select **Restart**.</span></span>
+1. <span data-ttu-id="19c4d-155">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Перезапустить**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-155">In the **Azure Explorer** view, right-click the virtual machine, and then select **Restart**.</span></span>
 
    ![Команда перезапуска виртуальной машины][RE01]
 
-2. <span data-ttu-id="149ee-157">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="149ee-157">In the confirmation window, click **Yes**.</span></span> 
+2. <span data-ttu-id="19c4d-157">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-157">In the confirmation window, click **Yes**.</span></span> 
 
    ![Диалоговое окно подтверждения перезапуска виртуальной машины][RE02]
 
-## <a name="shut-down-a-virtual-machine-in-intellij"></a><span data-ttu-id="149ee-159">Завершение работы виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="149ee-159">Shut down a virtual machine in IntelliJ</span></span>
+## <a name="shut-down-a-virtual-machine-in-intellij"></a><span data-ttu-id="19c4d-159">Завершение работы виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="19c4d-159">Shut down a virtual machine in IntelliJ</span></span>
 
-<span data-ttu-id="149ee-160">Чтобы завершить работу виртуальной машины с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="149ee-160">To shut down a running virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
+<span data-ttu-id="19c4d-160">Чтобы завершить работу виртуальной машины с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="19c4d-160">To shut down a running virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
 
-1. <span data-ttu-id="149ee-161">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Завершить работу**.</span><span class="sxs-lookup"><span data-stu-id="149ee-161">In the **Azure Explorer** view, right-click the virtual machine, and then select **Shutdown**.</span></span>
+1. <span data-ttu-id="19c4d-161">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Завершить работу**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-161">In the **Azure Explorer** view, right-click the virtual machine, and then select **Shutdown**.</span></span>
 
    ![Команда завершения работы виртуальной машины][SH01]
 
-2. <span data-ttu-id="149ee-163">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="149ee-163">In the confirmation window, click **Yes**.</span></span> 
+2. <span data-ttu-id="19c4d-163">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-163">In the confirmation window, click **Yes**.</span></span> 
 
    ![Диалоговое окно подтверждения завершения работы виртуальной машины][SH02]
 
-## <a name="delete-a-virtual-machine-in-intellij"></a><span data-ttu-id="149ee-165">Удаление виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="149ee-165">Delete a virtual machine in IntelliJ</span></span>
+## <a name="delete-a-virtual-machine-in-intellij"></a><span data-ttu-id="19c4d-165">Удаление виртуальной машины в IntelliJ</span><span class="sxs-lookup"><span data-stu-id="19c4d-165">Delete a virtual machine in IntelliJ</span></span>
 
-<span data-ttu-id="149ee-166">Чтобы удалить виртуальную машину с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="149ee-166">To delete a virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
+<span data-ttu-id="19c4d-166">Чтобы удалить виртуальную машину с помощью Azure Explorer в IntelliJ, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="19c4d-166">To delete a virtual machine by using the Azure Explorer in IntelliJ, do the following:</span></span>
 
-1. <span data-ttu-id="149ee-167">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="149ee-167">In the **Azure Explorer** view, right-click the virtual machine, and then select **Delete**.</span></span>
+1. <span data-ttu-id="19c4d-167">В представлении **Azure Explorer** щелкните правой кнопкой мыши виртуальную машину и выберите **Удалить**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-167">In the **Azure Explorer** view, right-click the virtual machine, and then select **Delete**.</span></span>
 
    ![Команда удаления виртуальной машины][DE01]
 
-2. <span data-ttu-id="149ee-169">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="149ee-169">In the confirmation window, click **Yes**.</span></span> 
+2. <span data-ttu-id="19c4d-169">В диалоговом окне подтверждения нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="19c4d-169">In the confirmation window, click **Yes**.</span></span> 
 
    ![Диалоговое окно подтверждения удаления виртуальной машины][DE02]
 
-## <a name="next-steps"></a><span data-ttu-id="149ee-171">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="149ee-171">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="19c4d-171">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="19c4d-171">Next steps</span></span>
 
-<span data-ttu-id="149ee-172">Дополнительные сведения о размерах виртуальных машин Azure и ценах на них см. в следующих ресурсах:</span><span class="sxs-lookup"><span data-stu-id="149ee-172">For more information about Azure virtual-machine sizes and pricing, see the following resources:</span></span>
+<span data-ttu-id="19c4d-172">Дополнительные сведения о размерах виртуальных машин Azure и ценах на них см. в следующих ресурсах:</span><span class="sxs-lookup"><span data-stu-id="19c4d-172">For more information about Azure virtual-machine sizes and pricing, see the following resources:</span></span>
 
-* <span data-ttu-id="149ee-173">Размеры виртуальных машин Azure</span><span class="sxs-lookup"><span data-stu-id="149ee-173">Azure virtual-machine sizes</span></span>
-  * <span data-ttu-id="149ee-174">[Размеры виртуальных машин Windows в Azure]</span><span class="sxs-lookup"><span data-stu-id="149ee-174">[Sizes for Windows virtual machines in Azure]</span></span>
-  * <span data-ttu-id="149ee-175">[Размеры виртуальных машин Linux в Azure]</span><span class="sxs-lookup"><span data-stu-id="149ee-175">[Sizes for Linux virtual machines in Azure]</span></span>
-* <span data-ttu-id="149ee-176">Цены на виртуальные машины Azure</span><span class="sxs-lookup"><span data-stu-id="149ee-176">Azure virtual-machine pricing</span></span>
-  * <span data-ttu-id="149ee-177">[Цены на виртуальные машины Windows]</span><span class="sxs-lookup"><span data-stu-id="149ee-177">[Windows virtual-machine pricing]</span></span>
-  * <span data-ttu-id="149ee-178">[Цены на виртуальные машины Linux]</span><span class="sxs-lookup"><span data-stu-id="149ee-178">[Linux virtual-machine pricing]</span></span>
+* <span data-ttu-id="19c4d-173">Размеры виртуальных машин Azure</span><span class="sxs-lookup"><span data-stu-id="19c4d-173">Azure virtual-machine sizes</span></span>
+  * <span data-ttu-id="19c4d-174">[Размеры виртуальных машин Windows в Azure]</span><span class="sxs-lookup"><span data-stu-id="19c4d-174">[Sizes for Windows virtual machines in Azure]</span></span>
+  * <span data-ttu-id="19c4d-175">[Размеры виртуальных машин Linux в Azure]</span><span class="sxs-lookup"><span data-stu-id="19c4d-175">[Sizes for Linux virtual machines in Azure]</span></span>
+* <span data-ttu-id="19c4d-176">Цены на виртуальные машины Azure</span><span class="sxs-lookup"><span data-stu-id="19c4d-176">Azure virtual-machine pricing</span></span>
+  * <span data-ttu-id="19c4d-177">[Цены на виртуальные машины Windows]</span><span class="sxs-lookup"><span data-stu-id="19c4d-177">[Windows virtual-machine pricing]</span></span>
+  * <span data-ttu-id="19c4d-178">[Цены на виртуальные машины Linux]</span><span class="sxs-lookup"><span data-stu-id="19c4d-178">[Linux virtual-machine pricing]</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
@@ -162,10 +162,10 @@ ms.locfileid: "52338668"
 [Sizes for Windows virtual machines in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Размеры виртуальных машин Linux в Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
 [Sizes for Linux virtual machines in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
-[Цены на виртуальные машины Windows]: /pricing/details/virtual-machines/windows/
-[Windows virtual-machine pricing]: /pricing/details/virtual-machines/windows/
-[Цены на виртуальные машины Linux]: /pricing/details/virtual-machines/linux/
-[Linux virtual-machine pricing]: /pricing/details/virtual-machines/linux/
+[Цены на виртуальные машины Windows]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
+[Windows virtual-machine pricing]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
+[Цены на виртуальные машины Linux]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
+[Linux virtual-machine pricing]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 
 <!-- IMG List -->
 

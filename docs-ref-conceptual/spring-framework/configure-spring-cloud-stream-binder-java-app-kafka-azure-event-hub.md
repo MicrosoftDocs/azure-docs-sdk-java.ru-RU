@@ -8,118 +8,118 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: ab465b56c05c7d480109fc97a4f1c74beaf53856
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: f2cf66a4e0ac113406781b4859869ff4edab527e
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339118"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991539"
 ---
-# <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a><span data-ttu-id="fcd3e-103">Использование начального приложения Spring Boot для Apache Kafka в Центрах событий Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-103">How to use the Spring Boot Starter for Apache Kafka with Azure Event Hubs</span></span>
+# <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a><span data-ttu-id="75e2a-103">Использование начального приложения Spring Boot для Apache Kafka в Центрах событий Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-103">How to use the Spring Boot Starter for Apache Kafka with Azure Event Hubs</span></span>
 
-## <a name="overview"></a><span data-ttu-id="fcd3e-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="fcd3e-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="75e2a-104">Обзор</span><span class="sxs-lookup"><span data-stu-id="75e2a-104">Overview</span></span>
 
-<span data-ttu-id="fcd3e-105">В статье показано, как настроить приложение Spring Cloud Stream Binder на основе Java, созданное с помощью Spring Boot Initializr для использования [Apache Kafka] в Центрах событий Azure.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-105">This article demonstrates how to configure a Java-based Spring Cloud Stream Binder created with the Spring Boot Initializer to use [Apache Kafka] with Azure Event Hubs.</span></span>
+<span data-ttu-id="75e2a-105">В статье показано, как настроить приложение Spring Cloud Stream Binder на основе Java, созданное с помощью Spring Boot Initializr для использования [Apache Kafka] в Центрах событий Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-105">This article demonstrates how to configure a Java-based Spring Cloud Stream Binder created with the Spring Boot Initializer to use [Apache Kafka] with Azure Event Hubs.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="fcd3e-106">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="fcd3e-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="75e2a-106">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="75e2a-106">Prerequisites</span></span>
 
-<span data-ttu-id="fcd3e-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
+<span data-ttu-id="75e2a-107">Чтобы выполнить действия, описанные в этой статье, необходимо иметь следующие компоненты:</span><span class="sxs-lookup"><span data-stu-id="75e2a-107">The following prerequisites are required in order to follow the steps in this article:</span></span>
 
-* <span data-ttu-id="fcd3e-108">Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="fcd3e-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="fcd3e-109">Поддерживаемая версия Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="fcd3e-109">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="fcd3e-110">Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-110">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="fcd3e-111">[Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-111">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="75e2a-108">Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].</span><span class="sxs-lookup"><span data-stu-id="75e2a-108">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="75e2a-109">Поддерживаемая версия Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="75e2a-109">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="75e2a-110">Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="75e2a-110">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
+* <span data-ttu-id="75e2a-111">[Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.</span><span class="sxs-lookup"><span data-stu-id="75e2a-111">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
 > [!IMPORTANT]
 >
-> <span data-ttu-id="fcd3e-112">Для выполнения операций, описанных в этой статье, требуется Spring Boot 2.0 или более поздней версии.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-112">Spring Boot version 2.0 or greater is required to complete the steps in this article.</span></span>
+> <span data-ttu-id="75e2a-112">Для выполнения операций, описанных в этой статье, требуется Spring Boot 2.0 или более поздней версии.</span><span class="sxs-lookup"><span data-stu-id="75e2a-112">Spring Boot version 2.0 or greater is required to complete the steps in this article.</span></span>
 >
 
-## <a name="create-an-azure-event-hub-using-the-azure-portal"></a><span data-ttu-id="fcd3e-113">Создание концентратора событий на портале Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-113">Create an Azure Event Hub using the Azure portal</span></span>
+## <a name="create-an-azure-event-hub-using-the-azure-portal"></a><span data-ttu-id="75e2a-113">Создание концентратора событий на портале Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-113">Create an Azure Event Hub using the Azure portal</span></span>
 
-### <a name="create-an-azure-event-hub-namespace"></a><span data-ttu-id="fcd3e-114">Создание пространства имен концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-114">Create an Azure Event Hub Namespace</span></span>
+### <a name="create-an-azure-event-hub-namespace"></a><span data-ttu-id="75e2a-114">Создание пространства имен концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-114">Create an Azure Event Hub Namespace</span></span>
 
-1. <span data-ttu-id="fcd3e-115">Перейдите на портал Azure по адресу <https://portal.azure.com/> и выполните вход.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-115">Browse to the Azure portal at <https://portal.azure.com/> and sign in.</span></span>
+1. <span data-ttu-id="75e2a-115">Перейдите на портал Azure по адресу <https://portal.azure.com/> и выполните вход.</span><span class="sxs-lookup"><span data-stu-id="75e2a-115">Browse to the Azure portal at <https://portal.azure.com/> and sign in.</span></span>
 
-1. <span data-ttu-id="fcd3e-116">Выберите **+Создать ресурс**, **Интернет вещей** и **Центры событий**.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-116">Click **+Create a resource**, then **Internet of Things**, and then click **Event Hubs**.</span></span>
+1. <span data-ttu-id="75e2a-116">Выберите **+Создать ресурс**, **Интернет вещей** и **Центры событий**.</span><span class="sxs-lookup"><span data-stu-id="75e2a-116">Click **+Create a resource**, then **Internet of Things**, and then click **Event Hubs**.</span></span>
 
    ![Создание пространства имен концентратора событий Azure][IMG01]
 
-1. <span data-ttu-id="fcd3e-118">На странице **Создание пространства имен** введите такую информацию:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-118">On the **Create Namespace** page, enter the following information:</span></span>
+1. <span data-ttu-id="75e2a-118">На странице **Создание пространства имен** введите такую информацию:</span><span class="sxs-lookup"><span data-stu-id="75e2a-118">On the **Create Namespace** page, enter the following information:</span></span>
 
-   * <span data-ttu-id="fcd3e-119">Уникальное **имя**, которое станет частью URI для пространства имен концентратора событий.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-119">Enter a unique **Name**, which will become part of the URI for your event hub namespace.</span></span> <span data-ttu-id="fcd3e-120">Например, если вы зададите **wingtiptoys** в качестве **имени**, URI примет вид *wingtiptoys.servicebus.windows.net*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-120">For example: if you entered **wingtiptoys** for the **Name**, the URI would be *wingtiptoys.servicebus.windows.net*.</span></span>
-   * <span data-ttu-id="fcd3e-121">Выберите **ценовую категорию** для пространства имен концентратора событий.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-121">Choose a **Pricing tier** for your event hub namespace.</span></span>
-   * <span data-ttu-id="fcd3e-122">Отметьте **Включить Kafka** для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-122">Specify **Enable Kafka** for your namespace.</span></span>
-   * <span data-ttu-id="fcd3e-123">Выберите **подписку** для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-123">Choose the **Subscription** you want to use for your namespace.</span></span>
-   * <span data-ttu-id="fcd3e-124">Укажите, следует ли создать новую **группу ресурсов** для пространства имен или использовать существующую.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-124">Specify whether to create a new **Resource group** for your namespace, or choose an existing resource group.</span></span>
-   * <span data-ttu-id="fcd3e-125">Укажите **расположение** для пространства имен Центров событий.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-125">Specify the **Location** for your event hub namespace.</span></span>
+   * <span data-ttu-id="75e2a-119">Уникальное **имя**, которое станет частью URI для пространства имен концентратора событий.</span><span class="sxs-lookup"><span data-stu-id="75e2a-119">Enter a unique **Name**, which will become part of the URI for your event hub namespace.</span></span> <span data-ttu-id="75e2a-120">Например, если вы зададите **wingtiptoys** в качестве **имени**, URI примет вид *wingtiptoys.servicebus.windows.net*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-120">For example: if you entered **wingtiptoys** for the **Name**, the URI would be *wingtiptoys.servicebus.windows.net*.</span></span>
+   * <span data-ttu-id="75e2a-121">Выберите **ценовую категорию** для пространства имен концентратора событий.</span><span class="sxs-lookup"><span data-stu-id="75e2a-121">Choose a **Pricing tier** for your event hub namespace.</span></span>
+   * <span data-ttu-id="75e2a-122">Отметьте **Включить Kafka** для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="75e2a-122">Specify **Enable Kafka** for your namespace.</span></span>
+   * <span data-ttu-id="75e2a-123">Выберите **подписку** для пространства имен.</span><span class="sxs-lookup"><span data-stu-id="75e2a-123">Choose the **Subscription** you want to use for your namespace.</span></span>
+   * <span data-ttu-id="75e2a-124">Укажите, следует ли создать новую **группу ресурсов** для пространства имен или использовать существующую.</span><span class="sxs-lookup"><span data-stu-id="75e2a-124">Specify whether to create a new **Resource group** for your namespace, or choose an existing resource group.</span></span>
+   * <span data-ttu-id="75e2a-125">Укажите **расположение** для пространства имен Центров событий.</span><span class="sxs-lookup"><span data-stu-id="75e2a-125">Specify the **Location** for your event hub namespace.</span></span>
 
    ![Создание пространства имен для концентратора событий Azure][IMG02]
 
-1. <span data-ttu-id="fcd3e-127">Указав эти параметры, щелкните **Создать**, чтобы создать пространство имен.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-127">When you have specified the options listed above, click **Create** to create your namespace.</span></span>
+1. <span data-ttu-id="75e2a-127">Указав эти параметры, щелкните **Создать**, чтобы создать пространство имен.</span><span class="sxs-lookup"><span data-stu-id="75e2a-127">When you have specified the options listed above, click **Create** to create your namespace.</span></span>
 
-### <a name="create-an-azure-event-hub-in-your-namespace"></a><span data-ttu-id="fcd3e-128">Создание концентратора событий Azure в пространстве имен</span><span class="sxs-lookup"><span data-stu-id="fcd3e-128">Create an Azure Event Hub in your namespace</span></span>
+### <a name="create-an-azure-event-hub-in-your-namespace"></a><span data-ttu-id="75e2a-128">Создание концентратора событий Azure в пространстве имен</span><span class="sxs-lookup"><span data-stu-id="75e2a-128">Create an Azure Event Hub in your namespace</span></span>
 
-1. <span data-ttu-id="fcd3e-129">Перейдите на портал Azure по адресу <https://portal.azure.com/>.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-129">Browse to the Azure portal at <https://portal.azure.com/>.</span></span>
+1. <span data-ttu-id="75e2a-129">Перейдите на портал Azure по адресу <https://portal.azure.com/>.</span><span class="sxs-lookup"><span data-stu-id="75e2a-129">Browse to the Azure portal at <https://portal.azure.com/>.</span></span>
 
-1. <span data-ttu-id="fcd3e-130">Щелкните **Все ресурсы** и выберите созданное пространство имен.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-130">Click **All resources**, and then click the namespace that you created.</span></span>
+1. <span data-ttu-id="75e2a-130">Щелкните **Все ресурсы** и выберите созданное пространство имен.</span><span class="sxs-lookup"><span data-stu-id="75e2a-130">Click **All resources**, and then click the namespace that you created.</span></span>
 
    ![Выбор пространства имен концентратора событий Azure][IMG03]
 
-1. <span data-ttu-id="fcd3e-132">Щелкните **Центры событий**, а затем **+Концентратор событий**.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-132">Click **Event Hubs**, and then click **+Event Hub**.</span></span>
+1. <span data-ttu-id="75e2a-132">Щелкните **Центры событий**, а затем **+Концентратор событий**.</span><span class="sxs-lookup"><span data-stu-id="75e2a-132">Click **Event Hubs**, and then click **+Event Hub**.</span></span>
 
    ![Добавление нового концентратора событий][IMG04]
 
-1. <span data-ttu-id="fcd3e-134">В области **Создание концентратора событий** введите уникальное **имя** для концентратора событий и щелкните **Создать**.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-134">On the **Create Event Hub** page, enter a unique **Name** for your Event Hub, and then click **Create**.</span></span>
+1. <span data-ttu-id="75e2a-134">В области **Создание концентратора событий** введите уникальное **имя** для концентратора событий и щелкните **Создать**.</span><span class="sxs-lookup"><span data-stu-id="75e2a-134">On the **Create Event Hub** page, enter a unique **Name** for your Event Hub, and then click **Create**.</span></span>
 
    ![Создание концентратора событий Azure][IMG05]
 
-1. <span data-ttu-id="fcd3e-136">Созданный концентратор событий появится в списке на странице **Центры событий**.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-136">When your Event Hub has been created, it will be listed on the **Event Hubs** page.</span></span>
+1. <span data-ttu-id="75e2a-136">Созданный концентратор событий появится в списке на странице **Центры событий**.</span><span class="sxs-lookup"><span data-stu-id="75e2a-136">When your Event Hub has been created, it will be listed on the **Event Hubs** page.</span></span>
 
    ![Создание концентратора событий Azure][IMG06]
 
-## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a><span data-ttu-id="fcd3e-138">Создание простого приложения Spring Boot с помощью Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="fcd3e-138">Create a simple Spring Boot application with the Spring Initializr</span></span>
+## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a><span data-ttu-id="75e2a-138">Создание простого приложения Spring Boot с помощью Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="75e2a-138">Create a simple Spring Boot application with the Spring Initializr</span></span>
 
-1. <span data-ttu-id="fcd3e-139">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-139">Browse to <https://start.spring.io/>.</span></span>
+1. <span data-ttu-id="75e2a-139">Перейдите по адресу <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="75e2a-139">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="fcd3e-140">Задайте такие параметры:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-140">Specify the following options:</span></span>
+1. <span data-ttu-id="75e2a-140">Задайте такие параметры:</span><span class="sxs-lookup"><span data-stu-id="75e2a-140">Specify the following options:</span></span>
 
-   * <span data-ttu-id="fcd3e-141">Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-141">Generate a **Maven** project with **Java**.</span></span>
-   * <span data-ttu-id="fcd3e-142">Выберите версию **Spring Boot** не ниже версии 2.0.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-142">Specify a **Spring Boot** version that is equal to or greater than 2.0.</span></span>
-   * <span data-ttu-id="fcd3e-143">Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-143">Specify the **Group** and **Artifact** names for your application.</span></span>
-   * <span data-ttu-id="fcd3e-144">Добавьте зависимость **Web** (Веб).</span><span class="sxs-lookup"><span data-stu-id="fcd3e-144">Add the **Web** dependency.</span></span>
+   * <span data-ttu-id="75e2a-141">Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.</span><span class="sxs-lookup"><span data-stu-id="75e2a-141">Generate a **Maven** project with **Java**.</span></span>
+   * <span data-ttu-id="75e2a-142">Выберите версию **Spring Boot** не ниже версии 2.0.</span><span class="sxs-lookup"><span data-stu-id="75e2a-142">Specify a **Spring Boot** version that is equal to or greater than 2.0.</span></span>
+   * <span data-ttu-id="75e2a-143">Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.</span><span class="sxs-lookup"><span data-stu-id="75e2a-143">Specify the **Group** and **Artifact** names for your application.</span></span>
+   * <span data-ttu-id="75e2a-144">Добавьте зависимость **Web** (Веб).</span><span class="sxs-lookup"><span data-stu-id="75e2a-144">Add the **Web** dependency.</span></span>
 
       ![Основные параметры Spring Initializr][SI01]
 
    > [!NOTE]
    >
-   > <span data-ttu-id="fcd3e-146">Spring Initializr использует имена **Group** (Группы) и **Artifact** (Артефакта) для создания имени пакета, как например *com.wingtiptoys.kafka*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-146">The Spring Initializr uses the **Group** and **Artifact** names to create the package name; for example: *com.wingtiptoys.kafka*.</span></span>
+   > <span data-ttu-id="75e2a-146">Spring Initializr использует имена **Group** (Группы) и **Artifact** (Артефакта) для создания имени пакета, как например *com.wingtiptoys.kafka*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-146">The Spring Initializr uses the **Group** and **Artifact** names to create the package name; for example: *com.wingtiptoys.kafka*.</span></span>
    >
 
-1. <span data-ttu-id="fcd3e-147">Указав эти параметры, щелкните **Generate Project** (Создать проект).</span><span class="sxs-lookup"><span data-stu-id="fcd3e-147">When you have specified the options listed above, click **Generate Project**.</span></span>
+1. <span data-ttu-id="75e2a-147">Указав эти параметры, щелкните **Generate Project** (Создать проект).</span><span class="sxs-lookup"><span data-stu-id="75e2a-147">When you have specified the options listed above, click **Generate Project**.</span></span>
 
-1. <span data-ttu-id="fcd3e-148">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-148">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="75e2a-148">При появлении запроса скачайте проект на локальный компьютер.</span><span class="sxs-lookup"><span data-stu-id="75e2a-148">When prompted, download the project to a path on your local computer.</span></span>
 
    ![Скачивание проекта Spring][SI02]
 
-1. <span data-ttu-id="fcd3e-150">После извлечения файлов в локальной системе простое приложение Spring Boot можно будет редактировать.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-150">After you have extracted the files on your local system, your simple Spring Boot application will be ready for editing.</span></span>
+1. <span data-ttu-id="75e2a-150">После извлечения файлов в локальной системе простое приложение Spring Boot можно будет редактировать.</span><span class="sxs-lookup"><span data-stu-id="75e2a-150">After you have extracted the files on your local system, your simple Spring Boot application will be ready for editing.</span></span>
 
-## <a name="configure-your-spring-boot-app-to-use-the-spring-cloud-kafka-stream-and-azure-event-hub-starters"></a><span data-ttu-id="fcd3e-151">Настройка приложения Spring Boot для использования начальных приложений Spring Cloud Kafka Stream и концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-151">Configure your Spring Boot app to use the Spring Cloud Kafka Stream and Azure Event Hub starters</span></span>
+## <a name="configure-your-spring-boot-app-to-use-the-spring-cloud-kafka-stream-and-azure-event-hub-starters"></a><span data-ttu-id="75e2a-151">Настройка приложения Spring Boot для использования начальных приложений Spring Cloud Kafka Stream и концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-151">Configure your Spring Boot app to use the Spring Cloud Kafka Stream and Azure Event Hub starters</span></span>
 
-1. <span data-ttu-id="fcd3e-152">Найдите файл *pom.xml* в корневой папке приложения, например так:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-152">Locate the *pom.xml* file in the root directory of your app; for example:</span></span>
+1. <span data-ttu-id="75e2a-152">Найдите файл *pom.xml* в корневой папке приложения, например так:</span><span class="sxs-lookup"><span data-stu-id="75e2a-152">Locate the *pom.xml* file in the root directory of your app; for example:</span></span>
 
    `C:\SpringBoot\kafka\pom.xml`
 
-   <span data-ttu-id="fcd3e-153">-или-</span><span class="sxs-lookup"><span data-stu-id="fcd3e-153">-or-</span></span>
+   <span data-ttu-id="75e2a-153">-или-</span><span class="sxs-lookup"><span data-stu-id="75e2a-153">-or-</span></span>
 
    `/users/example/home/kafka/pom.xml`
 
-1. <span data-ttu-id="fcd3e-154">Откройте файл *pom.xml* в текстовом редакторе и добавьте начальное приложение Spring Cloud Kafka Stream и начальное приложение концентратора событий Azure в список `<dependencies>`:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-154">Open the *pom.xml* file in a text editor, and add the Spring Cloud Kafka Stream and Azure Event Hub starters to the list of `<dependencies>`:</span></span>
+1. <span data-ttu-id="75e2a-154">Откройте файл *pom.xml* в текстовом редакторе и добавьте начальное приложение Spring Cloud Kafka Stream и начальное приложение концентратора событий Azure в список `<dependencies>`:</span><span class="sxs-lookup"><span data-stu-id="75e2a-154">Open the *pom.xml* file in a text editor, and add the Spring Cloud Kafka Stream and Azure Event Hub starters to the list of `<dependencies>`:</span></span>
 
    ```xml
    <dependency>
@@ -136,36 +136,36 @@ ms.locfileid: "52339118"
 
    ![Редактирование файла pom.xml][SI03]
 
-1. <span data-ttu-id="fcd3e-156">Сохраните и закройте файл *pom.xml*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-156">Save and close the *pom.xml* file.</span></span>
+1. <span data-ttu-id="75e2a-156">Сохраните и закройте файл *pom.xml*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-156">Save and close the *pom.xml* file.</span></span>
 
-## <a name="create-an-azure-credential-file"></a><span data-ttu-id="fcd3e-157">Создание файла учетных данных Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-157">Create an Azure Credential File</span></span>
+## <a name="create-an-azure-credential-file"></a><span data-ttu-id="75e2a-157">Создание файла учетных данных Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-157">Create an Azure Credential File</span></span>
 
-1. <span data-ttu-id="fcd3e-158">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-158">Open a command prompt.</span></span>
+1. <span data-ttu-id="75e2a-158">Откройте окно командной строки.</span><span class="sxs-lookup"><span data-stu-id="75e2a-158">Open a command prompt.</span></span>
 
-1. <span data-ttu-id="fcd3e-159">Перейдите к каталогу *resources* приложения Spring Boot, например так:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-159">Navigate to the *resources* directory of your Spring Boot app; for example:</span></span>
+1. <span data-ttu-id="75e2a-159">Перейдите к каталогу *resources* приложения Spring Boot, например так:</span><span class="sxs-lookup"><span data-stu-id="75e2a-159">Navigate to the *resources* directory of your Spring Boot app; for example:</span></span>
 
    ```shell
    cd C:\SpringBoot\eventhub\src\main\resources
    ```
 
-   <span data-ttu-id="fcd3e-160">-или-</span><span class="sxs-lookup"><span data-stu-id="fcd3e-160">-or-</span></span>
+   <span data-ttu-id="75e2a-160">-или-</span><span class="sxs-lookup"><span data-stu-id="75e2a-160">-or-</span></span>
 
    ```shell
    cd /users/example/home/eventhub/src/main/resources
    ```
 
-1. <span data-ttu-id="fcd3e-161">Вход в учетную запись Azure:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-161">Sign in to your Azure account:</span></span>
+1. <span data-ttu-id="75e2a-161">Вход в учетную запись Azure:</span><span class="sxs-lookup"><span data-stu-id="75e2a-161">Sign in to your Azure account:</span></span>
 
    ```azurecli
    az login
    ```
 
-1. <span data-ttu-id="fcd3e-162">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-162">List your subscriptions:</span></span>
+1. <span data-ttu-id="75e2a-162">Отобразите список подписок:</span><span class="sxs-lookup"><span data-stu-id="75e2a-162">List your subscriptions:</span></span>
 
    ```azurecli
    az account list
    ```
-   <span data-ttu-id="fcd3e-163">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-163">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
+   <span data-ttu-id="75e2a-163">Azure отобразит список подписок, и вам нужно будет скопировать идентификатор GUID для подписки, которая будет использоваться, например:</span><span class="sxs-lookup"><span data-stu-id="75e2a-163">Azure will return a list of your subscriptions, and you will need to copy the GUID for the subscription that you want to use; for example:</span></span>
 
    ```json
    [
@@ -184,19 +184,19 @@ ms.locfileid: "52339118"
    ]
    ```
    
-1. <span data-ttu-id="fcd3e-164">Укажите GUID подписки, которую вы собираетесь использовать в Azure, например:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-164">Specify the GUID for the subscription you want to use with Azure; for example:</span></span>
+1. <span data-ttu-id="75e2a-164">Укажите GUID подписки, которую вы собираетесь использовать в Azure, например:</span><span class="sxs-lookup"><span data-stu-id="75e2a-164">Specify the GUID for the subscription you want to use with Azure; for example:</span></span>
 
    ```azurecli
    az account set -s 11111111-1111-1111-1111-111111111111
    ```
 
-1. <span data-ttu-id="fcd3e-165">Создайте файл учетных данных Azure:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-165">Create your Azure Credential file:</span></span>
+1. <span data-ttu-id="75e2a-165">Создайте файл учетных данных Azure:</span><span class="sxs-lookup"><span data-stu-id="75e2a-165">Create your Azure Credential file:</span></span>
 
    ```azurecli
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   <span data-ttu-id="fcd3e-166">Эта команда создаст файл *my.azureauth* в каталоге *resources* приблизительно с таким содержимым:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-166">This command will create a *my.azureauth* file in your *resources* directory with contents that resemble the following example:</span></span>
+   <span data-ttu-id="75e2a-166">Эта команда создаст файл *my.azureauth* в каталоге *resources* приблизительно с таким содержимым:</span><span class="sxs-lookup"><span data-stu-id="75e2a-166">This command will create a *my.azureauth* file in your *resources* directory with contents that resemble the following example:</span></span>
 
    ```json
    {
@@ -213,17 +213,17 @@ ms.locfileid: "52339118"
    }
    ```
 
-## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a><span data-ttu-id="fcd3e-167">Настройка приложения Spring Boot для использования концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-167">Configure your Spring Boot app to use your Azure Event Hub</span></span>
+## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a><span data-ttu-id="75e2a-167">Настройка приложения Spring Boot для использования концентратора событий Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-167">Configure your Spring Boot app to use your Azure Event Hub</span></span>
 
-1. <span data-ttu-id="fcd3e-168">Найдите файл *application.properties* в каталоге *resources* приложения, например так:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-168">Locate the *application.properties* in the *resources* directory of your app; for example:</span></span>
+1. <span data-ttu-id="75e2a-168">Найдите файл *application.properties* в каталоге *resources* приложения, например так:</span><span class="sxs-lookup"><span data-stu-id="75e2a-168">Locate the *application.properties* in the *resources* directory of your app; for example:</span></span>
 
    `C:\SpringBoot\eventhub\src\main\resources\application.properties`
 
-   <span data-ttu-id="fcd3e-169">-или-</span><span class="sxs-lookup"><span data-stu-id="fcd3e-169">-or-</span></span>
+   <span data-ttu-id="75e2a-169">-или-</span><span class="sxs-lookup"><span data-stu-id="75e2a-169">-or-</span></span>
 
    `/users/example/home/eventhub/src/main/resources/application.properties`
 
-2. <span data-ttu-id="fcd3e-170">Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-170">Open the *application.properties* file in a text editor, add the following lines, and then replace the sample values with the appropriate properties for your event hub:</span></span>
+2. <span data-ttu-id="75e2a-170">Откройте файл *application.properties* в текстовом редакторе, добавьте следующие строки и замените примеры значений соответствующими параметрами концентратора событий:</span><span class="sxs-lookup"><span data-stu-id="75e2a-170">Open the *application.properties* file in a text editor, add the following lines, and then replace the sample values with the appropriate properties for your event hub:</span></span>
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -235,36 +235,36 @@ ms.locfileid: "52339118"
    spring.cloud.stream.bindings.input.group=$Default
    spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
-   <span data-ttu-id="fcd3e-171">Описание</span><span class="sxs-lookup"><span data-stu-id="fcd3e-171">Where:</span></span>
+   <span data-ttu-id="75e2a-171">Описание</span><span class="sxs-lookup"><span data-stu-id="75e2a-171">Where:</span></span>
 
-   |                       <span data-ttu-id="fcd3e-172">Поле</span><span class="sxs-lookup"><span data-stu-id="fcd3e-172">Field</span></span>                       |                                                                                   <span data-ttu-id="fcd3e-173">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="fcd3e-173">Description</span></span>                                                                                    |
+   |                       <span data-ttu-id="75e2a-172">Поле</span><span class="sxs-lookup"><span data-stu-id="75e2a-172">Field</span></span>                       |                                                                                   <span data-ttu-id="75e2a-173">ОПИСАНИЕ</span><span class="sxs-lookup"><span data-stu-id="75e2a-173">Description</span></span>                                                                                    |
    |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |     `spring.cloud.azure.credential-file-path`     |                                                    <span data-ttu-id="fcd3e-174">Определяет файл учетных данных Azure, который был создан ранее в этом примере.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-174">Specifies Azure credential file that you created earlier in this tutorial.</span></span>                                                    |
-   |        `spring.cloud.azure.resource-group`        |                                                      <span data-ttu-id="fcd3e-175">Определяет группу ресурсов Azure, которая содержит концентратор событий Azure.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-175">Specifies the Azure Resource Group that contains your Azure Event Hub.</span></span>                                                      |
-   |            `spring.cloud.azure.region`            |                                           <span data-ttu-id="fcd3e-176">Определяет географический регион, указанный при создании концентратора событий Azure.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-176">Specifies the geographical region that you specified when you created your Azure Event Hub.</span></span>                                            |
-   |      `spring.cloud.azure.eventhub.namespace`      |                                          <span data-ttu-id="fcd3e-177">Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-177">Specifies the unique name that you specified when you created your Azure Event Hub Namespace.</span></span>                                           |
-   | `spring.cloud.stream.bindings.input.destination`  |                            <span data-ttu-id="fcd3e-178">Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-178">Specifies the input destination Azure Event Hub, which for this tutorial is the  hub you created earlier in this tutorial.</span></span>                            |
-   |    `spring.cloud.stream.bindings.input.group `    | <span data-ttu-id="fcd3e-179">Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-179">Specifies a Consumer Group from Azure Event Hub, which can be set to '$Default' in order to use the basic consumer group that was created when you created your Azure Event Hub.</span></span> |
-   | `spring.cloud.stream.bindings.output.destination` |                               <span data-ttu-id="fcd3e-180">Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-180">Specifies the output destination Azure Event Hub, which for this tutorial will be the same as the input destination.</span></span>                               |
+   |     `spring.cloud.azure.credential-file-path`     |                                                    <span data-ttu-id="75e2a-174">Определяет файл учетных данных Azure, который был создан ранее в этом примере.</span><span class="sxs-lookup"><span data-stu-id="75e2a-174">Specifies Azure credential file that you created earlier in this tutorial.</span></span>                                                    |
+   |        `spring.cloud.azure.resource-group`        |                                                      <span data-ttu-id="75e2a-175">Определяет группу ресурсов Azure, которая содержит концентратор событий Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-175">Specifies the Azure Resource Group that contains your Azure Event Hub.</span></span>                                                      |
+   |            `spring.cloud.azure.region`            |                                           <span data-ttu-id="75e2a-176">Определяет географический регион, указанный при создании концентратора событий Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-176">Specifies the geographical region that you specified when you created your Azure Event Hub.</span></span>                                            |
+   |      `spring.cloud.azure.eventhub.namespace`      |                                          <span data-ttu-id="75e2a-177">Определяет уникальное имя, заданное при создании пространства имен концентратора событий Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-177">Specifies the unique name that you specified when you created your Azure Event Hub Namespace.</span></span>                                           |
+   | `spring.cloud.stream.bindings.input.destination`  |                            <span data-ttu-id="75e2a-178">Определяет назначение входящих данных концентратора событий Azure, которым в этом примере является сам концентратор, созданный ранее.</span><span class="sxs-lookup"><span data-stu-id="75e2a-178">Specifies the input destination Azure Event Hub, which for this tutorial is the  hub you created earlier in this tutorial.</span></span>                            |
+   |    `spring.cloud.stream.bindings.input.group `    | <span data-ttu-id="75e2a-179">Определяет группу потребителей концентратора событий Azure, для которой можно установить значение $Default, чтобы использовать базовую группу потребителей, созданную вместе с концентратором событий Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-179">Specifies a Consumer Group from Azure Event Hub, which can be set to '$Default' in order to use the basic consumer group that was created when you created your Azure Event Hub.</span></span> |
+   | `spring.cloud.stream.bindings.output.destination` |                               <span data-ttu-id="75e2a-180">Определяет назначение исходящих данных для концентратора событий Azure, которое в этом примере совпадает с назначением входящих данных.</span><span class="sxs-lookup"><span data-stu-id="75e2a-180">Specifies the output destination Azure Event Hub, which for this tutorial will be the same as the input destination.</span></span>                               |
 
 
-3. <span data-ttu-id="fcd3e-181">Сохраните и закройте файл *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-181">Save and close the *application.properties* file.</span></span>
+3. <span data-ttu-id="75e2a-181">Сохраните и закройте файл *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-181">Save and close the *application.properties* file.</span></span>
 
-## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a><span data-ttu-id="fcd3e-182">Добавление примера кода для реализации базовых функций концентратора событий</span><span class="sxs-lookup"><span data-stu-id="fcd3e-182">Add sample code to implement basic event hub functionality</span></span>
+## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a><span data-ttu-id="75e2a-182">Добавление примера кода для реализации базовых функций концентратора событий</span><span class="sxs-lookup"><span data-stu-id="75e2a-182">Add sample code to implement basic event hub functionality</span></span>
 
-<span data-ttu-id="fcd3e-183">В этом разделе вы создадите классы Java, требуемые для отправки событий в концентратор событий.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-183">In this section, you create the necessary Java classes for sending events to your event hub.</span></span>
+<span data-ttu-id="75e2a-183">В этом разделе вы создадите классы Java, требуемые для отправки событий в концентратор событий.</span><span class="sxs-lookup"><span data-stu-id="75e2a-183">In this section, you create the necessary Java classes for sending events to your event hub.</span></span>
 
-### <a name="modify-the-main-application-class"></a><span data-ttu-id="fcd3e-184">Изменение класса основного приложения</span><span class="sxs-lookup"><span data-stu-id="fcd3e-184">Modify the main application class</span></span>
+### <a name="modify-the-main-application-class"></a><span data-ttu-id="75e2a-184">Изменение класса основного приложения</span><span class="sxs-lookup"><span data-stu-id="75e2a-184">Modify the main application class</span></span>
 
-1. <span data-ttu-id="fcd3e-185">Найдите файл основного приложения Java в каталоге пакета приложения, например:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-185">Locate the main application Java file in the package directory of your app; for example:</span></span>
+1. <span data-ttu-id="75e2a-185">Найдите файл основного приложения Java в каталоге пакета приложения, например:</span><span class="sxs-lookup"><span data-stu-id="75e2a-185">Locate the main application Java file in the package directory of your app; for example:</span></span>
 
    `C:\SpringBoot\kafka\src\main\java\com\wingtiptoys\kafka\KafkaApplication.java`
 
-   <span data-ttu-id="fcd3e-186">-или-</span><span class="sxs-lookup"><span data-stu-id="fcd3e-186">-or-</span></span>
+   <span data-ttu-id="75e2a-186">-или-</span><span class="sxs-lookup"><span data-stu-id="75e2a-186">-or-</span></span>
 
    `/users/example/home/kafka/src/main/java/com/wingtiptoys/kafka/KafkaApplication.java`
 
-1. <span data-ttu-id="fcd3e-187">Откройте файл основного приложения Java в текстовом редакторе и добавьте в него следующие строки:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-187">Open the main application Java file in a text editor, and add the following lines to the file:</span></span>
+1. <span data-ttu-id="75e2a-187">Откройте файл основного приложения Java в текстовом редакторе и добавьте в него следующие строки:</span><span class="sxs-lookup"><span data-stu-id="75e2a-187">Open the main application Java file in a text editor, and add the following lines to the file:</span></span>
 
    ```java
    package com.wingtiptoys.kafka;
@@ -280,12 +280,12 @@ ms.locfileid: "52339118"
    }
    ```
 
-1. <span data-ttu-id="fcd3e-188">Сохраните и закройте файл основного приложения Java.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-188">Save and close the main application Java file.</span></span>
+1. <span data-ttu-id="75e2a-188">Сохраните и закройте файл основного приложения Java.</span><span class="sxs-lookup"><span data-stu-id="75e2a-188">Save and close the main application Java file.</span></span>
 
 
-### <a name="create-a-new-class-for-the-source-connector"></a><span data-ttu-id="fcd3e-189">Создание класса для соединителя источника</span><span class="sxs-lookup"><span data-stu-id="fcd3e-189">Create a new class for the source connector</span></span>
+### <a name="create-a-new-class-for-the-source-connector"></a><span data-ttu-id="75e2a-189">Создание класса для соединителя источника</span><span class="sxs-lookup"><span data-stu-id="75e2a-189">Create a new class for the source connector</span></span>
 
-1. <span data-ttu-id="fcd3e-190">В каталоге пакета вашего приложения создайте файл Java с именем *KafkaSource.java*, а затем откройте этот файл в текстовом редакторе и добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-190">Create a new Java file named *KafkaSource.java* in the package directory of your app, then open the file in a text editor and add the following lines:</span></span>
+1. <span data-ttu-id="75e2a-190">В каталоге пакета вашего приложения создайте файл Java с именем *KafkaSource.java*, а затем откройте этот файл в текстовом редакторе и добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="75e2a-190">Create a new Java file named *KafkaSource.java* in the package directory of your app, then open the file in a text editor and add the following lines:</span></span>
 
    ```java
    package com.wingtiptoys.kafka;
@@ -313,11 +313,11 @@ ms.locfileid: "52339118"
    }
    ```
 
-1. <span data-ttu-id="fcd3e-191">Сохраните и закройте файл *KafkaSource.java*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-191">Save and close the *KafkaSource.java* file.</span></span>
+1. <span data-ttu-id="75e2a-191">Сохраните и закройте файл *KafkaSource.java*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-191">Save and close the *KafkaSource.java* file.</span></span>
 
-### <a name="create-a-new-class-for-the-sink-connector"></a><span data-ttu-id="fcd3e-192">Создание класса для соединителя приемника</span><span class="sxs-lookup"><span data-stu-id="fcd3e-192">Create a new class for the sink connector</span></span>
+### <a name="create-a-new-class-for-the-sink-connector"></a><span data-ttu-id="75e2a-192">Создание класса для соединителя приемника</span><span class="sxs-lookup"><span data-stu-id="75e2a-192">Create a new class for the sink connector</span></span>
 
-1. <span data-ttu-id="fcd3e-193">В каталоге пакета вашего приложения создайте файл Java с именем *KafkaSink.java*, а затем откройте этот файл в текстовом редакторе и добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-193">Create a new Java file named *KafkaSink.java* in the package directory of your app, then open the file in a text editor and add the following lines:</span></span>
+1. <span data-ttu-id="75e2a-193">В каталоге пакета вашего приложения создайте файл Java с именем *KafkaSink.java*, а затем откройте этот файл в текстовом редакторе и добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="75e2a-193">Create a new Java file named *KafkaSink.java* in the package directory of your app, then open the file in a text editor and add the following lines:</span></span>
 
    ```java
    package com.wingtiptoys.kafka;
@@ -339,31 +339,31 @@ ms.locfileid: "52339118"
    }
    ```
 
-1. <span data-ttu-id="fcd3e-194">Сохраните и закройте файл *KafkaSink.java*.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-194">Save and close the *KafkaSink.java* file.</span></span>
+1. <span data-ttu-id="75e2a-194">Сохраните и закройте файл *KafkaSink.java*.</span><span class="sxs-lookup"><span data-stu-id="75e2a-194">Save and close the *KafkaSink.java* file.</span></span>
 
-## <a name="build-and-test-your-application"></a><span data-ttu-id="fcd3e-195">Сборка и тестирование приложения</span><span class="sxs-lookup"><span data-stu-id="fcd3e-195">Build and test your application</span></span>
+## <a name="build-and-test-your-application"></a><span data-ttu-id="75e2a-195">Сборка и тестирование приложения</span><span class="sxs-lookup"><span data-stu-id="75e2a-195">Build and test your application</span></span>
 
-1. <span data-ttu-id="fcd3e-196">Откройте командную строку и перейдите из каталога в папку с файлом *pom.xml*, например:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-196">Open a command prompt and change directory to the folder where your *pom.xml* file is located; for example:</span></span>
+1. <span data-ttu-id="75e2a-196">Откройте командную строку и перейдите из каталога в папку с файлом *pom.xml*, например:</span><span class="sxs-lookup"><span data-stu-id="75e2a-196">Open a command prompt and change directory to the folder where your *pom.xml* file is located; for example:</span></span>
 
    `cd C:\SpringBoot\kafka`
 
-   <span data-ttu-id="fcd3e-197">-или-</span><span class="sxs-lookup"><span data-stu-id="fcd3e-197">-or-</span></span>
+   <span data-ttu-id="75e2a-197">-или-</span><span class="sxs-lookup"><span data-stu-id="75e2a-197">-or-</span></span>
 
    `cd /users/example/home/kafka`
 
-1. <span data-ttu-id="fcd3e-198">Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-198">Build your Spring Boot application with Maven and run it; for example:</span></span>
+1. <span data-ttu-id="75e2a-198">Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:</span><span class="sxs-lookup"><span data-stu-id="75e2a-198">Build your Spring Boot application with Maven and run it; for example:</span></span>
 
    ```shell
    mvn clean package
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="fcd3e-199">После запуска приложения можно использовать средство *curl*, чтобы протестировать приложение, например:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-199">Once your application is running, you can use *curl* to test your application; for example:</span></span>
+1. <span data-ttu-id="75e2a-199">После запуска приложения можно использовать средство *curl*, чтобы протестировать приложение, например:</span><span class="sxs-lookup"><span data-stu-id="75e2a-199">Once your application is running, you can use *curl* to test your application; for example:</span></span>
 
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   <span data-ttu-id="fcd3e-200">В журнале приложения должна появиться запись "hello".</span><span class="sxs-lookup"><span data-stu-id="fcd3e-200">You should see "hello" posted to your application's logs.</span></span> <span data-ttu-id="fcd3e-201">Например: </span><span class="sxs-lookup"><span data-stu-id="fcd3e-201">For example:</span></span>
+   <span data-ttu-id="75e2a-200">В журнале приложения должна появиться запись "hello".</span><span class="sxs-lookup"><span data-stu-id="75e2a-200">You should see "hello" posted to your application's logs.</span></span> <span data-ttu-id="75e2a-201">Например: </span><span class="sxs-lookup"><span data-stu-id="75e2a-201">For example:</span></span>
 
    ```shell
    [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2
@@ -374,7 +374,7 @@ ms.locfileid: "52339118"
 
 > [!NOTE]
 > 
-> <span data-ttu-id="fcd3e-202">Для тестирования можно изменить файл *KafkaSource.java*, добавив в него простую HTML-форму, как в следующем примере:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-202">For testing purposes, you could modify your *KafkaSource.java* so that it contains a simple HTML form like the following example:</span></span>
+> <span data-ttu-id="75e2a-202">Для тестирования можно изменить файл *KafkaSource.java*, добавив в него простую HTML-форму, как в следующем примере:</span><span class="sxs-lookup"><span data-stu-id="75e2a-202">For testing purposes, you could modify your *KafkaSource.java* so that it contains a simple HTML form like the following example:</span></span>
 > 
 > ```java
 > package com.wingtiptoys.kafka;
@@ -412,38 +412,44 @@ ms.locfileid: "52339118"
 > }
 > ```
 > 
-> <span data-ttu-id="fcd3e-203">Это позволит использовать веб-браузер для тестирования приложения:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-203">This will allow you to use a web browser to test your application:</span></span>
+> <span data-ttu-id="75e2a-203">Это позволит использовать веб-браузер для тестирования приложения:</span><span class="sxs-lookup"><span data-stu-id="75e2a-203">This will allow you to use a web browser to test your application:</span></span>
 > 
 > ![Тестирование приложения с помощью веб-браузера][TB01]
 > 
-> <span data-ttu-id="fcd3e-205">После отправки данных формы в приложении отобразятся результаты:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-205">When you submit the form, your application will display the results:</span></span>
+> <span data-ttu-id="75e2a-205">После отправки данных формы в приложении отобразятся результаты:</span><span class="sxs-lookup"><span data-stu-id="75e2a-205">When you submit the form, your application will display the results:</span></span>
 > 
 > ![Ответ приложения в веб-браузере][TB02]
 > 
 
-## <a name="next-steps"></a><span data-ttu-id="fcd3e-207">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="fcd3e-207">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="75e2a-207">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="75e2a-207">Next steps</span></span>
 
-<span data-ttu-id="fcd3e-208">Дополнительные сведения о поддержке в Azure Apache Kafka и Stream Binder для концентратора событий см. в статьях:</span><span class="sxs-lookup"><span data-stu-id="fcd3e-208">For more information about Azure support for Event Hub Stream Binder and Apache Kafka, see the following articles:</span></span>
+<span data-ttu-id="75e2a-208">Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.</span><span class="sxs-lookup"><span data-stu-id="75e2a-208">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
 
-* [<span data-ttu-id="fcd3e-209">Что такое Центры событий Azure?</span><span class="sxs-lookup"><span data-stu-id="fcd3e-209">What is Azure Event Hubs?</span></span>](/azure/event-hubs/event-hubs-about)
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="75e2a-209">Spring в Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-209">Spring on Azure</span></span>](/java/azure/spring-framework)
 
-* [<span data-ttu-id="fcd3e-210">Центры событий Azure для Apache Kafka</span><span class="sxs-lookup"><span data-stu-id="fcd3e-210">Azure Event Hubs for Apache Kafka</span></span>](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
+### <a name="additional-resources"></a><span data-ttu-id="75e2a-210">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="75e2a-210">Additional Resources</span></span>
 
-* [<span data-ttu-id="fcd3e-211">Создание пространства имен службы "Центры событий" и концентратора событий с помощью портала Azure</span><span class="sxs-lookup"><span data-stu-id="fcd3e-211">Create an Event Hubs namespace and an event hub using the Azure portal</span></span>](/azure/event-hubs/event-hubs-create)
+<span data-ttu-id="75e2a-211">Дополнительные сведения о поддержке в Azure Apache Kafka и Stream Binder для концентратора событий см. в статьях:</span><span class="sxs-lookup"><span data-stu-id="75e2a-211">For more information about Azure support for Event Hub Stream Binder and Apache Kafka, see the following articles:</span></span>
 
-* [<span data-ttu-id="fcd3e-212">Создание Центров событий с поддержкой Apache Kafka</span><span class="sxs-lookup"><span data-stu-id="fcd3e-212">Create Apache Kafka enabled event hubs</span></span>](/azure/event-hubs/event-hubs-create-kafka-enabled)
+* [<span data-ttu-id="75e2a-212">Что такое Центры событий Azure?</span><span class="sxs-lookup"><span data-stu-id="75e2a-212">What is Azure Event Hubs?</span></span>](/azure/event-hubs/event-hubs-about)
 
-<span data-ttu-id="fcd3e-213">См. дополнительные сведения об использовании Java в Azure и [инструментах Java для Visual Studio Team Services].</span><span class="sxs-lookup"><span data-stu-id="fcd3e-213">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+* [<span data-ttu-id="75e2a-213">Центры событий Azure для Apache Kafka</span><span class="sxs-lookup"><span data-stu-id="75e2a-213">Azure Event Hubs for Apache Kafka</span></span>](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
 
-<span data-ttu-id="fcd3e-214">**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-214">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="fcd3e-215">Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-215">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="fcd3e-216">В помощь разработчикам, начинающим работать со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-216">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="fcd3e-217">Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.</span><span class="sxs-lookup"><span data-stu-id="fcd3e-217">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+* [<span data-ttu-id="75e2a-214">Создание пространства имен службы "Центры событий" и концентратора событий с помощью портала Azure</span><span class="sxs-lookup"><span data-stu-id="75e2a-214">Create an Event Hubs namespace and an event hub using the Azure portal</span></span>](/azure/event-hubs/event-hubs-create)
+
+* [<span data-ttu-id="75e2a-215">Создание Центров событий с поддержкой Apache Kafka</span><span class="sxs-lookup"><span data-stu-id="75e2a-215">Create Apache Kafka enabled event hubs</span></span>](/azure/event-hubs/event-hubs-create-kafka-enabled)
+
+<span data-ttu-id="75e2a-216">Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).</span><span class="sxs-lookup"><span data-stu-id="75e2a-216">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
+
+<span data-ttu-id="75e2a-217">**[Spring Framework]** — это решение с открытым кодом, которое помогает разработчикам Java создавать приложения корпоративного класса.</span><span class="sxs-lookup"><span data-stu-id="75e2a-217">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="75e2a-218">Одним из самых популярных проектов, созданных на этой платформе, является проект [Spring Boot]. Он упрощает подход к созданию автономных приложений Java.</span><span class="sxs-lookup"><span data-stu-id="75e2a-218">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="75e2a-219">В помощь разработчикам, начинающим работать со Spring Boot, по адресу <https://github.com/spring-guides/> доступно несколько примеров пакетов этого приложения.</span><span class="sxs-lookup"><span data-stu-id="75e2a-219">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="75e2a-220">Помимо выбора из списка основных проектов Spring Boot, **[Spring Initializr]** помогает разработчикам создавать пользовательские приложения Spring Boot.</span><span class="sxs-lookup"><span data-stu-id="75e2a-220">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
 
 <!-- URL List -->
 
 [Apache Kafka]: http://kafka.apache.org
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/ (Работа с Azure DevOps и Java)
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
