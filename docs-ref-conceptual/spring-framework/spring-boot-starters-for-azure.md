@@ -8,18 +8,18 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 678d4b279cecb83c95b3bf0f6bcdf1581924aa62
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 69c0381313994796af31d5301ceadb9f6f40dcb5
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893505"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991558"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter для Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "48893505"
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Поддержка Azure
 
-Это начальное приложение Spring Boot поддерживает автоматическую настройку таких служб Azure, как служебная шина, служба хранилища, Active Directory, Cosmos DB, Key Vault, и т. д.
+Начальное приложение Spring Boot поддерживает автоматическую настройку служб Azure, таких как Служебная шина Azure, служба хранилища Azure, Active Directory, Cosmos DB, Key Vault и др.
 
 Примеры использования разных функций Azure с этим начальным приложением, см. по следующей ссылке:
 
@@ -229,18 +229,25 @@ ms.locfileid: "48893505"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
 Дополнительные сведения об использовании [Spring Boot] в Azure см. [Spring в Azure].
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
 
 Справку по началу работы с собственными приложениями Spring Boot см. на странице **Spring Initializr**: https://start.spring.io/.
 
 <!-- URL List -->
 
-[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
+[Azure для разработчиков Java]: /java/azure/
+[Working with Azure DevOps and Java]: /azure/devops/ (Работа с Azure DevOps и Java)
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring в Azure]: https://docs.microsoft.com/java/azure/spring-framework/
+[Spring в Azure]: /java/azure/spring-framework/
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

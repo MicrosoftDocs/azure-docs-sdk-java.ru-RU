@@ -8,19 +8,19 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: container-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 30be16aebb18e3c9e18f9a023ea9b82e5d614e94
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: aa8fa6d15d868e55b252483993d001d19746244b
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339148"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991508"
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>Развертывание приложения Spring Boot в Linux в службе контейнеров Azure
 
@@ -132,7 +132,7 @@ ms.locfileid: "52339148"
    </servers>
    ```
 
-1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например, *C:\SpringBoot\gs-spring-boot-docker\complete* или */users/robert/SpringBoot/gs-spring-boot-docker/complete*) и откройте файл *pom.xml* в текстовом редакторе.
+1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например "*C:\SpringBoot\gs-spring-boot-docker\complete*" или "*/users/robert/SpringBoot/gs-spring-boot-docker/complete*") и откройте файл *pom.xml* в текстовом редакторе.
 
 1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив значение сервера входа для реестра контейнеров Azure из предыдущего раздела данного учебника, например:
 
@@ -209,9 +209,9 @@ ms.locfileid: "52339148"
 
    * Выберите **Частный реестр**.
 
-   * **Образ и дополнительный тег**: задайте имя контейнера из более ранней версии, например "*wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*"
+   * **Образ и дополнительный тег**: задайте имя контейнера из более ранней версии, например *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*.
 
-   * **URL-адрес сервера**: укажите URL-адрес реестра из более ранней версии, например *<https://wingtiptoysregistry.azurecr.io>*.
+   * **URL-адрес сервера**. Укажите URL-адрес реестра из более ранней версии, например *<https://wingtiptoysregistry.azurecr.io>*.
 
    * **Имя входа пользователя** и **Пароль**: укажите учетные данные для входа из своих **ключей доступа**, которые использовались на предыдущих шагах.
    
@@ -263,12 +263,19 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
 Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:
 
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 * [Развертывание приложения Spring Boot в кластере Kubernetes в службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
 
 Дополнительные сведения о Spring Boot в образце проекта Docker см. в разделе [Spring Boot on Docker Getting Started] (Начало работы с Spring Boot в Docker).
 
@@ -282,14 +289,14 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Служба контейнеров Azure]: https://azure.microsoft.com/services/container-service/
-[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure для разработчиков Java]: /java/azure/
 [портал Azure]: https://portal.azure.com/
 [Создание частного реестра контейнеров Docker с помощью портала Azure]: /azure/container-registry/container-registry-get-started-portal
 [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/java/ (Работа с Azure DevOps и Java)
 [Maven]: http://maven.apache.org/
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/

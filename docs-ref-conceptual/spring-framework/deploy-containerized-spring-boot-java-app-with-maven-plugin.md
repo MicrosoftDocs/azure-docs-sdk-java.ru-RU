@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: cc14ac8dfd393d60924c39be0870c3caedc9741c
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: bcc56a92e2fd6891cdccb92c5541787f227d828a
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339088"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991498"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Развертывание приложения Spring Boot в Azure с помощью подключаемого модуля Maven для веб-приложений Azure
 
@@ -168,7 +168,7 @@ ms.locfileid: "52339088"
 
 3. Сохраните и закройте файл *settings.xml*.
 
-## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>НЕОБЯЗАТЕЛЬНО. Развертывание локального файла Docker в центр Docker
+## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>НЕОБЯЗАТЕЛЬНО. Развертывание локального файла Docker в Docker Hub
 
 При наличии учетной записи Docker образ контейнера Docker можно создать локально и принудительно отправить его в центр Docker. Для этого выполните следующие действия.
 
@@ -196,7 +196,7 @@ ms.locfileid: "52339088"
       mvn clean package docker:build -DpushImage
       ```
 
-## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>НЕОБЯЗАТЕЛЬНО. Настройка pom.xml перед развертыванием веб-приложения в Azure
+## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>НЕОБЯЗАТЕЛЬНО. Настройка pom.xml перед развертыванием контейнера в Azure
 
 Откройте файл `pom.xml` для приложения Spring Boot в текстовом редакторе, а затем найдите элемент `<plugin>` для `azure-webapp-maven-plugin`. Этот элемент должен выглядеть примерно следующим образом.
 
@@ -310,6 +310,13 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
 Дополнительные сведения о различных технологиях, рассматриваемых в данной статье, см. в следующих статьях.
 
 * [Подключаемый модуль Maven для веб-приложений Azure]
@@ -324,16 +331,18 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 * [Подключаемый модуль Docker для Maven]
 
+Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
+
 <!-- URL List -->
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
+[Azure для разработчиков Java]: /java/azure/
 [портал Azure]: https://portal.azure.com/
 [Docker]: https://www.docker.com/
 [Подключаемый модуль Docker для Maven]: https://github.com/spotify/docker-maven-plugin
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/ (Работа с Azure DevOps и Java)
 [Maven]: http://maven.apache.org/
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/

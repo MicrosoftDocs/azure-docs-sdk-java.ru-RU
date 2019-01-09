@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: f94b2981f1e641a6e4b2d9d3028608a56a6590e7
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: cdd157abdb993517f7c880a7edaff10f0e3d1033
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338878"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991588"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Как использовать Spring Boot Starter со службой хранилища Azure
 
@@ -347,11 +347,20 @@ ms.locfileid: "52338878"
 
      Должен отобразиться отправленный вами текст "Hello World".
 
+## <a name="summary"></a>Сводка
+
+В этом руководстве описано, как создать приложение Java с помощью **[Spring Initializr]** и добавить к нему начальное приложение службы хранилища Azure, а затем настроить приложение, чтобы отправить большой двоичный объект в учетную запись хранения Azure.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-См. дополнительные сведения о других [начальных приложениях Spring Boot для Microsoft Azure](spring-boot-starters-for-azure.md).
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
 
-См. дополнительные сведения об интеграции функций Azure в приложения на основе Spring в руководстве по [Spring Framework в Azure](/java/azure/spring-framework/).
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
+См. дополнительные сведения о других [начальных приложениях Spring Boot для Microsoft Azure](spring-boot-starters-for-azure.md).
 
 См. дополнительные сведения о других API-интерфейсах службы хранилища Azure, которые можно вызывать из приложений Spring Boot:
 * [Использование хранилища BLOB-объектов Azure из Java](/azure/storage/blobs/storage-java-how-to-use-blob-storage)

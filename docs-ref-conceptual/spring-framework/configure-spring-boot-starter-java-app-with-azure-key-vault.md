@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 78dadcf93bfc57ab669271495393fa9ba164c89d
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339158"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991368"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Как использовать начальное приложение Spring Boot Starter с Azure Key Vault
 
@@ -154,10 +154,10 @@ ms.locfileid: "52339158"
    |---|---|
    | `name` | Указывает уникальное имя для хранилища ключей. |
    | `location` | Указывает [регион Azure](https://azure.microsoft.com/regions/) для размещения группы ресурсов. |
-   | `enabled-for-deployment` | Указывает [вариант развертывания хранилища ключей](https://docs.microsoft.com/cli/azure/keyvault). |
-   | `enabled-for-disk-encryption` | Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/cli/azure/keyvault). |
-   | `enabled-for-template-deployment` | Указывает [вариант шифрования хранилища ключей](https://docs.microsoft.com/cli/azure/keyvault). |
-   | `sku` | Указывает [вариант номера SKU хранилища ключей](https://docs.microsoft.com/cli/azure/keyvault). |
+   | `enabled-for-deployment` | Указывает [вариант развертывания хранилища ключей](/cli/azure/keyvault). |
+   | `enabled-for-disk-encryption` | Указывает [вариант шифрования хранилища ключей](/cli/azure/keyvault). |
+   | `enabled-for-template-deployment` | Указывает [вариант шифрования хранилища ключей](/cli/azure/keyvault). |
+   | `sku` | Указывает [вариант номера SKU хранилища ключей](/cli/azure/keyvault). |
    | `query` | Указывает значение, извлекаемое из ответа — URI хранилища ключей, необходимый для работы с этим руководством. |
 
    Azure CLI отобразит этот URI для хранилища ключей для дальнейшего использования, например:  
@@ -175,7 +175,7 @@ ms.locfileid: "52339158"
    | Параметр | ОПИСАНИЕ |
    |---|---|
    | `name` | Указывает имя используемого хранилища ключей (см. выше). |
-   | `secret-permission` | Указывает [политики безопасности](https://docs.microsoft.com/cli/azure/keyvault) для хранилища ключей. |
+   | `secret-permission` | Указывает [политики безопасности](/cli/azure/keyvault) для хранилища ключей. |
    | `spn` | Указывает идентификатор GUID для зарегистрированного приложения (см. выше). |
 
    В Azure CLI отобразятся результаты создания политики безопасности, например:  
@@ -254,7 +254,7 @@ ms.locfileid: "52339158"
 
 4. Перейдите к файлу с основным кодом проекта, например: */src/main/java/com/wingtiptoys/secrets*.
 
-5. Откройте в текстовом редакторе основной файл Java приложения, например: *SecretsApplication.java*. Добавьте следующие строки в файл:
+5. Откройте в текстовом редакторе основной Java-файл приложения, например *SecretsApplication.java*, и добавьте следующие строки в файл.
 
    ```java
    package com.wingtiptoys.secrets;
@@ -309,6 +309,15 @@ ms.locfileid: "52339158"
 
 В этом руководстве вы создали веб-приложение Java с помощью **[Spring Initializr]**, создали хранилище Azure Key Vault для хранения конфиденциальной информации, а затем настроили созданное приложение для получения сведений из хранилища ключей.
 
+## <a name="next-steps"></a>Дополнительная информация
+
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
 См. дополнительные сведения об использовании Azure Key Vault:
 
 * [Документация по хранилищу ключей].
@@ -321,22 +330,15 @@ ms.locfileid: "52339158"
 
 * [Запуск приложения Spring Boot в кластере Kubernetes в Службе контейнеров Azure](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
-
-## <a name="next-steps"></a>Дополнительная информация
-
-Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
-
-> [!div class="nextstepaction"]
-> [Spring в Azure](/java/azure/spring-framework)
+Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
 
 <!-- URL List -->
 
 [Документация по хранилищу ключей]: /azure/key-vault/
 [Приступая к работе с хранилищем ключей Azure]: /azure/key-vault/key-vault-get-started
-[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure для разработчиков Java]: /java/azure/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/ (Работа с Azure DevOps и Java)
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/

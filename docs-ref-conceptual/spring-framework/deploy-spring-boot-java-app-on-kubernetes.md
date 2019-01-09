@@ -8,19 +8,19 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: d5ebfb7fc7279c745f77848dae397509662f0c0d
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 89a7a6900e5e0a544b4dc3fde960f62aeab6ebef
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338728"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991478"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 
@@ -80,7 +80,7 @@ ms.locfileid: "52338728"
 
 1. Должно появиться следующее сообщение: **Hello Docker World**.
 
-   ![Просмотр примера приложения в локальной среде][SB01]
+   ![Локальный просмотр образца приложения][SB01]
 
 ## <a name="create-an-azure-container-registry-using-the-azure-cli"></a>Создание реестра контейнеров Azure с помощью Azure CLI
 
@@ -304,14 +304,21 @@ ms.locfileid: "52338728"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения о Spring и Azure см. в центре документации об использовании Spring в Azure.
+
+> [!div class="nextstepaction"]
+> [Spring в Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Дополнительные ресурсы
+
 Дополнительные сведения об использовании Spring Boot в Azure см. в следующих статьях:
 
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 * [Развертывание приложения Spring Boot в Linux в службе контейнеров Azure](deploy-spring-boot-java-app-on-linux.md)
 
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java] и [инструментах Java для Visual Studio Team Services].
+Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
 
-<!-- Newly added --> Дополнительные сведения о развертывании приложения Java в кластере Kubernetes с помощью Visual Studio Code см. в [Руководства по Java для Visual Studio Code].
+Дополнительные сведения о развертывании приложения Java в кластере Kubernetes с помощью Visual Studio Code см. в [Руководства по Java для Visual Studio Code].
 
 Дополнительные сведения о примере проекта Spring Boot в Docker см. в разделе [Spring Boot on Docker Getting Started].
 
@@ -321,7 +328,7 @@ ms.locfileid: "52338728"
 
 По следующим ссылкам представлены дополнительные сведения об использовании Kubernetes с Azure:
 
-* [Начало работы с кластером Kubernetes в Службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+* [Начало работы с кластером Kubernetes в Службе Azure Kubernetes](/azure/aks/intro-kubernetes)
 
 Дополнительные сведения об использовании интерфейса командной строки Kubernetes доступны в руководстве пользователя **kubectl** по адресу <https://kubernetes.io/docs/user-guide/kubectl/>.
 
@@ -337,14 +344,14 @@ ms.locfileid: "52338728"
 
 [Интерфейс командной строки Azure (CLI)]: /cli/azure/overview
 [Служба Azure Kubernetes (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
-[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
+[Azure для разработчиков Java]: /java/azure/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux]: /azure/app-service-web/app-service-linux-using-custom-docker-image
 [Docker]: https://www.docker.com/
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[инструментах Java для Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/java/ (Работа с Azure DevOps и Java)
 [Kubernetes]: https://kubernetes.io/
 [Kubernetes Command-Line Interface (kubectl)]: https://kubernetes.io/docs/user-guide/kubectl-overview/
 [Maven]: http://maven.apache.org/
@@ -360,7 +367,7 @@ ms.locfileid: "52338728"
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->
-[Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks/
+[Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: /azure/container-registry/container-registry-auth-aks/
 [Руководства по Java для Visual Studio Code]: https://code.visualstudio.com/docs/java/java-kubernetes/
 
 <!-- IMG List -->
