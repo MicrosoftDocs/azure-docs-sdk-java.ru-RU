@@ -8,18 +8,17 @@ manager: routlaw
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 12/20/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: d281f37b027d4011ea2e3106990c5e45b69ebc88
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: fdff8dc2bd7a29473314d5c0bc99b7bcda369156
+ms.sourcegitcommit: 54e7f077d694a5b1dd7fa6c8870b7d476af9829c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892595"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55648728"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>Развертывание веб-приложения Hello World в контейнере Linux в облаке с помощью набора средств Azure для IntelliJ
 
@@ -74,21 +73,13 @@ ms.locfileid: "48892595"
 
    После входа в свою учетную запись на портале Azure можно выполнить процедуру, описанную в статье [Создание частного реестра контейнеров Docker с помощью портала Azure], которую здесь полезно представить еще раз.
 
-1. Щелкните значок меню **+ Создать**, нажмите кнопку **Контейнеры**, а затем нажмите кнопку **Реестр контейнеров Azure**.
+1. Щелкните значок меню **+ Создать ресурс**, а затем последовательно выберите **Контейнеры** и **Реестр контейнеров**.
    
-   ![Создание нового реестра контейнеров Azure][AR01]
-
-1. При появлении страницы сведений о шаблоне реестра контейнеров Azure нажмите кнопку **Создать**. 
-
-   ![Создание нового реестра контейнеров Azure][AR02]
+   ![Создание нового реестра контейнеров Azure][create-container-registry-01]
 
 1. При появлении страницы **Создать реестр контейнеров** введите данные в поля **Имя реестра** и **Группа ресурсов**, выберите **Включить** для параметра **Пользователь-администратор** и нажмите кнопку **Создать**.
 
-   ![Настройка параметров реестра контейнеров Azure][AR03]
-
-1. После создания реестра контейнеров перейдите в реестр контейнеров на портале Azure и нажмите кнопку **Ключи доступа**. Запишите имя пользователя и пароль для последующих шагов.
-
-   ![Ключи доступа к реестру контейнеров Azure][AR04]
+   ![Настройка параметров реестра контейнеров Azure][create-container-registry-02]
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Развертывание веб-приложения в контейнере Docker
 
@@ -98,31 +89,37 @@ ms.locfileid: "48892595"
 
    ![Добавление поддержки Docker][add-docker-support]
 
-1. Добавив поддержку Docker, щелкните правой кнопкой мыши проект в обозревателе проектов, выберите **Azure**, а затем — **Run on Web App (Linux)** (Выполнить веб-приложение (Linux)).
+1. Добавив поддержку Docker, щелкните проект правой кнопкой мыши в обозревателе проектов, выберите **Azure**, а затем — **Run on Web App for Containers** (Выполнить в веб-приложении для контейнеров).
 
-   ![Выполнение веб-приложения (Linux)][run-on-web-app-linux]
+   ![Выполнение в веб-приложении для контейнеров][run-on-web-app-for-containers]
 
-1. Когда отобразится диалоговое окно **Run on Web App (Linux)** (Выполнение веб-приложения (Linux)), введите необходимые сведения:
+1. Когда отобразится диалоговое окно **Run on Web App for Containers** (Выполнение в веб-приложении для контейнеров), введите необходимые сведения:
 
-   * **Name** (Имя) — понятное имя, отображаемое в наборе средств Azure. 
+   * **Имя.** Понятное имя, отображаемое в наборе средств Azure. 
 
-   * **Server URL** (URL-адрес сервера) — URL-адрес реестра контейнеров из предыдущего раздела этой статьи. Обычно используется следующий синтаксис *registry*.azurecr.io. 
+   * **Container Registry** (Реестр контейнеров). Выберите в раскрывающемся меню реестр контейнеров, который вы создали в предыдущем разделе этой статьи. Поля **Server URL** (URL-адрес сервера), **Username** (Имя пользователя) и **Password** (Пароль) будут заполнены автоматически.
 
-   * **Username** (Имя пользователя) и **Password** (Пароль) — ключи доступа для реестра контейнеров из предыдущего раздела этой статьи. 
-
-   * **Image and tag** (Образ и тег) — название образа контейнера. Обычно используется следующий синтаксис: *registry*.azurecr.io/*appname*:latest, где: 
+   * **Image and tag** (Образ и тег). Имя образа контейнера. Обычно используется следующий синтаксис: *registry*.azurecr.io/*appname*:latest, где: 
       * *registry* — это реестр контейнеров из предыдущего раздела этой статьи; 
       * *appname* — это имя веб-приложения. 
 
-   * **Use Existing Web App** (Использовать имеющееся веб-приложение) или **Create New Web App** (Создать веб-приложение) — указывает, будете ли вы развертывать контейнер в имеющемся веб-приложении или создадите веб-приложение. 
+   * **Use Existing Web App** (Использовать существующее веб-приложение) или **Create New Web App** (Создать веб-приложение). Указывает, будете ли вы развертывать контейнер в существующем веб-приложении или создадите новое. С помощью указанного вами **имени приложения** будет создан URL-адрес для вашего веб-приложения, например: *wingtiptoys.azurewebsites.net*.
 
-   * **Resource Group** (Группа ресурсов) — указывает, создадите ли вы группу ресурсов или будете использовать имеющуюся. 
+   * **Группа ресурсов**. Указывает, создадите ли вы группу ресурсов или будете использовать существующую. 
 
-   * **App Service Plan** (План службы приложений) — указывает, создадите ли вы план службы приложений или будете использовать имеющийся. 
+   * **App Service Plan** (План службы приложений). Указывает, создадите ли вы план службы приложений или будете использовать существующий. 
 
-1. Настроив перечисленные выше параметры, нажмите кнопку **Run** (Выполнить).
+   ![Выполнение в веб-приложении для контейнеров][run-on-web-app-linux]
 
-   ![Создание веб-приложения][create-web-app]
+1. Настроив перечисленные выше параметры, нажмите кнопку **Run** (Выполнить). После успешного развертывания веб-приложения его состояние будет отображаться в окне **Run** (Выполнение).
+
+   ![Веб-приложение успешно развернуто][successfully-deployed]
+
+1. После публикации веб-приложения вы можете перейти к указанному для него ранее URL-адресу, например *wingtiptoys.azurewebsites.net*.
+
+   ![Переход к веб-приложению][browsing-to-web-app]
+
+## <a name="optional-modify-your-web-app-publish-settings"></a>Необязательно: Изменение параметров для публикации веб-приложения
 
 1. После публикации веб-приложения параметры будут сохранены в качестве параметров по умолчанию. Приложение можно запустить в Azure, щелкнув значок зеленой стрелки на панели инструментов. Вы можете изменить параметры, щелкнув раскрывающееся меню для веб-приложения, а затем — **Edit Configurations** (Изменить конфигурации).
 
@@ -151,20 +148,18 @@ ms.locfileid: "48892595"
 
 <!-- IMG List -->
 
-[AR01]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR01.png
-[AR02]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR02.png
-[AR03]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR03.png
-[AR04]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/AR04.png
-
+[add-docker-support]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/add-docker-support.png
+[browsing-to-web-app]:  media/azure-toolkit-for-intellij-hello-world-web-app-linux/browsing-to-web-app.png
+[create-container-registry-01]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-container-registry-01.png
+[create-container-registry-02]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-container-registry-02.png
 [docker-settings-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/docker-settings-menu.png
+[edit-configuration-dialog]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-dialog.png
+[edit-configuration-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-menu.png
 [file-new-project]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/file-new-project.png
-[maven-archetype-webapp]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-archetype-webapp.png
 [groupid-and-artifactid]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/groupid-and-artifactid.png
+[maven-archetype-webapp]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-archetype-webapp.png
 [maven-options]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/maven-options.png
 [project-name]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/project-name.png
-[add-docker-support]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/add-docker-support.png
+[run-on-web-app-for-containers]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/run-on-web-app-for-containers.png
 [run-on-web-app-linux]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/run-on-web-app-linux.png
-[create-web-app]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/create-web-app.png
-[edit-configuration-menu]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-menu.png
-[edit-configuration-dialog]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/edit-configuration-dialog.png
 [successfully-deployed]: media/azure-toolkit-for-intellij-hello-world-web-app-linux/successfully-deployed.png
