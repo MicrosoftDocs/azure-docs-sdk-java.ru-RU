@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 98b3dc1243bf293ede121eafd51b041649d165db
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 9223cc425fcef28369431fa1c7a7b93062a210c2
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991428"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335407"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Создание приложения Spring Cloud Stream Binder с помощью Центров событий Azure
 
@@ -143,12 +143,10 @@ ms.locfileid: "53991428"
    ```xml
    <dependency>
       <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhub-stream-binder</artifactId>
-      <version>1.0.0.M2</version>
+      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
+      <version>1.1.0.RC2</version>
    </dependency>
    ```
-
-   ![Редактирование файла pom.xml][SI03]
 
 1. Сохраните и закройте файл *pom.xml*.
 
@@ -197,6 +195,7 @@ ms.locfileid: "53991428"
      }
    ]
    ```
+   
 1. Укажите GUID подписки, которую вы собираетесь использовать в Azure, например:
 
    ```azurecli
@@ -417,6 +416,7 @@ ms.locfileid: "53991428"
 <!-- URL List -->
 
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
+[Azure для разработчиков Java]: https://docs.microsoft.com/java/azure/
 [Working with Azure DevOps and Java]: /azure/devops/ (Работа с Azure DevOps и Java)
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
