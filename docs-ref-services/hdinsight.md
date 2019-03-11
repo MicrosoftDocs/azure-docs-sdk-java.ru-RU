@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
 ms.date: 11/21/2018
-ms.openlocfilehash: 96ecbedc90706775a80b97c42f0d55a46a45b8ac
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 3827b5744a5d08c53cbbff1db29eca34194c1625
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338688"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335437"
 ---
 # <a name="hdinsight-java-management-sdk-preview"></a>Пакет SDK для управления HDInsight для Java (предварительная версия)
 
@@ -47,7 +47,6 @@ ms.locfileid: "52338688"
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-client-authentication</artifactId>
     <version>1.6.2</version>
-    <scope>test</scope>
   </dependency>
   ```
 
@@ -65,7 +64,7 @@ ms.locfileid: "52338688"
 Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого вы получите экземпляр `HDInsightManagementClientImpl`, в котором доступны различные методы (описанные далее) для операций управления.
 
 > [!NOTE]
-> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Все методы аутентификации см. в руководстве по [аутентификации с использованием библиотек управления Azure для Java](https://docs.microsoft.com/en-us/java/azure/java-sdk-azure-authenticate?view=azure-java-stable).
+> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Все способы описаны в статье [Проверка подлинности с использованием библиотек управления Azure для Java](https://docs.microsoft.com/en-us/java/azure/java-sdk-azure-authenticate?view=azure-java-stable)
 
 ### <a name="authentication-example-using-a-service-principal"></a>Пример аутентификации с помощью субъекта-службы
 
@@ -150,7 +149,8 @@ public class Main {
                 CLIENT_SECRET,
                 AzureEnvironment.AZURE);
 
-        HDInsightManagementClientImpl client = new HDInsightManagementClientImpl(credentials);
+        HDInsightManagementClientImpl client = new HDInsightManagementClientImpl(credentials)
+                .withSubscriptionId(SUBSCRIPTION_ID);
 ```
 
 
