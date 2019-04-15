@@ -363,7 +363,7 @@ ms.locfileid: "53991539"
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   В журнале приложения должна появиться запись "hello". Например: 
+   В журналах приложения должна появиться запись "hello". Например: 
 
    ```shell
    [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2

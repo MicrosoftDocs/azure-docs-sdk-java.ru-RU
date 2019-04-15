@@ -385,7 +385,7 @@ ms.locfileid: "57335407"
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   В журнале приложения должна появиться запись "hello". Например: 
+   В журналах приложения должна появиться запись "hello". Например: 
 
    ```shell
    [Thread-13] INFO com.wingtiptoys.eventhub.EventhubSink - New message received: 'hello'
