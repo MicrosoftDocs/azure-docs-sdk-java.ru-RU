@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 87bbf46fe5b22c4a147d6010d3813334caa774fb
-ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
+ms.openlocfilehash: 42bb030a916cc5aaf1e20242518a0a400b8baa88
+ms.sourcegitcommit: 3b10fe30dcc83e4c2e4c94d5b55e37ddbaa23c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57335417"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59071013"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 
@@ -103,98 +103,54 @@ ms.locfileid: "57335417"
 
 1. Создайте частный реестр контейнеров Azure в группе ресурсов. Позднее в руководстве пример принудительно отправляется в этот реестр как образ Docker. Замените `wingtiptoysregistry` уникальным именем для реестра.
    ```azurecli
-   az acr create --admin-enabled --resource-group wingtiptoys-kubernetes--location eastus \
+   az acr create --resource-group wingtiptoys-kubernetes --location eastus \
     --name wingtiptoysregistry --sku Basic
    ```
 
-## <a name="push-your-app-to-the-container-registry"></a>Принудительная отправка приложения в реестр контейнеров
+## <a name="push-your-app-to-the-container-registry-via-jib"></a>Принудительная отправка приложения в реестр контейнеров с использованием Jib
 
-1. Перейдите в каталог конфигурации для установки Maven (по умолчанию ~/.m2/ или C:\Users\username\.m2) и откройте файл *settings.xml* в текстовом редакторе.
-
-1. Получите пароль для реестра контейнеров из Azure CLI.
+1. Войдите в Реестр контейнеров с помощью Azure CLI.
    ```azurecli
-   az acr credential show --name wingtiptoysregistry --query passwords[0]
-   ```
-
-   ```json
-   {
-     "name": "password",
-     "value": "AbCdEfGhIjKlMnOpQrStUvWxYz"
-   }
-   ```
-
-1. Добавьте идентификатор и пароль реестра контейнеров Azure для новой коллекции `<server>` в файле *settings.xml*.
-`id` и `username` — это имена реестра. Используйте значение `password` из предыдущей команды (без кавычек).
-
-   ```xml
-   <servers>
-      <server>
-         <id>wingtiptoysregistry</id>
-         <username>wingtiptoysregistry</username>
-         <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
-      </server>
-   </servers>
+   # set the default name for Azure Container Registry, otherwise you will need to specify the name in "az acr login"
+   az configure --defaults acr=wingtiptoysregistry
+   az acr login
    ```
 
 1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например, *C:\SpringBoot\gs-spring-boot-docker\complete* или */users/robert/SpringBoot/gs-spring-boot-docker/complete*) и откройте файл *pom.xml* в текстовом редакторе.
 
-1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив значение сервера входа для реестра контейнеров Azure.
+1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив имя для своего реестра в Реестре контейнеров Azure и последнюю версию [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin).
 
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
+      <jib-maven-plugin.version>1.0.2</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
 
-1. Обновите коллекцию `<plugins>` в файле *pom.xml* таким образом, чтобы в `<plugin>` содержались адрес сервера входа и имя реестра контейнеров Azure.
+1. Обновите коллекцию `<plugins>` в файле *pom.xml* таким образом, чтобы в `<plugin>` содержался подключаемый модуль `jib-maven-plugin`.
 
    ```xml
    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.11</version>
-      <configuration>
-         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <buildArgs>
-            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-         </buildArgs>
-         <baseImage>java</baseImage>
-         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-         <resources>
-            <resource>
-               <targetPath>/</targetPath>
-               <directory>${project.build.directory}</directory>
-               <include>${project.build.finalName}.jar</include>
-            </resource>
-         </resources>
-         <serverId>wingtiptoysregistry</serverId>
-         <registryUrl>https://wingtiptoysregistry.azurecr.io</registryUrl>
-      </configuration>
+     <artifactId>jib-maven-plugin</artifactId>
+     <groupId>com.google.cloud.tools</groupId>
+     <version>${jib-maven-plugin.version}</version>
+     <configuration>
+        <from>              
+            <image>openjdk:8-jre-alpine</image>
+        </from>
+        <to>                
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+        </to>
+     </configuration>
    </plugin>
    ```
 
-1. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните указанную ниже команду для создания контейнера Docker и отправки образа в реестр:
+1. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните указанную ниже команду для создания образа и его отправки в реестр:
 
    ```
-   mvn package dockerfile:build -DpushImage
+   mvn compile jib:build
    ```
-
-> [!NOTE]
->
->  При отправке образа из Maven в Azure может появиться сообщение об ошибке такого типа:
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: no basic auth credentials`
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: Incomplete Docker registry authorization credentials. Please provide all of username, password, and email or none.`
->
-> При возникновении этой ошибки войдите в Azure из командной строки Docker.
->
-> `docker login -u wingtiptoysregistry -p "AbCdEfGhIjKlMnOpQrStUvWxYz" wingtiptoysregistry.azurecr.io`
->
-> Затем принудительно отправьте контейнер:
->
-> `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Создание в Службе контейнеров Azure кластера Kubernetes с помощью Azure CLI
 
@@ -205,8 +161,31 @@ ms.locfileid: "57335417"
    ```
    Выполнение этой команды может занять некоторое время.
 
-1. При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. Чтобы предоставить AKS доступ к ACR, выполните инструкции из статьи [Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes].
+1. При использовании Реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо предоставить Службе Azure Kubernetes доступ для извлечения данных из Реестра контейнеров Azure. Когда вы создаете Службу Kubernetes, в Azure создается субъект-служба по умолчанию. Выполните приведенные ниже скрипты в Bash или PowerShell, чтобы предоставить AKS доступ к ACR. Дополнительные сведения см. в статье об [Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes].
 
+```bash
+   # Get the id of the service principal configured for AKS
+   CLIENT_ID=$(az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
+   
+   # Get the ACR registry resource id
+   ACR_ID=$(az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
+
+  -- или --
+
+```PowerShell
+   # Get the id of the service principal configured for AKS
+   $CLIENT_ID = az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv
+   
+   # Get the ACR registry resource id
+   $ACR_ID = az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
 
 1. Установите `kubectl` с использованием Azure CLI. Пользователи Linux могут добавить к этой команде префикс `sudo`, так как она развертывает интерфейс командной строки Kubernetes в `/usr/local/bin`.
    ```azurecli
@@ -221,49 +200,6 @@ ms.locfileid: "57335417"
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>Развертывание образа в кластере Kubernetes
 
 В этом руководстве с помощью `kubectl` развертывается приложение, а затем предоставляется возможность изучить развертывание с помощью веб-интерфейса Kubernetes.
-
-### <a name="deploy-with-the-kubernetes-web-interface"></a>Развертывание с помощью веб-интерфейса Kubernetes
-
-1. Откройте окно командной строки.
-
-1. Откройте веб-сайт конфигурации кластера Kubernetes в браузере по умолчанию:
-   ```
-   az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
-   ```
-
-1. Когда в браузере откроется веб-сайт конфигурации Kubernetes, щелкните ссылку, чтобы **развернуть контейнерное приложение**:
-
-   ![Веб-сайт конфигурации Kubernetes][KB01]
-
-1. Когда отобразится страница **Resource Creation** (Создание ресурса), укажите следующие параметры:
-
-   a. Выберите **Create an App** (Создать приложение).
-
-   b. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
-
-   c. Укажите сервер входа и образ контейнера, заданные ранее, в поле **Образ контейнера** (например, *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*).
-
-   4.3. Для параметра **Служба** выберите значение **Внешняя**.
-
-   д. Укажите внешний и внутренний порты в текстовых полях **Порт** и **Целевой порт**.
-
-   ![Веб-сайт конфигурации Kubernetes][KB02]
-
-
-1. Нажмите кнопку **Развернуть**, чтобы развернуть контейнер.
-
-   ![Развертывание Kubernetes][KB05]
-
-1. После развертывания приложение Spring Boot отобразится в списке **Службы**.
-
-   ![Службы Kubernetes][KB06]
-
-1. Щелкнув ссылку для **внешних конечных точек**, можно просмотреть сведения о выполнении приложения Spring Boot в Azure.
-
-   ![Службы Kubernetes][KB07]
-
-   ![Просмотр примера приложения в Azure][SB02]
-
 
 ### <a name="deploy-with-kubectl"></a>Развертывание с помощью kubectl
 
@@ -296,11 +232,54 @@ ms.locfileid: "57335417"
 1. После развертывания приложения в кластере подайте запрос на внешний IP-адрес и откройте его в своем веб-браузере:
 
    ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=${namespace}
+   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
    ```
 
    ![Просмотр примера приложения в Azure][SB02]
 
+
+
+### <a name="deploy-with-the-kubernetes-web-interface"></a>Развертывание с помощью веб-интерфейса Kubernetes
+
+1. Откройте окно командной строки.
+
+1. Откройте веб-сайт конфигурации кластера Kubernetes в браузере по умолчанию:
+   ```
+   az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
+   ```
+
+1. Когда в браузере откроется веб-сайт конфигурации Kubernetes, щелкните ссылку, чтобы **развернуть контейнерное приложение**:
+
+   ![Веб-сайт конфигурации Kubernetes][KB01]
+
+1. Когда отобразится страница **Resource Creation** (Создание ресурса), укажите следующие параметры:
+
+   a. Выберите **Create an App** (Создать приложение).
+
+   b. Укажите имя приложения Spring Boot в поле **Имя приложения** (например, *gs-spring-boot-docker*).
+
+   c. Укажите сервер входа и образ контейнера, заданные ранее, в поле **Образ контейнера** (например, *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*).
+
+   d. Для параметра **Служба** выберите значение **Внешняя**.
+
+   д. Укажите внешний и внутренний порты в текстовых полях **Порт** и **Целевой порт**.
+
+   ![Веб-сайт конфигурации Kubernetes][KB02]
+
+
+1. Нажмите кнопку **Развернуть**, чтобы развернуть контейнер.
+
+   ![Развертывание Kubernetes][KB05]
+
+1. После развертывания приложение Spring Boot отобразится в списке **Службы**.
+
+   ![Службы Kubernetes][KB06]
+
+1. Щелкнув ссылку для **внешних конечных точек**, можно просмотреть сведения о выполнении приложения Spring Boot в Azure.
+
+   ![Службы Kubernetes][KB07]
+
+   ![Просмотр примера приложения в Azure][SB02]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -311,10 +290,9 @@ ms.locfileid: "57335417"
 
 ### <a name="additional-resources"></a>Дополнительные ресурсы
 
-Дополнительные сведения об использовании Spring Boot в Azure см. в следующих статьях:
+Дополнительные сведения об использовании Spring Boot в Azure см. в следующей статье:
 
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
-* [Развертывание приложения Spring Boot в Linux в службе контейнеров Azure](deploy-spring-boot-java-app-on-linux.md)
 
 Дополнительные сведения об использовании Java в Azure см. в статьях [Azure для разработчиков Java] и [Working with Azure DevOps and Java] (Работа с Azure DevOps и Java).
 
@@ -339,6 +317,8 @@ ms.locfileid: "57335417"
 * [Pull an Image from a Private Registry] (Извлечение образа из частного реестра)
 
 Дополнительные примеры использования пользовательских образов Docker в Azure см. в разделе [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux].
+
+Дополнительные сведения об итеративном выполнении и отладке контейнеров непосредственно в Службе Azure Kubernetes (AKS) с помощью Azure Dev Spaces см. в разделе [Начало работы в Azure Dev Spaces с использованием Java].
 
 <!-- URL List -->
 
@@ -369,7 +349,7 @@ ms.locfileid: "57335417"
 <!-- Newly added -->
 [Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes]: /azure/container-registry/container-registry-auth-aks/
 [Руководства по Java для Visual Studio Code]: https://code.visualstudio.com/docs/java/java-kubernetes/
-
+[Начало работы в Azure Dev Spaces с использованием Java]: https://docs.microsoft.com/en-us/azure/dev-spaces/get-started-java
 <!-- IMG List -->
 
 [SB01]: ./media/deploy-spring-boot-java-app-on-kubernetes/SB01.png
