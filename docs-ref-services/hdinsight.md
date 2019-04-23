@@ -7,15 +7,15 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
-ms.date: 11/21/2018
-ms.openlocfilehash: 0ae8d78a0618c4dbcc5e734fce311f7c2e5684bd
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.date: 04/15/2019
+ms.openlocfilehash: fe87c9214e2a620230cf2f1f52261fd66a2b8857
+ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489652"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59705122"
 ---
-# <a name="hdinsight-java-management-sdk-preview"></a>Пакет SDK для управления HDInsight для Java (предварительная версия)
+# <a name="hdinsight-sdk-for-java"></a>Пакет SDK HDInsight для Java
 
 ## <a name="overview"></a>Обзор
 
@@ -29,7 +29,7 @@ ms.locfileid: "58489652"
 
 ## <a name="sdk-installation"></a>Установка пакета SDK
 
-Пакет SDK HDInsight для Java доступен в [репозитории Maven](https://mvnrepository.com/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight). Добавьте следующую зависимость в файл pom.xml:
+Пакет SDK HDInsight для Java доступен в [репозитории Maven](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight). Добавьте следующую зависимость в файл pom.xml:
 
 ```
 <dependency>
@@ -41,21 +41,21 @@ ms.locfileid: "58489652"
 
 Также необходимо добавить такие зависимости в файл pom.xml:
 
-* [Azure Client Authentication Library:](https://mvnrepository.com/artifact/com.microsoft.azure/azure-client-authentication/1.6.2)
+* [Azure Client Authentication Library:](https://search.maven.org/artifact/com.microsoft.azure/azure-client-authentication)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-client-authentication</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
-* [Azure Java Client Runtime For ARM:](https://mvnrepository.com/artifact/com.microsoft.azure/azure-arm-client-runtime/1.6.2)
+* [Azure Java Client Runtime For ARM:](https://search.maven.org/artifact/com.microsoft.azure/azure-arm-client-runtime)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-arm-client-runtime</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
@@ -153,7 +153,6 @@ public class Main {
                 .withSubscriptionId(SUBSCRIPTION_ID);
 ```
 
-
 ## <a name="cluster-management"></a>Управление кластерами
 
 > [!NOTE]
@@ -162,6 +161,10 @@ public class Main {
 ### <a name="create-a-cluster"></a>Создание кластера
 
 Кластер можно создать, вызвав `client.clusters().create()`.
+
+#### <a name="samples"></a>Примеры
+
+Для создания нескольких распространенных типов кластеров HDInsight доступны примеры кода: [Примеры Java для HDInsight](https://github.com/Azure-Samples/hdinsight-java-sdk-samples).
 
 #### <a name="example"></a>Пример
 
