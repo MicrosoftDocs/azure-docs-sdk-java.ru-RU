@@ -37,7 +37,7 @@ mvn clean compile exec:java
 
 [!INCLUDE [auth-include](includes/java-auth-include.md)]
 
-## <a name="create-a-sql-database-server-with-an-elastic-pool"></a>Создание сервера базы данных SQL с эластичным пулом
+## <a name="create-a-sql-database-server-with-an-elastic-pool"></a>Создание сервера Базы данных SQL с эластичным пулом
 
 ```java
 SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
