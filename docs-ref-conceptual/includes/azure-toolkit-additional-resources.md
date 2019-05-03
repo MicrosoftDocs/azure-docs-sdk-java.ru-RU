@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ebe035b7275083cf715f4b94be876fe49514e562
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61590412"
+---
 Дополнительные сведения о наборах средств Azure для Eclipse и IntelliJ IDE см. по следующим ссылкам:
 
 * [Набор средств Azure для Eclipse](../eclipse/azure-toolkit-for-eclipse.md) 
@@ -14,5 +22,5 @@
 Дополнительные сведения об использовании Java в Azure см. по следующим ссылкам: 
 
 * [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) 
-* [Работа с Visual Studio Team Services (VSTS) и Java](https://java.visualstudio.com/) 
+* [Инструменты Java для Visual Studio Team Services](https://java.visualstudio.com/) 
 <!-- TODO: Add URLs for Java in VSCode here --> 
