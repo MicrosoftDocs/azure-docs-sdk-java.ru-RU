@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: a9d4bd5a1677078431b5502b276b17cd973cbea0
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.openlocfilehash: 407b852e24ef88d2fb075bd064f1acf2b107ddc1
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489662"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270867"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Развертывание приложения Spring Boot в Службе приложений Azure для контейнеров
 
@@ -118,104 +118,86 @@ ms.locfileid: "58489662"
 
 ## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a>Настройка Maven для использования ключей доступа к реестру контейнеров Azure
 
-1. Перейдите в каталог конфигурации для установки Maven и откройте файл *settings.xml* в текстовом редакторе.
+1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например "*C:\SpringBoot\gs-spring-boot-docker\complete*" или " */users/robert/SpringBoot/gs-spring-boot-docker/complete*") и откройте файл *pom.xml* в текстовом редакторе.
 
-1. Добавьте параметры доступа к реестру контейнеров Azure из предыдущего раздела этого учебника в коллекцию `<servers>` в файле *settings.xml*, например:
-
-   ```xml
-   <servers>
-      <server>
-         <id>wingtiptoysregistry</id>
-         <username>wingtiptoysregistry</username>
-         <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
-      </server>
-   </servers>
-   ```
-
-1. Перейдите в каталог завершенного проекта для приложения Spring Boot (например "*C:\SpringBoot\gs-spring-boot-docker\complete*" или "*/users/robert/SpringBoot/gs-spring-boot-docker/complete*") и откройте файл *pom.xml* в текстовом редакторе.
-
-1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив значение сервера входа для реестра контейнеров Azure из предыдущего раздела данного учебника, например:
+1. Обновите коллекцию `<properties>` в файле *pom.xml*, добавив последнюю версию [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin), значение сервера входа и параметры доступа для Реестра контейнеров Azure из предыдущего раздела данного учебника. Например:
 
    ```xml
    <properties>
+      <jib-maven-plugin.version>1.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
+      <username>wingtiptoysregistry</username>
+      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. Обновите коллекцию `<plugins>` в файле *pom.xml* таким образом, чтобы в `<plugin>` содержались адрес сервера входа и имя для реестра контейнеров Azure из предыдущего раздела данного учебника. Например: 
+1. Добавьте [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) в коллекцию `<plugins>` в файле *pom.xml*, укажите базовый образ между тегами `<from>/<image>` и имя окончательного образа `<to>/<image>`, а также укажите имя пользователя и пароль из предыдущего раздела между тегами `<to>/<auth>`. Например:
 
    ```xml
    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.11</version>
-      <configuration>
-         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <dockerDirectory>src/main/docker</dockerDirectory>
-         <resources>
-            <resource>
-               <targetPath>/</targetPath>
-               <directory>${project.build.directory}</directory>
-               <include>${project.build.finalName}.jar</include>
-            </resource>
-         </resources>
-         <serverId>wingtiptoysregistry</serverId>
-         <registryUrl>https://wingtiptoysregistry.azurecr.io</registryUrl>
-      </configuration>
+     <artifactId>jib-maven-plugin</artifactId>
+     <groupId>com.google.cloud.tools</groupId>
+     <version>${jib-maven-plugin.version}</version>
+     <configuration>
+        <from>
+            <image>openjdk:8-jre-alpine</image>
+        </from>
+        <to>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+            <auth>
+               <username>${username}</username>
+               <password>${password}</password>
+            </auth>
+        </to>
+     </configuration>
    </plugin>
    ```
 
 1. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните команду ниже для перестроения приложения и отправки контейнера в реестр контейнеров Azure:
 
-   ```
-   mvn package docker:build -DpushImage 
+   ```cmd
+   mvn compile jib:build
    ```
 
 > [!NOTE]
 >
-> При отправке контейнера Docker в Azure может появиться сообщение об ошибке, похожее на одно из показанных ниже, даже если контейнер Docker был успешно создан:
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: no basic auth credentials`
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: Incomplete Docker registry authorization credentials. Please provide all of username, password, and email or none.`
->
-> В этом случае, возможно, потребуется войти в учетную запись Azure из командной строки Docker, например, выполнив следующую команду.
->
-> `docker login -u wingtiptoysregistry -p "AbCdEfGhIjKlMnOpQrStUvWxYz" wingtiptoysregistry.azurecr.io`
->
-> Затем контейнер можно передать из командной строки, например:
->
-> `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
+> При использовании Jib для отправки образа в Реестр контейнеров Azure образ не будет учитывать *Dockerfile* (дополнительные сведения см. в [этом](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html) документе).
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>Создание веб-приложения в Linux в службе приложений Azure с помощью образа контейнера
 
 1. Перейдите на [портал Azure] и выполните вход.
 
-2. Щелкните значок меню **+ Создать**, нажмите кнопку **Интернет + мобильные устройства**, а затем нажмите кнопку **веб-приложения на платформе Linux**.
+2. Щелкните значок меню **+ Создать ресурс**, а затем последовательно выберите **Веб** и **Веб-приложение для контейнеров**.
    
    ![Создание веб-приложения на портале Azure][LX01]
 
 3. Когда отобразится страница **Веб-приложение в Linux**, введите следующие сведения.
 
-   a. Введите уникальное имя в поле **Имя приложения**, например "*wingtiptoyslinux*."
+   a. Введите уникальное имя в поле **Имя приложения**, например *wingtiptoyslinux*.
 
    b. В раскрывающемся списке выберите свою **подписку**.
 
    c. Выберите существующую **группу ресурсов** или укажите имя, чтобы создать новую группу ресурсов.
 
-   d. Нажмите кнопку **Настройка контейнера** и введите следующие сведения.
+   d. В качестве **ОС** выберите *Linux*.
 
-   * Выберите **Частный реестр**.
+   д. Щелкните **План службы приложений или расположение** и выберите существующий план службы приложений или щелкните **Создать**, чтобы создать другой план службы приложений.
 
-   * **Образ и дополнительный тег**: задайте имя контейнера из более ранней версии, например *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*.
+   Е. Нажмите кнопку **Настройка контейнера** и введите следующие сведения.
 
-   * **URL-адрес сервера**. Укажите URL-адрес реестра из более ранней версии, например *<https://wingtiptoysregistry.azurecr.io>*.
+   * Выберите **Один контейнер** и **Реестр контейнеров Azure**.
 
-   * **Имя входа пользователя** и **Пароль**: укажите учетные данные для входа из своих **ключей доступа**, которые использовались на предыдущих шагах.
+   * **Реестр**: Выберите имя контейнера, созданное ранее, например *wingtiptoysregistry*.
+
+   * **Образ**. Выберите имя образа, например *gs-spring-boot-docker*.
    
-   д. После ввода всех этих данных нажмите кнопку **ОК**.
+   * **Тег**. Выберите тег для образа, например *latest*.
+   
+   * **Загрузочный файл**. Оставьте это поле пустым, так как образ уже включает команду запуска.
+   
+   д. После ввода всех этих данных нажмите кнопку **Применить**.
 
    ![Настройка параметров веб-приложения][LX02]
 
@@ -227,13 +209,11 @@ ms.locfileid: "58489662"
 >
 > 1. Перейдите на [портал Azure] и выполните вход.
 > 
-> 2. Щелкните значок для **служб приложений**. (См. элемент ном. 1 на рисунке ниже.)
+> 2. Щелкните значок для **Службы приложений** и выберите веб-приложение из списка.
 >
-> 3. Выберите веб-приложение в списке. (Элемент ном. 2 на рисунке ниже.)
+> 4. Щелкните **Конфигурация**. (Элемент 1 на приведенном ниже рисунке.)
 >
-> 4. Щелкните **Параметры приложения**. (Элемент ном. 3 на рисунке ниже.)
->
-> 5. В разделе **Параметры приложения** добавьте новую переменную среды с именем **PORT** и введите номер пользовательского порта в качестве значения. (Элемент ном. 4 на рисунке ниже.)
+> 5. В разделе **Параметры приложения** добавьте новый параметр с именем **PORT** и введите номер пользовательского порта в качестве значения. (Элементы 2, 3, 4 на приведенном ниже рисунке.)
 >
 > 6. Выберите команду **Сохранить**. (Элемент ном. 5 на рисунке ниже.)
 >
