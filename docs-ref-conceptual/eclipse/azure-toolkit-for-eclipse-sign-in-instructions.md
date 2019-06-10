@@ -14,131 +14,117 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 79f6cfd3b21d68c131a3f0052d86e4bcb3254e55
-ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.openlocfilehash: b4b13de38913ae6e7ae2bb09210ac742efc9d0ad
+ms.sourcegitcommit: d18d9dce22b7f7af178f756bd341433d24e3c3b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61591071"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66575316"
 ---
-# <a name="azure-sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a><span data-ttu-id="9897d-103">Инструкции по входу для набора средств Azure для Eclipse</span><span class="sxs-lookup"><span data-stu-id="9897d-103">Azure Sign In Instructions for the Azure Toolkit for Eclipse</span></span>
+# <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a><span data-ttu-id="4928d-103">Инструкции по входу для набора средств Azure в Eclipse</span><span class="sxs-lookup"><span data-stu-id="4928d-103">Sign-in instructions for the Azure Toolkit for Eclipse</span></span>
 
-<span data-ttu-id="9897d-104">Набор средств Azure для Eclipse предоставляет два метода для входа в систему с помощью учетной записи Azure:</span><span class="sxs-lookup"><span data-stu-id="9897d-104">The Azure Toolkit for Eclipse provides two methods for signing into your Azure account:</span></span>
+<span data-ttu-id="4928d-104">Набор средств Azure для Eclipse предоставляет два метода для входа в систему с помощью учетной записи Azure:</span><span class="sxs-lookup"><span data-stu-id="4928d-104">The Azure Toolkit for Eclipse provides two methods for signing into your Azure account:</span></span>
 
-  * <span data-ttu-id="9897d-105">**Автоматически** — при использовании этого метода создается файл учетных данных, содержащий данные субъекта-службы, после чего этот файл можно использовать для автоматического входа в учетную запись Azure.</span><span class="sxs-lookup"><span data-stu-id="9897d-105">**Automated** - when you are using this method, you will create a credentials file which contains your service principal data, after which you can use the credentials file to automatically sign into your Azure account.</span></span>
-  * <span data-ttu-id="9897d-106">**Интерактивно** — при использовании этого метода потребуется вводить учетные данные Azure при каждом входе в учетную запись Azure.</span><span class="sxs-lookup"><span data-stu-id="9897d-106">**Interactive** - when you are using this method, you will enter your Azure credentials each time you sign into your Azure account.</span></span>
+  - <span data-ttu-id="4928d-105">[вход в учетную запись Azure с помощью имени пользователя устройства](#sign-in-to-your-azure-account-by-device-login);</span><span class="sxs-lookup"><span data-stu-id="4928d-105">[Sign in to your Azure account by Device Login](#sign-in-to-your-azure-account-by-device-login)</span></span>
+  - <span data-ttu-id="4928d-106">[вход в учетную запись Azure с помощью субъекта-службы](#sign-in-to-your-azure-account-by-service-principal).</span><span class="sxs-lookup"><span data-stu-id="4928d-106">[Sign in to your Azure account by Service Principal](#sign-in-to-your-azure-account-by-service-principal)</span></span>
 
-<span data-ttu-id="9897d-107">В следующих разделах описано использование каждого из методов.</span><span class="sxs-lookup"><span data-stu-id="9897d-107">The steps in the following sections will describe how to use each method.</span></span>
+<span data-ttu-id="4928d-107">Предоставляются также методы [**выхода из системы**](#sign-out-of-your-azure-account).</span><span class="sxs-lookup"><span data-stu-id="4928d-107">[**Sign out**](#sign-out-of-your-azure-account) methods are also provided.</span></span>
 
 [!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
-## <a name="signing-into-your-azure-account-automatically-and-creating-a-credentials-file-to-use-in-the-future"></a><span data-ttu-id="9897d-108">Автоматический вход в учетную запись Azure и создание файла учетных данных для использования в будущем</span><span class="sxs-lookup"><span data-stu-id="9897d-108">Signing into your Azure account automatically and creating a credentials file to use in the future</span></span>
+## <a name="sign-in-to-your-azure-account-by-device-login"></a><span data-ttu-id="4928d-108">Вход в учетную запись Azure с помощью имени пользователя устройства</span><span class="sxs-lookup"><span data-stu-id="4928d-108">Sign in to your Azure account by Device Login</span></span>
 
-<span data-ttu-id="9897d-109">Описанные ниже действия помогут вам создать файл учетных данных, содержащий данные субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="9897d-109">The following steps will walk you through creating a credentials file which contains your service principal data.</span></span> <span data-ttu-id="9897d-110">После выполнения этих шагов Eclipse использует файл учетных данных для автоматического входа в Azure при каждом открытии проекта.</span><span class="sxs-lookup"><span data-stu-id="9897d-110">Once you have completed these steps, Eclipse will automatically use the credentials file to automatically sign you into Azure each time you open your project.</span></span>
+<span data-ttu-id="4928d-109">Чтобы войти в Azure с помощью имени пользователя устройства, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="4928d-109">To sign in Azure by device login, do the following:</span></span>
 
-1. <span data-ttu-id="9897d-111">Откройте проект с помощью Eclipse.</span><span class="sxs-lookup"><span data-stu-id="9897d-111">Open your project with Eclipse.</span></span>
+1. <span data-ttu-id="4928d-110">Откройте проект с помощью Eclipse.</span><span class="sxs-lookup"><span data-stu-id="4928d-110">Open your project with Eclipse.</span></span>
 
-1. <span data-ttu-id="9897d-112">Выберите **Сервис**, **Azure** и затем **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-112">Click **Tools**, then click **Azure**, and then click **Sign In**.</span></span>
+2. <span data-ttu-id="4928d-111">Выберите **Сервис**, **Azure** и затем **Войти**.</span><span class="sxs-lookup"><span data-stu-id="4928d-111">Click **Tools**, then click **Azure**, and then click **Sign In**.</span></span>
+   <span data-ttu-id="4928d-112">![Меню Eclipse для входа в систему Azure][I01]</span><span class="sxs-lookup"><span data-stu-id="4928d-112">![Eclipse Menu for Azure Sign In][I01]</span></span>
 
-   ![Меню Eclipse для входа в систему Azure][A01]
+3. <span data-ttu-id="4928d-113">В окне **Azure Sign In** (Вход в Azure) выберите **Device Login** (Имя пользователя устройства) и щелкните **Sign in** (Вход).</span><span class="sxs-lookup"><span data-stu-id="4928d-113">In the **Azure Sign In** window, select **Device Login**, and then click **Sign in**.</span></span>
 
-1. <span data-ttu-id="9897d-114">При отображении диалогового окна **Вход в Azure** выберите **Автоматически** и щелкните **Создать**.</span><span class="sxs-lookup"><span data-stu-id="9897d-114">When the **Azure Sign In** dialog box appears, select **Automated**, and then click **New**.</span></span>
+   ![Окно Azure Sign In (Вход в Azure) с выбранным именем пользователя устройства][I02]
 
-   ![Диалоговое окно входа][A02]
+4. <span data-ttu-id="4928d-115">В диалоговом окне **Azure Device Login** (Вход в систему устройства Azure) щелкните **Copy&Open** (Копировать и открыть).</span><span class="sxs-lookup"><span data-stu-id="4928d-115">Click **Copy&Open** in **Azure Device Login** dialog .</span></span>
 
-1. <span data-ttu-id="9897d-116">При отображении диалогового окна **Вход в Azure** введите учетные данные и щелкните **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-116">When the **Azure Log In** dialog box appears, enter your Azure credentials, and then click **Sign In**.</span></span>
+   ![Диалоговое окно входа Azure][I03]
 
-   ![Диалоговое окно входа в Azure][A03]
+> [!NOTE]
+>
+> <span data-ttu-id="4928d-117">Если браузер не открывается, настройте Eclipse, чтобы использовать внешний браузер, например Internet Explorer, Firefox или Chrome:</span><span class="sxs-lookup"><span data-stu-id="4928d-117">If the browser doesn't open, configure Eclipse to use an external browser like Internet Explorer, Firefox, or Chrome:</span></span>
+>
+> 1. <span data-ttu-id="4928d-118">Откройте Preferences > General > Web Browser > Use external web browser in Eclipse (Предпочтения > Общие > Веб-браузер > Использование внешнего веб-браузера в Eclipse).</span><span class="sxs-lookup"><span data-stu-id="4928d-118">Open Preferences -> General -> Web Browser -> Use external web browser in Eclipse</span></span>
+>
+> 2. <span data-ttu-id="4928d-119">Выберите предпочитаемый браузер.</span><span class="sxs-lookup"><span data-stu-id="4928d-119">Select the browser you prefer to use</span></span>
+>
 
-1. <span data-ttu-id="9897d-118">При отображении диалогового окна **Create authentication files** (Создание файлов проверки подлинности) выберите нужные подписки, конечный каталог и нажмите кнопку **Начать**.</span><span class="sxs-lookup"><span data-stu-id="9897d-118">When the **Create authentication files** dialog box appears, select the subscriptions that you want to use, choose your destination directory, and then click **Start**.</span></span>
+5. <span data-ttu-id="4928d-120">В браузере вставьте код устройства (скопированный при нажатии **Copy&Open** (Копировать и открыть) на последнем шаге), а затем нажмите кнопку **Далее**.</span><span class="sxs-lookup"><span data-stu-id="4928d-120">In the browser, paste your device code (which has been copied when you clicked **Copy&Open** in last step) and then click **Next**.</span></span>
 
-   ![Диалоговое окно входа в Azure][A04]
+   ![Вход в систему устройства в браузере][I04]
 
-1. <span data-ttu-id="9897d-120">Отображается диалоговое окно **Service Principal Creatation Status** (Состояние создания субъекта-службы). После успешного создания файлов нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="9897d-120">The **Service Principal Creatation Status** dialog box will be displayed, and after your files have been created successfully, click **OK**.</span></span>
+6. <span data-ttu-id="4928d-122">Наконец, в диалоговом окне **Select Subscriptions** (Выбор подписок) выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="4928d-122">Finally, in the **Select Subscriptions** dialog box, select the subscriptions that you want to use, then click **OK**.</span></span>
 
-   ![Диалоговое окно состояния создания субъекта-службы][A05]
+   ![Диалоговое окно выбора подписок][I05]
 
-1. <span data-ttu-id="9897d-122">При отображении диалогового окна **Вход в Azure** нажмите кнопку **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-122">When the **Azure Sign In** dialog box appears, click **Sign In**.</span></span>
+## <a name="sign-in-to-your-azure-account-by-service-principal"></a><span data-ttu-id="4928d-124">Вход в учетную запись Azure с помощью субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="4928d-124">Sign in to your Azure account by Service Principal</span></span>
+
+<span data-ttu-id="4928d-125">В этом разделе показано, как создать файл учетных данных, содержащий данные субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="4928d-125">This section walks you through creating a credentials file that contains your service principal data.</span></span> <span data-ttu-id="4928d-126">После выполнения этого процесса Eclipse использует файл учетных данных для автоматического входа в Azure при открытии проекта.</span><span class="sxs-lookup"><span data-stu-id="4928d-126">After you have completed this process, Eclipse uses the credentials file to automatically sign you in to Azure when open your project.</span></span>
+
+1. <span data-ttu-id="4928d-127">Откройте проект с помощью Eclipse.</span><span class="sxs-lookup"><span data-stu-id="4928d-127">Open your project with Eclipse.</span></span>
+
+2. <span data-ttu-id="4928d-128">Выберите **Сервис**, **Azure** и затем **Войти**.</span><span class="sxs-lookup"><span data-stu-id="4928d-128">Click **Tools**, then click **Azure**, and then click **Sign In**.</span></span>
+   <span data-ttu-id="4928d-129">![Команда Azure Sign In (Вход в Azure) в Eclipse][A01]</span><span class="sxs-lookup"><span data-stu-id="4928d-129">![The Eclipse Azure Sign In command][A01]</span></span>
+
+3. <span data-ttu-id="4928d-130">В окне **Azure Sign In** (Вход в Azure) выберите **Service Principal** (Субъект-служба).</span><span class="sxs-lookup"><span data-stu-id="4928d-130">In the **Azure Sign In** window, select **Service Principal**.</span></span> <span data-ttu-id="4928d-131">Если у вас еще нет файла проверки подлинности с помощью субъекта-службы, щелкните **New** (Создать), чтобы создать его.</span><span class="sxs-lookup"><span data-stu-id="4928d-131">If you do not have the service principal authentication file yet, click **New** to create one.</span></span> <span data-ttu-id="4928d-132">В противном случае вы можете щелкнуть **Browse** (Обзор), чтобы открыть нужный файл и перейти к шагу 8.</span><span class="sxs-lookup"><span data-stu-id="4928d-132">Otherwise you can click **Browse** to open it and jump to step 8.</span></span>
+
+   ![Окно Azure Sign In (Вход в Azure) с выбранным субъектом-службы][A02]
+
+4. <span data-ttu-id="4928d-134">В диалоговом окне **Azure Device Login** (Вход в систему устройства Azure) щелкните **Copy&Open** (Копировать и открыть).</span><span class="sxs-lookup"><span data-stu-id="4928d-134">Click **Copy&Open** in **Azure Device Login** dialog.</span></span>
+
+   ![Диалоговое окно входа Azure][A08]
+
+> [!NOTE]
+>
+> <span data-ttu-id="4928d-136">Если браузер не открывается, настройте Eclipse, чтобы использовать внешний браузер, например IE или Chrome:</span><span class="sxs-lookup"><span data-stu-id="4928d-136">If the browser doesn't open, configure eclipse to use an external browser like IE or Chrome:</span></span>
+>
+> 1. <span data-ttu-id="4928d-137">Откройте Preferences > General > Web Browser > Use external web browser in Eclipse (Предпочтения > Общие > Веб-браузер > Использование внешнего веб-браузера в Eclipse).</span><span class="sxs-lookup"><span data-stu-id="4928d-137">Open Preferences -> General -> Web Browser -> Use external web browser in Eclipse</span></span>
+>
+> 2. <span data-ttu-id="4928d-138">Выберите предпочитаемый браузер.</span><span class="sxs-lookup"><span data-stu-id="4928d-138">Select the browser you prefer to use</span></span>
+>
+
+5. <span data-ttu-id="4928d-139">В браузере вставьте код устройства (скопированный при нажатии **Copy&Open** (Копировать и открыть) на последнем шаге), а затем нажмите кнопку **Далее**.</span><span class="sxs-lookup"><span data-stu-id="4928d-139">In the browser, paste your device code (which has been copied when you click **Copy&Open** in last step) and then click **Next**.</span></span>
+
+   ![Вход в систему устройства в браузере][A03]
+
+6. <span data-ttu-id="4928d-141">В диалоговом окне **Create authentication files** (Создание файлов проверки подлинности) выберите нужные подписки, конечный каталог и нажмите кнопку **Start** (Начать).</span><span class="sxs-lookup"><span data-stu-id="4928d-141">In the **Create Authentication Files** window, select the subscriptions that you want to use, choose your destination directory, and then click **Start**.</span></span>
+
+   ![Окно Create authentication files (Создание файлов проверки подлинности)][A04]
+
+7. <span data-ttu-id="4928d-143">В диалоговом окне **Service Principal Creation Status** (Состояние создания субъекта-службы) после успешного создания файлов нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="4928d-143">In the **Service Principal Creation Status** dialog box, click **OK** after your files have been created successfully.</span></span>
+
+   ![Диалоговое окно Service Principal Creation Status (Состояние создания субъекта-службы)][A05]
+
+8. <span data-ttu-id="4928d-145">Адрес созданного файла будет автоматически заполнен в окне **Azure Sign In** (Вход в Azure). Теперь щелкните **Sign in** (Вход).</span><span class="sxs-lookup"><span data-stu-id="4928d-145">Address of the created file will be automatically filled in the **Azure Sign In** window, now click **Sign in**.</span></span>
 
    ![Диалоговое окно входа в Azure][A06]
 
-1. <span data-ttu-id="9897d-124">При отображении диалогового окна **Выбор подписок** выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="9897d-124">When the **Select Subscriptions** dialog box appears, select the subscriptions that you want to use, and then click **OK**.</span></span>
+9. <span data-ttu-id="4928d-147">Наконец, в диалоговом окне **Select Subscriptions** (Выбор подписок) выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="4928d-147">Finally, in the **Select Subscriptions** dialog box, select the subscriptions that you want to use, then click **OK**.</span></span>
 
    ![Диалоговое окно выбора подписок][A07]
 
-## <a name="signing-out-of-your-azure-account-when-you-signed-in-automatically"></a><span data-ttu-id="9897d-126">Выход из учетной записи Azure после автоматического входа</span><span class="sxs-lookup"><span data-stu-id="9897d-126">Signing out of your Azure account when you signed in automatically</span></span>
+## <a name="sign-out-of-your-azure-account"></a><span data-ttu-id="4928d-149">Выход из учетной записи Azure</span><span class="sxs-lookup"><span data-stu-id="4928d-149">Sign out of your Azure account</span></span>
 
-<span data-ttu-id="9897d-127">После настройки, описанной в предыдущем разделе, набор средств Azure будет автоматически выполнять выход из вашей учетной записи Azure при каждом перезапуске Eclipse.</span><span class="sxs-lookup"><span data-stu-id="9897d-127">After you have configured the steps in the previous section, the Azure Toolkit will automatically sign you into your Azure account each time you restart Eclipse.</span></span> <span data-ttu-id="9897d-128">Чтобы выйти из учетной записи Azure и предотвратить автоматический вход набора средств Azure, сделайте следующее.</span><span class="sxs-lookup"><span data-stu-id="9897d-128">However, to sign out of your Azure account and prevent the Azure Toolkit from signing you in automatically, use the following steps.</span></span>
+<span data-ttu-id="4928d-150">После настройки учетной записи путем выполнения действий, описанных в предыдущем разделе, при каждом перезапуске Eclipse будет автоматически выполняться вход.</span><span class="sxs-lookup"><span data-stu-id="4928d-150">After you have configured your account by preceding steps, you will be automatically signed in each time you start Eclipse.</span></span> <span data-ttu-id="4928d-151">Однако если вы хотите выйти из учетной записи Azure, сделайте следующее:</span><span class="sxs-lookup"><span data-stu-id="4928d-151">However, if you want to sign out of your Azure account, use the following steps.</span></span>
 
-1. <span data-ttu-id="9897d-129">В Eclipse выберите **Сервис**, **Azure** и затем **Выйти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-129">In Eclipse, click **Tools**, then click **Azure**, and then click **Sign Out**.</span></span>
-
-   ![Меню Eclipse для выхода из системы Azure][L01]
-
-1. <span data-ttu-id="9897d-131">При отображении диалогового окна **Выход из Azure** нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="9897d-131">When the **Azure Sign Out** dialog box appears, click **Yes**.</span></span>
-
-   ![Диалоговое окно выхода][L03]
-
-## <a name="signing-into-your-azure-account-automatically-using-a-credentials-file-which-you-have-already-created"></a><span data-ttu-id="9897d-133">Автоматический вход в учетную запись Azure с помощью созданного файла учетных данных</span><span class="sxs-lookup"><span data-stu-id="9897d-133">Signing into your Azure account automatically using a credentials file which you have already created</span></span>
-
-<span data-ttu-id="9897d-134">Если вы выходите из Azure во время применения Eclipse, потребуется перенастроить набор средств Azure для Eclipse, чтобы использовать созданный файл учетных данных для автоматического входа в учетную запись Azure.</span><span class="sxs-lookup"><span data-stu-id="9897d-134">If you sign out of Azure when you are using Eclipse, you will need to reconfigure the Azure Toolkit for Eclipse to use a credentials file which have created before you can automatically sign into your Azure acccount.</span></span> <span data-ttu-id="9897d-135">Указанные ниже шаги помогут настроить набор средств Azure для использования существующего файла учетных данных.</span><span class="sxs-lookup"><span data-stu-id="9897d-135">The following steps will walk you through configuring the Azure Toolkit to use an existing credentials file.</span></span>
-
-1. <span data-ttu-id="9897d-136">Откройте проект с помощью Eclipse.</span><span class="sxs-lookup"><span data-stu-id="9897d-136">Open your project with Eclipse.</span></span>
-
-1. <span data-ttu-id="9897d-137">Выберите **Сервис**, **Azure** и затем **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-137">Click **Tools**, then click **Azure**, and then click **Sign In**.</span></span>
-
-   ![Меню Eclipse для входа в систему Azure][A01]
-
-1. <span data-ttu-id="9897d-139">При отображении диалогового окна **Вход в Azure** выберите **Автоматически** и щелкните **Обзор**.</span><span class="sxs-lookup"><span data-stu-id="9897d-139">When the **Azure Sign In** dialog box appears, select **Automated**, and then click **Browse**.</span></span>
-
-   ![Диалоговое окно входа][A02]
-
-1. <span data-ttu-id="9897d-141">Когда откроется диалоговое окно **Select Authenticated File** (Выбор файла, прошедшего аутентификацию), выберите созданный ранее файл учетных данных и щелкните **Открыть**.</span><span class="sxs-lookup"><span data-stu-id="9897d-141">When the **Select Authenticated File** dialog box appears, select a credentials file which you created earlier, and then click **Open**.</span></span>
-
-   ![Диалоговое окно входа][A08]
-
-1. <span data-ttu-id="9897d-143">При отображении диалогового окна **Вход в Azure** нажмите кнопку **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-143">When the **Azure Sign In** dialog box appears, click **Sign In**.</span></span>
-
-   ![Диалоговое окно входа в Azure][A06]
-
-1. <span data-ttu-id="9897d-145">При отображении диалогового окна **Выбор подписок** выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="9897d-145">When the **Select Subscriptions** dialog box appears, select the subscriptions that you want to use, and then click **OK**.</span></span>
-
-   ![Диалоговое окно выбора подписок][A07]
-
-## <a name="signing-into-your-azure-account-interactively"></a><span data-ttu-id="9897d-147">Интерактивный вход в учетную запись Azure</span><span class="sxs-lookup"><span data-stu-id="9897d-147">Signing into your Azure account interactively</span></span>
-
-<span data-ttu-id="9897d-148">Ниже показано, как войти в Azure, вручную введя учетные данные Azure.</span><span class="sxs-lookup"><span data-stu-id="9897d-148">The following steps will illustrate how to sign into Azure by manually entering your Azure credentials.</span></span>
-
-1. <span data-ttu-id="9897d-149">Откройте проект с помощью Eclipse.</span><span class="sxs-lookup"><span data-stu-id="9897d-149">Open your project with Eclipse.</span></span>
-
-1. <span data-ttu-id="9897d-150">Выберите **Сервис**, **Azure** и затем **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-150">Click **Tools**, then click **Azure**, and then click **Sign In**.</span></span>
-
-   ![Меню Eclipse для входа в систему Azure][I01]
-
-1. <span data-ttu-id="9897d-152">При отображении диалогового окна **Вход в Azure** выберите **Интерактивно** и щелкните **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-152">When the **Azure Sign In** dialog box appears, select **Interactive**, and then click **Sign In**.</span></span>
-
-   ![Диалоговое окно входа][I02]
-
-1. <span data-ttu-id="9897d-154">При отображении диалогового окна **Вход в Azure** введите учетные данные и щелкните **Войти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-154">When the **Azure Log In** dialog box appears, enter your Azure credentials, and then click **Sign In**.</span></span>
-
-   ![Диалоговое окно входа в Azure][I03]
-
-1. <span data-ttu-id="9897d-156">При отображении диалогового окна **Выбор подписок** выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="9897d-156">When the **Select Subscriptions** dialog box appears, select the subscriptions that you want to use, and then click **OK**.</span></span>
-
-   ![Диалоговое окно выбора подписок][I04]
-
-## <a name="signing-out-of-your-azure-account-when-you-signed-in-interactively"></a><span data-ttu-id="9897d-158">Выход из учетной записи Azure после интерактивного входа</span><span class="sxs-lookup"><span data-stu-id="9897d-158">Signing out of your Azure account when you signed in interactively</span></span>
-
-<span data-ttu-id="9897d-159">После настройки, описанной в предыдущем разделе, вы будете автоматически выходить из своей учетной записи Azure при каждом перезапуске Eclipse.</span><span class="sxs-lookup"><span data-stu-id="9897d-159">After you have configured the steps in the previous section, you will automatically signed out of your Azure account each time you restart Eclipse.</span></span> <span data-ttu-id="9897d-160">Однако если вы хотите выйти из учетной записи Azure без перезапуска Eclipse, выполните указанные ниже действия.</span><span class="sxs-lookup"><span data-stu-id="9897d-160">However, if you want to sign out of your Azure account without restarting Eclipse, use the following steps.</span></span>
-
-1. <span data-ttu-id="9897d-161">В Eclipse выберите **Сервис**, **Azure** и затем **Выйти**.</span><span class="sxs-lookup"><span data-stu-id="9897d-161">In Eclipse, click **Tools**, then click **Azure**, and then click **Sign Out**.</span></span>
+1. <span data-ttu-id="4928d-152">В Eclipse выберите **Сервис**, **Azure** и затем **Выйти**.</span><span class="sxs-lookup"><span data-stu-id="4928d-152">In Eclipse, click **Tools**, then click **Azure**, and then click **Sign Out**.</span></span>
 
    ![Меню Eclipse для выхода из системы Azure][L01]
 
-1. <span data-ttu-id="9897d-163">При отображении диалогового окна **Выход из Azure** нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="9897d-163">When the **Azure Sign Out** dialog box appears, click **Yes**.</span></span>
+2. <span data-ttu-id="4928d-154">При отображении диалогового окна **Выход из Azure** нажмите кнопку **Да**.</span><span class="sxs-lookup"><span data-stu-id="4928d-154">When the **Azure Sign Out** dialog box appears, click **Yes**.</span></span>
 
    ![Диалоговое окно выхода][L02]
 
-## <a name="next-steps"></a><span data-ttu-id="9897d-165">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="9897d-165">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="4928d-156">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="4928d-156">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
@@ -151,6 +137,7 @@ ms.locfileid: "61591071"
 [I02]: media/azure-toolkit-for-eclipse-sign-in-instructions/I02.png
 [I03]: media/azure-toolkit-for-eclipse-sign-in-instructions/I03.png
 [I04]: media/azure-toolkit-for-eclipse-sign-in-instructions/I04.png
+[I05]: media/azure-toolkit-for-eclipse-sign-in-instructions/I05.png
 
 [A01]: media/azure-toolkit-for-eclipse-sign-in-instructions/A01.png
 [A02]: media/azure-toolkit-for-eclipse-sign-in-instructions/A02.png

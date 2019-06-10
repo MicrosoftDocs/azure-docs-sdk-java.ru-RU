@@ -1,7 +1,8 @@
 ---
-title: Создание веб-приложения Hello World для Azure с помощью Eclipse
+title: Создание веб-приложения Hello World для Службы приложений Azure с помощью IntelliJ
 description: В этом учебнике показано, как с помощью набора средств Azure для IntelliJ создать веб-приложение Hello World для Azure.
 services: app-service
+keywords: java, intellij, web app, azure app service, hello world, quick start
 documentationcenter: java
 author: selvasingh
 manager: routlaw
@@ -14,114 +15,140 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 7055751d1b1c37e019ef4ed59f1710ce6905e9f8
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.openlocfilehash: ae0749ce1ddab971f1a83e2e5e58492fd8ccb287
+ms.sourcegitcommit: 733115fe0a7b5109b511b4a32490f8264cf91217
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489642"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626102"
 ---
-# <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a><span data-ttu-id="7188f-103">Создание веб-приложения Hello World для Azure с помощью Eclipse</span><span class="sxs-lookup"><span data-stu-id="7188f-103">Create a Hello World web app for Azure using IntelliJ</span></span>
+# <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a><span data-ttu-id="b400f-104">Создание веб-приложения Hello World для Службы приложений Azure с помощью IntelliJ</span><span class="sxs-lookup"><span data-stu-id="b400f-104">Create a Hello World web app for Azure App Service using IntelliJ</span></span>
 
-<span data-ttu-id="7188f-104">В этом руководстве показано, как создать базовое приложение Hello World для Azure и развернуть его как веб-приложение с помощью [Набор средств Azure для IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="7188f-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for IntelliJ].</span></span>
+<span data-ttu-id="b400f-105">С помощью подключаемого модуля с открытым кодом [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) всего за несколько минут можно создать и развернуть в Службе приложений Azure базовое приложение Hello World в качестве веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="b400f-105">Using open sourced [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) plugin, creating and deploying a basic Hello World application to Azure App Service as a web app can be done in a few minutes.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="7188f-105">Дополнительные сведения о версии, в которой используются [Набор средств Azure для Eclipse], см. в статье [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse][eclipse-hello-world].</span><span class="sxs-lookup"><span data-stu-id="7188f-105">For a version of this article that uses the [Azure Toolkit for Eclipse], see [Create a Hello World web app for Azure using Eclipse][eclipse-hello-world].</span></span>
+> <span data-ttu-id="b400f-106">Если вы предпочитаете использовать Eclipse, ознакомьтесь с нашим [аналогичным учебником для Eclipse][eclipse-hello-world].</span><span class="sxs-lookup"><span data-stu-id="b400f-106">If you prefer using Eclipse, check out our [similar tutorial for Eclipse][eclipse-hello-world].</span></span>
+>
+>[!INCLUDE [quickstarts-free-trial-note](../includes/quickstarts-free-trial-note.md)]
+>
+> <span data-ttu-id="b400f-107">Обязательно очистите ресурсы после выполнения действий из этого учебника.</span><span class="sxs-lookup"><span data-stu-id="b400f-107">Don't forget to clean up the resources after you complete this tutorial.</span></span> <span data-ttu-id="b400f-108">В этом случае работа с этим учебником не приведет к превышению квоты бесплатной учетной записи.</span><span class="sxs-lookup"><span data-stu-id="b400f-108">In that case, running this guide will not exceed your free account quota.</span></span>
 >
 
-> [!IMPORTANT]
-> 
-> <span data-ttu-id="7188f-106">Набор средств Azure для IntelliJ обновлен в августе 2017 года. В него добавлен другой рабочий процесс.</span><span class="sxs-lookup"><span data-stu-id="7188f-106">The Azure Toolkit for IntelliJ was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="7188f-107">В этой статье описывается, как создать веб-приложение Hello World с помощью набора средств Azure для IntelliJ версии 3.0.7 (или более поздней).</span><span class="sxs-lookup"><span data-stu-id="7188f-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for IntelliJ.</span></span> <span data-ttu-id="7188f-108">Если вы используете набор средств версии 3.0.6 (или более ранней), необходимо выполнить действия, описанные в руководстве по [созданию веб-приложения Hello World для Azure в IntelliJ с помощью набора средств предыдущих версий][Legacy Version].</span><span class="sxs-lookup"><span data-stu-id="7188f-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in IntelliJ using the legacy toolkit][Legacy Version].</span></span>
-> 
+[!INCLUDE [azure-toolkit-for-intellij-basic-prerequisites](../includes/azure-toolkit-for-intellij-basic-prerequisites.md)]
 
-<span data-ttu-id="7188f-109">После завершения этого учебника приложение при просмотре в веб-браузере будет выглядеть следующим образом:</span><span class="sxs-lookup"><span data-stu-id="7188f-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
+## <a name="installation-and-sign-in"></a><span data-ttu-id="b400f-109">Установка и вход</span><span class="sxs-lookup"><span data-stu-id="b400f-109">Installation and Sign-in</span></span>
 
-![Предварительный просмотр приложения Hello World][browse-web-app]
+1. <span data-ttu-id="b400f-110">В диалоговом окне Settings/Preferences (Параметры и предпочтения) в IntelliJ IDEA (CTRL+ALT+S) выберите **Plugins** (Подключаемые модули).</span><span class="sxs-lookup"><span data-stu-id="b400f-110">In IntelliJ IDEA's Settings/Preferences dialog (Ctrl+Alt+S), select **Plugins**.</span></span> <span data-ttu-id="b400f-111">Затем найдите модуль **Azure Toolkit for IntelliJ** в **Marketplace** и щелкните **Install** (Установить).</span><span class="sxs-lookup"><span data-stu-id="b400f-111">Then, find the **Azure Toolkit for IntelliJ** in the **Marketplace** and click **Install**.</span></span> <span data-ttu-id="b400f-112">После установки щелкните **Restart** (Перезапуск), чтобы активировать подключаемый модуль.</span><span class="sxs-lookup"><span data-stu-id="b400f-112">After installed, click **Restart** to activate the plugin.</span></span> 
 
-[!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
+   ![Подключаемый модуль Azure Toolkit for IntelliJ в Marketplace][marketplace]
 
-## <a name="create-a-new-web-app-project"></a><span data-ttu-id="7188f-111">Создание проекта веб-приложения</span><span class="sxs-lookup"><span data-stu-id="7188f-111">Create a new web app project</span></span>
+2. <span data-ttu-id="b400f-114">Чтобы войти в учетную запись Azure, откройте боковую панель **Azure Explorer**, а затем щелкните значок **Azure Sign In** (Вход в Azure) в верхней строке (или в меню IDEA **Tools/Azure/Azure Sign in** (Средства/Azure/Вход в Azure)).</span><span class="sxs-lookup"><span data-stu-id="b400f-114">To sign in to your Azure account, open sidebar **Azure Explorer**, and then click the **Azure Sign In** icon in the bar on top (or from IDEA menu **Tools/Azure/Azure Sign in**).</span></span>
 
-1. <span data-ttu-id="7188f-112">Запустите IntelliJ и войдите в свою учетную запись Azure, следуя инструкциям из статьи [Инструкции по входу для набора средств Azure для IntelliJ][intelliJ-sign-in-instructions].</span><span class="sxs-lookup"><span data-stu-id="7188f-112">Start IntelliJ, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for IntelliJ][intelliJ-sign-in-instructions] article.</span></span>
+   ![Команда Azure Sign In (Вход в Azure) в IntelliJ][I01]
 
-1. <span data-ttu-id="7188f-113">Щелкните меню **File** (Файл), выберите команду **New** (Создать), а затем — **Project** (Проект).</span><span class="sxs-lookup"><span data-stu-id="7188f-113">Click the **File** menu, then click **New**, and then click **Project**.</span></span>
-   
+3. <span data-ttu-id="b400f-116">В окне **Azure Sign In** (Вход в Azure) выберите **Device Login** (Имя пользователя устройства) и щелкните **Sign in** (Вход) ([другие варианты входа](azure-toolkit-for-intellij-sign-in-instructions.md)).</span><span class="sxs-lookup"><span data-stu-id="b400f-116">In the **Azure Sign In** window, select **Device Login**, and then click **Sign in** ([other sign in options](azure-toolkit-for-intellij-sign-in-instructions.md)).</span></span>
+
+   ![Окно Azure Sign In (Вход в Azure) с выбранным именем пользователя устройства][I02]
+
+4. <span data-ttu-id="b400f-118">В диалоговом окне **Azure Device Login** (Вход в систему устройства Azure) щелкните **Copy&Open** (Копировать и открыть).</span><span class="sxs-lookup"><span data-stu-id="b400f-118">Click **Copy&Open** in **Azure Device Login** dialog .</span></span>
+
+   ![Диалоговое окно входа Azure][I03]
+
+5. <span data-ttu-id="b400f-120">В браузере вставьте код устройства (скопированный при нажатии **Copy&Open** (Копировать и открыть) на последнем шаге), а затем нажмите кнопку **Далее**.</span><span class="sxs-lookup"><span data-stu-id="b400f-120">In the browser, paste your device code (which has been copied when you click **Copy&Open** in last step) and then click **Next**.</span></span>
+
+   ![Вход в систему устройства в браузере][I04]
+
+6. <span data-ttu-id="b400f-122">В диалоговом окне **Select Subscriptions** (Выбор подписок) выберите нужные подписки и нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="b400f-122">In the **Select Subscriptions** dialog box, select the subscriptions that you want to use, and then click **OK**.</span></span>
+
+   ![Диалоговое окно выбора подписок][I05]
+
+## <a name="creating-web-app-project"></a><span data-ttu-id="b400f-124">Создание проекта веб-приложения</span><span class="sxs-lookup"><span data-stu-id="b400f-124">Creating web app project</span></span>
+
+1. <span data-ttu-id="b400f-125">В IntelliJ щелкните меню **File** (Файл), выберите команду **New** (Создать), а затем — **Project** (Проект).</span><span class="sxs-lookup"><span data-stu-id="b400f-125">In IntelliJ, click the **File** menu, then click **New**, and then click **Project**.</span></span>
+
    ![Создание проекта][file-new-project]
 
-1. <span data-ttu-id="7188f-115">В диалоговом окне **New Project** (Новый проект) выберите **Maven**, а затем **maven-archetype-webapp** и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="7188f-115">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
-   
+2. <span data-ttu-id="b400f-127">В диалоговом окне **New Project** (Новый проект) выберите **Maven**, а затем **maven-archetype-webapp** и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="b400f-127">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
+
    ![Выбор веб-приложения архетипа Maven][maven-archetype-webapp]
-   
-1. <span data-ttu-id="7188f-117">Укажите значение **GroupId** (Идентификатор группы) и **ArtifactId** (Идентификатор артефакта) для веб-приложения и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="7188f-117">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
-   
+
+3. <span data-ttu-id="b400f-129">Укажите значение **GroupId** (Идентификатор группы) и **ArtifactId** (Идентификатор артефакта) для веб-приложения и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="b400f-129">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
+
    ![Указание идентификатора группы и артефакта][groupid-and-artifactid]
 
-1. <span data-ttu-id="7188f-119">Настройте любые параметры Maven или примите значения по умолчанию и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="7188f-119">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
-   
+4. <span data-ttu-id="b400f-131">Настройте любые параметры Maven или примите значения по умолчанию и щелкните **Next** (Далее).</span><span class="sxs-lookup"><span data-stu-id="b400f-131">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
+
    ![Указание параметров Maven][maven-options]
 
-1. <span data-ttu-id="7188f-121">Укажите имя и расположение проекта, а затем щелкните **Finish** (Готово).</span><span class="sxs-lookup"><span data-stu-id="7188f-121">Specify your project name and location, and then click **Finish**.</span></span>
-   
+5. <span data-ttu-id="b400f-133">Укажите имя и расположение проекта, а затем щелкните **Finish** (Готово).</span><span class="sxs-lookup"><span data-stu-id="b400f-133">Specify your project name and location, and then click **Finish**.</span></span>
+
    ![Указание имени проекта][project-name]
 
-1. <span data-ttu-id="7188f-123">В представлении обозревателя проектов IntelliJ разверните **src**, а затем **main**, **webapp** и дважды щелкните **index.jsp**.</span><span class="sxs-lookup"><span data-stu-id="7188f-123">Within IntelliJ's Project Explorer view, expand **src**, then **main**, then **webapp**, and then double-click **index.jsp**.</span></span>
-   
-   ![Открытие страницы индексов][open-index-page]
+6. <span data-ttu-id="b400f-135">В представлении обозревателя проектов откройте и измените файл **src/main/webapp/index.jsp** следующим образом и **сохраните изменения**:</span><span class="sxs-lookup"><span data-stu-id="b400f-135">Under Project Explorer view, open and edit the file **src/main/webapp/index.jsp** as following and **save the changes**:</span></span>
 
-1. <span data-ttu-id="7188f-125">При открытии в IntelliJ файла index.jsp добавьте код для динамического отображения фразы **Hello World!**</span><span class="sxs-lookup"><span data-stu-id="7188f-125">When your index.jsp file opens in IntelliJ, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="7188f-126">в существующий элемент `<body>`.</span><span class="sxs-lookup"><span data-stu-id="7188f-126">within the existing `<body>` element.</span></span> <span data-ttu-id="7188f-127">Обновленное содержимое элемента `<body>` должно выглядеть так:</span><span class="sxs-lookup"><span data-stu-id="7188f-127">Your updated `<body>` content should resemble the following example:</span></span>
-   
-   ```java
-   <body><b><% out.println("Hello World!"); %></b></body>
-   ``` 
+   ```html
+   <html>
+    <body>
+      <b><% out.println("Hello World!"); %></b>
+    </body>
+   </html>
+   ```
 
    ![Изменение страницы индексов][edit-index-page]
 
-1. <span data-ttu-id="7188f-129">Сохраните index.jsp.</span><span class="sxs-lookup"><span data-stu-id="7188f-129">Save index.jsp.</span></span>
+## <a name="deploying-web-app-to-azure"></a><span data-ttu-id="b400f-137">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="b400f-137">Deploying web app to Azure</span></span>
 
-## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="7188f-130">Развертывание веб-приложения в Azure</span><span class="sxs-lookup"><span data-stu-id="7188f-130">Deploy your web app to Azure</span></span>
+1. <span data-ttu-id="b400f-138">В представлении обозревателя проектов щелкните проект правой кнопкой мыши, разверните **Azure** и щелкните **Deploy to Azure** (Развертывание в Azure).</span><span class="sxs-lookup"><span data-stu-id="b400f-138">Under Project Explorer view, right-click your project, expand **Azure**, then click **Deploy to Azure**.</span></span>
 
-1. <span data-ttu-id="7188f-131">В представлении обозревателя проектов IntelliJ щелкните правой кнопкой мыши проект, выберите **Azure**, а затем — **Run on Web App** (Выполнить в веб-приложении).</span><span class="sxs-lookup"><span data-stu-id="7188f-131">Within IntelliJ's Project Explorer view, right-click your project, choose **Azure**, and then choose **Run on Web App**.</span></span>
-   
-   ![Пункт меню Run on web app (Выполнить в веб-приложении)][run-on-web-app-menu]
+   ![Меню развертывания в Azure][deploy-to-azure-menu]
 
-1. <span data-ttu-id="7188f-133">В диалоговом окне Run on Web App (Выполнение в веб-приложении) можно выбрать один из таких вариантов:</span><span class="sxs-lookup"><span data-stu-id="7188f-133">In the Run on Web App dialog box, you can choose one of the following options:</span></span>
+1. <span data-ttu-id="b400f-140">В диалоговом окне развертывания в Azure вы можете напрямую развернуть приложение в существующее веб-приложение Tomcat, если оно у вас есть. В противном случае необходимо создать такое веб-приложение.</span><span class="sxs-lookup"><span data-stu-id="b400f-140">In the Deploy to Azure dialog box, you can directly deploy the application to an existing Tomcat webapp if you already have one, otherwise you should create a new one first.</span></span>
+   1. <span data-ttu-id="b400f-141">Щелкните ссылку **No Available webapp, click to create a new one** (Нет доступного веб-приложения. Щелкните, чтобы создать), чтобы создать веб-приложение. Если в подписке уже есть веб-приложения, можно выбрать **Create New WebApp** (Создать веб-приложение) из раскрывающегося списка веб-приложений.</span><span class="sxs-lookup"><span data-stu-id="b400f-141">Click the link **No Available webapp, click to create a new one** to crete a new web app, you could choose **Create New WebApp** from WebApp dropdown if there are existing webapps in your subscription.</span></span>
 
-   * <span data-ttu-id="7188f-134">Выберите имеющееся веб-приложение (если оно есть) и нажмите кнопку **Run** (Выполнить).</span><span class="sxs-lookup"><span data-stu-id="7188f-134">Choose an existing web app (if one exists), and then click **Run**.</span></span>
+      ![Диалоговое окно развертывания в Azure][deploy-to-azure-dialog]
 
-      ![Диалоговое окно Run on Web App (Выполнение в веб-приложении)][run-on-web-app-dialog]
-
-   * <span data-ttu-id="7188f-136">Щелкните **Create New Web App** (Создать веб-приложение) в раскрывающемся списке WebApp (Веб-приложение).</span><span class="sxs-lookup"><span data-stu-id="7188f-136">Click **Create New Web App** from WebApp dropdown.</span></span> <span data-ttu-id="7188f-137">Если вы решите создать веб-приложение, укажите требуемую информацию для созданного веб-приложения и нажмите кнопку **Run** (Выполнить).</span><span class="sxs-lookup"><span data-stu-id="7188f-137">If you choose to create a new web app, specify the requisite information for your web app, and then click **Run** after web app creation.</span></span>
+   1. <span data-ttu-id="b400f-143">Во всплывающем диалоговом окне выберите **TOMCAT 8.5-jre8** как веб-контейнер и укажите другие необходимые сведения, а затем нажмите кнопку **ОК**, чтобы создать веб-приложение.</span><span class="sxs-lookup"><span data-stu-id="b400f-143">In the pop-up dialog box, chose **TOMCAT 8.5-jre8** as Web Container and specify other required information, then click **OK** to create the webapp.</span></span>
 
       ![Создание веб-приложения][create-new-web-app-dialog]
 
-1. <span data-ttu-id="7188f-139">Набор средств отобразит сообщение о состоянии при успешном развертывании веб-приложения, где будет содержаться URL-адрес развернутого веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="7188f-139">The toolkit will display a status message when it has successfully deployed your web app, which will also display the URL of your deployed web app.</span></span>
+   1. <span data-ttu-id="b400f-145">Выберите веб-приложение из раскрывающегося списка веб-приложений, а затем щелкните **Run** (Запуск). (Вы можете выполнить запуск отсюда, если хотите выполнить развертывание в существующее веб-приложение.)</span><span class="sxs-lookup"><span data-stu-id="b400f-145">Choose the web app from WebApp drop down, and then click **Run**.(You could start from here if you want deploy to an existing webapp)</span></span>
+
+      ![Развертывание в существующее веб-приложение][deploy-to-existing-webapp]
+
+1. <span data-ttu-id="b400f-147">Набор средств отобразит сообщение о состоянии при успешном развертывании веб-приложения, а также URL-адрес развернутого веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="b400f-147">The toolkit will display a status message when it has successfully deployed your web app, along with the URL of your deployed web app if succeed.</span></span>
 
    ![Развертывание завершено успешно][successfully-deployed]
 
-1. <span data-ttu-id="7188f-141">Перейти к своему веб-приложению можно с помощью ссылки, предоставленной в сообщении о состоянии.</span><span class="sxs-lookup"><span data-stu-id="7188f-141">You can browse to your web app using the link provided in the status message.</span></span>
+1. <span data-ttu-id="b400f-149">Перейти к своему веб-приложению можно с помощью ссылки, предоставленной в сообщении о состоянии.</span><span class="sxs-lookup"><span data-stu-id="b400f-149">You can browse to your web app using the link provided in the status message.</span></span>
 
    ![Просмотр веб-приложения][browse-web-app]
 
-1. <span data-ttu-id="7188f-143">После публикации веб-приложения параметры будут сохранены в качестве параметров по умолчанию. Приложение можно запустить в Azure, щелкнув значок зеленой стрелки на панели инструментов.</span><span class="sxs-lookup"><span data-stu-id="7188f-143">After you have published your web app, your settings will be saved as the default, and you can run your application on Azure by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="7188f-144">Вы можете изменить параметры, щелкнув раскрывающееся меню для веб-приложения, а затем — **Edit Configurations** (Изменить конфигурации).</span><span class="sxs-lookup"><span data-stu-id="7188f-144">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
+## <a name="managing-deploy-configurations"></a><span data-ttu-id="b400f-151">Управление конфигурациями развертывания</span><span class="sxs-lookup"><span data-stu-id="b400f-151">Managing deploy configurations</span></span>
+
+1. <span data-ttu-id="b400f-152">После публикации веб-приложения параметры будут сохранены в качестве параметров по умолчанию. Развертывание можно запустить, щелкнув значок зеленой стрелки на панели инструментов.</span><span class="sxs-lookup"><span data-stu-id="b400f-152">After you have published your web app, your settings will be saved as the default, and you can run the deployment by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="b400f-153">Вы можете изменить параметры, щелкнув раскрывающееся меню для веб-приложения, а затем — **Edit Configurations** (Изменить конфигурации).</span><span class="sxs-lookup"><span data-stu-id="b400f-153">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
 
    ![Пункт меню Edit configuration (Изменить конфигурацию)][edit-configuration-menu]
 
-1. <span data-ttu-id="7188f-146">При отображении диалогового окна **Run/Debug Configurations** (Конфигурации выполнения и отладки) можно изменить любые параметры по умолчанию, а затем нажать кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="7188f-146">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
+1. <span data-ttu-id="b400f-155">При отображении диалогового окна **Run/Debug Configurations** (Конфигурации выполнения и отладки) можно изменить любые параметры по умолчанию, а затем нажать кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="b400f-155">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
 
    ![Диалоговое окно Edit configuration (Изменение конфигурации)][edit-configuration-dialog]
 
-## <a name="next-steps"></a><span data-ttu-id="7188f-148">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="7188f-148">Next steps</span></span>
+## <a name="cleaning-up-resources"></a><span data-ttu-id="b400f-157">Очистка ресурсов</span><span class="sxs-lookup"><span data-stu-id="b400f-157">Cleaning up resources</span></span>
+
+1. <span data-ttu-id="b400f-158">Удаление веб-приложений в Azure Explorer</span><span class="sxs-lookup"><span data-stu-id="b400f-158">Deleting Web Apps in Azure Explorer</span></span>
+
+     ![Очистка ресурсов][clean-resources]
+
+## <a name="next-steps"></a><span data-ttu-id="b400f-160">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="b400f-160">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
-<span data-ttu-id="7188f-149">Дополнительные сведения о создании веб-приложений Azure см. в разделе [Обзор веб-приложений].</span><span class="sxs-lookup"><span data-stu-id="7188f-149">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
+<span data-ttu-id="b400f-161">Дополнительные сведения о создании веб-приложений Azure см. в разделе [Обзор веб-приложений].</span><span class="sxs-lookup"><span data-stu-id="b400f-161">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
 
 <!-- URL List -->
 
-[Набор средств Azure для IntelliJ]: azure-toolkit-for-intellij.md
 [Azure Toolkit for IntelliJ]: azure-toolkit-for-intellij.md
-[Набор средств Azure для Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [Azure Toolkit for Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Обзор веб-приложений]: /azure/app-service/app-service-web-overview
@@ -132,7 +159,7 @@ ms.locfileid: "58489642"
 [intelliJ-sign-in-instructions]: azure-toolkit-for-intellij-sign-in-instructions.md
 
 <!-- IMG List -->
-
+[marketplace]:./media/azure-toolkit-for-intellij-create-hello-world-web-app/marketplace.png
 [file-new-project]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/file-new-project.png
 [maven-archetype-webapp]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/maven-archetype-webapp.png
 [groupid-and-artifactid]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/groupid-and-artifactid.png
@@ -140,10 +167,17 @@ ms.locfileid: "58489642"
 [project-name]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/project-name.png
 [open-index-page]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/open-index-page.png
 [edit-index-page]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-index-page.png
-[run-on-web-app-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-menu.png
-[run-on-web-app-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-dialog.png
+[deploy-to-azure-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-menu.png
+[deploy-to-azure-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/run-on-web-app-dialog.png
+[deploy-to-existing-webapp]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/deploy-to-existing-webapp.png
 [create-new-web-app-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/create-new-web-app-dialog.png
 [successfully-deployed]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/successfully-deployed.png
 [browse-web-app]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/browse-web-app.png
 [edit-configuration-menu]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-configuration-menu.png
 [edit-configuration-dialog]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/edit-configuration-dialog.png
+[clean-resources]: ./media/azure-toolkit-for-intellij-create-hello-world-web-app/clean-resource.png
+[I01]: media/azure-toolkit-for-intellij-sign-in-instructions/I01.png
+[I02]: media/azure-toolkit-for-intellij-sign-in-instructions/I02.png
+[I03]: media/azure-toolkit-for-intellij-sign-in-instructions/I03.png
+[I04]: media/azure-toolkit-for-intellij-sign-in-instructions/I04.png
+[I05]: media/azure-toolkit-for-intellij-sign-in-instructions/I05.png
