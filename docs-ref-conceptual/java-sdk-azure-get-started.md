@@ -12,12 +12,12 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: fdf0334a8796d636a1968943cc34d7ae98d6361c
-ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
+ms.openlocfilehash: 22389ce7346a1d97c072dcc82162c9286f21f178
+ms.sourcegitcommit: 04d0d92c46399976b58a9dfa107ba644378bf171
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040262"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65986200"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Начало работы с разработкой в облаке с помощью Java в Azure
 
@@ -147,23 +147,23 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>Установка Azure Toolkit for IntelliJ
 
-[Набор средств Azure](intellij/azure-toolkit-for-intellij-installation.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. См. дополнительные сведения об [установке набора средств Azure для IntelliJ](intellij/azure-toolkit-for-intellij-installation.md).
+[Набор средств Azure](intellij/azure-toolkit-for-intellij-installation.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. Подробные сведения см. в [кратком руководстве по Azure Toolkit for IntelliJ](intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md).
 
-В меню **Файл** выберите **Параметры**. 
+- В меню **Файл** выберите **Параметры**. 
 
-Выберите **Обзор репозиториев...** найдите "Azure" и установите **набор средств Azure для Intellij**.
+- Выберите **Обзор репозиториев...** найдите "Azure" и установите **набор средств Azure для Intellij**.
 
-Перезапустите Intellij.
+- Перезапустите Intellij.
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
 
-[Набор средств Azure](eclipse/azure-toolkit-for-eclipse.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. См. дополнительные сведения об [установке набора средств Azure для Eclipse](eclipse/azure-toolkit-for-eclipse.md).
+[Набор средств Azure](eclipse/azure-toolkit-for-eclipse.md) требуется, если вы развертываете веб-приложения и API-интерфейсы программными средствами. Сейчас этот набор не используется для разработки других типов. Ниже приведены общие сведения о действиях по установке. Подробные сведения см. в [кратком руководстве по Azure Toolkit for Eclipse](eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md).
 
-В меню **Help** (Справка) выберите пункт **Install New Software** (Установка нового программного обеспечения).
+- В меню **Help** (Справка) выберите пункт **Install New Software** (Установка нового программного обеспечения).
 
-В поле **Work with:** (Работа с:) введите `http://dl.microsoft.com/eclipse` и нажмите клавишу ВВОД.
+- В поле **Work with:** (Работа с:) введите `http://dl.microsoft.com/eclipse` и нажмите клавишу ВВОД.
 
-Затем установите флажок рядом с пунктом **Azure toolkit for Java** (Набор средств Azure для Java) и снимите флажок рядом с пунктом **Contact all update sites during install to find required software** (Проверить все сайты обновления во время установки для поиска требуемого ПО). Затем нажмите кнопку "Далее".
+- Затем установите флажок рядом с пунктом **Azure toolkit for Java** (Набор средств Azure для Java) и снимите флажок рядом с пунктом **Contact all update sites during install to find required software** (Проверить все сайты обновления во время установки для поиска требуемого ПО). Затем нажмите кнопку "Далее".
 
 ## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 

@@ -14,14 +14,15 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0cbb515a62e540fdc9decb8055bb57e0cb35e7b2
-ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
+ms.openlocfilehash: 0b57e60df9a4439cf0acbac19288b6fecfce6ee5
+ms.sourcegitcommit: 733115fe0a7b5109b511b4a32490f8264cf91217
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53638993"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626099"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Набор средств Azure для IntelliJ
+
 В набор средств Azure для IntelliJ входят шаблоны и функциональные возможности для простого создания, разработки, тестирования и развертывания приложений Azure с помощью интегрированной среды разработки IntelliJ.
 
 > [!NOTE]
@@ -29,17 +30,11 @@ ms.locfileid: "53638993"
 > Также имеется набор средств Azure для интегрированной среды разработки Eclipse. Дополнительные сведения см. в разделе [Набор средств Azure для Eclipse](../eclipse/azure-toolkit-for-eclipse.md).
 > 
 
-## <a name="get-started-with-the-azure-toolkit-for-intellij"></a>Приступая к работе с набором средств Azure для IntelliJ
-Следующие статьи помогут вам приступить к работе с набором средств Azure для IntelliJ:
+## <a name="get-started-in-10-minutes"></a>10-минутное руководство по началу работы
 
-* [Установка набора средств Azure для IntelliJ](azure-toolkit-for-intellij-installation.md)
+* [Создание веб-приложения Hello World для Службы приложений Azure](azure-toolkit-for-intellij-create-hello-world-web-app.md)
 
-* [Инструкции по входу для набора средств Azure для IntelliJ](azure-toolkit-for-intellij-sign-in-instructions.md)
-
-* [Создание веб-приложения Azure (цен. категория "Базовый") в IntelliJ](azure-toolkit-for-intellij-create-hello-world-web-app.md)
-
-## <a name="use-the-azure-toolkit-for-intellij-with-your-java-projects"></a>Использование набора средств Azure для IntelliJ для проектов Java
-В следующих статьях демонстрируется использование набора средств Azure для IntelliJ для добавления функций Azure в проекты Java.
+## <a name="step-by-step-tutorials"></a>Пошаговые руководства
 
 * [Запуск веб-приложения Hello World в контейнере Linux с помощью набора средств Azure для IntelliJ](azure-toolkit-for-intellij-hello-world-web-app-linux.md)
 
@@ -49,36 +44,18 @@ ms.locfileid: "53638993"
 
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания приложений Spark для кластера Spark в HDInsight на платформе Linux](/azure/hdinsight/hdinsight-apache-spark-intellij-tool-plugin)
 
-## <a name="manage-azure-resources-using-the-azure-toolkit-for-intellij"></a>Управление ресурсами Azure с помощью набора средств Azure для IntelliJ
-В следующих статьях демонстрируется использование набора средств Azure для IntelliJ для управления ресурсами Azure:
+## <a name="managing-azure-resources"></a>Управление ресурсами Azure
 
-* [Управление кэшами Redis с помощью Azure Explorer для IntelliJ](azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md)
+* [Кэши Redis](azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md)
 
-* [Управление учетными записями хранения с помощью Azure Explorer для IntelliJ](azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md)
+* [Учетные записи хранения](azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md)
 
-* [Управление виртуальными машинами с помощью Azure Explorer для IntelliJ](azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md)
+* [Виртуальные машины](azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="whats-more"></a>Новые возможности
 
-Дополнительные сведения о наборе средств Azure для IntelliJ см. на следующих страницах:
-
-* [Заметки о выпуске набора средств Azure](https://github.com/Microsoft/azure-tools-for-java/releases)
-
-* [Набор средств Azure для IntelliJ в репозитории подключаемых модулей JetBrains](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij)
-
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) и [инструментах Java для Visual Studio Team Services](/azure/devops/java/).
-
+[!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 > [!NOTE]
 > 
 > Набор средств Azure для IntelliJ — это проект с открытым кодом, исходный код которого доступен по [лицензии MIT на сайте проекта](https://github.com/microsoft/azure-tools-for-java).
 > 
-
-<!-- [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)] -->
-
-<!-- URL List -->
-
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-
-<!-- Temporarily Deprecated URLs -->
-
-<!-- [Debug a Java Web App on Azure in IntelliJ]: ./app-service-web/app-service-web-debug-java-web-app-in-intellij.md -->

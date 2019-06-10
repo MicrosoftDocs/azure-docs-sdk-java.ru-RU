@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0f3df5c8cf3c83c1ce9a4ca32c753b5fc39ab1df
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 86cef07873ae7a2ba75aab1044fe4d241cd5b13e
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892885"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270873"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>Установка набора средств Azure для IntelliJ
 
@@ -34,7 +34,30 @@ ms.locfileid: "48892885"
 
 Установить набор средств Azure для IntelliJ можно с помощью диалогового окна **Параметры** или меню **Настройка** на начальном экране. Оба способа установки будут описаны ниже.
 
-[!INCLUDE [azure-toolkit-for-IntelliJ-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
+## <a name="prerequisites"></a>Предварительные требования
+
+Azure Toolkit for IntelliJ требует наличия следующих программных компонентов:
+
+* Установленный Пакет SDK для Java (JDK) 8+, например: [OpenJDK](https://openjdk.java.net/) или [Oracle JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
+* Установленный [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition или Community Edition.
+
+> [!NOTE]
+> 
+> На сайте репозитория подключаемых модулей JetBrains на странице [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) приведен список сборок, совместимых с набором средств.
+> 
+
+<!--
+> [!IMPORTANT]
+> 
+> If you are using the Azure Toolkit for IntelliJ on Windows, the toolkit requires installing the Azure SDK 2.9.6 or later in order to use the Azure emulator. You have two options for installing the Azure SDK:
+> 
+> * You can download and install the Azure SDK by using the [Web Platform Installer (WebPI)](http://go.microsoft.com/fwlink/?LinkID=252838).
+> * If you do not have the Azure SDK installed when you create your first Azure deployment project, you will be prompted to automatically download install the requisite version of the Azure SDK.
+> 
+> Note that the Azure SDK is only required on Windows.
+> 
+-->
+
 
 ## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a>Установка набора средств Azure для IntelliJ из диалогового окна параметров
 

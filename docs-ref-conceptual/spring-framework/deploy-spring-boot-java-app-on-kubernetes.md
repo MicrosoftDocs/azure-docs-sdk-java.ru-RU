@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 42bb030a916cc5aaf1e20242518a0a400b8baa88
-ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
+ms.openlocfilehash: 9ab781d27e8968ab867efc65f3ac422ac6253a6a
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59745162"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270849"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Развертывание приложения Spring Boot в кластере Kubernetes в Службе Azure Kubernetes
 
@@ -123,7 +123,7 @@ ms.locfileid: "59745162"
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>1.0.2</jib-maven-plugin.version>
+      <jib-maven-plugin.version>1.2.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -136,10 +136,10 @@ ms.locfileid: "59745162"
      <groupId>com.google.cloud.tools</groupId>
      <version>${jib-maven-plugin.version}</version>
      <configuration>
-        <from>              
+        <from>
             <image>openjdk:8-jre-alpine</image>
         </from>
-        <to>                
+        <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
         </to>
      </configuration>
@@ -148,9 +148,14 @@ ms.locfileid: "59745162"
 
 1. Перейдите в каталог завершенного проекта для приложения Spring Boot и выполните указанную ниже команду для создания образа и его отправки в реестр:
 
-   ```
+   ```cmd
    mvn compile jib:build
    ```
+
+> [!NOTE]
+>
+> Из-за особенностей, связанных с безопасностью Azure CLI и Реестром контейнеров Azure, учетные данные, созданные командой `az acr login`, действуют в течение всего 1 часа. При появлении ошибки *401 — недостаточно прав* вы можете повторно выполнить команду `az acr login -n <your registry name>` для аутентификации.
+>
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Создание в Службе контейнеров Azure кластера Kubernetes с помощью Azure CLI
 
@@ -205,7 +210,7 @@ ms.locfileid: "59745162"
 
 1. Откройте окно командной строки.
 
-1. Запустите контейнер в кластере Kubernetes с помощью команды `kubectl run`. Присвойте приложению имя службы в Kubernetes и полное имя образа. Например: 
+1. Запустите контейнер в кластере Kubernetes с помощью команды `kubectl run`. Присвойте приложению имя службы в Kubernetes и полное имя образа. Например:
    ```
    kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
    ```
@@ -215,7 +220,7 @@ ms.locfileid: "59745162"
 
    * Параметр `--image` указывает объединенное имя сервера входа и образа как `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest`.
 
-1. Предоставьте кластер Kubernetes извне с помощью команды `kubectl expose`. Укажите имя службы, общедоступный TCP-порт, используемый для доступа к приложению, и внутренний целевой порт, прослушиваемый приложением. Например: 
+1. Предоставьте кластер Kubernetes извне с помощью команды `kubectl expose`. Укажите имя службы, общедоступный TCP-порт, используемый для доступа к приложению, и внутренний целевой порт, прослушиваемый приложением. Например:
    ```
    kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
    ```

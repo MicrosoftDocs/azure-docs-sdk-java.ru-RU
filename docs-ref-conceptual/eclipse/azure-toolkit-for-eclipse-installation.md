@@ -14,16 +14,19 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: bcc5ed04143eebaff89e5688a818e464f077390e
-ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.openlocfilehash: 8e6630f7e019d950249e7e84024ac800a0f2f136
+ms.sourcegitcommit: 394521c47ac9895d00d9f97535cc9d1e27d08fe9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61590701"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270847"
 ---
-# <a name="install-the-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
+# <a name="installing-the-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
 
-В набор средств Azure для Eclipse входят шаблоны и функции для простого создания, разработки, тестирования и развертывания облачных приложений в Azure с помощью среды разработки Eclipse.
+Существует два способа для установки Azure Toolkit for Eclipse:
+
+  - [Eclipse Marketplace.](#eclipse-marketplace)
+  - [Установка нового программного обеспечения.](#install-new-software)
 
 > [!NOTE] 
 > 
@@ -32,22 +35,30 @@ ms.locfileid: "61590701"
 > <https://github.com/microsoft/azure-tools-for-java> 
 > 
 
-Ниже приведен процесс установки набора средств Azure для Eclipse.
+[!INCLUDE [azure-toolkit-for-eclipse-basic-prerequisites](../includes/azure-toolkit-for-eclipse-basic-prerequisites.md)]
 
-[!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
+## <a name="eclipse-marketplace"></a>Eclipse Marketplace
 
-## <a name="to-install-the-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
+1. Перетащите кнопку ниже в запущенную рабочую область Eclipse.
+
+    [![Перетащите в запущенную рабочую область Eclipse*. * Требуется клиент Eclipse Marketplace](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Перетащите в запущенную рабочую область Eclipse*. * Требуется клиент Eclipse Marketplace")
+
+2. Кроме того, вы можете найти и установить **подключаемый модуль Azure Toolkit for Eclipse** в **разделе справки или в Eclipse Marketplace**.
+
+    ![Marketplace](./media/azure-toolkit-for-eclipse-installation/marketplace.png)
+
+## <a name="install-new-software"></a>Установка нового программного обеспечения
 
 1. Запустите Eclipse.
 
 1. Щелкните меню **Help** (Справка) и выберите пункт **Install New Software** (Установить новое программное обеспечение), как показано на следующем рисунке.
-   
+
    ![Установка набора средств Azure для Eclipse][01]
 
 1. В диалоговом окне **Available Software** (Доступное программное обеспечение) в текстовом поле **Work with** (Работа с) введите `http://dl.microsoft.com/eclipse/` и нажмите клавишу **ВВОД**.
 
 1. В области **Name** (Имя) установите флажок **Azure Toolkit for Java** (Набор средств Azure для Java) и снимите флажок **Contact all update sites during install to find required software** (Проверить все сайты обновления во время установки для поиска требуемого ПО). Экран должен выглядеть следующим образом:
-   
+
    ![Установка набора средств Azure для Eclipse][02]
 
 1. Если развернуть **набор средств Azure для Eclipse**, вы увидите список компонентов, которые будут установлены, например:
@@ -65,19 +76,19 @@ ms.locfileid: "61590701"
 1. Щелкните **Далее**. (Если при установке набора средств возникают необычные задержки, убедитесь, что снят флажок **Contact all update sites during install to find required software** [Проверить все сайты обновления во время установки для поиска требуемого ПО].)
 
 1. В диалоговом окне **Install Details** (Сведения об установке) нажмите кнопку **Далее**.
-   
+
    ![Просмотр сведений об установке][03]
 
 1. В диалоговом окне **Review Licenses** (Просмотр лицензий) ознакомьтесь с условиями лицензионного соглашения. Если вы принимаете условия лицензионных соглашений, установите переключатель **I accept the terms of the license agreements** (Я принимаю условия лицензионных соглашений), а затем нажмите кнопку **Готово**. (В следующих действиях предполагается, что вы принимаете условия лицензионных соглашений. Если вы не принимаете эти условия, завершите процесс установки.)
-   
+
    ![Review Licenses][04]
-   
+
    Eclipse скачает и установит необходимые пакеты.
-   
+
    ![Ход установки][05]
 
 1. Если отображается запрос на перезапуск Eclipse для завершения установки, нажмите кнопку **Yes**(Да).
-   
+
    ![Запрос перезапуска][06]
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -89,7 +100,6 @@ ms.locfileid: "61590701"
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690946.aspx -->
 
 <!-- IMG List -->
-
 [01]: media/azure-toolkit-for-eclipse-installation/eclipse-installation-01.png
 [02]: media/azure-toolkit-for-eclipse-installation/eclipse-installation-02.png
 [03]: media/azure-toolkit-for-eclipse-installation/eclipse-installation-03.png

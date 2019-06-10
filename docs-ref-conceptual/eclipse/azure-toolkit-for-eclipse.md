@@ -14,73 +14,52 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 88d92cfd82244d5df2ad34304155d41c5aab0ee9
-ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
+ms.openlocfilehash: 5bec0af1a17b87d24f29bc856691870d4d697888
+ms.sourcegitcommit: 733115fe0a7b5109b511b4a32490f8264cf91217
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53638963"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65625754"
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
 
-В набор средств Azure для Eclipse входят шаблоны и функции для простого создания, разработки, тестирования и развертывания облачных приложений в Azure с помощью интегрированной среды разработки Eclipse.
+В Azure Toolkit for Eclipse входят шаблоны и функции для простого создания, разработки, тестирования и развертывания облачных приложений в Azure с помощью интегрированной среды разработки Eclipse.
 
 > [!NOTE]
 > 
-> Также имеется набор средств Azure для интегрированной среды разработки IntelliJ. Дополнительные сведения см. в разделе [Набор средств Azure для IntelliJ](../intellij/azure-toolkit-for-intellij.md).
+> Также доступен набор средств Azure Toolkit for the IntelliJ IDEA. Дополнительные сведения см. в разделе [Набор средств Azure для IntelliJ](../intellij/azure-toolkit-for-intellij.md).
 > 
 
-## <a name="get-started-with-the-azure-toolkit-for-eclipse"></a>Начало работы с набором средств Azure для Eclipse
-Следующие статьи помогут вам приступить к работе с набором средств Azure для Eclipse:
+## <a name="get-started-in-10-minutes"></a>10-минутное руководство по началу работы
 
-* [Установка набора средств Azure для Eclipse](azure-toolkit-for-eclipse-installation.md)
+* [Создание веб-приложения Hello World для Службы приложений Azure](azure-toolkit-for-eclipse-create-hello-world-web-app.md)
 
-* [Инструкции по входу для набора средств Azure для Eclipse](azure-toolkit-for-eclipse-sign-in-instructions.md)
+## <a name="step-by-step-tutorials"></a>Пошаговые руководства
 
-* [Создание веб-приложения Azure (цен. категория "Базовый") с помощью Eclipse](azure-toolkit-for-eclipse-create-hello-world-web-app.md)
+* [Публикация приложения Spring Boot в виде контейнера Docker](azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md)
 
-## <a name="use-the-azure-toolkit-for-eclipse-with-your-java-projects"></a>Использование набора средств Azure для Eclipse для проектов Java
-В следующих статьях демонстрируется использование набора средств Azure для Eclipse для добавления функций Azure в проекты Java:
-
-* [Публикация приложения Spring Boot в виде контейнера Docker с помощью набора средств Azure для Eclipse](azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md)
-
-* [Публикация веб-приложения в виде контейнера Docker с помощью набора средств Azure для Eclipse](azure-toolkit-for-eclipse-publish-as-docker-container.md)
+* [Публикация веб-приложения в виде контейнера Docker](azure-toolkit-for-eclipse-publish-as-docker-container.md)
 
 * [Использование подключаемого модуля средств HDInsight для Eclipse для создания приложений Spark для кластера Spark в HDInsight на платформе Linux](/azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin)
 
 * [Отображение в Eclipse содержимого Javadoc для пакета библиотек Azure для Java](azure-toolkit-for-eclipse-displaying-javadoc-content-for-azure-libraries.md)
 
-## <a name="manage-azure-resources-using-the-azure-toolkit-for-eclipse"></a>Управление ресурсами Azure с помощью набора средств Azure для Eclipse
-В следующих статьях демонстрируется использование набора средств Azure для Eclipse для управления ресурсами Azure:
+## <a name="managing-azure-resources"></a>Управление ресурсами Azure
 
-* [Управление кэшами Redis с помощью Azure Explorer для Eclipse](azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md)
+* [Кэши Redis](azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md)
 
-* [Управление учетными записями хранения с помощью Azure Explorer для Eclipse](azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md)
+* [Учетные записи хранения](azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md)
 
-* [Управление виртуальными машинами с помощью Azure Explorer для Eclipse](azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md)
+* [Виртуальные машины](azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="whats-more"></a>Новые возможности
 
-Дополнительные сведения о наборе средств Azure для Eclipse см. на следующих страницах:
-
-* [Заметки о выпуске набора средств Azure](https://github.com/Microsoft/azure-tools-for-java/releases)
-
-* [Набор средств Azure для Eclipse в Eclipse Marketplace](http://marketplace.eclipse.org/content/azure-toolkit-eclipse)
-
-Дополнительные сведения об использовании Azure с Java см. в руководствах по [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/) и [инструментах Java для Visual Studio Team Services](/azure/devops/java/).
-
-<!-- [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)] -->
+[!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 > [!NOTE]
 > 
 > Набор средств Azure для Eclipse — это проект с открытым кодом, исходный код которого доступен по [лицензии MIT на сайте проекта](https://github.com/microsoft/azure-tools-for-java).
 > 
-
-<!-- URL List -->
-
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure
-
-<!-- Temporarily Deprecated URLs -->
 
 <!-- [Deploying large deployments](azure-toolkit-for-eclipse-deploying-large-deployments.md) -->
 <!-- [How to Maintain Session Data with Session Affinity]: http://go.microsoft.com/fwlink/?LinkID=699539 -->
