@@ -14,12 +14,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 1d3ae6c12f32a3443f2783d0c88112746197f5be
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: f00afbdd09ce617f863ed758f4bdddcb40701e27
+ms.sourcegitcommit: 5bbf64121a99019207ed8cca29280fc5183c7314
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991548"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66840839"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Использование начального приложения Spring Boot с API SQL Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "53991548"
 
 Azure Cosmos DB — это глобально распределенная служба баз данных, предоставляющая разработчикам возможность работать с данными с помощью разных стандартных API, например SQL, MongoDB, Graph и табличных API. Начальное приложение Spring Boot от Майкрософт позволяет разработчикам использовать приложения Spring Boot, которые легко интегрируются с Azure Cosmos DB с помощью API SQL.
 
-В этой статье описано, как создать Azure Cosmos DB на портале Azure, создать пользовательское приложение Java с помощью **[Spring Initializr]**, а затем добавить начальное приложение Spring Boot в пользовательское приложение для хранения и получения данных в Azure Cosmos DB с помощью API SQL.
+В этой статье описано, как создать Azure Cosmos DB на портале Azure и пользовательское приложение Spring Boot с помощью **[Spring Initializr]** , а затем добавить [Начальное приложение Spring Boot CosmosDB для Azure] в пользовательское приложение для хранения и получения данных в Azure Cosmos DB с помощью Spring Data и API SQL Cosmos DB.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,6 @@ Azure Cosmos DB — это глобально распределенная сл�
 
 * Подписка Azure. Если у вас ее еще нет, вы можете активировать [Преимущества для подписчиков MSDN] или зарегистрироваться для получения [бесплатной учетной записи Azure].
 * Поддерживаемая версия Java Development Kit (JDK). Дополнительные сведения о версиях JDK, доступных для разработки в Azure, см. в статье <https://aka.ms/azure-jdks>.
-* [Apache Maven](http://maven.apache.org/) версии 3.0 или более поздней.
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>Создание Azure Cosmos DB с помощью портала Azure
 
@@ -49,13 +48,13 @@ Azure Cosmos DB — это глобально распределенная сл�
 
 1. На странице **Azure Cosmos DB** введите следующие сведения.
 
-   * Введите уникальный **идентификатор**, который будет использоваться в качестве URI для базы данных, например *wingtiptoysdata.documents.azure.com*.
-   * Выберите **SQL** в качестве API.
    * Выберите **подписку**, которую нужно использовать для базы данных.
    * Укажите, следует ли создать **группу ресурсов** для базы данных, или выберите имеющуюся группу ресурсов.
+   * Введите уникальное **имя учетной записи**, которое будет использоваться в качестве URI для базы данных, например: *wingtiptoysdata*.
+   * Выберите **Core (SQL)** для API.
    * Укажите **расположение** для базы данных.
-   
-   Указав эти параметры, щелкните **Создать**, чтобы создать базу данных.
+
+   Указав эти параметры, щелкните **Просмотреть и создать**, чтобы создать базу данных.
 
    ![Портал Azure][AZ03]
 
@@ -63,7 +62,7 @@ Azure Cosmos DB — это глобально распределенная сл�
 
    ![Портал Azure][AZ04]
 
-1. Когда откроется страница свойств базы данных, щелкните **Ключи доступа** и скопируйте URI и ключи доступа для базы данных. Эти значения будут использоваться в приложении Spring Boot.
+1. Когда откроется страница свойств базы данных, щелкните **Ключи** и скопируйте URI и ключи доступа для базы данных. Эти значения будут использоваться в приложении Spring Boot.
 
    ![Портал Azure][AZ05]
 
@@ -71,12 +70,7 @@ Azure Cosmos DB — это глобально распределенная сл�
 
 1. Перейдите по адресу <https://start.spring.io/>.
 
-1. Укажите, что требуется создать проект **Maven** на **Java**, введите имя **группы** и **артефакта** для приложения, укажите версию **Spring Boot**, а затем нажмите соответствующую кнопку, чтобы **создать проект**.
-
-   > [!IMPORTANT]
-   >
-   > Внесены критические изменения в API Spring Boot версии 2.0.n, которые будут использоваться при выполнении действий, описанных в этой статье. Для выполнения этих действий вы также можете использовать одну из версий Spring Boot 1.5.n. Различия будут выделены, где это необходимо.
-   >
+1. Укажите, что вы хотите создать проект **Maven** на **Java**, выберите версию **Spring Boot**, введите имя **группы** и **артефакта** для приложения, добавьте **поддержку Azure** в зависимости и нажмите кнопку **Создать проект**.
 
    ![Основные параметры Spring Initializr][SI01]
 
@@ -85,15 +79,15 @@ Azure Cosmos DB — это глобально распределенная сл�
    > Spring Initializr использует имена **группы** и **артефакта** для создания имени пакета, например *com.example.wintiptoysdata*.
    >
 
-1. При появлении запроса скачайте проект на локальный компьютер.
+1. При появлении запроса скачайте проект на локальный компьютер и извлеките файлы.
 
-   ![Скачивание пользовательского проекта Spring Boot][SI02]
+   ![Извлечение пользовательского проекта Spring Boot][SI02]
 
 1. После извлечения файлов в локальной системе простое приложение Spring Boot можно будет редактировать.
 
    ![Пользовательские файлы проекта Spring Boot][SI03]
 
-## <a name="configure-your-spring-boot-app-to-use-the-azure-spring-boot-starter"></a>Настройка приложения Spring Boot для использования начального приложения Azure Spring Boot
+## <a name="configure-your-spring-boot-application-to-use-the-azure-spring-boot-starter"></a>Настройка приложения Spring Boot для использования начального приложения Azure Spring Boot
 
 1. Найдите файл *pom.xml* в каталоге приложения, например:
 
@@ -110,24 +104,11 @@ Azure Cosmos DB — это глобально распределенная сл�
    ```xml
    <dependency>
       <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-documentdb-spring-boot-starter</artifactId>
-      <version>2.0.4</version>
+      <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
    </dependency>
    ```
 
    ![Изменение файла pom.xml][PM02]
-
-   > [!IMPORTANT]
-   >
-   > Если для работы с этим руководством вы используете одну из версий Spring Boot 1.5.n, укажите более раннюю версию начального приложения Azure Cosmos DB, например:
-   >
-   > ```xml
-   > <dependency>
-   >   <groupId>com.microsoft.azure</groupId>
-   >   <artifactId>azure-documentdb-spring-boot-starter</artifactId>
-   >   <version>0.1.4</version>
-   > </dependency>
-   > ```
 
 1. Убедитесь, что версия Spring Boot совпадает с той, которую вы выбрали при создании приложения с помощью Spring Initializr, например:
 
@@ -135,19 +116,20 @@ Azure Cosmos DB — это глобально распределенная сл�
    <parent>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-parent</artifactId>
-      <version>2.0.1.RELEASE</version>
+      <version>2.1.5.RELEASE</version>
       <relativePath/>
    </parent>
    ```
 
-   > [!NOTE]
-   >
-   > Если для работы с этим руководством вы используете одну из версий Spring Boot 1.5.n, проверьте, выбрана ли правильная версия, например `<version>1.5.14.RELEASE</version>`.
-   >
+1. Убедитесь, что вы используете последнюю версию [начальных приложений Azure Spring Boot](https://github.com/microsoft/azure-spring-boot), например:
+
+   ```xml
+   <azure.version>2.1.6</azure.version>
+   ```
 
 1. Сохраните и закройте файл *pom.xml*.
 
-## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a>Настройка приложения Spring Boot для использования Azure Cosmos DB
+## <a name="configure-your-spring-boot-application-to-use-your-azure-cosmos-db"></a>Настройка приложения Spring Boot для использования с Azure Cosmos DB
 
 1. Найдите файл *application.properties* в каталоге *resources*, например:
 
@@ -163,13 +145,13 @@ Azure Cosmos DB — это глобально распределенная сл�
 
    ```yaml
    # Specify the DNS URI of your Azure Cosmos DB.
-   azure.documentdb.uri=https://wingtiptoys.documents.azure.com:443/
+   azure.cosmosdb.uri=https://wingtiptoys.documents.azure.com:443/
 
    # Specify the access key for your database.
-   azure.documentdb.key=57686f6120447564652c20426f6220526f636b73==
+   azure.cosmosdb.key=57686f6120447564652c20426f6220526f636b73==
 
    # Specify the name of your database.
-   azure.documentdb.database=wingtiptoysdata
+   azure.cosmosdb.database=wingtiptoysdata
    ```
 
    ![Редактирование файла application.properties][RE02]
@@ -178,9 +160,9 @@ Azure Cosmos DB — это глобально распределенная сл�
 
 ## <a name="add-sample-code-to-implement-basic-database-functionality"></a>Добавление примера кода для реализации базовых возможностей базы данных
 
-В этом разделе мы создадим два класса Java для хранения пользовательских данных, а затем изменим класс основного приложения для создания экземпляра класса пользователя и сохраним его в базу данных.
+В этом разделе мы создадим два класса Java для хранения пользовательских данных, а затем изменим класс основного приложения для создания экземпляра класса *User* и сохраним его в базе данных.
 
-### <a name="define-a-basic-class-for-storing-user-data"></a>Определение базового класса для хранения пользовательских данных
+### <a name="define-a-base-class-for-storing-user-data"></a>Определение базового класса для хранения пользовательских данных
 
 1. Создайте файл с именем *User.java* в том же каталоге, что и файл основного приложения Java.
 
@@ -194,40 +176,40 @@ Azure Cosmos DB — это глобально распределенная сл�
       private String id;
       private String firstName;
       private String lastName;
-   
+
       public User() {
       }
-   
+
       public User(String id, String firstName, String lastName) {
          this.id = id;
          this.firstName = firstName;
          this.lastName = lastName;
       }
-   
+
       public String getId() {
          return this.id;
       }
-   
+
       public void setId(String id) {
          this.id = id;
       }
-   
+
       public String getFirstName() {
          return firstName;
       }
-   
+
       public void setFirstName(String firstName) {
          this.firstName = firstName;
       }
-   
+
       public String getLastName() {
          return lastName;
       }
-   
+
       public void setLastName(String lastName) {
          this.lastName = lastName;
       }
-   
+
       @Override
       public String toString() {
          return String.format("User: %s %s %s", id, firstName, lastName);
@@ -245,12 +227,12 @@ Azure Cosmos DB — это глобально распределенная сл�
 
    ```java
    package com.example.wingtiptoysdata;
-   
-   import com.microsoft.azure.spring.data.documentdb.repository.DocumentDbRepository;
+
+   import com.microsoft.azure.spring.data.cosmosdb.repository.DocumentDbRepository;
    import org.springframework.stereotype.Repository;
-   
+
    @Repository
-   public interface UserRepository extends DocumentDbRepository<User, String> { } 
+   public interface UserRepository extends DocumentDbRepository<User, String> { }
    ```
 
 1. Сохраните и закройте файл *UserRepository.java*.
@@ -270,58 +252,51 @@ Azure Cosmos DB — это глобально распределенная сл�
 1. Откройте файл основного приложения Java в текстовом редакторе и добавьте в него следующие строки:
 
    ```java
-   package com.example.wingtiptoysdata;
+    package com.example.wingtiptoysdata;
 
-   // These imports are required for the application.
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.boot.CommandLineRunner;
+    import org.springframework.boot.CommandLineRunner;
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-   // These imports are only used to create an ID for this example.
-   import java.util.Date;
-   import java.text.SimpleDateFormat;
+    import java.util.Optional;
+    import java.util.UUID;
 
-   @SpringBootApplication
-   public class wingtiptoysdataApplication implements CommandLineRunner {
+    @SpringBootApplication
+    public class WingtiptoysdataApplication implements CommandLineRunner {
 
-      @Autowired
-      private UserRepository repository;
+        private final UserRepository repository;
 
-      public static void main(String[] args) {
-         // Execute the command line runner.
-         SpringApplication.run(wingtiptoysdataApplication.class, args);
-         System.exit(0);
-      }
+        public WingtiptoysdataApplication(UserRepository repository) {
+            this.repository = repository;
+        }
 
-      public void run(String... args) throws Exception {
-         // Create a simple date/time ID.
-         SimpleDateFormat userId = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-         Date currentDate = new Date();
+        public static void main(String[] args) {
+            // Execute the command line runner.
+            SpringApplication.run(WingtiptoysdataApplication.class, args);
+            System.exit(0);
+        }
 
-         // Create a new User class.
-         final User testUser = new User(userId.format(currentDate), "Gena", "Soto");
+        public void run(String... args) throws Exception {
+            // Create a unique identifier.
+            String uuid = UUID.randomUUID().toString();
 
-         // For this example, remove all of the existing records.
-         repository.deleteAll();
+            // Create a new User class.
+            final User testUser = new User(uuid, "John", "Doe");
 
-         // Save the User class to the Azure database.
-         repository.save(testUser);
-      
-         // Retrieve the database record for the User class you just saved by ID.
-         // final User result = repository.findOne(testUser.getId());
-         final User result = repository.findById(testUser.getId()).get();
+            // For this example, remove all of the existing records.
+            repository.deleteAll();
 
-         // Display the results of the database record retrieval.
-         System.out.printf("\n\n%s\n\n",result.toString());
-      }
-   }
+            // Save the User class to the Azure database.
+            repository.save(testUser);
+
+            // Retrieve the database record for the User class you just saved by ID.
+            Optional<User> result = repository.findById(testUser.getId());
+
+            // Display the results of the database record retrieval.
+            System.out.println("\nSaved user is: " + result + "\n")
+        }
+    }
    ```
-
-   > [!IMPORTANT]
-   >
-   > Если для работы с этим руководством вы используете одну из версий Spring Boot 1.5.n, измените синтаксис `final User result = repository.findById(testUser.getId()).get();` на `final User result = repository.findOne(testUser.getId());`.
-   >
 
 1. Сохраните и закройте файл основного приложения Java.
 
@@ -338,14 +313,13 @@ Azure Cosmos DB — это глобально распределенная сл�
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
 
    ```shell
-   mvn clean package
-   mvn spring-boot:run
+   mvnw clean spring-boot:run
    ```
 
 1. В приложении появится несколько сообщений среды выполнения, включая следующее, указывающее, что значения успешно сохранены и извлечены из базы данных.
 
-   ```
-   User: 20170724025215132 Gena Soto
+   ```shell
+   Saved user is: Optional[User: 24093cb5-55fe-4d2c-b459-cb8bafdd39fe John Doe]
    ```
 
    ![Успешные результаты приложения][JV02]
@@ -373,7 +347,7 @@ Azure Cosmos DB — это глобально распределенная сл�
 
 Дополнительные сведения об использовании приложений Spring Boot в Azure см. в следующих статьях:
 
-* [Spring Boot DocumentDB Starter for Azure] (Начальное приложение Spring Boot DocumentDB для Azure)
+* [Начальное приложение Spring Boot CosmosDB для Azure]
 
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](deploy-spring-boot-java-web-app-on-azure.md)
 
@@ -389,7 +363,7 @@ Azure Cosmos DB — это глобально распределенная сл�
 [Azure для разработчиков Java]: /java/azure/
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Spring Data для API SQL для Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Spring Boot DocumentDB Starter for Azure]:https://github.com/Microsoft/azure-spring-boot-starters/tree/master/azure-documentdb-spring-boot-starter-sample (Начальное приложение Spring Boot DocumentDB для Azure)
+[Начальное приложение Spring Boot CosmosDB для Azure]: https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-starters/azure-cosmosdb-spring-boot-starter
 [бесплатной учетной записи Azure]: https://azure.microsoft.com/pricing/free-trial/
 [Working with Azure DevOps and Java]: https://azure.microsoft.com/services/devops/java/ (Работа с Azure DevOps и Java)
 [Преимущества для подписчиков MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
