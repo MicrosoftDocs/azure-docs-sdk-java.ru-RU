@@ -1,6 +1,6 @@
 ---
 title: Как использовать JPA Spring Data с Базой данных SQL Azure
-description: Узнайте, как использовать JPA Spring Data с Базой данных SQL Azure.
+description: Узнайте, как использовать JPA Spring Data с базой данных SQL Azure.
 services: sql-database
 documentationcenter: java
 author: rmcmurray
@@ -24,7 +24,7 @@ ms.locfileid: "64673959"
 
 ## <a name="overview"></a>Обзор
 
-В этой статье показано создание примера приложения, использующего [Spring Data] для хранения и извлечения информации в [Базу данных SQL Azure](https://azure.microsoft.com/services/sql-database/) с помощью [Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
+В этой статье показано создание примера приложения, использующего [Spring Data] для хранения и извлечения информации в [базу данных SQL Azure](https://azure.microsoft.com/services/sql-database/) с помощью [Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,7 +42,7 @@ ms.locfileid: "64673959"
 
 > [!NOTE]
 > 
-> Дополнительные сведения см. в статье о [создании Базы данных Azure SQL с помощью портала Azure](/azure/sql-database/sql-database-get-started-portal).
+> Дополнительные сведения см. в статье о [создании базы данных Azure SQL с помощью портала Azure](/azure/sql-database/sql-database-get-started-portal).
 
 1. Перейдите на портал Azure по адресу <https://portal.azure.com/> и выполните вход.
 
@@ -173,7 +173,7 @@ ms.locfileid: "64673959"
 
 ## <a name="summary"></a>Сводка
 
-С помощью этого руководства вы создали пример приложения Java, использующий Spring Data для хранения и извлечения информации в Базу данных SQL Azure с помощью JPA.
+С помощью этого руководства вы создали пример приложения Java, использующий Spring Data для хранения и извлечения информации в базе данных SQL Azure с помощью JPA.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

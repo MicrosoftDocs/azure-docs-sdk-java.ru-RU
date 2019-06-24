@@ -1,6 +1,6 @@
 ---
-title: Библиотеки базы данных SQL Azure для Java
-description: Подключайтесь к базе данных SQL Azure с помощью драйвера JDBC или управляйте экземплярами базы данных Azure SQL помощью API управления.
+title: Библиотеки Базы данных SQL Azure для Java
+description: Подключайтесь к базе данных SQL Azure с помощью драйвера JDBC или управляйте экземплярами Базы данных Azure SQL помощью API управления.
 keywords: Azure, Java, SDK, API, SQL, database, JDBC
 author: rloutlaw
 ms.author: routlaw
@@ -18,7 +18,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 10/23/2018
 ms.locfileid: "49799790"
 ---
-# <a name="azure-sql-database-libraries-for-java"></a>Библиотеки базы данных SQL Azure для Java
+# <a name="azure-sql-database-libraries-for-java"></a>Библиотеки Базы данных SQL Azure для Java
 
 ## <a name="overview"></a>Обзор
 
@@ -56,7 +56,7 @@ try {
 
 ## <a name="management-api"></a>API управления
 
-Создавайте ресурсы базы данных SQL Azure и управляйте ими в своей подписке с помощью API управления.   
+Создавайте ресурсы Базы данных SQL Azure и управляйте ими в своей подписке с помощью API управления.   
 
 [Добавьте зависимость](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) в файл Maven `pom.xml`, чтобы использовать API управления в проекте.
 
